@@ -1,0 +1,576 @@
+{
+  "active": false,
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Super Agente",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Super Agente",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tavily": {
+      "ai_tool": [
+        [
+          {
+            "node": "Super Agente",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Descargar Archivo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set 'Text'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set 'Text'": {
+      "main": [
+        [
+          {
+            "node": "Super Agente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de Email": {
+      "ai_tool": [
+        [
+          {
+            "node": "Super Agente",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de Calendario": {
+      "ai_tool": [
+        [
+          {
+            "node": "Super Agente",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Disparador Telegram": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribir": {
+      "main": [
+        [
+          {
+            "node": "Super Agente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar Archivo": {
+      "main": [
+        [
+          {
+            "node": "Transcribir",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculadora": {
+      "ai_tool": [
+        [
+          {
+            "node": "Super Agente",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Super Agente": {
+      "main": [
+        [
+          {
+            "node": "Respuesta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de CRM": {
+      "ai_tool": [
+        [
+          {
+            "node": "Super Agente",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AgentePropuestas": {
+      "ai_tool": [
+        [
+          {
+            "node": "Super Agente",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-09T17:24:12.868Z",
+  "id": "ofhreMiIOglF3aho",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Super Winner - Agente General",
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        400
+      ],
+      "id": "aa9cdd89-649e-4251-ad97-441168075e8b",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Disparador Telegram').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        100,
+        500
+      ],
+      "id": "5d530262-e7b7-4667-8c53-f1cb9dca2101",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Usa esta herramienta para buscar en Internet",
+        "method": "POST",
+        "url": "https://api.tavily.com/search",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n    \"api_key\": \"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\",\n    \"query\": \"{searchTerm}\",\n    \"search_depth\": \"basic\",\n    \"include_answer\": true,\n    \"topic\": \"news\",\n    \"include_raw_content\": true,\n    \"max_results\": 3\n} ",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "searchTerm",
+              "description": "Lo que el usuario ha solicitado buscar en Internet",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        640,
+        540
+      ],
+      "id": "37129e90-72ee-467d-99d2-de3edfd11889",
+      "name": "Tavily"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fe7ecc99-e1e8-4a5e-bdd6-6fce9757b234",
+              "name": "text",
+              "value": "={{ $json.message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c0b806cf-ca7c-4797-8d13-74c6166fb723",
+      "name": "Set 'Text'",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        60,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.voice.file_id }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "fae29375-f3ad-44f8-aa99-7ee5c24da00f"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Voice"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8c844924-b2ed-48b0-935c-c66a8fd0c778",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a454bb16-8c58-43b8-9e7f-879a9464a5b4",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -200,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "name": "AgenteEmail",
+        "description": "Llama a esta herramienta para cualquier acción relacionada con correos electrónicos.",
+        "workflowId": {
+          "__rl": true,
+          "value": "B6DNmYLEsvd75PmV",
+          "mode": "list",
+          "cachedResultName": "Super Winner - Agente Gmail"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        220,
+        560
+      ],
+      "id": "9f371db9-8079-4e45-9d3e-785ae55152f5",
+      "name": "Agente de Email"
+    },
+    {
+      "parameters": {
+        "name": "AgenteCalendario",
+        "description": "Llama a esta herramienta para cualquier acción relacionada con el calendario.",
+        "workflowId": {
+          "__rl": true,
+          "value": "kZEfqowGcpkPeptQ",
+          "mode": "list",
+          "cachedResultName": "Super Winner - Agente Calendario"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        360,
+        580
+      ],
+      "id": "f6375d19-44ec-4d74-8ab0-53703e663644",
+      "name": "Agente de Calendario"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "b409ddc9-c063-43ae-bb84-1559c19135be",
+      "name": "Disparador Telegram",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -360,
+        100
+      ],
+      "webhookId": "99eab1a0-569d-4f0f-a49e-578a02abfe63",
+      "credentials": {
+        "telegramApi": {
+          "id": "nSFTSgYMKsRjpAkb",
+          "name": "SuperWinner"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "id": "423243c6-f1bb-4744-a5bd-904f207f5b4a",
+      "name": "Transcribir",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        120,
+        0
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}"
+      },
+      "id": "2b3410f1-f6ed-4b34-b193-062059ac8658",
+      "name": "Descargar Archivo",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "83bb7385-33f6-4105-8294-1a91c0ebbee5",
+      "credentials": {
+        "telegramApi": {
+          "id": "nSFTSgYMKsRjpAkb",
+          "name": "SuperWinner"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Disparador Telegram').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "7532e693-bada-4e37-9cf2-002d4c66bd41",
+      "name": "Respuesta",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        780,
+        100
+      ],
+      "webhookId": "5dced4b9-5066-4036-a4d4-14fc07edd53c",
+      "credentials": {
+        "telegramApi": {
+          "id": "nSFTSgYMKsRjpAkb",
+          "name": "SuperWinner"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        760,
+        480
+      ],
+      "id": "3f871be3-89f7-47f6-886c-881796294c27",
+      "name": "Calculadora"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text }}",
+        "options": {
+          "systemMessage": "=# Resumen  \nEres un asistente personal. Tu trabajo es enviar la consulta del usuario a la herramienta correcta. Nunca debes redactar correos electrónicos ni crear resúmenes, solo necesitas llamar a la herramienta adecuada.  \n\n## Herramientas  \n- AgenteEmail: Usa esta herramienta para gestionar correos electrónicos.  \n- AgenteCalendario: Usa esta herramienta para gestionar el calendario.  \n- AgenteCrm: Usa esta herramienta para obtener, actualizar o agregar contactos.  \n- Tavily: Usa esta herramienta para buscar en la web.  \n-AgentePropuestas: Usa esta herramienta cuando tengas que hacer una propuesta\n\n## Reglas  \nAlgunas acciones requieren que primero busques información de contacto. Para las siguientes acciones, debes obtener la información de contacto y enviarla a la herramienta correspondiente:  \n  - Enviar correos electrónicos.  \n  - Redactar correos electrónicos.  \n  - Crear eventos de calendario con asistentes.  \n\n## Ejemplos  \n### 1)  \n- Entrada: Envía un correo electrónico a Adrián Martinez preguntándole a qué hora quiere salir.  \n  - Acción: Usa *AgenteContacto* para obtener el correo electrónico de Adrián Martinez, si este contacto no existe, crealo.\n  - Acción: Usa *AgenteEmail* para enviar el correo. Debes pasarle a la herramienta una consulta como:  \n    > \"Envía un correo electrónico a Adrián Martinez para preguntarle a qué hora quiere salir. Aquí está su correo electrónico: [dirección de correo electrónico]\"\n- Salida: El correo electrónico ha sido enviado a Adrián Martinez. ¿Puedo ayudarte con algo más?  \n\n## Recordatorios Finales  \nLa fecha y hora actual es: **{{ $now }}**."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        320,
+        100
+      ],
+      "id": "2a25e413-1db1-43e7-8a75-a8dd9dbbf59e",
+      "name": "Super Agente"
+    },
+    {
+      "parameters": {
+        "name": "AgenteCrm",
+        "description": "Llama a esta herramienta para cualquier acción relacionada con contactos.",
+        "workflowId": {
+          "__rl": true,
+          "value": "9Jz5FxSMkWpFvF1x",
+          "mode": "list",
+          "cachedResultName": "Super Winner - Agente CRM"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        500,
+        580
+      ],
+      "id": "4461c161-a8a3-45de-b8ef-c20fbe4cd88f",
+      "name": "Agente de CRM"
+    },
+    {
+      "parameters": {
+        "name": "AgentePropuestas",
+        "description": "Llama a este Agente cuando necesites una propuesta ",
+        "workflowId": {
+          "__rl": true,
+          "value": "u1oEdkv8Hs6fjC0Y",
+          "mode": "list",
+          "cachedResultName": "El Super Winner — Agente Gmail"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        840,
+        340
+      ],
+      "id": "fc09afe2-fd89-435e-8c39-1f507983dd74",
+      "name": "AgentePropuestas"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-03-09T17:24:59.078Z",
+      "updatedAt": "2025-03-09T17:24:59.078Z",
+      "id": "kKf4nTigoHJQmBQY",
+      "name": "SuperW"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-09T19:15:09.000Z",
+  "versionId": "963e3332-ca68-40e4-acb7-287755ad6455"
+}
