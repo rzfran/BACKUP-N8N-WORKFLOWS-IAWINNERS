@@ -1,0 +1,707 @@
+{
+  "active": false,
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Adelaida",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Adelaida",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de Instagram": {
+      "ai_tool": [
+        [
+          {
+            "node": "Adelaida",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de Youtube": {
+      "ai_tool": [
+        [
+          {
+            "node": "Adelaida",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Disparador Telegram": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Descargar Archivo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive": {
+      "ai_tool": [
+        [
+          {
+            "node": "Adelaida",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Make": {
+      "ai_tool": [
+        [
+          {
+            "node": "Adelaida",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Adelaida": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar Archivo": {
+      "main": [
+        [
+          {
+            "node": "Transcribir",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribir": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Adelaida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de Twitter": {
+      "ai_tool": [
+        [
+          {
+            "node": "Adelaida",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de LinkedIn": {
+      "ai_tool": [
+        [
+          {
+            "node": "Adelaida",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-23T19:37:42.147Z",
+  "id": "UWSvlDuAI1kYXDTn",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Adelaida - Experta en Contenido",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "// Función para extraer el ID de un video de YouTube desde una URL\nfunction extraerIdYoutube(url) {\n    const patrones = [\n        /(?:youtube\\.com\\/watch\\?v=|youtu\\.be\\/)([^&\\n?#]+)/,\n        /youtube\\.com\\/shorts\\/([^&\\n?#]+)/\n    ];\n\n    for (const patron of patrones) {\n        const coincidencia = url.match(patron);\n        if (coincidencia && coincidencia[1]) {\n            return coincidencia[1];\n        }\n    }\n    return null;\n}\n\n// Código modificado\nconst mensaje = $input.first().json.message.text;\nconst regexUrl = /(https?:\\/\\/)?(www\\.)?(youtube\\.com|youtu\\.be)\\/.+/;\nconst urlYoutube = mensaje.match(regexUrl)?.[0];\n\nif (!urlYoutube) {\n    return [{json: {error: 'No se encontró una URL de YouTube'}}];\n}\n\nconst idVideo = extraerIdYoutube(urlYoutube);\nreturn [{json: {videoId: idVideo}}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        280,
+        -380
+      ],
+      "id": "8131f9aa-0811-4f09-b662-f92bdfcab7ac",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "url": "=https://www.searchapi.io/api/v1/search?engine=youtube_transcripts&api_key=25brK3xoGrgYmhFVMJkRSfER&video_id={{ $json.videoId }}&lang=en",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        580,
+        -380
+      ],
+      "id": "6f6b7f64-33ce-4386-991f-80bda4421b5f",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extraer el contenido de la propiedad 'text' de cada objeto dentro de 'transcripts'\nconst textos = $input.first().json.transcripts.map(t => t.text);\n\n// Unir todos los textos con un espacio entre ellos\nconst textoUnido = textos.join(' ');\n\n// Devolver el texto completo en un solo objeto\nreturn [{ json: { textoUnido } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        840,
+        -380
+      ],
+      "id": "292f39aa-abe8-43b1-8156-ad90cf4cc7eb",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        760,
+        300
+      ],
+      "id": "a4b5aa57-8aff-430a-a225-5b82f5ab7140",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Disparador Telegram').item.json.message.chat.id }}",
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1000,
+        300
+      ],
+      "id": "4a4cf044-ce73-4084-a033-c55399c30ed1",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "name": "Agente_Instagram",
+        "description": "Llamarás a esta tool cuando tengas que crear contenido para Instagram",
+        "workflowId": {
+          "__rl": true,
+          "value": "FtKarD45NAWDNCaZ",
+          "mode": "list",
+          "cachedResultName": "Agente de Instagram"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1480,
+        320
+      ],
+      "id": "2dc53f15-4712-413a-a36c-3b7c51bdda14",
+      "name": "Agente de Instagram"
+    },
+    {
+      "parameters": {
+        "name": "Agente_Youtube",
+        "description": "Llamarás a esta tool cuando tengas que crear contenido para YouTube",
+        "workflowId": {
+          "__rl": true,
+          "value": "GPasHXuVlGPbEHd0",
+          "mode": "list",
+          "cachedResultName": "Agente de YouTube"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1640,
+        320
+      ],
+      "id": "bccd7d43-09b6-47f0-9f94-36be2cd94e72",
+      "name": "Agente de Youtube"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Disparador Telegram').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1940,
+        20
+      ],
+      "id": "792496a6-681c-41a0-8a98-0d3cf02b0ee5",
+      "name": "Telegram",
+      "webhookId": "f9db1bac-f2de-412a-9e03-1ba8b415c129",
+      "credentials": {
+        "telegramApi": {
+          "id": "NTR4bQv9U4ihabQf",
+          "name": "Adelaida - Influwinner"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -200,
+        0
+      ],
+      "id": "cd3a316d-5085-4dd0-bdc1-dea348e60c7e",
+      "name": "Disparador Telegram",
+      "webhookId": "3830640e-e37c-4e11-b97a-c0af76e21813",
+      "credentials": {
+        "telegramApi": {
+          "id": "NTR4bQv9U4ihabQf",
+          "name": "Adelaida - Influwinner"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "https://",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "id": "73bf51eb-119e-4a91-89a0-dd634f8fb8fd"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Link YouTube"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "3dae630e-bf33-40b2-b586-4da11bbc13f9",
+                    "leftValue": "={{ $json.message.voice.mime_type }}",
+                    "rightValue": "audio/ogg",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Audio"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a7f83dde-7730-48c3-8c1c-1769c87fedc6",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "https://",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEquals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Texto"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        20,
+        0
+      ],
+      "id": "1c978b81-f90a-456e-8d68-73ad00053c7a",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTool",
+      "typeVersion": 3,
+      "position": [
+        1140,
+        320
+      ],
+      "id": "02eedc41-7ce9-4a16-8f20-0560174c1c10",
+      "name": "Google Drive",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "BJGLOOV3150Lxod1",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Envía el contenido a Make para publicarlo en la red social",
+        "method": "POST",
+        "url": "https://hook.eu2.make.com/mcqh8ceuyvjnnogpo4vcuz89bothocu8",
+        "sendQuery": true,
+        "parametersQuery": {
+          "values": [
+            {
+              "name": "Red Social"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "Contenido"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        1800,
+        300
+      ],
+      "id": "db59cbd3-c911-4a0e-8ad3-a24d3e7d879e",
+      "name": "Make"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['Link YouTube'] }}{{ $json.Audio }}{{ $json.Texto }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=Eres un asistente de creación de contenido\n\nEn caso de que no te lo diga, primero siempre preguntarás para que plataforma quiere el contenido:\n\n1- Instagram\n\n2- YouTube\n\n3- Linkedin\n\n4- Twitter\n\nLuego procederás a crear el contenido llamando a las siguientes Tools:\n\n-Contenido para Instagram: Llama a la Tool Agente_Instagram\n-Contenido para Youtube: Llama a la Tool Agente_Youtube\n-Contenido para LinkedIn: Llama a la Tool Agente_LinkedIn\n-Contenido para Twitter: Llama a la Tool Agente_Twitter\n\nCuando hayas creado el contenido se lo enviarás y esperarás confirmación para publicar o cambiar y mejorar el contenido.\n\nImportante: No Publicarás contenido sin previa confirmación\n\nCuando tengas la confirmación procederás a publicarlo y lo enviarás a la Tool \"Make\" "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        1240,
+        20
+      ],
+      "id": "8c1fbc8b-7934-405e-a747-e563a2e1726a",
+      "name": "Adelaida"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "id": "b497e176-5ba2-496b-baca-bac65b3dd7fe",
+      "name": "Transcribir",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        560,
+        -160
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}"
+      },
+      "id": "21ce734c-8440-41a1-8776-5c912bb03cc3",
+      "name": "Descargar Archivo",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        300,
+        -140
+      ],
+      "webhookId": "83bb7385-33f6-4105-8294-1a91c0ebbee5",
+      "credentials": {
+        "telegramApi": {
+          "id": "NTR4bQv9U4ihabQf",
+          "name": "Adelaida - Influwinner"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5dafda30-ff40-4cbf-bac1-2734f723f039",
+              "name": "Link YouTube",
+              "value": "={{ $json.textoUnido }}",
+              "type": "string"
+            },
+            {
+              "id": "c060b3b8-9f9b-4429-b581-527a345d295b",
+              "name": "Audio",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            },
+            {
+              "id": "38e7b85c-a822-42ee-a817-4bfcbd31c654",
+              "name": "Texto",
+              "value": "={{ $('Disparador Telegram').item.json.message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1000,
+        -40
+      ],
+      "id": "b609b356-e531-4ba1-8ee3-835fd5097168",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "name": "Agente_Twitter",
+        "description": "Llama a esta tool para crear contenido para Twitter",
+        "workflowId": {
+          "__rl": true,
+          "value": "3UAtTkiElkoYhdha",
+          "mode": "list",
+          "cachedResultName": "Agente de Twitter"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        540
+      ],
+      "id": "8b5e98df-7013-4634-86dd-b5eb8ff10a56",
+      "name": "Agente de Twitter"
+    },
+    {
+      "parameters": {
+        "name": "Agente_LinkedIn",
+        "description": "Llama a esta tool para crear contenido de LinkedIn",
+        "workflowId": {
+          "__rl": true,
+          "value": "FhBLLGQDezMo6ACq",
+          "mode": "list",
+          "cachedResultName": "Agente de LinkedIn"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1400,
+        560
+      ],
+      "id": "f4eb6468-bca1-40a2-b274-d1df04efb211",
+      "name": "Agente de LinkedIn"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-09T19:01:01.000Z",
+  "versionId": "50348b4f-a636-4f78-8cea-72212ee96c69"
+}
