@@ -1,0 +1,609 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Agente de CRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de CRM": {
+      "main": [
+        [
+          {
+            "node": "✅",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "❌",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leads_interesados": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de CRM",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Horarios_doctores_clinica": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de CRM",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Registro_visitas": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de CRM",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ver_Leads_registrados": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de CRM",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ver_registro_visitas": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de CRM",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente de CRM",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Servicios_clinica": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de CRM",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-02-27T15:30:19.433Z",
+  "id": "8aNtKrLb5PkT6Ljr",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente CRM - Clinica",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1320,
+        320
+      ],
+      "id": "28031f13-ea60-4758-83d1-6dac53418e3b",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "39c2f302-03be-4464-a17a-d7cc481d6d44",
+              "name": "=response",
+              "value": "={{$json.output}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4fa4d208-9bce-41ea-bcd7-a5ed0356f25e",
+      "name": "✅",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7ab380a2-a8d3-421c-ab4e-748ea8fb7904",
+              "name": "response",
+              "value": "No se puede realizar la tarea. Por favor, inténtalo de nuevo.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9e2ae6ca-ce62-48b1-bf7f-ca32a73d346a",
+      "name": "❌",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}",
+        "options": {
+          "systemMessage": "=# Resumen\nEres un asistente de CRM especializado en la gestión de pacientes y registros de la clínica dental. Tus responsabilidades incluyen la gestión de leads, actualización de visitas, consulta de horarios de doctores y detalles de los servicios de la clínica. No realizas cambios en el calendario, ya que esa función es exclusiva del **Agente_de_Calendario**.\n\n## Herramientas de Gestión del CRM\n- **Leads_interesados** → Para registrar o actualizar la información de un lead interesado en los servicios de la clínica.\n- **Registro_visitas** → Para anotar o actualizar las visitas agendadas de los pacientes.\n- **Horarios_doctores_clinica** → Para consultar los horarios disponibles de los doctores y asignar el doctor correspondiente a cada visita agendada.\n- **Servicios_clinica** → Para recuperar información detallada sobre los servicios de la clínica.\n\n## Flujo de Trabajo del Agente de CRM\n\n### 1. Consulta de Información\n- Si un cliente solicita detalles sobre los servicios, utilizar la tool **Servicios_clinica**.\n- Si un cliente pregunta por la disponibilidad de doctores, consultar **Horarios_doctores_clinica**.\n\n### 2. Registro de Leads Interesados\n- Cuando un cliente exprese interés en un servicio, utilizar la tool **Leads_interesados** para registrar su información.\n- Si el lead ya existe en la base de datos, actualizar sus datos según la conversación.\n- Ejemplo de estados a registrar:\n  - **\"Cita agendada\"** si el lead ya ha confirmado una visita.\n  - **\"Nuevo lead\"** siempre que registres un nuevo lead.\n  - **\"Cita cancelada\"** en caso de que el cliente cancele una visita.\n\n### 3. Registro y Actualización de Visitas\n- Cuando un cliente haya agendado una cita (validado por el **Agente_de_Calendario**), actualizar la tool **Registro_visitas** con:\n  - **Nombre del paciente**\n  - **Servicio de interés**\n  - **Fecha y hora de la cita** : el formato utilizado sera (Miercoles 05 Marzo 18:00)\n  - **Estado:** \"Cita Agendada\"\n  - **Doctor asignado:** Para determinar el doctor correspondiente, verificar el servicio y la hora de la cita con la tool **Horarios_doctores_clinica** y asignar el doctor adecuado.\n- Si un cliente cancela su cita, actualizar su estado en **Registro_visitas** como \"Cancelada\".\n- Si un cliente reprograma su cita, actualizar la tool **Registro_visitas** con la nueva fecha y hora, verificando nuevamente el doctor asignado con **Horarios_doctores_clinica**.\n- Enviar una confirmación al cliente con los detalles de su cita, incluyendo el doctor asignado.\n\n### 4. Notificaciones al Equipo de Ventas\n- Enviar un correo automático a **contacto.adrianmartinez@gmail.com** cuando un nuevo lead se registre o cuando una visita sea confirmada.\n\n## Notas Finales\n- **Fecha y hora actual:** **{{ $now }}**\n- **Zona horaria:** Madrid (GMT+1)\n- **Formato de fecha para el CRM:** Miercoles 05 Feb 18:00\n\n\n## Reglas Generales\n- Siempre verificar si un lead ya está registrado antes de crear uno nuevo.\n- **Asignar correctamente el doctor a cada visita agendada** usando la tool **Horarios_doctores_clinica**.\n- No agendar ni modificar citas; eso es responsabilidad del **Agente_de_Calendario**.\n- Garantizar que toda la información del CRM esté actualizada y organizada.\n\n## Objetivo del Agente\nMantener un CRM actualizado y estructurado, asegurando que los datos de pacientes, visitas y servicios estén correctamente organizados para optimizar la gestión de la clínica y asignar eficientemente los doctores a cada cita agendada.\n\n"
+        }
+      },
+      "id": "4d203847-3ad1-439a-af4e-10efa04fbff7",
+      "name": "Agente de CRM",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        -680,
+        100
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg",
+          "mode": "list",
+          "cachedResultName": "CRM - Clinica Dental",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1160328853,
+          "mode": "list",
+          "cachedResultName": "Leads Interesados",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit#gid=1160328853"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre cliente": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_cliente', ``, 'string') }}",
+            "Email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email', ``, 'string') }}",
+            "WhatsApp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('WhatsApp', ``, 'string') }}",
+            "Servicio de interes": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Servicio_de_interes', ``, 'string') }}",
+            "Estado": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Estado', ``, 'string') }}",
+            "Fecha de cita": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha_de_cita', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "Nombre cliente"
+          ],
+          "schema": [
+            {
+              "id": "Nombre cliente",
+              "displayName": "Nombre cliente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "WhatsApp",
+              "displayName": "WhatsApp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Servicio de interes",
+              "displayName": "Servicio de interes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Estado",
+              "displayName": "Estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fecha de cita",
+              "displayName": "Fecha de cita",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        -640,
+        580
+      ],
+      "id": "930be397-dd3c-49cf-8d23-8d4e55403208",
+      "name": "Leads_interesados",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg",
+          "mode": "list",
+          "cachedResultName": "CRM - Clinica Dental",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 365068801,
+          "mode": "list",
+          "cachedResultName": "Horarios doctores Clinica",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit#gid=365068801"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        -320,
+        540
+      ],
+      "id": "426b905d-e1d3-441a-925e-547a6d7b2ddf",
+      "name": "Horarios_doctores_clinica",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg",
+          "mode": "list",
+          "cachedResultName": "CRM - Clinica Dental",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 468737566,
+          "mode": "list",
+          "cachedResultName": "Registro de visitas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit#gid=468737566"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre cliente": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_cliente__using_to_match_', ``, 'string') }}",
+            "Email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email', ``, 'string') }}",
+            "WhatsApp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('WhatsApp', ``, 'string') }}",
+            "Servicio de interes": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Servicio_de_interes', ``, 'string') }}",
+            "Estado": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Estado', ``, 'string') }}",
+            "Fecha de cita": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha_de_cita', ``, 'string') }}",
+            "Doctor": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Doctor', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "Nombre cliente"
+          ],
+          "schema": [
+            {
+              "id": "Nombre cliente",
+              "displayName": "Nombre cliente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "WhatsApp",
+              "displayName": "WhatsApp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Servicio de interes",
+              "displayName": "Servicio de interes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Estado",
+              "displayName": "Estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha de cita",
+              "displayName": "Fecha de cita",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Doctor",
+              "displayName": "Doctor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        -180,
+        520
+      ],
+      "id": "16d216bf-d68e-43e4-9071-fbc06d8ac81c",
+      "name": "Registro_visitas",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg",
+          "mode": "list",
+          "cachedResultName": "CRM - Clinica Dental",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1160328853,
+          "mode": "list",
+          "cachedResultName": "Leads Interesados",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit#gid=1160328853"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        -480,
+        560
+      ],
+      "id": "1ad61425-2901-43e0-b4af-d1bafe259e8f",
+      "name": "Ver_Leads_registrados",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg",
+          "mode": "list",
+          "cachedResultName": "CRM - Clinica Dental",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 468737566,
+          "mode": "list",
+          "cachedResultName": "Registro de visitas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit#gid=468737566"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        -40,
+        480
+      ],
+      "id": "edc7efed-9464-4cbe-bc3d-12a5b971694c",
+      "name": "Ver_registro_visitas",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -940,
+        320
+      ],
+      "id": "7ad94f26-6190-4442-a760-c4ee0264ff99",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg",
+          "mode": "list",
+          "cachedResultName": "CRM - Clinica Dental",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 976062489,
+          "mode": "list",
+          "cachedResultName": "Servicios Clinica",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit#gid=976062489"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        -760,
+        560
+      ],
+      "id": "fdc57bd1-4167-4882-8710-7cf4ae1ede05",
+      "name": "Servicios_clinica",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1060,
+        60
+      ],
+      "id": "8dfc6395-59db-4e94-884f-25c31c402398",
+      "name": "When chat message received",
+      "webhookId": "986233f4-a7e9-4808-9ffe-ba17cd38a3c9"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-09T16:14:35.000Z",
+  "versionId": "81d9db86-6f13-48e5-8c21-47d0ed1f6362"
+}
