@@ -1,0 +1,384 @@
+{
+  "active": false,
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de Calendario": {
+      "main": [
+        [
+          {
+            "node": "✅",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "❌",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActualizarEvento": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EliminarEvento": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ObtenerEventos": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CrearEventos": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CrearEventoconInvitado": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-09T17:26:04.509Z",
+  "id": "kZEfqowGcpkPeptQ",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Super Winner - Agente Calendario",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "26e7ed63-0ff3-4ba3-9c79-7b7b58e5b686",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        -920,
+        360
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -920,
+        100
+      ],
+      "id": "405d41eb-0b1e-4648-9824-1c9aa1f3692b",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "39c2f302-03be-4464-a17a-d7cc481d6d44",
+              "name": "=response",
+              "value": "={{$json.output}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "96b1e087-2b07-40f1-be3c-5a506db49409",
+      "name": "✅",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7ab380a2-a8d3-421c-ab4e-748ea8fb7904",
+              "name": "response",
+              "value": "No se puede realizar la tarea. Por favor, inténtalo de nuevo.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "187817e0-9153-4016-8934-f491f24bdabf",
+      "name": "❌",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}",
+        "options": {
+          "systemMessage": "=# Resumen\nEres un asistente de calendario. Tus responsabilidades incluyen la creación, obtención y eliminación de eventos en el calendario del usuario.\n\n## Herramientas de Gestión de Calendario\n- \"CrearEventoconInvitado\" → Para crear un evento que incluya un participante.  \n- \"CrearEventos\" → Para crear eventos individuales.  \n- \"ObtenerEventos\" → Para recuperar la agenda del calendario cuando se solicite.  \n- \"EliminarEvento\" → Para eliminar un evento.  \n  - Primero, usa \"ObtenerEventos\" para obtener el ID del evento que deseas eliminar.  \n- \"ActualizarEvento\" → Para actualizar un evento.  \n  - Primero, usa \"ObtenerEventos\" para obtener el ID del evento que deseas actualizar.  \n\n## Notas Finales  \n- Fecha y hora actual: **{{ $now }}**  \n- Zona horaria: Madrid (GMT+1)\n- Si no se especifica una duración para un evento, se asumirá que durará una hora.  "
+        }
+      },
+      "id": "3da5f52f-0ef4-4670-8183-e0448c36e971",
+      "name": "Agente de Calendario",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        -680,
+        100
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "calendar": {
+          "__rl": true,
+          "value": "academia.iawinners@gmail.com",
+          "mode": "list",
+          "cachedResultName": "academia.iawinners@gmail.com"
+        },
+        "eventId": "={{ $fromAI(\"eventID\") }}",
+        "updateFields": {
+          "attendeesUi": {
+            "values": {
+              "attendees": [
+                "={{ $fromAI(\"CorreoInvitado\") }}"
+              ]
+            }
+          },
+          "end": "={{ $fromAI(\"endTime\") }}",
+          "start": "={{ $fromAI(\"startTime\") }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -780,
+        440
+      ],
+      "id": "c7ddd501-6a32-4a73-8728-3c16972e261a",
+      "name": "ActualizarEvento",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "calendar": {
+          "__rl": true,
+          "value": "academia.iawinners@gmail.com",
+          "mode": "list",
+          "cachedResultName": "academia.iawinners@gmail.com"
+        },
+        "eventId": "={{ $fromAI(\"eventID\") }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -640,
+        480
+      ],
+      "id": "df8d4230-c94d-4ee7-a9b3-9fae1d8711ef",
+      "name": "EliminarEvento",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "academia.iawinners@gmail.com",
+          "mode": "list",
+          "cachedResultName": "academia.iawinners@gmail.com"
+        },
+        "timeMin": "={{ $fromAI(\"dayBefore\",\"el día anterior a la fecha que solicitó el usuario.\") }}",
+        "timeMax": "={{ $fromAI(\"dayAfter\",\"el día siguiente a la fecha que solicitó el usuario.\") }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -500,
+        500
+      ],
+      "id": "7c95d38d-68ac-454a-833b-dc1588bae1cd",
+      "name": "ObtenerEventos",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "academia.iawinners@gmail.com",
+          "mode": "list",
+          "cachedResultName": "academia.iawinners@gmail.com"
+        },
+        "start": "={{ $fromAI(\"eventStart\") }}",
+        "end": "={{ $fromAI(\"eventEnd\") }}",
+        "additionalFields": {
+          "attendees": [],
+          "conferenceDataUi": {
+            "conferenceDataValues": {
+              "conferenceSolution": "hangoutsMeet"
+            }
+          },
+          "summary": "={{ $fromAI(\"eventTitle\") }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -360,
+        460
+      ],
+      "id": "485eaca2-4b72-456b-8941-46f0e7de9100",
+      "name": "CrearEventos",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "academia.iawinners@gmail.com",
+          "mode": "list",
+          "cachedResultName": "academia.iawinners@gmail.com"
+        },
+        "start": "={{ $fromAI(\"eventStart\") }}",
+        "end": "={{ $fromAI(\"eventEnd\") }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ $fromAI(\"CorreoInvitado\") }}"
+          ],
+          "conferenceDataUi": {
+            "conferenceDataValues": {
+              "conferenceSolution": "hangoutsMeet"
+            }
+          },
+          "summary": "={{ $fromAI(\"eventTitle\") }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -220,
+        360
+      ],
+      "id": "b823c488-4289-44d5-8d4d-749776927360",
+      "name": "CrearEventoconInvitado",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-03-09T17:24:59.078Z",
+      "updatedAt": "2025-03-09T17:24:59.078Z",
+      "id": "kKf4nTigoHJQmBQY",
+      "name": "SuperW"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-09T19:03:19.000Z",
+  "versionId": "b1725b5a-f6da-4cef-a33d-81c9772781ea"
+}
