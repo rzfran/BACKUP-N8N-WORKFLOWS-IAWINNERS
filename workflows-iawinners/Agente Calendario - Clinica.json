@@ -1,0 +1,418 @@
+{
+  "active": false,
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de Calendario": {
+      "main": [
+        [
+          {
+            "node": "✅",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "❌",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActualizarEvento": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EliminarEvento": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ObtenerEventos": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CrearEventoconInvitado": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CrearEvento": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "VerDisponibilidad": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente de Calendario",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-27T15:29:20.753Z",
+  "id": "Zl1beuDQZNbnZE5L",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente Calendario - Clinica",
+  "nodes": [
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "options": {}
+      },
+      "id": "5b53c61d-912b-4bb6-b71f-9e7b5d67da6e",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        -920,
+        360
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -920,
+        100
+      ],
+      "id": "bca86db0-b980-4ec9-9ae1-9318aa078476",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "39c2f302-03be-4464-a17a-d7cc481d6d44",
+              "name": "=response",
+              "value": "={{$json.output}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bef76971-d282-43a5-8535-cef820e1cd7e",
+      "name": "✅",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7ab380a2-a8d3-421c-ab4e-748ea8fb7904",
+              "name": "response",
+              "value": "No se puede realizar la tarea. Por favor, inténtalo de nuevo.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6a6bbbe8-b2e7-4ca8-a351-d895caa2c725",
+      "name": "❌",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}",
+        "options": {
+          "systemMessage": "=\nEres un asistente de calendario. Tus responsabilidades incluyen la creación, obtención y eliminación de eventos en el calendario del usuario. \n\n## Herramientas de Gestión de Calendario\n- **CrearEventoconInvitado** → Para crear un evento que incluya un participante.\n- **CrearEventos** → Para crear eventos individuales.\n- **ObtenerEventos** → Para recuperar la agenda del calendario cuando se solicite.\n- **EliminarEvento** → Para eliminar un evento.\n  - Primero, usa **ObtenerEventos** para obtener el ID del evento que deseas eliminar.\n- **ActualizarEvento** → Para actualizar un evento.\n  - Primero, usa **ObtenerEventos** para obtener el ID del evento que deseas actualizar.\n-**VerDisponibilidad**: Para verificar la disponibilidad del calendario\n\n## Flujo de Trabajo del Agente de Calendario\n\n1. **Verificación de Disponibilidad**\n   - Cuando un cliente solicite una cita, utilizar la tool **ObtenerEventos** para verificar los horarios disponibles en la fecha y hora solicitadas.\n   - Si el horario está ocupado, sugerir otras opciones disponibles al cliente.\n\n2. **Agendar una Cita**\n   - Una vez confirmada la disponibilidad, utilizar la tool **CrearEventos** para registrar la cita en el calendario.\n   - Si el cliente proporciona información adicional relevante, agregarla en la descripción del evento.\n   - Si se requiere que el cliente reciba una invitación en su correo, utilizar la tool **CrearEventoconInvitado**.\n\n3. **Modificar una Cita**\n   - Si el cliente desea cambiar la fecha u hora de su cita, utilizar la tool **ObtenerEventos** para localizar la cita en el calendario.\n   - Confirmar con el cliente que la cita encontrada es la correcta.\n   - Una vez confirmada, utilizar la tool **ActualizarEvento** para modificar la fecha y/o la hora.\n   - Verificar nuevamente la disponibilidad antes de confirmar el cambio.\n\n4. **Cancelar una Cita**\n   - Si el cliente solicita cancelar una cita, utilizar la tool **ObtenerEventos** para localizar la cita en el calendario.\n   - Confirmar con el cliente que desea eliminar esa cita.\n   - Una vez confirmado, utilizar la tool **EliminarEvento** para remover la cita del calendario.\n\n## Notas Finales\n- Fecha y hora actual: **{{ $now }}**\n- Zona horaria: Madrid (GMT+1)\n- Si no se especifica una duración para un evento, se asumirá que durará una hora.\n\n## Reglas Generales\n- Siempre verificar disponibilidad antes de crear o modificar una cita.\n- Confirmar con el cliente cualquier modificación o eliminación de una cita antes de proceder.\n- Agregar descripciones detalladas en cada evento del calendario para mejorar la gestión interna.\n\n\n**Objetivo del Agente:**\nGarantizar una gestión eficiente y organizada de las citas en la clínica dental, asegurando que los clientes reciban confirmaciones precisas y que el equipo de ventas esté siempre informado de las actualizaciones en el calendario.\n\n"
+        }
+      },
+      "id": "b0030d3e-ea7c-44b0-87ba-f967b9314afa",
+      "name": "Agente de Calendario",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        -680,
+        100
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "calendar": {
+          "__rl": true,
+          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Calendario - Clinica Sonrisas"
+        },
+        "eventId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_ID', ``, 'string') }}",
+        "updateFields": {
+          "attendeesUi": {
+            "values": {
+              "attendees": [
+                "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Attendees', `Aqui va el correo del invitado`, 'string') }}"
+              ]
+            }
+          },
+          "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', `La fecha de finalización del evento`, 'string') }}",
+          "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', `La fecha de inicio del evento`, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -840,
+        500
+      ],
+      "id": "c7ac9a58-6480-4454-922d-0b20b7348a47",
+      "name": "ActualizarEvento",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "calendar": {
+          "__rl": true,
+          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Calendario - Clinica Sonrisas"
+        },
+        "eventId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_ID', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -680,
+        520
+      ],
+      "id": "14506d46-309a-4eb9-83cc-1fedb849d140",
+      "name": "EliminarEvento",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Calendario - Clinica Sonrisas"
+        },
+        "timeMin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('After', `el día anterior a la fecha que solicitó el usuario.`, 'string') }}",
+        "timeMax": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Before', `el día siguiente a la fecha que solicitó el usuario.`, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -540,
+        580
+      ],
+      "id": "58760e4e-1099-4060-9510-e74a08e09da7",
+      "name": "ObtenerEventos",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Calendario - Clinica Sonrisas"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', `Deberás añadir el dia y hora de inicio de la cita`, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', `Deberás añadir el dia y hora del inicio de la cita en correspondencia a lo que dura ese tratamiento`, 'string') }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Attendees', `Aquí añadirás el correo del cliente`, 'string') }}"
+          ],
+          "location": "C/ Clinica Sonrisas 99, Barcelona, 08918",
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', `Aquí añadirás el resumen de la visita con el servicio y info importante del cliente`, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -220,
+        360
+      ],
+      "id": "b73a3072-718b-4d0d-95a2-de0bd1b0178b",
+      "name": "CrearEventoconInvitado",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Calendario - Clinica Sonrisas"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', `Deberás añadir el dia y hora de inicio de la cita`, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', `Deberás añadir el dia y hora del inicio de la cita en correspondencia a lo que dura ese tratamiento`, 'string') }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Attendees', `Aquí añadirás el correo del cliente`, 'string') }}"
+          ],
+          "location": "C/ Clinica Sonrisas 99, Barcelona, 08918",
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', `Aquí añadirás el resumen de la visita con el servicio y info importante del cliente`, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -380,
+        360
+      ],
+      "id": "59f8ba3a-4572-485a-a748-28c25160a9fd",
+      "name": "CrearEvento",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "calendar",
+        "calendar": {
+          "__rl": true,
+          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Calendario - Clinica Sonrisas"
+        },
+        "timeMin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start_Time', ``, 'string') }}",
+        "timeMax": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End_Time', ``, 'string') }}",
+        "options": {
+          "timezone": {
+            "__rl": true,
+            "value": "Europe/Madrid",
+            "mode": "list",
+            "cachedResultName": "Europe/Madrid"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -400,
+        580
+      ],
+      "id": "1692f6a2-8542-4365-8672-0c61a474e145",
+      "name": "VerDisponibilidad",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-09T16:13:11.000Z",
+  "versionId": "a7061201-3b1d-42b9-b523-31a08d3949ec"
+}
