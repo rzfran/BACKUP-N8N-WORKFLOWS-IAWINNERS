@@ -1,0 +1,153 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-01T12:00:02.674Z",
+  "id": "QGSEbGCOcEMJgOYr",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente Email - Basico",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -220,
+        -40
+      ],
+      "id": "33072bf6-1e88-4687-8f23-849d531d3eb3",
+      "name": "When chat message received",
+      "webhookId": "2f798b41-96c2-41a7-9638-f64c853c7e71"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Eres un asistente virtual para una inmobiliaria especializado para enviar precios y brindar información sobre las propiedades disponibles.\n\nEnvia nombre de la propiedad, ubicación, precio y tipo de la propiedad"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        0,
+        -40
+      ],
+      "id": "d534f754-7817-4453-950a-9d72d2451a65",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -120,
+        200
+      ],
+      "id": "8b9ee8ca-28e8-4dd3-a614-8f3fb837425b",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        80,
+        200
+      ],
+      "id": "b74743f8-6dc4-4bc0-a4f7-5cfb42ff3600",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        260,
+        180
+      ],
+      "id": "d761ebdb-375d-4fb2-96ea-3a68dffb3e5a",
+      "name": "Gmail",
+      "webhookId": "7c6cbf01-ce8d-43ca-a78c-87f6a21edf74",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-02T12:11:23.000Z",
+  "versionId": "0bac917f-d955-4916-9630-87c826b4634f"
+}
