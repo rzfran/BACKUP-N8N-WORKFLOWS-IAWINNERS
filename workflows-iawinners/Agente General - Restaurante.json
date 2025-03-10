@@ -1,0 +1,2123 @@
+{
+  "active": false,
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Borrar imagen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Trigger": {
+      "main": [
+        [
+          {
+            "node": "Numero",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set 'Text'",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp Business Cloud4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Transcribir",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribir": {
+      "main": [
+        [
+          {
+            "node": "Audio_Transcrito",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set 'Text'": {
+      "main": [
+        [
+          {
+            "node": "Guardar mensaje",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-fixing Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Generador de respuestas",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 2": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Parte 3": {
+      "main": [
+        [
+          {
+            "node": "Wait 3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "on_error": {
+      "main": [
+        [
+          {
+            "node": "Generador de respuestas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generador de respuestas": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "Wait 2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If Parte 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Generador de respuestas",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "on_error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "WhatsApp Business Cloud2": {
+      "main": [
+        [
+          {
+            "node": "If Parte 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud3": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud4": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Imagen_Transcrita",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de Calendario": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Info_clinica": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente CRM Clinica": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Borrar imagen": {
+      "main": [
+        [
+          {
+            "node": "Generador de respuestas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar mensaje": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recuperar mensajes": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Recuperar mensajes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Audio_Transcrito": {
+      "main": [
+        [
+          {
+            "node": "Guardar mensaje1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar mensaje1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Recuperar mensajes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar mensaje2": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "Recuperar mensajes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Imagen_Transcrita": {
+      "main": [
+        [
+          {
+            "node": "Guardar mensaje2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Numero": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar_cliente": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Crear_cliente": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar_disponibilidad": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cerebro": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reservar_mesa": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar_ID_Claveturno": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar_reservas": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-28T12:31:32.876Z",
+  "id": "EeSSSsX1P249YZXh",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente General - Restaurante",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['Respuesta obtenida'][0] }}",
+        "options": {
+          "systemMessage": "=Eres el asistente de WhatsApp de **Clínica Sonrisas**, especializado en la atención al cliente, gestión de pacientes y registros de la clínica dental. Tu principal objetivo es informar a los clientes y guiar la conversación de manera natural para intentar agendar citas. No realizas cambios en el calendario, ya que esa función es exclusiva del **Agente_de_Calendario**. \n\nAdemás, tu conversación debe ser **fluida y conversacional**, evitando respuestas con demasiada información de golpe. Siempre debes mantener un **tono cercano y amigable**, guiando al cliente en la conversación de manera natural y evitando respuestas robóticas o listas de información demasiado largas.\n\nLa Fecha de hoy es: {{ $now }}\n\n# Agentes Disponibles por Tools\n- **Agente_CRM_Clinica**: Responsable de la gestión de leads, visitas, horarios de doctores y detalles de los servicios.\n- **Agente_de_Calendario**: Exclusivamente encargado de verificar disponibilidad, agendar, modificar y cancelar citas en el calendario.\n\n## Herramientas de Gestión del CRM\n- **Leads_interesados** → Para registrar o actualizar la información de un lead interesado en los servicios de la clínica.\n- **Registro_visitas** → Para anotar o actualizar las visitas agendadas de los pacientes.\n- **Horarios_doctores_clinica** → Para consultar los horarios disponibles de los doctores y asignar el doctor correspondiente a cada visita agendada.\n- **Servicios_clinica** → Para recuperar información detallada sobre los servicios de la clínica.\n\n## Flujo de Atención al Cliente\n\n### 1. Saludo y Presentación\n   - Responder amablemente presentándose como el asistente virtual de **Clínica Sonrisas**.\n   - Preguntar en qué puede ayudar al cliente de manera conversacional.\n\n### 2. Consulta sobre Necesidades del Cliente\n   - Escuchar lo que necesita el cliente y hacer preguntas para entender mejor su requerimiento.\n   - Si el cliente menciona un problema dental, guiarlo hacia un servicio adecuado.\n\n### 3. Información sobre Servicios, Doctores y Horarios\n   - Si el cliente solicita información sobre un servicio en particular, horarios de visitas o disponibilidad de doctores, utilizar la tool **Servicios_clinica** o **Horarios_doctores_clinica**.\n   - Si falta información, utilizar la tool **Agente_CRM_Clinica**.\n   - **Responder en formato de conversación fluida y progresiva. No enviar listas largas ni toda la información de golpe.**\n   - Hacer preguntas para mantener la conversación natural.\n\nEjemplo Correcto:\n\n**Cliente:** \"Quiero hacerme un blanqueamiento dental.\"\n\n**Agente:** \"¡Buena elección! El blanqueamiento ayuda a mejorar el tono de los dientes y eliminar manchas. ¿Te gustaría saber más sobre cómo funciona o prefieres que te dé detalles sobre los precios y opciones?\"\n\nEjemplo Incorrecto:\n\n**Agente:** \"El blanqueamiento dental es un procedimiento en el que se usa un gel especial para aclarar el color de los dientes. Tenemos diferentes opciones, incluyendo blanqueamiento en clínica con luz LED y kits para casa. El precio depende de la opción que elijas, y el proceso puede durar entre 60 y 90 minutos...\" (Demasiada información de golpe.)\n\n### 4. Solicitud de Datos del Cliente\n   - Antes de continuar con cualquier acción (como verificar disponibilidad o agendar), solicitar al cliente:\n     - Nombre completo\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n   - **Una vez recibidos estos datos, registrarlos inmediatamente en el CRM utilizando la tool Agente_CRM_Clinica.**\n   - IMPORTANTE: No informar al cliente que se ha registrado en el sistema, solo continuar con el flujo normal de conversación.\n\n### 5. Gestión de Citas\n   - **No se podrá agendar una cita si no se tienen todos los datos del cliente:**\n     - Nombre completo\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n     - Fecha y hora confirmada\n   - Si falta algún dato, solicitarlo antes de proceder con el agendamiento.\n   - Si el cliente desea agendar, modificar o cancelar una cita, indicarle que se verificará la disponibilidad y utilizar la tool **Agente_de_Calendario** para gestionar la solicitud.\n   - **Cuando un cliente pregunte por disponibilidad:**\n     - Preguntar primero qué día le vendría bien.\n     - Luego, preguntar si prefiere por la mañana o por la tarde.\n     - Ofrecer solo **dos o tres opciones de horarios concretos**, en lugar de listas completas.\n     - Preguntar si alguno de los horarios le va bien. Si no, ofrecer otra alternativa hasta encontrar un horario adecuado.\n     - **Si el cliente solicita una hora específica, utilizar la tool de *Agente_de_calendario para verificar si está libre antes de responder.**\n     - Si la hora está disponible, confirmarla inmediatamente al cliente.\n     - Si no está disponible, sugerir una alternativa cercana.\n     - **Asegurar que la zona horaria utilizada para todas las verificaciones de disponibilidad sea Europa/Madrid (GMT+1).**\n   - **Si por algún motivo hay un error en la verificación o gestión de la cita, en lugar de decirle al cliente que contacte con el Agente_de_Calendario, proporcionarle el número de contacto de la clínica para que pueda llamar y confirmar su cita personalmente: 932259854.**\n\nEjemplo de Conversación Correcta:\n\n**Cliente:** \"¿Cuándo podría hacerme un blanqueamiento?\"\n\n**Agente:** \"Podemos verlo ahora mismo. ¿Te iría bien la próxima semana o prefieres otra fecha?\"\n\n**Cliente:** \"La próxima semana.\"\n\n**Agente:** \"Genial. ¿Prefieres en la mañana o en la tarde?\"\n\n**Cliente:** \"Por la tarde.\"\n\n**Agente:** \"Te puedo ofrecer el miércoles a las 16:00 o el viernes a las 17:30. ¿Te va bien alguno?\"\n\n### 6. Registro y Actualización de Visitas\n   - Cuando un cliente haya agendado una cita (validado por el **Agente_de_Calendario**), actualizarlo en el CRM usando la tool **Agente_de_Calendario** con:\n     - Nombre del paciente\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n     - Fecha y hora de la cita\n     - Estado: \"Cita Agendada\"\n     - **Doctor asignado:** Para determinar el doctor correspondiente, verificar el servicio y la hora de la cita con la tool **Horarios_doctores_clinica** y asignar el doctor adecuado.\n   - Enviar una confirmación al correo del cliente con los detalles de su cita, incluyendo el doctor asignado utilizando la tool *Gmail*\n\n### 7. Notificaciones con la tool de Gmail\n   - Enviar un correo automático al equipo de ventas de la clínica **contacto.adrianmartinez@gmail.com** cuando un nuevo lead se registre o cuando una visita sea confirmada.\n   - Enviar un correo electrónico al cliente cuando haya agendado su visita con el resumen de su cita.\n\n## Reglas Generales\n- **Siempre mantener la conversación fluida y amigable.**\n- No enviar listas largas de horarios o información técnica de golpe.\n- No informar al cliente cuando se registre en el CRM o se realicen acciones internas.\n- Solo comunicar cuando una cita haya sido agendada exitosamente.\n- **Las opciones de horarios deben presentarse de forma conversacional y limitada a dos o tres opciones.**\n- **Verificar siempre que las citas se programen en la zona horaria correcta: Europa/Madrid (GMT+1).**\n- Garantizar que toda la información del CRM esté actualizada y organizada.\n\n**Objetivo:** Guiar la conversación de manera natural y optimizar la experiencia del cliente, asegurando que cada interacción sea fluida y personalizada.\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -960,
+        440
+      ],
+      "id": "717cf3db-d52a-46a7-9ad0-bcdec4cbd8c7",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1240,
+        720
+      ],
+      "id": "0315a7e9-14be-413b-8abf-f9226692ba19",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Numero').item.json.Numero }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1100,
+        720
+      ],
+      "id": "72cc3843-1d88-4de1-95b4-042a2e173988",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', `Deberás construir el HTML del mensaje para que quede bonito y bien organizado`, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -1080,
+        1020
+      ],
+      "id": "ce688d51-e434-44cb-9efb-c5d41e232054",
+      "name": "Gmail",
+      "webhookId": "c526e28f-294d-4585-a774-86a454a5a318",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', ``, 'number') }}",
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -960,
+        1020
+      ],
+      "id": "01c0d195-9f6c-4bad-8638-38ee55a39f29",
+      "name": "Gmail1",
+      "webhookId": "9037ccd0-5d6f-46f7-aff9-02143d635dae",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ]
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3460,
+        440
+      ],
+      "id": "a2f3110f-ab48-4844-9650-bf4b6dbf5b7a",
+      "name": "WhatsApp Trigger",
+      "webhookId": "acb1d285-c377-4a4c-9e4d-5e162aeae6b1",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "wNLNSjzYJjZWp1k5",
+          "name": "WhatsApp OAuth account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "533381876531896",
+        "recipientPhoneNumber": "={{ $('Numero').item.json.Numero }}",
+        "textBody": "={{ $json.output.response.parte1 }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        300,
+        440
+      ],
+      "id": "67262551-0bc9-43a2-ba0d-7b7e35014f87",
+      "name": "WhatsApp Business Cloud",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fe7ecc99-e1e8-4a5e-bdd6-6fce9757b234",
+              "name": "text",
+              "value": "={{ $('WhatsApp Trigger').item.json.messages[0].text.body }}",
+              "type": "string"
+            },
+            {
+              "id": "359ee248-b32c-48e6-b6cf-193017f9ee39",
+              "name": "id",
+              "value": "={{ $json.contacts[0].wa_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "11e8c8d6-033a-487d-b94e-c43e9cc3ae69",
+      "name": "Set 'Text'",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2800,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('WhatsApp Trigger').item.json.messages[0].type }}",
+                    "rightValue": "audio",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Voice"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8c844924-b2ed-48b0-935c-c66a8fd0c778",
+                    "leftValue": "={{ $('WhatsApp Trigger').item.json.messages[0].type }}",
+                    "rightValue": "text",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "51b64a23-027a-4c9e-b5ae-88eeb60876a3",
+                    "leftValue": "={{ $('WhatsApp Trigger').item.json.messages[0].type }}",
+                    "rightValue": "image",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Image"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "274ff160-f02a-4823-a9f5-877b719d5752",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -3080,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "id": "b4f860be-00b0-479d-bb92-1a415589d612",
+      "name": "Transcribir",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        -2440,
+        220
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $('WhatsApp Trigger').item.json.messages[0].audio.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -2800,
+        220
+      ],
+      "id": "211fcd60-366a-4f9a-a07b-ff1b25bb2a81",
+      "name": "WhatsApp Business Cloud1",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2620,
+        220
+      ],
+      "id": "fca7a028-2174-4be6-818a-c5e04234d0c4",
+      "name": "HTTP Request",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "Fv9zvOckHoK8Kb6L",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "prompt": "Instructions:\n--------------\n{instructions}\n--------------\nCompletion:\n--------------\n{completion}\n--------------\n\nAbove, the Completion did not satisfy the constraints given in the Instructions.\nError:\n--------------\n{error}\n--------------\n\nPlease try again. Please only respond with an answer that satisfies the constraints laid out in the Instructions:"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+      "typeVersion": 1,
+      "position": [
+        0,
+        660
+      ],
+      "id": "4f36da8a-8213-4115-a99d-968074c8a215",
+      "name": "Auto-fixing Output Parser"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"response\": {\n    \"parte1\": \"Parte uno de la respuesta\",\n    \"parte2\": \"Parte dos de la respuesta\",\n    \"parte3\": \"Parte tres de la respuesta (opcional).\"   \n  }\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        780
+      ],
+      "id": "45a2af36-2d28-445f-8c02-7d0c9a282da8",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        760,
+        360
+      ],
+      "id": "a0e57505-875d-4227-a683-df72b5992bee",
+      "name": "Wait 2",
+      "webhookId": "5f20e876-b489-4531-bd45-1898b98185df"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6c883ec3-6f23-4834-b4fc-a8f7ff5eacc5",
+              "leftValue": "={{ $('Generador de respuestas').item.json.output.response.parte3 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        560
+      ],
+      "id": "cbbac3b0-73e5-4800-a37c-7b9cfd3a062a",
+      "name": "If Parte 3"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1280,
+        360
+      ],
+      "id": "4c4b7e51-20af-48a7-a46c-fd0014731135",
+      "name": "Wait 3",
+      "webhookId": "5a8e3ba6-b0ff-4daa-b6e3-a29c02f999c6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "806fb232-eb65-4d07-8d56-499f1da263d8",
+              "name": "output",
+              "value": "={{ $('AI Agent').item.json.output }}\"\n\n\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        560,
+        760
+      ],
+      "id": "697cc6bf-1386-4a8e-8ca4-2cd54e246873",
+      "name": "on_error"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        540
+      ],
+      "id": "4bce8ac8-34a8-4910-844a-5488097f5955",
+      "name": "No Operation, do nothing2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('AI Agent').item.json.output }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=# Adapta la respuesta \"{{ $json.output }}\" de acuerdo a las siguientes instrucciones:\n\n- Elimina estos caractéres:\n  •\"*\", \"¿\", \"¡\", \"#\"\n- Mantén los saltos de línea cuando corresponda, principalmente en los listados o Bullet Point Lists.\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n- El mensaje debe sonar relajado, formal y respetuoso. \n- Si la respuesta es breve, rellena únicamente la parte1.\n- Si la respuesta es más extensa, considera rellenar la parte2 y la parte3.\n- Si el mensaje contiene una lista, déjala sola en una parte, *manteniendo el formato de lista* (con los saltos de línea correspondientes).\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\".\n- La respuesta final debe ser lo más similar posible a la respuesta inicial, no cambies radicalmente las palabras o el significado de la respuesta inicial si no es necesario.\n\n"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        -160,
+        440
+      ],
+      "id": "26c318fd-0576-42f6-8892-4ead22718752",
+      "name": "Generador de respuestas",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c722cfec-cc19-43f0-804f-5ce50bacff2b",
+              "leftValue": "={{ $('Generador de respuestas').item.json.output.response.parte2 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        560,
+        440
+      ],
+      "id": "e0732de2-4d11-4353-8d34-083764c48be1",
+      "name": "If5"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -160,
+        780
+      ],
+      "id": "2429f7e2-26f4-4ee3-888a-39fc7ac3d1b2",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "533381876531896",
+        "recipientPhoneNumber": "={{ $('Numero').item.json.Numero }}",
+        "textBody": "={{ $('Generador de respuestas').item.json.output.response.parte2 }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        920,
+        360
+      ],
+      "id": "abaa8eee-cda1-459f-bc4f-9dbb08f274ed",
+      "name": "WhatsApp Business Cloud2",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "533381876531896",
+        "recipientPhoneNumber": "={{ $('Numero').item.json.Numero }}",
+        "textBody": "={{ $('Generador de respuestas').item.json.output.response.parte3 }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        360
+      ],
+      "id": "00ed5aa4-eace-4600-adbb-a6b6a2366fea",
+      "name": "WhatsApp Business Cloud3",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $('WhatsApp Trigger').item.json.messages[0].image.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -2800,
+        660
+      ],
+      "id": "c07da741-641e-495b-b904-47229ea01ea8",
+      "name": "WhatsApp Business Cloud4",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2620,
+        660
+      ],
+      "id": "b98387e6-02e6-4b75-bd26-8bb4a2f2fc1c",
+      "name": "HTTP Request1",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "Fv9zvOckHoK8Kb6L",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "text": "Aquí hay una imagen enviada por el usuario. Describe la imagen y transcribe cualquier texto visible en ella. Proporciona tantos detalles como sea posible en no más de 300 caracteres.",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -2440,
+        660
+      ],
+      "id": "06287f63-d8ee-428d-923a-6b9b055875e0",
+      "name": "OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Agente_de_calendario",
+        "description": "Utilizará esta tool para obtener cualquier información del calendario, horarios disponibles, citas agendadas, eliminar o añadir citas. ",
+        "workflowId": {
+          "__rl": true,
+          "value": "Zl1beuDQZNbnZE5L",
+          "mode": "list",
+          "cachedResultName": "Agente Calendario - Clinica"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        -380,
+        800
+      ],
+      "id": "10d63726-4777-4a8e-a66c-1225a86cfd67",
+      "name": "Agente de Calendario"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "1TFGxKY6dodgl201PChmNHoRL0JzcrlSyvW5UVYujieU"
+      },
+      "type": "n8n-nodes-base.googleDocsTool",
+      "typeVersion": 2,
+      "position": [
+        -660,
+        820
+      ],
+      "id": "4e8a9ca8-2dd3-4898-a0ac-0e4ecd3fc077",
+      "name": "Info_clinica",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "rSCzk13TMRoydT9g",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Agente_CRM_Clinica",
+        "workflowId": {
+          "__rl": true,
+          "value": "8aNtKrLb5PkT6Ljr",
+          "mode": "list",
+          "cachedResultName": "Agente CRM - Clinica"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        840
+      ],
+      "id": "4bac0a1a-7411-4bd7-8f5e-1587721cbc3c",
+      "name": "Agente CRM Clinica"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=Eres un asistente virtual que gestiona reservas de mesas en un restaurante a través de WhatsApp, Airtable y correo electrónico.\n\nFecha y hora actual: {{ $now }}\n\nFlujo de Conversación\n1. Saludo Inicial\n\"Hola, soy el asistente del restaurante. ¿En qué puedo ayudarte hoy?\"\n2. Si el cliente pregunta por información, proporciona:\nUbicación del restaurante\nHorarios de atención\nTeléfono de contacto\nSi quiere reservar, pasa al siguiente paso.\n\nVerificación de Cliente en Airtable\nAntes de proceder con la reserva, siempre debes verificar el ID del cliente en Airtable.\n\nUsa la herramienta Buscar_cliente para buscar el número de WhatsApp en la tabla Clientes.\n\nSi el número de WhatsApp no está disponible, pregunta al cliente por su número.\nSi el cliente está registrado:\n\nResponde: \"Tengo tu contacto registrado como {{ (\"nombrecliente\") }}, ¿es correcto?\"\nGuarda el ID del cliente en la variable \"idcliente\".\nSi el cliente no está registrado:\n\nPregunta: \"Antes de continuar, necesito tu nombre completo y correo electrónico.\"\nLuego, usa la herramienta Crear_cliente para registrarlo en Airtable.\nAlmacena el nuevo ID en \"idcliente\".\nImportante\nEl campo Cliente en Airtable solo acepta IDs, no nombres.\nEl ID del cliente se enviará en un array, como lo requiere Airtable.\nEjemplo de ID de cliente en Airtable: \"recqzBT2WYaIcUoq9\"\nEjemplo del formato correcto en la variable: [\"recqzBT2WYaIcUoq9\"]\nSolicitud de Fecha y Número de Personas\nPregunta: \"¿Para qué fecha y cuántas personas deseas reservar?\"\n\nExtrae la fecha y almacénala en las siguientes variables:\n\n- fecha : \"{{ (\"fecha\") }}\" en formato: \"YYYY-MM-DD\"\n- hora : \"{{ (\"hora\") }}\" en Formato: \"HH:mm\"\n- claveturno = \"{fecha} + {hora}\" en formato: \"yyyy-MM-dd - HH:mm\"\n\n#Buscar disponibilidad\n- Si necesitas buscar disponibilidad llama a la Tool [Consultar_disponibilidad] y usa las variables: \"fecha\" y \"claveturno\"\n\nSi hay disponibilidad, responde con los horarios y zonas disponibles.\n\nBúsqueda del ID de la Clave de Turno\nAntes de reservar, necesitas el ID de la Clave de Turno.\n\nUsa la herramienta Buscar_ID_claveturno para buscar en la tabla Disponibilidad de Turnos, aplicando la siguiente fórmula:\n\nplaintext\nCopiar\nEditar\n{Clave Turno} = \"{{ (\"claveturno\") }}\"\nGuarda el ID de la Clave de Turno en idclaveturno.\n\nEjemplo de ID en Airtable: \"rec4Xa7Bz2WuGyQ9K\"\nConfirmación de Reserva\nPregunta al cliente:\n\"Tenemos disponibilidad el día {{ (\"fecha\") }} a las {{ (\"hora\") }}. ¿Te gustaría reservar esta opción?\"\n\nSi el cliente acepta, sigue estos pasos:\n\nAntes de hacer la reserva, vuelve a ejecutar Buscar_cliente para asegurarte de que el ID del cliente sigue siendo válido y almacenarlo en \"idcliente\" nuevamente.\n\nLlama a la herramienta Reservar_mesa para registrar la reserva en la tabla Reservas.\n\nEnvía los datos en este formato:\n\njson\nCopiar\nEditar\n{\n  \"Cliente\": [\"{{ (\"idcliente\") }}\"],\n  \"Clave Turno\": [\"{{ (\"idclaveturno\") }}\"],\n  \"Fecha\": \"{{ (\"fecha\") }}\",\n  \"Hora\": \"{{ (\"hora\") }}\",\n  \"Número de Personas\": {{ (\"numeropersonas\") }}\n}\nActualiza la disponibilidad en la tabla Disponibilidad de Turnos.\n\nEnvía confirmación por WhatsApp y correo electrónico.\n\nNotas importantes\nSiempre verifica el ID del cliente con Buscar_cliente antes de hacer la reserva.\nSi hay un error con los IDs, verifica que el ID del Cliente y la Clave Turno sean arrays en el formato requerido.\nCambio o Cancelación de Reserva\nCambio de Reserva\nSi el cliente quiere cambiar de hora o fecha:\nUsa Consultar_disponibilidad para verificar opciones.\nSi hay una alternativa, actualiza la reserva en Airtable.\nCancelación de Reserva\nSi el cliente quiere cancelar:\nBusca la reserva en Airtable por número de WhatsApp.\nLlama a la herramienta correspondiente para eliminar la reserva y actualizar la disponibilidad.\nRecordatorios Automáticos\n24 horas antes de la reserva, envía un mensaje recordatorio.\n1 hora antes de la reserva, envía un mensaje final de confirmación.\nCierre de Conversación\n\"Gracias por tu reserva. Esperamos verte pronto en el restaurante.\"\nSi el cliente necesita más ayuda, sigue atendiéndolo.\nTools Utilizadas en n8n\nTool\tFunción\nBuscar_cliente\tBusca en Airtable si el número de WhatsApp ya está registrado antes de realizar cualquier reserva.\nCrear_cliente\tRegistra nuevos clientes en Airtable.\nConsultar_disponibilidad\tVerifica los turnos disponibles en la tabla \"Disponibilidad de Turnos\".\nBuscar_ID_claveturno\tBusca el Record ID de la Clave de Turno en Airtable.\nReservar_mesa\tAgrega la reserva en la tabla \"Reservas\" y envía los IDs en un array."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -1080,
+        1380
+      ],
+      "id": "4a8d63e7-9e82-43c4-bb31-a918f792568e",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 50
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1480,
+        1680
+      ],
+      "id": "70d9c872-cb48-4ac3-afe2-a354c2ce2d33",
+      "name": "Window Buffer Memory1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1320,
+        1380
+      ],
+      "id": "abd028f4-2e5c-4344-b23d-64712b31043b",
+      "name": "When chat message received",
+      "webhookId": "cf5e8309-24ea-48d9-a261-90312b457e04"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fcd5ad2d-6e28-4f7e-b7ee-11888215972c",
+              "name": "text",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2240,
+        220
+      ],
+      "id": "2a22d155-0f5f-4101-82f0-d4c17705f318",
+      "name": "Audio_Transcrito"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "={{ $('Numero').item.json.Numero }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        440
+      ],
+      "id": "f00fb9c1-3fa2-4c75-b136-f798fe224b61",
+      "name": "Borrar imagen",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('Numero').item.json.Numero }}",
+        "messageData": "={{ $('Set \\'Text\\'').item.json.values()[0] }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -2040,
+        440
+      ],
+      "id": "fa9fc44d-8c5e-42f8-9cb2-ceea9c9672e5",
+      "name": "Guardar mensaje",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "Respuesta obtenida",
+        "key": "={{ $('Numero').item.json.Numero }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1500,
+        440
+      ],
+      "id": "ca68c33b-566e-4712-9bcd-fc2cc07fe394",
+      "name": "Recuperar mensajes",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1820,
+        440
+      ],
+      "id": "2f16e655-fd7a-4d78-972a-07ba6a803743",
+      "name": "Wait",
+      "webhookId": "0b287dab-8434-4f55-bac5-8b3227d9806a"
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('Numero').item.json.Numero }}",
+        "messageData": "={{ $('Audio_Transcrito').item.json.values()[0] }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -2040,
+        220
+      ],
+      "id": "d2b0fc08-1840-4d51-89c9-2418abc2a133",
+      "name": "Guardar mensaje1",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1820,
+        220
+      ],
+      "id": "e8f23e79-6444-4bbf-8733-124cdd21c0d5",
+      "name": "Wait1",
+      "webhookId": "158a21b3-23e4-4008-b466-79d8736004c1"
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('Numero').item.json.Numero }}",
+        "messageData": "={{ $('Imagen_Transcrita').item.json.text }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -2040,
+        660
+      ],
+      "id": "6b52f047-a5a3-4fb9-820d-853d75f793a4",
+      "name": "Guardar mensaje2",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1820,
+        660
+      ],
+      "id": "764fa0b2-35e5-4ce0-9fdb-153a6a94fdda",
+      "name": "Wait2",
+      "webhookId": "29aa05dc-22ae-4aa3-98da-3cdaf97b2ed2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fcd5ad2d-6e28-4f7e-b7ee-11888215972c",
+              "name": "text",
+              "value": "={{ $json.content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2240,
+        660
+      ],
+      "id": "cae01424-fc12-49ac-824f-abf529fa3a48",
+      "name": "Imagen_Transcrita"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "85067916-af72-44a6-90a8-cbeaa0b4a4b8",
+              "name": "Numero",
+              "value": "={{ $json.contacts[0].wa_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3260,
+        440
+      ],
+      "id": "987b9f4c-ccc0-4ca5-8867-a35550caa7d8",
+      "name": "Numero"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appzvcnqGSDFYpK2d",
+          "mode": "list",
+          "cachedResultName": "Gestión de Reservas de Restaurante",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblED5Xp6eoM4LfJ6",
+          "mode": "list",
+          "cachedResultName": "Clientes",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d/tblED5Xp6eoM4LfJ6"
+        },
+        "filterByFormula": "={WhatsApp} = \"{{ $fromAI(\"whatsapp\") }}\"\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -1300,
+        1740
+      ],
+      "id": "a66f4e02-269e-4b46-a518-30d4a94eee21",
+      "name": "Buscar_cliente",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appzvcnqGSDFYpK2d",
+          "mode": "list",
+          "cachedResultName": "Gestión de Reservas de Restaurante",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblED5Xp6eoM4LfJ6",
+          "mode": "list",
+          "cachedResultName": "Clientes",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d/tblED5Xp6eoM4LfJ6"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre Completo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_Completo', `Aquí irá el nombre del cliente`, 'string') }}",
+            "WhatsApp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('WhatsApp', `Aquí irá el número de whats app del cliente`, 'string') }}",
+            "Correo Electrónico": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Correo_Electr_nico', `Aquí irá el correo electrónico del cliente`, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Nombre Completo",
+              "displayName": "Nombre Completo",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "WhatsApp",
+              "displayName": "WhatsApp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Correo Electrónico",
+              "displayName": "Correo Electrónico",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Historial de Reservas",
+              "displayName": "Historial de Reservas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Total de Reservas",
+              "displayName": "Total de Reservas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Reservas Confirmadas",
+              "displayName": "Reservas Confirmadas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Resumen de Reservas",
+              "displayName": "Resumen de Reservas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Sugerencias de Marketing",
+              "displayName": "Sugerencias de Marketing",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -1180,
+        1740
+      ],
+      "id": "aec7b3c2-288b-40fa-8673-44a3351f85e1",
+      "name": "Crear_cliente",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appzvcnqGSDFYpK2d",
+          "mode": "list",
+          "cachedResultName": "Gestión de Reservas de Restaurante",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblyQRXUWx39oTP8M",
+          "mode": "list",
+          "cachedResultName": "Disponibilidad",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d/tblyQRXUWx39oTP8M"
+        },
+        "filterByFormula": "=AND(\n  {Clave turno} = \"{{ $fromAI(\"claveturno\") }}\",\n  {Plazas Disponibles} > 0\n)\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -1040,
+        1740
+      ],
+      "id": "6ba65e98-aa99-49f0-8dbc-eef2d784920a",
+      "name": "Consultar_disponibilidad",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1600,
+        1660
+      ],
+      "id": "6864c45a-d4dd-4f8a-8c6d-0e7a0a64333f",
+      "name": "Cerebro",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appzvcnqGSDFYpK2d",
+          "mode": "list",
+          "cachedResultName": "Gestión de Reservas de Restaurante",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbllzVlaLqRCz9cSR",
+          "mode": "list",
+          "cachedResultName": "Reservas",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d/tbllzVlaLqRCz9cSR"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $fromAI(\"fecha\") }}\n",
+            "Número de Personas": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('N_mero_de_Personas', `Número de personas de la reserva`, 'number') }}",
+            "Turno": "={{ $fromAI(\"hora\") }}",
+            "Cliente": "=[\"{{$fromAI(\"idcliente\")}}\"]",
+            "Estado de la Reserva": "Confirmada",
+            "Clave turno": "=[\"{{$fromAI(\"idclaveturno\")}}\"]"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Turno",
+              "displayName": "Turno",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Cliente",
+              "displayName": "Cliente",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Número de Personas",
+              "displayName": "Número de Personas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Estado de la Reserva",
+              "displayName": "Estado de la Reserva",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Pendiente",
+                  "value": "Pendiente"
+                },
+                {
+                  "name": "Confirmada",
+                  "value": "Confirmada"
+                },
+                {
+                  "name": "Cancelada",
+                  "value": "Cancelada"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Clave turno",
+              "displayName": "Clave turno",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Clave turno (from Clave turno)",
+              "displayName": "Clave turno (from Clave turno)",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Disponibilidad",
+              "displayName": "Disponibilidad",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "typecast": true
+        }
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -880,
+        1740
+      ],
+      "id": "47245265-44ba-45b9-b4a1-af7581386736",
+      "name": "Reservar_mesa",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appzvcnqGSDFYpK2d",
+          "mode": "list",
+          "cachedResultName": "Gestión de Reservas de Restaurante",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblyQRXUWx39oTP8M",
+          "mode": "list",
+          "cachedResultName": "Disponibilidad",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d/tblyQRXUWx39oTP8M"
+        },
+        "filterByFormula": "={Clave Turno} = \"{{ $fromAI(\"claveturno\") }}\"",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -720,
+        1740
+      ],
+      "id": "3f464354-ec29-4a5c-bd0a-a33eed0e1546",
+      "name": "Buscar_ID_Claveturno",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appzvcnqGSDFYpK2d",
+          "mode": "list",
+          "cachedResultName": "Gestión de Reservas de Restaurante",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbllzVlaLqRCz9cSR",
+          "mode": "list",
+          "cachedResultName": "Reservas",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d/tbllzVlaLqRCz9cSR"
+        },
+        "filterByFormula": "={cliente} = \"{{ $fromAI(\"idcliente\") }}\"",
+        "options": {
+          "fields": [
+            "Fecha",
+            "Turno",
+            "Número de Personas",
+            "Estado de la Reserva"
+          ],
+          "view": {
+            "__rl": true,
+            "value": "viw3u18Df6eQ8XJvQ",
+            "mode": "list",
+            "cachedResultName": "Grid view",
+            "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d/tbllzVlaLqRCz9cSR/viw3u18Df6eQ8XJvQ"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -480,
+        1520
+      ],
+      "id": "04b76a74-f7fc-4163-82ce-92133e149191",
+      "name": "Consultar_reservas",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appzvcnqGSDFYpK2d",
+          "mode": "list",
+          "cachedResultName": "Gestión de Reservas de Restaurante",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbllzVlaLqRCz9cSR",
+          "mode": "list",
+          "cachedResultName": "Reservas",
+          "cachedResultUrl": "https://airtable.com/appzvcnqGSDFYpK2d/tbllzVlaLqRCz9cSR"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        -460,
+        1740
+      ],
+      "id": "3d37a5fd-4312-4b2f-9fe1-fa65cee17534",
+      "name": "Airtable",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-26T07:17:34.787Z",
+      "updatedAt": "2025-02-27T17:47:03.175Z",
+      "id": "UFH6BosTRpNyXl3E",
+      "name": "💬🟢WhatsApp"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-07T18:29:40.000Z",
+  "versionId": "ad7fd912-8269-452e-9028-90eb530af466"
+}
