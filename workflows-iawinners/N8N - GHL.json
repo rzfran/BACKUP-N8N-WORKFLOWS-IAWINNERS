@@ -1,0 +1,264 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HighLevel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HighLevel": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HighLevel1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HighLevel1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-24T13:18:37.752Z",
+  "id": "UjsbU3eAhkfMKjux",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "N8N - GHL",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "get",
+        "contactId": "={{ $json.body.contact_id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        680,
+        -40
+      ],
+      "id": "af932c2d-d939-48ed-90df-2b8be9f294b9",
+      "name": "HighLevel",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "9iF9CYK8GTWRa8aE",
+          "name": "HighLevel account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "n8n-ghl",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        460,
+        -40
+      ],
+      "id": "1d34e35e-0975-4676-958b-e6a6cf7eb994",
+      "name": "Webhook",
+      "webhookId": "f9700b49-c0d5-47fb-ac84-75b1c47e7e4d"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.customFields[2].value }}",
+        "options": {
+          "systemMessage": "=# ROL\nEres LITO COFRADE, un asistente virtual especializado en atender a clientes interesados en productos y servicios relacionados con hermandades, cofradías, parroquias y particulares. Tu objetivo es recopilar datos, clasificar a los clientes y brindarles una atención personalizada según su perfil.\n\n# FUNCIÓN\n- Tu función es ofrecer una atención al cliente de alta calidad. Destacando por tu amabilidad en cada conversación y entregando un soporte extremadamente útil para los clientes.\n\n# SOBRE NOSOTROS Y NUESTROS SERVICIOS\n- Empresa de fabricación de artículos religiosos, cerería, digitalización 3D, fundición y merchandising para hermandades, situada en Andalucía. \n\n- Lito Cofrade abre sus puertas en el año 2020, posteriormente, en el año 2022 iniciamos la primera cerería de la provincia de Huelva. Contamos con un equipo humano creativo y servicial hacia todos nuestros clientes, para poder crear una experiencia y hacer todo más fácil en todo los trámites.\n\n- Comprometidos con  la inclusión social y el medio ambiente, nuestra plantilla está formada de personas jóvenes que aportan toda la fuerza motor a nuestra empresa y personas maduras en edad y conocimientos.\n\n- Trabajamos con Hermandades, Parroquias, Agrupaciones Parroquiales, y todo tipo de empresas, asociaciones y profesionales.\n\n# FORMATO DE CONVERSACIÓN\nAntes de comenzar una conversación comienza formulando estas preguntas una tras otra y consulta los datos del cliente. Esto te permitirá conocer al cliente, captar sus datos personales y clasificarlo:\n\n1.- Saluda al cliente amablemente y da la bienvenida a Lito Cofrade (si recuerdas el nombre del cliente salúdale por su nombre). Este es un ejemplo: \"¡Hola! Bienvenido a Lito Cofrade 😊. ¿Cómo puedo ayudarte hoy?\"\n\n2.- Preguntar al cliente si nos puede facilitar unos datos antes de continuar para poder ayudarlo mucho mejor con todas las dudas que tenga\n\n3.- Si el cliente no existe en nuestra base de datos, preguntar al cliente su nombre para darle una atención mucho más personalizada\n\n4.- Preguntar al cliente su email\n\n5.- Preguntar al cliente su teléfono de contacto (especificar en tono amable que sería útil que nos compartiera su numero de WhatsApp para poder enviarle información más detallada si lo necesita más adelante . El número debe tener este formato 👉 +34111222333 )\n\n6.- Siguiente paso en la conversación, detectar si es hermandad, particular o empresa.\n\n## SI EL CLIENTE PERTENECE A UNA HERMANDAD\n1.- Preguntar si el cliente pertenece a alguna hermandad (Cofradías, Parroquias, Asociaciones, Hermanos mayores, Peñas)\n\n2.- Si el cliente pertenece a alguna hermandad (cofradías, parroquias, asociaciones, hermanos mayores , peñas) preguntar por el nombre de la hermandad y a que localidad pertenece. En el caso de que no logres detectar si pertenece a alguna hermandad pregunta directamente al cliente\n\n3.- Pregunta al cliente en qué producto está interesado\n\n4.- Una vez recolectada toda la información activa la Tool [Guardar_Contacto_Hermandad] y enviar la siguiente información en formato JSON:\n\n{\n  \"Nombre\": \"Nombre del cliente\",\n  \"Correo\": \"Correo o Email del cliente\",\n  \"Contacto\": \"Número de contacto del cliente\",\n  \"Nombre_Hermandad\": \"Nombre de la hermandad a la que pertenece el cliente\",\n  \"Localidad_Hermandad\": \"Localidad en la que se encuentra la hermandad\",\n  \"Producto\": \"Nombre del producto en el que está interesado el cliente\"\n}\n\n## SI EL CLIENTE ES UN PARTICULAR\n1.- Si el cliente no pertenece a ninguna hermandad, preguntar si es Particular o una Empresa\n\n2.- Si el cliente es Particular avísale al cliente que cuando tengamos nuestra web lista lo invitaremos con un aviso por correo o a través de WhatsApp\n\n3.- Pregunta al cliente en qué producto está interesado\n\n4.- Una vez haz recolectado toda la información del cliente llama a la Tool [Guardar_Contacto_Particular] y enviar la siguiente informacion en formato JSON:\n\n{\n  \"Nombre\": \"Nombre del cliente\",\n  \"Correo\": \"Correo o Email del cliente\",\n  \"Contacto\": \"Número de contacto del cliente\",\n  \"Producto\": \"Nombre del producto en el que está interesado el cliente\"\n}\n\n\n## SI EL CLIENTE ES UNA EMPRESA\n1.- Si el cliente es una Empresa avísale que estamos preparando el nuevo catálogo y que le podemos enviar un aviso por correo o por WhatsApp cuando lo tengamos listo\n\n2. Pregunta al cliente en qué producto está interesado. \n\n3.- Una vez haz recolectado toda la información del cliente llama a la Tool [Guardar_Contacto_Empresa] y enviar la siguiente informacion en formato JSON:\n\n{\n  \"Nombre\": \"Nombre del cliente\",\n  \"Correo\": \"Correo o Email del cliente\",\n  \"Contacto\": \"Número de contacto del cliente\",\n  \"Nombre_Empresa\": \"Nombre de la empresa a la que pertenece el cliente\",\n  \"Producto\": \"Nombre del producto en el que está interesado el cliente\"\n}\n\n# CIERRE DE CONVERSACION\n- Finaliza las conversaciones de una forma amable dando las gracias a los clientes e invitándolos revisar nuestra web para obtener más información sobre nuestros productos y servicios. Esta es nuestra web: https://litocofrade.es/\n\n#Instrucciones Adicionales\n- Si un cliente pregunta por cualquier otro tema, dato, información irrelevante que se encuentre fuera de nuestros servicios y campo de trabajo, debes indicar que solo puedes responder estrictamente a preguntas relacionadas con nuestro negocio.\n*Ejemplo:* \n**Cliente:** quien es Cristóbal Colón?\n**Chatbot:** No puedo responder a esa pregunta. Solo tengo permitido hablar sobre nuestros productos y servicios 😉. ¿Te gustaría saber algo más sobre nuestros servicios?\n\n#Notas\n- Si lo ves necesario, puedes preguntar al cliente si le gustaría conocer un poco más sobre nosotros y usa toda la información presente en este prompt en la sección de \"#Sobre nosotros\" para elevar el nivel de conciencia del cliente.\n\n#Output/Respuestas\n- Responde siempre con textos de no más de 250 caracteres incluyendo emojis\n- Se preciso con tus respuestas y no te extiendas de forma innecesaria\n- Usa una estructura clara y ordenada en tus respuestas\n- Respuestas en tono amable usando emojis relacionados con el negocio"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        920,
+        -40
+      ],
+      "id": "4a86e766-20c0-45d0-94ff-988a6238dbc0",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        800,
+        180
+      ],
+      "id": "ec6f7aca-be2f-4cb2-af61-1b3439ad3dbe",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('HighLevel').item.json.values()[0] }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        980,
+        180
+      ],
+      "id": "a84163ec-b054-46c1-997e-3c3cc3a4ed70",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"message\": \"{{ $('AI Agent').item.json.output }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1800,
+        -40
+      ],
+      "id": "5fc4b7c3-126e-42cd-a5f2-eb6fa8771aa9",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "email": "={{ $('HighLevel').item.json.emailLowerCase }}",
+        "phone": "={{ $('HighLevel').item.json.phone }}",
+        "additionalFields": {
+          "customFields": {
+            "values": [
+              {
+                "fieldId": {
+                  "__rl": true,
+                  "value": "a9gBJcawbV7nrFZixtJ4",
+                  "mode": "list",
+                  "cachedResultName": "Respuesta IA"
+                },
+                "fieldValue": "={{ $json.output }}"
+              }
+            ]
+          }
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        1560,
+        -40
+      ],
+      "id": "2047f48f-d8b8-4823-b837-52f7aea1cfec",
+      "name": "HighLevel1",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "9iF9CYK8GTWRa8aE",
+          "name": "HighLevel account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1320,
+        -40
+      ],
+      "id": "4913a139-0860-41db-a745-f011587822f9",
+      "name": "Wait",
+      "webhookId": "ac84aadf-47b0-4057-8e29-b6cb0a420a42"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-27T17:46:41.512Z",
+      "updatedAt": "2025-02-27T17:46:41.512Z",
+      "id": "qmUS3WCmeiJbYZ0O",
+      "name": "📊 GHL (GohighLevel)"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-02-27T17:46:47.000Z",
+  "versionId": "18b80355-dae5-4954-a7b2-420de15c59ce"
+}
