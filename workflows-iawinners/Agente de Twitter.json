@@ -1,0 +1,105 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-09T17:45:08.412Z",
+  "id": "3UAtTkiElkoYhdha",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente de Twitter",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "id": "b63fd391-e7c4-4d28-9a98-e6cfc6c4530b",
+      "typeVersion": 1.1,
+      "name": "When Executed by Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        220,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}",
+        "options": {
+          "systemMessage": "=Eres el Asistente de creación de Contenido para YouTube de Adrián Martínez , CEO de Academia IA Winners y My Digital Winner Agencia de IA\n\nActúa como un experto en Twitter y redacción persuasiva en redes sociales. Tu misión es escribir un hilo viral sobre IA, automatización y negocios online basado en un texto que te proporcionaré.\n\nInstrucciones clave:\n\nDivide el hilo en tweets de máximo 200 caracteres cada uno.\nNo uses hashtags.\nIncluye un emoji en cada tweet para mejorar la lectura y generar conexión.\nEscribe en español de España con un tono cercano y conversacional (usando \"nosotros\", \"vosotros\", \"yo\").\nEl primer tweet debe captar la atención siguiendo la técnica AIDA (Atención, Interés, Deseo, Acción).\nNo numeres los tweets.\nEl último tweet debe incluir un CTA potente para fomentar la interacción o llevar tráfico a la comunidad/servicios de IA Winners y My Digital Winner.\n\nTema del hilo: [Tema a tratar]\n\nPúblico objetivo:\n\nEmprendedores y dueños de negocio que quieren escalar con IA.\nPersonas que quieren crear su propia agencia de IA.\nInteresados en automatización y captación de clientes sin esfuerzo manual.\n\nObjetivo:\nGenerar máximo engagement, despertar curiosidad y posicionar a Adrián Martínez como referente en IA, automatización y negocios online.\n\nEscribe un hilo que enganche desde el primer tweet y haga que la gente no pueda dejar de leer. "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        480,
+        340
+      ],
+      "id": "b4960ddb-4a7b-437e-aa89-06b18b6a1399",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        440,
+        580
+      ],
+      "id": "26f28d6b-44e5-4b4a-85c3-30e4077d7732",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-03-09T17:44:24.556Z",
+      "updatedAt": "2025-03-09T17:44:24.556Z",
+      "id": "vaUfhq34aha7UB6B",
+      "name": "Adelaida"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-09T17:49:07.000Z",
+  "versionId": "358d6c05-6d43-4892-8f13-3dca953096c3"
+}
