@@ -1,0 +1,750 @@
+{
+  "active": false,
+  "connections": {
+    "Window Buffer Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "When chat message received",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar_cliente": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Crear_cliente": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar_disponibilidad": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cerebro": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar_ID_Claveturno": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar_reservas": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reservar_pista": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Info_pistas": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar_confirmacion": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cancelar_reserva": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-09T00:51:15.785Z",
+  "id": "VicwGyb5LbPJSkic",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "PRUEBAS AGENTE PADEL",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=#ROL\nEres un asistente virtual que gestiona reservas de pistas en el Club de Padel Winners a través de WhatsApp, Airtable y correo electrónico.\n\nFecha y hora actual: {{ $now.toISO() }}\n\n#INICIO DE CONVERSACION\n1. Si el cliente pregunta por información, proporciona: \n  - Ubicación del Club\n  - Horarios de atención\n  - Teléfono de contacto\n  Si quiere reservar, pasa al siguiente paso.\n\n2.- Preguntar al cliente su número de WhatsApp y revisar si está registrado en el sistema llamando a la Tool [Buscar_cliente] para buscar el número de WhatsApp en la tabla Clientes.\n\n3.- Si el cliente está registrado responde: \"Tengo tu contacto registrado como {{ (\"nombrecliente\") }}, ¿es correcto?\"\n\n4.- Si el cliente no está registrado responde: \"Antes de continuar, necesito tu nombre completo y correo electrónico.\" Luego, llama a la Tool [Crear_cliente] para registrarlo en Airtable\n\n5.- Guarda el ID del cliente en la variable \"idcliente\"\n\n\n#AGENDAR VISITAS/CITAS/PISTA\n1.- Solicitud de Fecha y hora para la reserva de la pista \npregunta: \"¿Para qué fecha y hora quieres reservar pista?\"\n\n2.- Extrae la fecha y almacénala en las siguientes variables:\nclaveturno = \"Fecha y hora de la visita del cliente\"\n\n3.- Si necesitas buscar disponibilidad llama a la Tool [Consultar_disponibilidad] y usa las variables: \"claveturno\"\n\n4.- Si te piden disponibilidad con un solo digito, por ejemplo: \"para mañana a las 9\". Debes consultar usando la variable \"claveturno\" con el formato \"yyyy-MM-dd - h:mm\"\". Por ejemplo: \"2025-03-07 - 9:00\".\n\n5.- Si te piden disponibilidad con dos digitos, por ejemplo: \"para mañana a las 13\". Debes consultar usando la variable \"claveturno\" con el formato \"yyyy-MM-dd - hh:mm\" \n\n6.- Si hay disponibilidad, responde con los horarios y pistas disponibles.\n\n\n#CONFIRMACION DE RESERVA\n1.- Pregunta al cliente: \"Tenemos disponibilidad el día {{ (\"Fecha\") }} a las {{ (\"Hora\") }} en las pistas {{ (\"Pista\") }}. ¿Que pista te gustaría reservar?\"\n\n2.- Si el cliente acepta llama a la Tool [Reservar_pista] para registrar la reserva en la tabla Reservas.\n\nEnvía los datos en este formato JSON:\n\n{\n  \"Cliente\": [\"{{ (\"idcliente\") }}\"],\n  \"Clave Turno\": [\"{{ (\"idclaveturno\") }}\"],\n  \"Fecha\": \"{{ (\"fecha\") }}\",\n  \"Hora\": \"{{ (\"hora\") }}\",\n  \"Pista\": {{ (\"pista\") }}\n}\n\n- Actualiza la disponibilidad en la tabla Disponibilidad de Turnos.\n\n- Si el cliente reservó responder: \"Gracias por tu reserva, {{ (\"nombrecliente\") }} . Esperamos verte pronto 😉.\"\n\n\n#CANCELAR RESERVA\nSi el cliente necesita cancelar una reserva seguir el siguiente paso a paso:  \n\n1.- Si no tienes el número de whatsApp del cliente debes pedirselo y guardarlo en la variable \"numero_whatsapp\"\n\n2.- Una vez que tienes el número de whatsapp usalo para buscar si el cliente está registrado en nuestro sistema llamando a la Tool [Buscar_cliente]\n\n3.- Si el cliente está registrado podrás obtener estos 2 datos: \"{{ (\"idcliente\") }}\", \"{{ (\"nombrecliente\") }}\"\n\n4.- Busca cuales son las reservas que tiene ese cliente a partir de esta fecha en adelante: {{ $now.toISO() }} llamando a la Tool [Consultar_reservas] usando el {{ (\"idcliente\") }}\n\n5.- Preguntale al cliente cual de estas reservas quiere cancelar y guarda el *id de esa reserva en específico* en la variable \"id_reserva\"\n\n6.- Una vez recabada toda la información necesaria, llama a la Tool [Cancelar_reserva] y usa el \"id_reserva\" para cancelar la reserva\n\n7.- Una vez cancelada la reserva avisa al cliente que su reserva a sido cancelada\n\n8.- Cierra la conversación preguntando al cliente si necesita ayuda con otra cosa. Si no necesita ayuda despídete amablemente\n\n\n#NOTAS\n- Si hay un error con los IDs, verifica que el ID del Cliente y la Clave Turno sean arrays en el formato requerido.\n\n- Si el cliente necesita más ayuda, sigue atendiéndolo.\n\n- El campo Cliente en Airtable solo acepta IDs, no nombres.\n\n- El ID del cliente se enviará en un array, como lo requiere Airtable.\n\n- Ejemplo de ID de cliente en Airtable: \"recqzBT2WYaIcUoq9\"\n\n- Ejemplo del formato correcto en la variable: [\"recqzBT2WYaIcUoq9\"]\n\n\n#Tools\n- Buscar_cliente: Busca en Airtable si el número de WhatsApp ya está registrado antes de realizar cualquier reserva.\n\n- Crear_cliente: Registra nuevos clientes en Airtable.\n\n- Consultar_disponibilidad: Verifica los turnos disponibles en la tabla \"Disponibilidad de Turnos\".\n\n- Buscar_ID_claveturno: Busca el Record ID de la Clave de Turno en Airtable.\n\n- Reservar_pista: Agrega la reserva en la tabla \"Reservas\" y envía los IDs en un array.\n\n- Info_pistas: Usarás esta Tool para darle información de las pistas al cliente, zona, tipo de pista.."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        80,
+        -100
+      ],
+      "id": "7c8178dd-97f6-46b0-a2ff-4f495f4e056f",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -280,
+        260
+      ],
+      "id": "17f04035-e674-4cb7-8fc7-bf03615c291d",
+      "name": "Window Buffer Memory1"
+    },
+    {
+      "parameters": {
+        "public": true,
+        "mode": "webhook",
+        "options": {
+          "loadPreviousSession": "memory"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -280,
+        -100
+      ],
+      "id": "d9454f11-9297-4cb6-b70a-79ee3ae07c06",
+      "name": "When chat message received",
+      "webhookId": "ad99ef03-094f-4d1c-be4a-10440b8784bf"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblED5Xp6eoM4LfJ6",
+          "mode": "list",
+          "cachedResultName": "Clientes",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tblED5Xp6eoM4LfJ6"
+        },
+        "filterByFormula": "={WhatsApp} = \"{{ $fromAI(\"whatsapp\") }}\"\n",
+        "options": {
+          "view": {
+            "__rl": true,
+            "value": "viwgUIw6wbTBaGai8",
+            "mode": "list",
+            "cachedResultName": "Grid view",
+            "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tblED5Xp6eoM4LfJ6/viwgUIw6wbTBaGai8"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -140,
+        260
+      ],
+      "id": "50d1e8d9-6d09-4a3c-900c-899a0c284ae1",
+      "name": "Buscar_cliente",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblED5Xp6eoM4LfJ6",
+          "mode": "list",
+          "cachedResultName": "Clientes",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tblED5Xp6eoM4LfJ6"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre Completo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_Completo', `Aquí irá el nombre del cliente`, 'string') }}",
+            "WhatsApp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('WhatsApp', `Aquí irá el número de whats app del cliente`, 'string') }}",
+            "Correo Electrónico": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Correo_Electr_nico', `Aquí irá el correo electrónico del cliente`, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Nombre Completo",
+              "displayName": "Nombre Completo",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "WhatsApp",
+              "displayName": "WhatsApp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Correo Electrónico",
+              "displayName": "Correo Electrónico",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Historial de Reservas",
+              "displayName": "Historial de Reservas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Total de Reservas",
+              "displayName": "Total de Reservas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Reservas Confirmadas",
+              "displayName": "Reservas Confirmadas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Resumen de Reservas",
+              "displayName": "Resumen de Reservas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Sugerencias de Marketing",
+              "displayName": "Sugerencias de Marketing",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        260
+      ],
+      "id": "bb20cec5-eed5-43c2-9142-85c70b471f72",
+      "name": "Crear_cliente",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Llama a esta Tool cuando necesites consultar disponibilidad usando la variable \"claveturno\"",
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl19MIoptqxho73q",
+          "mode": "list",
+          "cachedResultName": "Disponibilidad Pistas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbl19MIoptqxho73q"
+        },
+        "filterByFormula": "={clave turno} = \"{{ $fromAI(\"claveturno\") }}\"",
+        "returnAll": false,
+        "limit": 10,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        160,
+        260
+      ],
+      "id": "c43381f7-f3b3-4555-84ca-c38675be66ba",
+      "name": "Consultar_disponibilidad",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        260
+      ],
+      "id": "ff419aab-555e-40e9-b3ae-b66a1e31818f",
+      "name": "Cerebro",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl19MIoptqxho73q",
+          "mode": "list",
+          "cachedResultName": "Disponibilidad Pistas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbl19MIoptqxho73q"
+        },
+        "filterByFormula": "={Clave Turno} = \"{{ $fromAI(\"claveturno\") }}\"",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        260
+      ],
+      "id": "818b21d4-acaf-40b6-bf64-e9bc9d89bf05",
+      "name": "Buscar_ID_Claveturno",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbllzVlaLqRCz9cSR",
+          "mode": "list",
+          "cachedResultName": "Reservas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbllzVlaLqRCz9cSR"
+        },
+        "filterByFormula": "={cliente} = \"{{ $fromAI(\"nombrecliente\") }}\"",
+        "options": {
+          "fields": [
+            "Clave Turno",
+            "Reservas (from Clave Turno)",
+            "Cliente",
+            "Hora",
+            "Fecha"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        660,
+        260
+      ],
+      "id": "a9ce7365-932e-45fe-aebb-e196191083f1",
+      "name": "Consultar_reservas",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbllzVlaLqRCz9cSR",
+          "mode": "list",
+          "cachedResultName": "Reservas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbllzVlaLqRCz9cSR"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $fromAI(\"fecha\") }}\n",
+            "Cliente": "=[\"{{$fromAI(\"idcliente\")}}\"]",
+            "Hora": "={{ $fromAI(\"hora\") }}",
+            "Clave Turno": "=[\"{{$fromAI(\"idclaveturno\")}}\"]"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Hora",
+              "displayName": "Hora",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Cliente",
+              "displayName": "Cliente",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Clave Turno",
+              "displayName": "Clave Turno",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Reservas (from Clave Turno)",
+              "displayName": "Reservas (from Clave Turno)",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "typecast": true
+        }
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        320,
+        260
+      ],
+      "id": "f7a682da-210b-4162-93cc-db86140f3622",
+      "name": "Reservar_pista",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbllVDPLLi045v5rF",
+          "mode": "list",
+          "cachedResultName": "Pistas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbllVDPLLi045v5rF"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        800,
+        260
+      ],
+      "id": "dd034c90-7f4b-4117-8ef0-0518cba68255",
+      "name": "Info_pistas",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "emailType": "text",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        500,
+        -80
+      ],
+      "id": "852565b1-1cae-4707-bb2a-b0b949ec0f4d",
+      "name": "Enviar_confirmacion",
+      "webhookId": "76408822-c0ca-4ddd-a5bb-b1100c569455",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "llama a esta Tool para cancelar una reserva",
+        "operation": "deleteRecord",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbllzVlaLqRCz9cSR",
+          "mode": "list",
+          "cachedResultName": "Reservas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbllzVlaLqRCz9cSR"
+        },
+        "id": "={{ $fromAI(\"id_reserva\") }}"
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        960,
+        260
+      ],
+      "id": "37064dab-3a9a-4714-af2b-e5ad04344deb",
+      "name": "Cancelar_reserva",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-03-10T12:52:16.000Z",
+  "versionId": "c4b1d48f-667e-472d-af9e-5470e8a3861c"
+}
