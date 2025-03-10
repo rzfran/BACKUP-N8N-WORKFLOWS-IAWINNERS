@@ -1,0 +1,1775 @@
+{
+  "active": true,
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Borrar imagen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Trigger": {
+      "main": [
+        [
+          {
+            "node": "Numero",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set 'Text'",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp Business Cloud4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Transcribir",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribir": {
+      "main": [
+        [
+          {
+            "node": "Audio_Transcrito",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set 'Text'": {
+      "main": [
+        [
+          {
+            "node": "Guardar mensaje",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-fixing Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Generador de respuestas",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 2": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Parte 3": {
+      "main": [
+        [
+          {
+            "node": "Wait 3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "on_error": {
+      "main": [
+        [
+          {
+            "node": "Generador de respuestas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generador de respuestas": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "Wait 2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If Parte 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Generador de respuestas",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "on_error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "WhatsApp Business Cloud2": {
+      "main": [
+        [
+          {
+            "node": "If Parte 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud3": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud4": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Imagen_Transcrita",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de Calendario": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Info_clinica": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente CRM Clinica": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail3": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente de Calendario1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Info_clinica1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente CRM Clinica1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Borrar imagen": {
+      "main": [
+        [
+          {
+            "node": "Generador de respuestas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar mensaje": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recuperar mensajes": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Recuperar mensajes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Audio_Transcrito": {
+      "main": [
+        [
+          {
+            "node": "Guardar mensaje1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar mensaje1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Recuperar mensajes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar mensaje2": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "Recuperar mensajes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Imagen_Transcrita": {
+      "main": [
+        [
+          {
+            "node": "Guardar mensaje2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Numero": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-27T12:32:07.259Z",
+  "id": "v67QDkHYGXvvYdFS",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente General -Clinica",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['Respuesta obtenida'][0] }}",
+        "options": {
+          "systemMessage": "=Eres el asistente de WhatsApp de **Clínica Sonrisas**, especializado en la atención al cliente, gestión de pacientes y registros de la clínica dental. Tu principal objetivo es informar a los clientes y guiar la conversación de manera natural para intentar agendar citas. No realizas cambios en el calendario, ya que esa función es exclusiva del **Agente_de_Calendario**. \n\nAdemás, tu conversación debe ser **fluida y conversacional**, evitando respuestas con demasiada información de golpe. Siempre debes mantener un **tono cercano y amigable**, guiando al cliente en la conversación de manera natural y evitando respuestas robóticas o listas de información demasiado largas.\n\nLa Fecha de hoy es: {{ $now }}\n\n# Agentes Disponibles por Tools\n- **Agente_CRM_Clinica**: Responsable de la gestión de leads, visitas, horarios de doctores y detalles de los servicios.\n- **Agente_de_Calendario**: Exclusivamente encargado de verificar disponibilidad, agendar, modificar y cancelar citas en el calendario.\n\n## Herramientas de Gestión del CRM\n- **Leads_interesados** → Para registrar o actualizar la información de un lead interesado en los servicios de la clínica.\n- **Registro_visitas** → Para anotar o actualizar las visitas agendadas de los pacientes.\n- **Horarios_doctores_clinica** → Para consultar los horarios disponibles de los doctores y asignar el doctor correspondiente a cada visita agendada.\n- **Servicios_clinica** → Para recuperar información detallada sobre los servicios de la clínica.\n\n## Flujo de Atención al Cliente\n\n### 1. Saludo y Presentación\n   - Responder amablemente presentándose como el asistente virtual de **Clínica Sonrisas**.\n   - Preguntar en qué puede ayudar al cliente de manera conversacional.\n\n### 2. Consulta sobre Necesidades del Cliente\n   - Escuchar lo que necesita el cliente y hacer preguntas para entender mejor su requerimiento.\n   - Si el cliente menciona un problema dental, guiarlo hacia un servicio adecuado.\n\n### 3. Información sobre Servicios, Doctores y Horarios\n   - Si el cliente solicita información sobre un servicio en particular, horarios de visitas o disponibilidad de doctores, utilizar la tool **Servicios_clinica** o **Horarios_doctores_clinica**.\n   - Si falta información, utilizar la tool **Agente_CRM_Clinica**.\n   - **Responder en formato de conversación fluida y progresiva. No enviar listas largas ni toda la información de golpe.**\n   - Hacer preguntas para mantener la conversación natural.\n\nEjemplo Correcto:\n\n**Cliente:** \"Quiero hacerme un blanqueamiento dental.\"\n\n**Agente:** \"¡Buena elección! El blanqueamiento ayuda a mejorar el tono de los dientes y eliminar manchas. ¿Te gustaría saber más sobre cómo funciona o prefieres que te dé detalles sobre los precios y opciones?\"\n\nEjemplo Incorrecto:\n\n**Agente:** \"El blanqueamiento dental es un procedimiento en el que se usa un gel especial para aclarar el color de los dientes. Tenemos diferentes opciones, incluyendo blanqueamiento en clínica con luz LED y kits para casa. El precio depende de la opción que elijas, y el proceso puede durar entre 60 y 90 minutos...\" (Demasiada información de golpe.)\n\n### 4. Solicitud de Datos del Cliente\n   - Antes de continuar con cualquier acción (como verificar disponibilidad o agendar), solicitar al cliente:\n     - Nombre completo\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n   - **Una vez recibidos estos datos, registrarlos inmediatamente en el CRM utilizando la tool Agente_CRM_Clinica.**\n   - IMPORTANTE: No informar al cliente que se ha registrado en el sistema, solo continuar con el flujo normal de conversación.\n\n### 5. Gestión de Citas\n   - **No se podrá agendar una cita si no se tienen todos los datos del cliente:**\n     - Nombre completo\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n     - Fecha y hora confirmada\n   - Si falta algún dato, solicitarlo antes de proceder con el agendamiento.\n   - Si el cliente desea agendar, modificar o cancelar una cita, indicarle que se verificará la disponibilidad y utilizar la tool **Agente_de_Calendario** para gestionar la solicitud.\n   - **Cuando un cliente pregunte por disponibilidad:**\n     - Preguntar primero qué día le vendría bien.\n     - Luego, preguntar si prefiere por la mañana o por la tarde.\n     - Ofrecer solo **dos o tres opciones de horarios concretos**, en lugar de listas completas.\n     - Preguntar si alguno de los horarios le va bien. Si no, ofrecer otra alternativa hasta encontrar un horario adecuado.\n     - **Si el cliente solicita una hora específica, utilizar la tool de *Agente_de_calendario para verificar si está libre antes de responder.**\n     - Si la hora está disponible, confirmarla inmediatamente al cliente.\n     - Si no está disponible, sugerir una alternativa cercana.\n     - **Asegurar que la zona horaria utilizada para todas las verificaciones de disponibilidad sea Europa/Madrid (GMT+1).**\n   - **Si por algún motivo hay un error en la verificación o gestión de la cita, en lugar de decirle al cliente que contacte con el Agente_de_Calendario, proporcionarle el número de contacto de la clínica para que pueda llamar y confirmar su cita personalmente: 932259854.**\n\nEjemplo de Conversación Correcta:\n\n**Cliente:** \"¿Cuándo podría hacerme un blanqueamiento?\"\n\n**Agente:** \"Podemos verlo ahora mismo. ¿Te iría bien la próxima semana o prefieres otra fecha?\"\n\n**Cliente:** \"La próxima semana.\"\n\n**Agente:** \"Genial. ¿Prefieres en la mañana o en la tarde?\"\n\n**Cliente:** \"Por la tarde.\"\n\n**Agente:** \"Te puedo ofrecer el miércoles a las 16:00 o el viernes a las 17:30. ¿Te va bien alguno?\"\n\n### 6. Registro y Actualización de Visitas\n   - Cuando un cliente haya agendado una cita (validado por el **Agente_de_Calendario**), actualizarlo en el CRM usando la tool **Agente_de_Calendario** con:\n     - Nombre del paciente\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n     - Fecha y hora de la cita\n     - Estado: \"Cita Agendada\"\n     - **Doctor asignado:** Para determinar el doctor correspondiente, verificar el servicio y la hora de la cita con la tool **Horarios_doctores_clinica** y asignar el doctor adecuado.\n   - Enviar una confirmación al correo del cliente con los detalles de su cita, incluyendo el doctor asignado utilizando la tool *Gmail*\n\n### 7. Notificaciones con la tool de Gmail\n   - Enviar un correo automático al equipo de ventas de la clínica **contacto.adrianmartinez@gmail.com** cuando un nuevo lead se registre o cuando una visita sea confirmada.\n   - Enviar un correo electrónico al cliente cuando haya agendado su visita con el resumen de su cita.\n\n## Reglas Generales\n- **Siempre mantener la conversación fluida y amigable.**\n- No enviar listas largas de horarios o información técnica de golpe.\n- No informar al cliente cuando se registre en el CRM o se realicen acciones internas.\n- Solo comunicar cuando una cita haya sido agendada exitosamente.\n- **Las opciones de horarios deben presentarse de forma conversacional y limitada a dos o tres opciones.**\n- **Verificar siempre que las citas se programen en la zona horaria correcta: Europa/Madrid (GMT+1).**\n- Garantizar que toda la información del CRM esté actualizada y organizada.\n\n**Objetivo:** Guiar la conversación de manera natural y optimizar la experiencia del cliente, asegurando que cada interacción sea fluida y personalizada.\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -960,
+        440
+      ],
+      "id": "17733dca-d61b-45c4-8f20-79452e25c59f",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1240,
+        720
+      ],
+      "id": "721a0a0e-bf00-422e-a834-20bbb5c17298",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Numero').item.json.Numero }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1100,
+        720
+      ],
+      "id": "9a65350d-aae1-42cd-8483-9f0b36ac48c6",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', `Deberás construir el HTML del mensaje para que quede bonito y bien organizado`, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -940,
+        820
+      ],
+      "id": "0ffefc52-ba85-440f-9822-37b07095794c",
+      "name": "Gmail",
+      "webhookId": "1b57e585-5acb-415c-a317-9d2e3dee635a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', ``, 'number') }}",
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -820,
+        820
+      ],
+      "id": "5952fa73-bea7-4c72-9c05-98e2bb6bff87",
+      "name": "Gmail1",
+      "webhookId": "e7025802-a744-45b6-b04c-410802fc63c9",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ]
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1840,
+        -40
+      ],
+      "id": "d0ba9fe1-7558-4be7-9b39-945b700fca89",
+      "name": "WhatsApp Trigger",
+      "webhookId": "dab86a9e-03da-4f2a-8294-9a332fc14f50",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "wNLNSjzYJjZWp1k5",
+          "name": "WhatsApp OAuth account 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "533381876531896",
+        "recipientPhoneNumber": "={{ $('Numero').item.json.Numero }}",
+        "textBody": "={{ $json.output.response.parte1 }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        300,
+        440
+      ],
+      "id": "4bb792dd-c6ec-4001-a499-48dcbed07bfc",
+      "name": "WhatsApp Business Cloud",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fe7ecc99-e1e8-4a5e-bdd6-6fce9757b234",
+              "name": "text",
+              "value": "={{ $('WhatsApp Trigger').item.json.messages[0].text.body }}",
+              "type": "string"
+            },
+            {
+              "id": "359ee248-b32c-48e6-b6cf-193017f9ee39",
+              "name": "id",
+              "value": "={{ $json.contacts[0].wa_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "875de309-ebcb-4bea-9576-4b4e5ccc2789",
+      "name": "Set 'Text'",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1180,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('WhatsApp Trigger').item.json.messages[0].type }}",
+                    "rightValue": "audio",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Voice"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8c844924-b2ed-48b0-935c-c66a8fd0c778",
+                    "leftValue": "={{ $('WhatsApp Trigger').item.json.messages[0].type }}",
+                    "rightValue": "text",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "51b64a23-027a-4c9e-b5ae-88eeb60876a3",
+                    "leftValue": "={{ $('WhatsApp Trigger').item.json.messages[0].type }}",
+                    "rightValue": "image",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Image"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f2677c57-bdb5-48da-8783-d9d962a47b01",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1460,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "id": "da3c9192-8c6b-498e-8453-0147e11f1f2e",
+      "name": "Transcribir",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        -820,
+        -260
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $('WhatsApp Trigger').item.json.messages[0].audio.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -1180,
+        -260
+      ],
+      "id": "6934321e-a004-4ea0-8846-07ae24369b8f",
+      "name": "WhatsApp Business Cloud1",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1000,
+        -260
+      ],
+      "id": "cd41f46d-02a1-46dd-abc6-c15c3a4b3ec0",
+      "name": "HTTP Request",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "Fv9zvOckHoK8Kb6L",
+          "name": "Unnamed credential"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "options": {
+          "prompt": "Instructions:\n--------------\n{instructions}\n--------------\nCompletion:\n--------------\n{completion}\n--------------\n\nAbove, the Completion did not satisfy the constraints given in the Instructions.\nError:\n--------------\n{error}\n--------------\n\nPlease try again. Please only respond with an answer that satisfies the constraints laid out in the Instructions:"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+      "typeVersion": 1,
+      "position": [
+        0,
+        660
+      ],
+      "id": "8af0e18b-f1bb-47ff-a382-3f998d0cc0fd",
+      "name": "Auto-fixing Output Parser"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"response\": {\n    \"parte1\": \"Parte uno de la respuesta\",\n    \"parte2\": \"Parte dos de la respuesta\",\n    \"parte3\": \"Parte tres de la respuesta (opcional).\"   \n  }\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        780
+      ],
+      "id": "862ef1bb-e1f7-4a94-86cb-8223a27e24b6",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        760,
+        360
+      ],
+      "id": "e4639e21-5fea-42cf-9ed2-f0d2e2f604a7",
+      "name": "Wait 2",
+      "webhookId": "684e93e6-e18f-4fe3-a685-de74f1947a66"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6c883ec3-6f23-4834-b4fc-a8f7ff5eacc5",
+              "leftValue": "={{ $('Generador de respuestas').item.json.output.response.parte3 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        560
+      ],
+      "id": "15d35f26-08ad-4a9d-9489-844b489042c0",
+      "name": "If Parte 3"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1280,
+        360
+      ],
+      "id": "4fea3a86-c7c4-40f4-be79-c5c400b99fe5",
+      "name": "Wait 3",
+      "webhookId": "66233074-987c-4318-8b48-fc566033b228"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "806fb232-eb65-4d07-8d56-499f1da263d8",
+              "name": "output",
+              "value": "={{ $('AI Agent').item.json.output }}\"\n\n\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        560,
+        760
+      ],
+      "id": "d41381df-21c7-42e2-b4bf-4e68ea24d5df",
+      "name": "on_error"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        540
+      ],
+      "id": "e8b69364-eae2-4699-9cf2-188ecccb2cca",
+      "name": "No Operation, do nothing2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('AI Agent').item.json.output }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=# Adapta la respuesta \"{{ $json.output }}\" de acuerdo a las siguientes instrucciones:\n\n- Elimina estos caractéres:\n  •\"*\", \"¿\", \"¡\", \"#\"\n- Mantén los saltos de línea cuando corresponda, principalmente en los listados o Bullet Point Lists.\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n- El mensaje debe sonar relajado, formal y respetuoso. \n- Si la respuesta es breve, rellena únicamente la parte1.\n- Si la respuesta es más extensa, considera rellenar la parte2 y la parte3.\n- Si el mensaje contiene una lista, déjala sola en una parte, *manteniendo el formato de lista* (con los saltos de línea correspondientes).\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\".\n- La respuesta final debe ser lo más similar posible a la respuesta inicial, no cambies radicalmente las palabras o el significado de la respuesta inicial si no es necesario.\n\n"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        -160,
+        440
+      ],
+      "id": "2d9c5fe1-e048-4e5c-988a-9039ce77db93",
+      "name": "Generador de respuestas",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c722cfec-cc19-43f0-804f-5ce50bacff2b",
+              "leftValue": "={{ $('Generador de respuestas').item.json.output.response.parte2 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        560,
+        440
+      ],
+      "id": "a2516403-cda3-49b2-897d-692fe60a7244",
+      "name": "If5"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -160,
+        780
+      ],
+      "id": "4c209006-b5c7-46c8-bf89-f831a35973ef",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "533381876531896",
+        "recipientPhoneNumber": "={{ $('Numero').item.json.Numero }}",
+        "textBody": "={{ $('Generador de respuestas').item.json.output.response.parte2 }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        920,
+        360
+      ],
+      "id": "8bc6113f-6544-49d3-8d1c-af574780f5c4",
+      "name": "WhatsApp Business Cloud2",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "533381876531896",
+        "recipientPhoneNumber": "={{ $('Numero').item.json.Numero }}",
+        "textBody": "={{ $('Generador de respuestas').item.json.output.response.parte3 }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        360
+      ],
+      "id": "41f34e2b-ceed-4584-9420-f5249ab13fd3",
+      "name": "WhatsApp Business Cloud3",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $('WhatsApp Trigger').item.json.messages[0].image.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -1180,
+        180
+      ],
+      "id": "b981fa92-d512-486b-9943-ab7cad0e3948",
+      "name": "WhatsApp Business Cloud4",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1000,
+        180
+      ],
+      "id": "23395162-9ea8-4f06-bfdd-87ae7a46e1e7",
+      "name": "HTTP Request1",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "Fv9zvOckHoK8Kb6L",
+          "name": "Unnamed credential"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "text": "Aquí hay una imagen enviada por el usuario. Describe la imagen y transcribe cualquier texto visible en ella. Proporciona tantos detalles como sea posible en no más de 300 caracteres.",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -820,
+        180
+      ],
+      "id": "3bb3077b-dc6f-4619-9694-a72ff5cbdc6d",
+      "name": "OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Agente_de_calendario",
+        "description": "Utilizará esta tool para obtener cualquier información del calendario, horarios disponibles, citas agendadas, eliminar o añadir citas. ",
+        "workflowId": {
+          "__rl": true,
+          "value": "Zl1beuDQZNbnZE5L",
+          "mode": "list",
+          "cachedResultName": "Agente Calendario - Clinica"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        -380,
+        820
+      ],
+      "id": "7f4a96e3-84c3-4004-8d69-5261222b39dd",
+      "name": "Agente de Calendario"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "1TFGxKY6dodgl201PChmNHoRL0JzcrlSyvW5UVYujieU"
+      },
+      "type": "n8n-nodes-base.googleDocsTool",
+      "typeVersion": 2,
+      "position": [
+        -660,
+        820
+      ],
+      "id": "ec0c888e-106d-420c-846b-b06735c0d560",
+      "name": "Info_clinica",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "rSCzk13TMRoydT9g",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Agente_CRM_Clinica",
+        "workflowId": {
+          "__rl": true,
+          "value": "8aNtKrLb5PkT6Ljr",
+          "mode": "list",
+          "cachedResultName": "Agente CRM - Clinica"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        820
+      ],
+      "id": "c09edbe4-8530-41fa-87e8-32c54d6c1f1a",
+      "name": "Agente CRM Clinica"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=Eres el asistente de WhatsApp de **Clínica Dentalia**, especializado en la atención al cliente, gestión de pacientes y registros de la clínica dental. Tu principal objetivo es informar a los clientes y guiar la conversación de manera natural para intentar agendar citas. No realizas cambios en el calendario, ya que esa función es exclusiva del **Agente_de_Calendario**. \n\nAdemás, tu conversación debe ser **fluida y conversacional**, evitando respuestas con demasiada información de golpe. Siempre debes mantener un **tono cercano y amigable**, guiando al cliente en la conversación de manera natural y evitando respuestas robóticas o listas de información demasiado largas.\n\nLa Fecha de hoy es: {{ $now }}\n\n# Agentes Disponibles por Tools\n- **Agente_CRM_Clinica**: Responsable de la gestión de leads, visitas, horarios de doctores y detalles de los servicios.\n- **Agente_de_Calendario**: Exclusivamente encargado de verificar disponibilidad, agendar, modificar y cancelar citas en el calendario.\n\n## Herramientas de Gestión del CRM\n- **Leads_interesados** → Para registrar o actualizar la información de un lead interesado en los servicios de la clínica.\n- **Registro_visitas** → Para anotar o actualizar las visitas agendadas de los pacientes.\n- **Horarios_doctores_clinica** → Para consultar los horarios disponibles de los doctores y asignar el doctor correspondiente a cada visita agendada.\n- **Servicios_clinica** → Para recuperar información detallada sobre los servicios de la clínica.\n\n## Flujo de Atención al Cliente\n\n### 1. Saludo y Presentación\n   - Responder amablemente presentándose como el asistente virtual de **Clínica Dentalia**.\n   - Preguntar en qué puede ayudar al cliente de manera conversacional.\n\n### 2. Consulta sobre Necesidades del Cliente\n   - Escuchar lo que necesita el cliente y hacer preguntas para entender mejor su requerimiento.\n   - Si el cliente menciona un problema dental, guiarlo hacia un servicio adecuado.\n\n### 3. Información sobre Servicios, Doctores y Horarios\n   - Si el cliente solicita información sobre un servicio en particular, horarios de visitas o disponibilidad de doctores, utilizar la tool **Servicios_clinica** o **Horarios_doctores_clinica**.\n   - Si falta información, utilizar la tool **Agente_CRM_Clinica**.\n   - **Responder en formato de conversación fluida y progresiva. No enviar listas largas ni toda la información de golpe.**\n   - Hacer preguntas para mantener la conversación natural.\n\nEjemplo Correcto:\n\n**Cliente:** \"Quiero hacerme un blanqueamiento dental.\"\n\n**Agente:** \"¡Buena elección! El blanqueamiento ayuda a mejorar el tono de los dientes y eliminar manchas. ¿Te gustaría saber más sobre cómo funciona o prefieres que te dé detalles sobre los precios y opciones?\"\n\nEjemplo Incorrecto:\n\n**Agente:** \"El blanqueamiento dental es un procedimiento en el que se usa un gel especial para aclarar el color de los dientes. Tenemos diferentes opciones, incluyendo blanqueamiento en clínica con luz LED y kits para casa. El precio depende de la opción que elijas, y el proceso puede durar entre 60 y 90 minutos...\" (Demasiada información de golpe.)\n\n### 4. Solicitud de Datos del Cliente\n   - Antes de continuar con cualquier acción (como verificar disponibilidad o agendar), solicitar al cliente:\n     - Nombre completo\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n   - **Una vez recibidos estos datos, registrarlos inmediatamente en el CRM utilizando la tool Agente_CRM_Clinica.**\n   - IMPORTANTE: No informar al cliente que se ha registrado en el sistema, solo continuar con el flujo normal de conversación.\n\n### 5. Gestión de Citas\n   - **No se podrá agendar una cita si no se tienen todos los datos del cliente:**\n     - Nombre completo\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n     - Fecha y hora confirmada\n   - Si falta algún dato, solicitarlo antes de proceder con el agendamiento.\n   - Si el cliente desea agendar, modificar o cancelar una cita, indicarle que se verificará la disponibilidad y utilizar la tool **Agente_de_Calendario** para gestionar la solicitud.\n   - **Cuando un cliente pregunte por disponibilidad:**\n     - Preguntar primero qué día le vendría bien.\n     - Luego, preguntar si prefiere por la mañana o por la tarde.\n     - Ofrecer solo **dos o tres opciones de horarios concretos**, en lugar de listas completas.\n     - Preguntar si alguno de los horarios le va bien. Si no, ofrecer otra alternativa hasta encontrar un horario adecuado.\n     - **Si el cliente solicita una hora específica, utilizar la tool de *Agente_de_calendario para verificar si está libre antes de responder.**\n     - Si la hora está disponible, confirmarla inmediatamente al cliente.\n     - Si no está disponible, sugerir una alternativa cercana.\n     - **Asegurar que la zona horaria utilizada para todas las verificaciones de disponibilidad sea Europa/Madrid (GMT+1).**\n   - **Si por algún motivo hay un error en la verificación o gestión de la cita, en lugar de decirle al cliente que contacte con el Agente_de_Calendario, proporcionarle el número de contacto de la clínica para que pueda llamar y confirmar su cita personalmente: 932259854.**\n\nEjemplo de Conversación Correcta:\n\n**Cliente:** \"¿Cuándo podría hacerme un blanqueamiento?\"\n\n**Agente:** \"Podemos verlo ahora mismo. ¿Te iría bien la próxima semana o prefieres otra fecha?\"\n\n**Cliente:** \"La próxima semana.\"\n\n**Agente:** \"Genial. ¿Prefieres en la mañana o en la tarde?\"\n\n**Cliente:** \"Por la tarde.\"\n\n**Agente:** \"Te puedo ofrecer el miércoles a las 16:00 o el viernes a las 17:30. ¿Te va bien alguno?\"\n\n### 6. Registro y Actualización de Visitas\n   - Cuando un cliente haya agendado una cita (validado por el **Agente_de_Calendario**), actualizarlo en el CRM usando la tool **Agente_de_Calendario** con:\n     - Nombre del paciente\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n     - Fecha y hora de la cita\n     - Estado: \"Cita Agendada\"\n     - **Doctor asignado:** Para determinar el doctor correspondiente, verificar el servicio y la hora de la cita con la tool **Horarios_doctores_clinica** y asignar el doctor adecuado.\n   - Enviar una confirmación al correo del cliente con los detalles de su cita, incluyendo el doctor asignado utilizando la tool *Gmail*\n\n### 7. Notificaciones con la tool de Gmail\n   - Enviar un correo automático al equipo de ventas de la clínica **contacto.adrianmartinez@gmail.com** cuando un nuevo lead se registre o cuando una visita sea confirmada.\n   - Enviar un correo electrónico al cliente cuando haya agendado su visita con el resumen de su cita con la tool de Gmail\n\n## Reglas Generales\n- **Siempre mantener la conversación fluida y amigable.**\n- No enviar listas largas de horarios o información técnica de golpe.\n- No informar al cliente cuando se registre en el CRM o se realicen acciones internas.\n- Solo comunicar cuando una cita haya sido agendada exitosamente.\n- **Las opciones de horarios deben presentarse de forma conversacional y limitada a dos o tres opciones.**\n- **Verificar siempre que las citas se programen en la zona horaria correcta: Europa/Madrid (GMT+1).**\n- Garantizar que toda la información del CRM esté actualizada y organizada.\n\n**Objetivo:** Guiar la conversación de manera natural y optimizar la experiencia del cliente, asegurando que cada interacción sea fluida y personalizada.\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -1100,
+        1400
+      ],
+      "id": "cfb46525-184d-441e-bae1-305f246234ed",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1680,
+        1840
+      ],
+      "id": "552b5d3e-7d1b-4edc-bf2a-f070e00c0426",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 50
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1520,
+        1900
+      ],
+      "id": "a3bed71d-1461-460d-ae22-beb4f9d047a9",
+      "name": "Window Buffer Memory1"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', `Deberás construir el HTML del mensaje para que quede bonito y bien organizado\n\nDeberás enviarle también la dirección de la clínica`, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -1320,
+        1920
+      ],
+      "id": "867f0e8b-6135-4e60-98be-21be36ac6659",
+      "name": "Gmail2",
+      "webhookId": "1b57e585-5acb-415c-a317-9d2e3dee635a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', ``, 'number') }}",
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -1200,
+        1920
+      ],
+      "id": "2e85b00f-c5dd-41b7-a8e6-c635ddbf0fbb",
+      "name": "Gmail3",
+      "webhookId": "e7025802-a744-45b6-b04c-410802fc63c9",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Agente_de_calendario",
+        "description": "Utilizará esta tool para obtener cualquier información del calendario, horarios disponibles, citas agendadas, eliminar o añadir citas. ",
+        "workflowId": {
+          "__rl": true,
+          "value": "Zl1beuDQZNbnZE5L",
+          "mode": "list",
+          "cachedResultName": "Agente Calendario - Clinica"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        -700,
+        1880
+      ],
+      "id": "171fa5e5-aba3-45ea-9b43-69207094d11d",
+      "name": "Agente de Calendario1"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "1TFGxKY6dodgl201PChmNHoRL0JzcrlSyvW5UVYujieU"
+      },
+      "type": "n8n-nodes-base.googleDocsTool",
+      "typeVersion": 2,
+      "position": [
+        -1040,
+        1920
+      ],
+      "id": "f178c14f-afe5-49a1-88f9-55fdd6adbb09",
+      "name": "Info_clinica1",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "rSCzk13TMRoydT9g",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Agente_CRM_Clinica",
+        "description": "Llama a este Agente si necesitas información de los servicios, horarios de visita disponibles, doctores, registrar algun nuevo lead o anotar una nueva visita confirmada",
+        "workflowId": {
+          "__rl": true,
+          "value": "8aNtKrLb5PkT6Ljr",
+          "mode": "list",
+          "cachedResultName": "Agente CRM - Clinica"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        -900,
+        1920
+      ],
+      "id": "e8f2cd4e-c9bc-43a3-b12d-1594b4592dc4",
+      "name": "Agente CRM Clinica1"
+    },
+    {
+      "parameters": {
+        "public": true,
+        "mode": "webhook",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1480,
+        1400
+      ],
+      "id": "b3b0862c-9fa3-476b-9b95-de0b0e8c1d4c",
+      "name": "When chat message received",
+      "webhookId": "2083fbbd-988d-43e0-b1c0-a7345f99020d"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fcd5ad2d-6e28-4f7e-b7ee-11888215972c",
+              "name": "text",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -620,
+        -260
+      ],
+      "id": "a0cafbce-4e64-4e4c-8033-9bdd120d19eb",
+      "name": "Audio_Transcrito"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "={{ $('Numero').item.json.Numero }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        440
+      ],
+      "id": "c17465dc-3154-4173-8bcf-d2d88b41acfc",
+      "name": "Borrar imagen",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('Numero').item.json.Numero }}",
+        "messageData": "={{ $('Set \\'Text\\'').item.json.values()[0] }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        -40
+      ],
+      "id": "02228f58-600c-4175-8c71-568af1f96404",
+      "name": "Guardar mensaje",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "Respuesta obtenida",
+        "key": "={{ $('Numero').item.json.Numero }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        120,
+        -40
+      ],
+      "id": "b06207d2-59df-4ff4-b2de-14235a01636d",
+      "name": "Recuperar mensajes",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -200,
+        -40
+      ],
+      "id": "53f64b3f-b2d5-496f-9e16-dfcb4f1f512f",
+      "name": "Wait",
+      "webhookId": "238db8f2-6f61-4145-8beb-1aec5c3782d5"
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('Numero').item.json.Numero }}",
+        "messageData": "={{ $('Audio_Transcrito').item.json.values()[0] }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        -260
+      ],
+      "id": "cce4b421-5a4e-4edd-81c0-58e303fa814c",
+      "name": "Guardar mensaje1",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -200,
+        -260
+      ],
+      "id": "91af7a0d-495f-4c50-917e-5f70e8d7a826",
+      "name": "Wait1",
+      "webhookId": "238db8f2-6f61-4145-8beb-1aec5c3782d5"
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('Numero').item.json.Numero }}",
+        "messageData": "={{ $('Imagen_Transcrita').item.json.text }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        180
+      ],
+      "id": "f2ce90c0-24df-49d7-9c34-90ccc0a8431b",
+      "name": "Guardar mensaje2",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -200,
+        180
+      ],
+      "id": "b47b863b-ea4c-44ca-9a7a-4b1fed0a93ed",
+      "name": "Wait2",
+      "webhookId": "238db8f2-6f61-4145-8beb-1aec5c3782d5"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fcd5ad2d-6e28-4f7e-b7ee-11888215972c",
+              "name": "text",
+              "value": "={{ $json.content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -620,
+        180
+      ],
+      "id": "a38ba1a6-b01f-4d42-81a4-3034761f9434",
+      "name": "Imagen_Transcrita"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "85067916-af72-44a6-90a8-cbeaa0b4a4b8",
+              "name": "Numero",
+              "value": "={{ $json.contacts[0].wa_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1640,
+        -40
+      ],
+      "id": "e78a5d29-8a79-42d2-a7bc-a8db1041fcc2",
+      "name": "Numero"
+    }
+  ],
+  "pinData": {
+    "WhatsApp Trigger": [
+      {
+        "json": {
+          "messaging_product": "whatsapp",
+          "metadata": {
+            "display_phone_number": "15551607071",
+            "phone_number_id": "533381876531896"
+          },
+          "contacts": [
+            {
+              "profile": {
+                "name": "Fran"
+              },
+              "wa_id": "56987482747"
+            }
+          ],
+          "messages": [
+            {
+              "from": "56987482747",
+              "id": "wamid.HBgLNTY5ODc0ODI3NDcVAgASGBQzRjNBNjk3RjIyQTUyOTMyNEM2NwA=",
+              "timestamp": "1740714337",
+              "type": "audio",
+              "audio": {
+                "mime_type": "audio/ogg; codecs=opus",
+                "sha256": "QEhVheOEDNESBwkQwkNRJpbNdDvVnCGZn0W2+85/DmE=",
+                "id": "1498897848155428",
+                "voice": true
+              }
+            }
+          ],
+          "field": "messages"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-26T07:17:34.787Z",
+      "updatedAt": "2025-02-27T17:47:03.175Z",
+      "id": "UFH6BosTRpNyXl3E",
+      "name": "💬🟢WhatsApp"
+    }
+  ],
+  "triggerCount": 2,
+  "updatedAt": "2025-03-09T17:09:17.000Z",
+  "versionId": "c3361b91-abd2-4798-af99-d050c57ed97a"
+}
