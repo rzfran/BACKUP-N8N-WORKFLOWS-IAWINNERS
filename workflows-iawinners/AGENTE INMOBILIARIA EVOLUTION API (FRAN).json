@@ -1,0 +1,1346 @@
+{
+  "active": false,
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "No hacer nada",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Obtener datos de usuario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT4o mini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AGENTE CON PROMPT",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener datos de usuario": {
+      "main": [
+        [
+          {
+            "node": "AGENTE CON PROMPT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AGENTE CON PROMPT",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Vector Store Tool",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Tool",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Detalles_Propiedades": {
+      "ai_tool": [
+        [
+          {
+            "node": "AGENTE CON PROMPT",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AGENTE CON PROMPT",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AGENTE CON PROMPT": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Hay URL?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Separar Output en partes2": {
+      "main": [
+        [
+          {
+            "node": "Recorrer mensajes 1 a 1 Texto e Imagen1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recorrer mensajes 1 a 1 Texto e Imagen1": {
+      "main": [
+        [
+          {
+            "node": "Flujo terminado2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Detectar URL en el mensaje1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Detectar URL en el mensaje1": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "OpenAI3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respuesta de mensaje único3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hay URL?1": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "Separar Output en partes2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AGENTE CON PROMPT",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "No hacer nada1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "No hacer nada2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ver_Disponibilidad": {
+      "ai_tool": [
+        [
+          {
+            "node": "AGENTE CON PROMPT",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agendar_Reunion": {
+      "ai_tool": [
+        [
+          {
+            "node": "AGENTE CON PROMPT",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Respuesta de Texto + Imagen1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respuesta de Texto + Imagen1": {
+      "main": [
+        [
+          {
+            "node": "Recorrer mensajes 1 a 1 Texto e Imagen1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respuesta de mensaje único3": {
+      "main": [
+        [
+          {
+            "node": "Recorrer mensajes 1 a 1 Texto e Imagen1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-26T15:18:06.045Z",
+  "id": "CQ3QCoQ9KUXUImwu",
+  "meta": null,
+  "name": "AGENTE INMOBILIARIA EVOLUTION API (FRAN)",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "035319c1-6705-49af-975a-1db74e775aa9",
+              "leftValue": "={{ $json.body.data.key.fromMe }}",
+              "rightValue": "1",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "7fb8e59e-fc64-4673-98df-e8be6eb0b446",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2840,
+        420
+      ],
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini-2024-07-18",
+        "options": {
+          "temperature": 0.5
+        }
+      },
+      "id": "dde2e96f-7b90-4cc3-bdcb-042a392b6699",
+      "name": "GPT4o mini",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        -2440,
+        720
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ba8e7056-fa12-4aa5-9446-5fc721555b95",
+              "name": "Numero",
+              "value": "={{ $json.body.data.key.remoteJid.substring(0,11) }}",
+              "type": "string"
+            },
+            {
+              "id": "6aec485e-fbf8-4d2f-b2fe-3da3cec4e34a",
+              "name": "Mensaje",
+              "value": "={{ $json.body.data.message.conversation }}",
+              "type": "string"
+            },
+            {
+              "id": "a3fc82a6-7790-403c-91ae-82777df4bd1a",
+              "name": "Fecha de mensaje",
+              "value": "={{ $json.body.date_time }}",
+              "type": "string"
+            },
+            {
+              "id": "0309a963-6a43-4c6f-a1d6-f64c8efafafe",
+              "name": "Nombre",
+              "value": "={{ $json.body.data.source }}",
+              "type": "string"
+            },
+            {
+              "id": "33d865d9-2c44-4537-a549-06ab267fd914",
+              "name": "ID",
+              "value": "={{ $json.body.data.key.remoteJid }}",
+              "type": "string"
+            },
+            {
+              "id": "6c3a44e5-d425-4bee-9c39-7ff9b2ae3c9b",
+              "name": "body.data.key.fromMe",
+              "value": "={{ $json.body.data.key.fromMe }}",
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b8bc54c1-2493-49b5-b658-20ec042b67d5",
+      "name": "Obtener datos de usuario",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2560,
+        520
+      ],
+      "executeOnce": false
+    },
+    {
+      "parameters": {},
+      "id": "7155ee44-12ed-4779-9f44-a14fd3727288",
+      "name": "No hacer nada",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -2560,
+        320
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "name": "bbdd_vectorizada",
+        "description": "Toda la información de la inmobiliaria",
+        "topK": 20
+      },
+      "id": "97d975ac-b195-4eaa-8d7e-2b22474c0eb8",
+      "name": "Vector Store Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1,
+      "position": [
+        -2260,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "id": "1b729f6f-a431-41b8-ae27-c5ee7af7030e",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        -1960,
+        900
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "88c12b1d-1d68-4b96-84f7-8705cd509d23",
+      "name": "Embeddings OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1,
+      "position": [
+        -1960,
+        1080
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "inmobiliaria",
+          "mode": "list",
+          "cachedResultName": "inmobiliaria"
+        },
+        "options": {
+          "pineconeNamespace": "Ejemplo"
+        }
+      },
+      "id": "b3b0423c-c6b2-4b35-ade4-f0793c0e909e",
+      "name": "Pinecone Vector Store",
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1,
+      "position": [
+        -2240,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appdnBlz3ZaKQigvU",
+          "mode": "list",
+          "cachedResultName": "Propiedades Andes Elite Properties",
+          "cachedResultUrl": "https://airtable.com/appdnBlz3ZaKQigvU"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl2thcv2KWXGDbCC",
+          "mode": "list",
+          "cachedResultName": "Tabla Propiedades",
+          "cachedResultUrl": "https://airtable.com/appdnBlz3ZaKQigvU/tbl2thcv2KWXGDbCC"
+        },
+        "returnAll": false,
+        "limit": 3,
+        "options": {
+          "fields": [
+            "Nombre de Propiedad",
+            "Disponibilidad",
+            "Precio",
+            "Ubicación",
+            "Habitaciones",
+            "Baños",
+            "Descripción",
+            "Imagen"
+          ]
+        }
+      },
+      "id": "2d993325-dda3-41b3-a993-6cd66c48c1c6",
+      "name": "Detalles_Propiedades",
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -1460,
+        720
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "c0cf0b52-8280-40d5-89be-cf644e4fd28a",
+      "name": "Calculator",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        -1920,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.Mensaje }}",
+        "options": {
+          "systemMessage": "=#Rol\nEres el Asistente de Ventas de Andes Elite Properties, una inmobiliaria de lujo especializada en ofrecer propiedades exclusivas y servicios de alto nivel. Tu objetivo es brindar una atención de lujo a los clientes, guiándolos en una conversación amable y perspicaz para comprender sus preferencias y cubrir sus necesidades inmobiliarias de forma personalizada.\n\n\n#Interacción Inicial\nCuando inicies una conversación:\n\n-Si se detecta que ya se ha hablado con el mismo cliente antes deberás llamarlo por su nombre y no volver a preguntarlo\n-Evita saludar muchas veces a un mismo cliente. Limitate a saludar 1 vez por cliente que recuerdes\n-Si es primera vez que hablas con ese cliente debes solicitar el nombre del cliente para personalizar la atención\n-Utiliza respuestas claras, cortas y emoticonos relacionados con el inmobiliarias de lujo.\n-Indaga sobre el presupuesto, gustos, motivos de ubicación, cantidad de habitaciones y baños deseados para evaluar si es un cliente potencial según los criterios de la inmobiliaria. Para esto debes ser sutil e ir poco a poco llevando la conversación para sacar toda esta información sin que el cliente se de cuenta\n-Usar la Tool [Detalles_Propiedades] para buscar propiedades y mostrar a los clientes\n\n\n#Funciones\n-Obtener información de los servicios de la empresa llamando a la Tool [Vector Store Tool]\n-Obtener información de propiedades disponibles en la inmobiliria llamando a la Tool [Detalles_Propiedades]\n-Llamar a la Tool [Horarios_Visita] par obtener información sobre horarios de visita disponibles \n-Llamar a la Tool [Detalles_Propiedades] para recomendar la mejor opcion de propiedad al cliente\n\n\n\n#Agendar reunión\n1.- Para agendar reunión o visita a alguna propiedad debes llamar a la Tool [Agendar_Reunion]\n2.- Recuerda que la fecha y hora local actual en la que se agendan las reuniónes es la de Santiago de Chile {{$now}}\n3.- Consultar al cliente cuándo quiere agendar la visita o reunión y almacenar esa informacion en las siguientes variables:\n\n{\n\t\"Nombre cliente\": \"nombre_cliente (si sabes el nombre del cliente autocompleta esta información)\",\n    \"Fecha_inicio\": \"fecha inicio reunión en formato global yyyy-mm-ddThh:mm:ssZ\",\n    \"Fecha_final\": \"La misma fecha de inicio pero sumar 1 hora adicional, ya que la durarición de la visita a propiedades es de 1 hora y para reuniones es de 30 minutos\",\n    \"Correo\": \"correo_cliente\",\n    \"motivo agendamiento\": \"motivo_agendamiento\"\n}\n\n4.- Una vez almacenada la información verifica disponibilidad para agendar esa reunión o visita llamando a la Tool [Ver_Disponibilidad]. Si la fecha en la que el cliente necesita agendar la visita o reunión se encuentra ocupada, deberás avisarle al cliente que no se encuentra esa hora disponible y en su lugar le recomiendas una hora cercana que sí esté disponible\n\n5.- Si existe disponibilidad agendar la reunión llamando a la Tool [Agendar_Reunion] enviando nuevamente los siguientes datos usando la hora y fecha actual {{$now}}:\n\n{\n\t\"Nombre cliente\": \"nombre_cliente (si sabes el nombre del cliente autocompleta esta información)\",\n    \"Fecha_inicio\": \"fecha_inicio_reunión en formato compatible com Google Calendar\",\n    \"Fecha_final\": \"La misma fecha de inicio pero sumar 1 hora adicional, ya que la durarición de la visita a propiedades es de 1 hora y para reuniones es de 30 minutos\",\n    \"Correo\": \"correo_cliente\",\n    \"motivo agendamiento\": \"motivo_agendamiento\"\n}\n\n6.- Recuerda que si te falta algun dato para agendar la reunión debes consultarlo al usuario y guardarlo en la variable correspondiente\n\n#Notas\n-Todos los precios de servicios y propiedades están en dólares, pero podemos hacer la conversión a pesos chilenos o UF utilizando la Tool [Calculator]. Para esto debes preguntar al cliente qué tipo de moneda le gustaría usar y hacer la conversión correspondiente\n\n#Output\n-Toda pregunta o consulta de parte del cliente debe ser respondida solo con información real llamando a la Tool [Vector Store Tool]\n-Utilizar emojis relacionados con la inmobiliaria en cada respuesta\n-Utilizar un lenguaje más natural de día a día con un tono agradable y profesional que haga al cliente tener confianza en ti como asistente"
+        }
+      },
+      "id": "1029f217-0b43-477c-8a0d-045ba32775e8",
+      "name": "AGENTE CON PROMPT",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        -2120,
+        520
+      ],
+      "alwaysOutputData": false,
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e8e12d55-1c5f-4960-a31b-95ce251b7106",
+              "name": "Output Agente",
+              "value": "={{ $('AGENTE CON PROMPT').item.json.values()[0] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1400,
+        520
+      ],
+      "id": "22057cc7-5caa-4641-94f0-9d01c9c5a9b3",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini-2024-07-18",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI-2024-07-18"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "Tu trabajo es mejorar la estructura del mensaje quitando símbolos como \"#\",\"**texto**\" o \"![texto].\n\nEjemplo de como debería quedar el mensaje:\n\n*Residencia Viñedos del Maipo* \n- *Nombre* : Villa Entre Valles\n- *Disponibilidad* : Inmediata\n- *Habitaciones* : 3\n- *Baños* : 2\n- *Precio* : $200,000\n- *Ubicación* : Valle de Colchagua",
+              "role": "system"
+            },
+            {
+              "content": "=Mejora el siguiente mensaje: {{$('If2').last().json.values()[0]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        500,
+        180
+      ],
+      "id": "afd7ca22-9e88-4607-bb04-bad2fbd05e56",
+      "name": "OpenAI3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://evolutionapi.aittom.com/message/sendText/mi-numero",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "F67BBACFDE04-409D-9A09-EB53D637F4BB"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $('Obtener datos de usuario').item.json.Numero }}"
+            },
+            {
+              "name": "text",
+              "value": "={{ $('Edit Fields').item.json.mensaje }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "id": "f0b57534-6045-4166-8e0e-9ca5fdd048aa",
+      "name": "Respuesta de mensaje único4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2760,
+        920
+      ],
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener el texto de la variable de manera dinámica\nconst inputText = items[0].json[Object.keys(items[0].json)[0]]; // Accede al primer campo dinámicamente\n\n// Expresión regular para detectar cualquier URL\nconst urlRegex = /(https?:\\/\\/[^\\s]+)/g;\n\n// Buscar la URL en el texto\nconst urls = inputText.match(urlRegex);\n\n// Si se encuentra al menos una URL\nif (urls && urls.length > 0) {\n    // Extraer el mensaje sin la URL\n    const message = inputText.replace(urls[0], '').trim(); // Elimina la primera URL del texto\n\n    // Retornar los resultados\n    return [\n        {\n            json: {\n                message: message,\n                url: urls[0] // La primera URL encontrada\n            }\n        }\n    ];\n} else {\n    // Si no se encontró ninguna URL, manejar el caso\n    return [\n        {\n            json: {\n                message: inputText, // Retornar el texto completo sin cambios\n                url: null\n            }\n        }\n    ];\n}"
+      },
+      "id": "e9950006-0bb6-47a4-908c-1e669b7b9305",
+      "name": "Detectar URL en el mensaje1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Accedemos al contenido de `Output Agente` directamente\nconst fullText = $json['Output Agente'];\n\n// Verificamos si `fullText` contiene los datos esperados\nif (!fullText) {\n    console.log('No se encontró el texto en la salida de \"Output Agente\". Verifica la estructura del JSON de salida.');\n    return [{ error: 'No se encontró el texto en la salida de \"Output Agente\".' }];\n}\n\n// Dividimos el texto en partes usando el salto de línea \"\\n\\n\" como separador\nconst propertiesArray = fullText.split(\"\\n\\n\");\n\n// Creamos un array de objetos para cada propiedad\nconst separatedProperties = propertiesArray.map((property, index) => {\n    return { [`property_${index + 1}`]: property };\n});\n\n// Devolvemos el array con las propiedades separadas\nreturn separatedProperties;"
+      },
+      "id": "e39e5ad5-2c41-4927-bc32-33409f9b0b17",
+      "name": "Separar Output en partes2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -480,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https:/evolutionapi.aittom.com/message/sendMedia/n4506",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "5FFEB26E03CD-48DE-8C1D-F3AB18022A48"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $('Obtener datos de usuario').last().json.values()[0] }}"
+            },
+            {
+              "name": "mediatype",
+              "value": "image"
+            },
+            {
+              "name": "mimetype",
+              "value": "image/png"
+            },
+            {
+              "name": "caption",
+              "value": "={{ $('Edit Fields1').item.json.values()[0] }}"
+            },
+            {
+              "name": "media",
+              "value": "={{ $('Edit Fields1').item.json.values()[1] }}"
+            },
+            {
+              "name": "fileName",
+              "value": "Imagem.png"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "id": "1443c738-9072-458b-b1f5-2d95cf52b24e",
+      "name": "Respuesta de Texto + Imagen1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        180
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "1805b96b-396d-4c0f-9e9b-fd3a0bd2a6f7",
+      "name": "Flujo terminado2",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "5180e721-b248-4a3e-819d-703e3c41c510",
+      "name": "Recorrer mensajes 1 a 1 Texto e Imagen1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -240,
+        300
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "59babff8-137e-4659-994c-c56fe80d6bc2",
+              "leftValue": "={{ $('Detectar URL en el mensaje1').item.json.values()[1] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        240,
+        300
+      ],
+      "id": "e21158ea-8a77-44fb-b63d-eb4b366d6806",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3e0aa757-4de8-492a-8412-f4603c4a1784",
+              "leftValue": "={{ $('Edit Fields2').item.json.values()[0] }}",
+              "rightValue": "https",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1220,
+        520
+      ],
+      "id": "27adab88-4dc9-40fd-be18-3ddd6650eb5b",
+      "name": "Hay URL?1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cf9f2548-053b-472f-b601-4e34ca31511c",
+              "name": "Output Agente",
+              "value": "={{ $('If3').item.json['Output Agente'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -720,
+        300
+      ],
+      "id": "2b0d07a6-3450-482c-a9f9-81838fbce3b8",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.ID}}",
+        "contextWindowLength": 1
+      },
+      "id": "26d0c2ef-953a-4271-b26f-9311fb205ece",
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.2,
+      "position": [
+        -2320,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.ID}}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryZep",
+      "typeVersion": 1.2,
+      "position": [
+        2500,
+        980
+      ],
+      "id": "fbdbf50e-adec-46b7-bdcc-2b1a522b659e",
+      "name": "Zep"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "inmobiliaria",
+        "options": {}
+      },
+      "id": "7742397f-7e1a-4e7c-a6c6-fd711dc348e0",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -3060,
+        420
+      ],
+      "webhookId": "d757ccb8-eaf7-43c7-9412-f9b45e79d5fc",
+      "notesInFlow": false
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini-2024-07-18",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI-2024-07-18"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Tu trabajo es mejorar la estructura del mensaje dejando el texto correctamente organizado, alineado y justificado.\n\n\n\nEn tus respuestas siempre responde SOLO con el mensaje mejorado SIN textos adicionales",
+              "role": "system"
+            },
+            {
+              "content": "=Mejora la estructura del siguiente mensaje: {{ $('If1').item.json['Output Agente'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        -700,
+        880
+      ],
+      "id": "eb7c690e-12ac-4bf7-bcd9-e44d10b8f7c8",
+      "name": "OpenAI"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://evolutionapi.aittom.com/message/sendText/n4506",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "5FFEB26E03CD-48DE-8C1D-F3AB18022A48"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $('Obtener datos de usuario').item.json.Numero }}"
+            },
+            {
+              "name": "text",
+              "value": "={{ $('If2').item.json.values()[0] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "74f6a0d8-a350-4eed-9883-8445f1a501e6",
+      "name": "Respuesta de mensaje único3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        420
+      ],
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {},
+      "id": "504ef4eb-8542-4a3e-bbdc-c4c1abcdc26f",
+      "name": "No hacer nada1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -700,
+        660
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "035319c1-6705-49af-975a-1db74e775aa9",
+              "leftValue": "={{ $('Webhook').last().json.body.data.key.fromMe}}",
+              "rightValue": "1",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "65115bc7-1281-4f1a-9966-6edda1d9fbe0",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1000,
+        760
+      ],
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "035319c1-6705-49af-975a-1db74e775aa9",
+              "leftValue": "={{ $('Webhook').last().json.body.data.key.fromMe}}",
+              "rightValue": "1",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "da64850a-a5ac-4582-830f-a675d2e0141c",
+      "name": "If3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1020,
+        300
+      ],
+      "executeOnce": false
+    },
+    {
+      "parameters": {},
+      "id": "8b7fe85e-a552-4478-bf79-25d344a515df",
+      "name": "No hacer nada2",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -720,
+        120
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-evolution-api.httpBin",
+      "typeVersion": 1,
+      "position": [
+        2500,
+        240
+      ],
+      "id": "d9d2efe2-85dc-493f-9187-ed07389ff161",
+      "name": "Evolution API1",
+      "credentials": {}
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-evolution-api.httpBin",
+      "typeVersion": 1,
+      "position": [
+        2720,
+        500
+      ],
+      "id": "41c53bb3-4d37-4023-8989-0557110972c8",
+      "name": "Evolution API2",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "name": "Ver_Disponibilidad",
+        "description": "Llama a esta Tool para ver disponibilidad horaria en el calendario para, posteriormente, agendar una reunión",
+        "workflowId": {
+          "__rl": true,
+          "value": "zQw7IRJ6OsAHcoXE",
+          "mode": "list",
+          "cachedResultName": "Workflow Ver Disponibilidad"
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\n\t\"Nombre cliente\": \"nombre_cliente\",\n    \"Fecha_inicio\": \"fecha_inicio reunión\",\n    \"Fecha_final\": \"fecha_final\",\n    \"Correo\": \"correo_cliente\",\n    \"motivo agendamiento\": \"motivo_agendamiento\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -1780,
+        720
+      ],
+      "id": "d37ecd9d-2edd-4dd3-994a-284d29881e07",
+      "name": "Ver_Disponibilidad"
+    },
+    {
+      "parameters": {
+        "name": "Agendar_Reunion",
+        "description": "Llama a esta Tool cuando hayas verificado la disponibilidad horaria y agendes la reunión o visita",
+        "workflowId": {
+          "__rl": true,
+          "value": "XCA6MRBdF2SHkz5n",
+          "mode": "list",
+          "cachedResultName": "Workflow Agendar Reunion"
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\n\t\"Nombre cliente\": \"nombre_cliente\",\n    \"Fecha_inicio\": \"fecha_inicio reunión\",\n    \"Fecha_final\": \"fecha_final\",\n    \"Correo\": \"correo_cliente\",\n    \"motivo agendamiento\": \"motivo_agendamiento\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -1620,
+        720
+      ],
+      "id": "3dbe09a4-d592-478c-a2bd-910722994939",
+      "name": "Agendar_Reunion"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-evolution-api.httpBin",
+      "typeVersion": 1,
+      "position": [
+        2500,
+        500
+      ],
+      "id": "0ac47b6c-ecf4-464e-b441-c7ce401e393f",
+      "name": "Evolution API",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a5377465-87f5-4271-8d8e-2b0cd0f8b164",
+              "name": "mensaje",
+              "value": "={{ $('OpenAI').item.json.message.values()[1] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -340,
+        880
+      ],
+      "id": "a5a0f028-f55a-4b01-94d9-d5371c9c59ea",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b4b47b6c-e9ae-4e88-bf32-1d93d96136e7",
+              "name": "mensaje",
+              "value": "={{ $('OpenAI3').item.json.message.values()[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "0bfe6b9b-91b4-4f2b-baa6-0aa127a512db",
+              "name": "url",
+              "value": "={{ $('If2').item.json.url }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        840,
+        180
+      ],
+      "id": "dfbdc6bd-f066-47f5-9988-683f4322ca4e",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://evolutionapi.aittom.com/message/sendText/n4506",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "5FFEB26E03CD-48DE-8C1D-F3AB18022A48"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $('Obtener datos de usuario').item.json.Numero }}"
+            },
+            {
+              "name": "text",
+              "value": "={{ $json.mensaje }}"
+            },
+            {
+              "name": "delay",
+              "value": "={{ 1000 }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -120,
+        880
+      ],
+      "id": "300bad70-17df-4aec-8f2c-e9d760b54523",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-26T07:16:45.007Z",
+      "updatedAt": "2025-02-26T07:16:53.420Z",
+      "id": "5XN4iFvQiP4gW0zh",
+      "name": "Agente IA 🤖"
+    },
+    {
+      "createdAt": "2025-02-26T07:17:34.787Z",
+      "updatedAt": "2025-02-27T17:47:03.175Z",
+      "id": "UFH6BosTRpNyXl3E",
+      "name": "💬🟢WhatsApp"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-08T20:29:00.000Z",
+  "versionId": "8f2f6049-b437-406d-9d12-840b2b53aaf0"
+}
