@@ -1,0 +1,377 @@
+{
+  "active": false,
+  "connections": {
+    "Cerebro": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Conocimiento": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Acción Correo": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Web": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SSE Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-10T11:44:05.035Z",
+  "id": "FYtGxBAG6bJi1MQL",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Ejemplo Agente de IA - Dibujo",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ]
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        0
+      ],
+      "id": "e96efb12-ec77-48de-9186-900077bee1e5",
+      "name": "WhatsApp Trigger",
+      "webhookId": "64066de6-5433-4ba6-8034-be7a7a3d95d4",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "wNLNSjzYJjZWp1k5",
+          "name": "WhatsApp OAuth account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        320,
+        -100
+      ],
+      "id": "10ce8218-e047-4c48-96a8-e3a7c1959944",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        120,
+        320
+      ],
+      "id": "edb488ab-3694-4159-adda-e26c789aa5c7",
+      "name": "Cerebro",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        300,
+        320
+      ],
+      "id": "e481933f-61e1-42a7-a4bf-3ebaa0ebd35d",
+      "name": "Memoria"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg",
+          "mode": "list",
+          "cachedResultName": "CRM - Clinica Dental",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 976062489,
+          "mode": "list",
+          "cachedResultName": "Servicios Clinica",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1re5JpCW5dxhSJlWGt5SPMWAISyX2OCNuyr8039ZICcg/edit#gid=976062489"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        520,
+        300
+      ],
+      "id": "4769a217-307f-4f85-acfb-11fc74aa4c07",
+      "name": "Conocimiento",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        720,
+        300
+      ],
+      "id": "06c73d43-d2d3-48b0-a094-bbb716c2c17b",
+      "name": "Acción Correo",
+      "webhookId": "d438c359-2151-467b-97ef-60689d44d0e6",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "589015034296503",
+        "recipientPhoneNumber": "edfeede",
+        "textBody": "edede",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        960,
+        -160
+      ],
+      "id": "bb45ff0c-8360-497d-92ad-ce2acf45adf5",
+      "name": "WhatsApp Business Cloud",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "oqcZcWeo4OBtlCnZ",
+          "name": "WhatsApp fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## INPUT",
+        "height": 540
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        -260
+      ],
+      "id": "7236899a-986b-414a-be22-168a4dc04a46",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -120,
+        140
+      ],
+      "id": "c48b011b-5d9d-4ce9-a38c-3a592e09a2f7",
+      "name": "Web",
+      "webhookId": "b1296948-5912-49dd-ace5-3ce5dfea8f0a"
+    },
+    {
+      "parameters": {
+        "content": "## Inteligencia ",
+        "height": 260,
+        "width": 160,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        80,
+        200
+      ],
+      "id": "4fb5d8a0-96dd-44c5-b8a8-74205178641a",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Recuerdos",
+        "height": 260,
+        "width": 160,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        200
+      ],
+      "id": "31d64b8a-669c-409f-8882-96b8ca8ca04d",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "Conocimientos de la empresa",
+        "height": 260,
+        "width": 160,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        480,
+        200
+      ],
+      "id": "ff5d836e-713e-4e5b-876b-32da481f1fa1",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Acciones",
+        "height": 260,
+        "width": 160,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        680,
+        200
+      ],
+      "id": "7d2ec552-7d4e-4fd6-a220-dfd563c8da7d",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## OUTPUT",
+        "height": 540
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        900,
+        -260
+      ],
+      "id": "f3222163-bd99-44d5-a348-7d1734e0e92c",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.sseTrigger",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        -180
+      ],
+      "id": "d402d490-4d49-4032-babe-d0403fc727e8",
+      "name": "SSE Trigger"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-10T11:44:05.035Z",
+  "versionId": "be4892ab-b091-4ffc-88df-1664db8f76e5"
+}
