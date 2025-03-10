@@ -1,0 +1,1504 @@
+{
+  "active": false,
+  "connections": {
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Limpiar base datos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail3": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Visitas_horarios1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Comerciales1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Programar_visita1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribir1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Auto-fixing Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Generador de respuestas1",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Auto-fixing Output Parser1",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait ": {
+      "main": [
+        [
+          {
+            "node": "Enviar_Respuesta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Parte ": {
+      "main": [
+        [
+          {
+            "node": "Wait 4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 4": {
+      "main": [
+        [
+          {
+            "node": "Enviar_Respuesta2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generador de respuestas1": {
+      "main": [
+        [
+          {
+            "node": "Enviar_Respuesta1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Wait ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If Parte ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Auto-fixing Output Parser1",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Generador de respuestas1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Propiedades1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Tipo_Mensaje",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analizar_Imagen": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transformar_a_JPG": {
+      "main": [
+        [
+          {
+            "node": "Analizar_Imagen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transformar_a_mp3": {
+      "main": [
+        [
+          {
+            "node": "Transcribir1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Traer_Base64": {
+      "main": [
+        [
+          {
+            "node": "Transformar_a_mp3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ordenar_Info_1": {
+      "main": [
+        [
+          {
+            "node": "Guardar mensaje",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tipo_Mensaje": {
+      "main": [
+        [
+          {
+            "node": "Transformar_a_JPG",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Traer_Base64",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ordenar_Info_1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar mensaje": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Recuperar mensajes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recuperar mensajes": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Limpiar base datos": {
+      "main": [
+        [
+          {
+            "node": "Generador de respuestas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar_Respuesta1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar_Respuesta": {
+      "main": [
+        [
+          {
+            "node": "If Parte ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar_Respuesta2": {
+      "main": [
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-25T15:26:05.518Z",
+  "id": "vTaotUEigrN2kDvp",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente Inmobiliaria - WhatsApp No Oficial COPIA (FRAN)",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['Respuesta obtenida'][0] }}",
+        "options": {
+          "systemMessage": "=Eres el asistente de Inmobiliaria Inteligente y su CEO se llama Adrian\n\nCuando se agende una visita avisa siempre por slack a los comerciales, pero no lo incluirás en el mensaje de output ni dirás que ya has avisado a los comerciales asignados.\n\n#Importante:\n\nNo le solicitarás el número de whatsapp al cliente. Este es el número de whatsapp del cliente para que lo guardes {{ $('Webhook').item.json.body.data.key.values()[0].slice(0,11) }}\n\nNo le preguntarás al cliente que comercial prefiere, decidirás tu el comercial asignado para cada visita revisando en la tool [comerciales]\n\nCuando hayas agendado la visita le enviarás la confirmación por correo al cliente utilizando la tool de [gmail]\n\nEs posible que recibás descripciones de imagenes que muestran pisos, deberás analizar si esos pisos estan en las propiedades que tenemos en la inmobiliaria con la tool de [propiedades]. \n\nEn caso de no estar le dirás que esta propiedad no es nuestra pero procederás a ofrecerle otra propiedad que tengamos en la tool [propiedades] que tenga características parecidas. En caso de si estar procederás a conseguir una visita."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -400,
+        1440
+      ],
+      "id": "102e99e3-0f39-4460-84e6-71b6daca5d88",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -700,
+        1800
+      ],
+      "id": "9a347717-24d8-470a-96b0-7fb8e345c932",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Ordenar_Info_1').item.json.values()[0] }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -540,
+        1800
+      ],
+      "id": "b8fe4e7d-cef8-4d2f-a679-0a3fd5ab4d27",
+      "name": "Window Buffer Memory1"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', `Deberás construir el HTML del mensaje para que quede bonito y bien organizado`, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -420,
+        1800
+      ],
+      "id": "feb9d231-93da-40e5-be03-2e3f329dc0e1",
+      "name": "Gmail2",
+      "webhookId": "268d75ad-72df-4d9e-97ab-94ac885e461e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', ``, 'number') }}",
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -300,
+        1800
+      ],
+      "id": "47b361e6-db50-476e-88ba-02c2015ef9cb",
+      "name": "Gmail3",
+      "webhookId": "e106f1e5-9fd7-4b88-922a-5f6e712547ca",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90",
+          "mode": "list",
+          "cachedResultName": "CRM Inmobiliaria",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 538326816,
+          "mode": "list",
+          "cachedResultName": "Visitas Horarios",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90/edit#gid=538326816"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        -60,
+        1800
+      ],
+      "id": "172c53cc-d634-46f2-b567-a12dd82cf2a6",
+      "name": "Visitas_horarios1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90",
+          "mode": "list",
+          "cachedResultName": "CRM Inmobiliaria",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2089378896,
+          "mode": "list",
+          "cachedResultName": "Comerciales",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90/edit#gid=2089378896"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        60,
+        1800
+      ],
+      "id": "8f9259a7-ccf4-4aed-bd6e-56196fcd21bd",
+      "name": "Comerciales1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90",
+          "mode": "list",
+          "cachedResultName": "CRM Inmobiliaria",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1126580900,
+          "mode": "list",
+          "cachedResultName": "Calendario de citas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90/edit#gid=1126580900"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre cliente": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_cliente', `Aquí añadiras el nombre del cliente interesado en visitar la propiedad`, 'string') }}",
+            "Correo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Correo', `Aquí añadiras el correo del cliente interesado en visitar la propiedad`, 'string') }}",
+            "Whats app": "={{ $('WhatsApp Trigger1').item.json.contacts[0].wa_id }}",
+            "Comercial Asignado": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Comercial_Asignado', `Aquí añadirás el comercial asignado a esa visita del piso`, 'string') }}",
+            "Piso de interés": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Piso_de_inter_s', `Aquí añadirás el piso que visitará el cliente`, 'string') }}",
+            "Día de la visita": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('D_a_de_la_visita', `Aquí añadirás el dia de la visita\n\nFormato: Miércoles 05 febrero 15:00pm`, 'string') }}"
+          },
+          "matchingColumns": [
+            "Nombre cliente"
+          ],
+          "schema": [
+            {
+              "id": "Nombre cliente",
+              "displayName": "Nombre cliente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Whats app",
+              "displayName": "Whats app",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Comercial Asignado",
+              "displayName": "Comercial Asignado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Piso de interés",
+              "displayName": "Piso de interés",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Día de la visita",
+              "displayName": "Día de la visita",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        200,
+        1800
+      ],
+      "id": "a50fe9da-03ac-46c5-bbba-2d9d653c9900",
+      "name": "Programar_visita1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C08DT6K76H4",
+          "mode": "list",
+          "cachedResultName": "comerciales-inmobiliaria-inteligente"
+        },
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_Text', ``, 'string') }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slackTool",
+      "typeVersion": 2.3,
+      "position": [
+        340,
+        1800
+      ],
+      "id": "afbf185f-9b8c-437d-9ab9-155a10125cbc",
+      "name": "Slack1",
+      "webhookId": "59752dc9-5b6f-40ef-badb-f85bb8e5b737",
+      "credentials": {
+        "slackApi": {
+          "id": "OFxJ1QfJagcb67g0",
+          "name": "Slack account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "=audio_data",
+        "options": {}
+      },
+      "id": "5bb28284-713a-475a-af7c-75d4d7239cdc",
+      "name": "Transcribir1",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        -1740,
+        1620
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "prompt": "=Instructions:\n--------------\n{instructions}\n--------------\nCompletion:\n--------------\n{completion}\n--------------\n\nAbove, the Completion did not satisfy the constraints given in the Instructions.\nError:\n--------------\n{error}\n--------------\n\nPlease try again. Please only respond with an answer that satisfies the constraints laid out in the Instructions:"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+      "typeVersion": 1,
+      "position": [
+        740,
+        1660
+      ],
+      "id": "ebe78ebd-4cc4-4875-80be-8317b5a1efb7",
+      "name": "Auto-fixing Output Parser1"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"response\": {\n    \"parte1\": \"Parte uno de la respuesta\",\n    \"parte2\": \"Parte dos de la respuesta\",\n    \"parte3\": \"Parte tres de la respuesta (opcional).\"   \n  }\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        960,
+        1860
+      ],
+      "id": "ca1142ff-7878-42a6-acaa-62e991b043aa",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1780,
+        1440
+      ],
+      "id": "7fd244e1-ca94-4ebf-9fda-c57597fc2b00",
+      "name": "Wait ",
+      "webhookId": "bbfea2ad-d350-42a0-b38b-4043b8486d80"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6c883ec3-6f23-4834-b4fc-a8f7ff5eacc5",
+              "leftValue": "={{ $('Generador de respuestas1').item.json.output.response.parte3 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2120,
+        1640
+      ],
+      "id": "0d760328-ebe9-4e3e-afe3-06a7406c5b44",
+      "name": "If Parte "
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2280,
+        1440
+      ],
+      "id": "62fe5610-8c16-4f61-94c4-5b4c6f30e394",
+      "name": "Wait 4",
+      "webhookId": "6c29c6bb-b148-4e38-b05a-c627d86b4d73"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2460,
+        1660
+      ],
+      "id": "ae57d7d6-a081-4725-ae94-155a84b2b84a",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('AI Agent1').item.json.output }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Adapta la siguiente respuesta: \"{{ $('AI Agent1').item.json.output }}\" de acuerdo a las siguientes instrucciones:\n\n- Elimina estos caractéres:\n  •\"*\", \"¿\", \"¡\", \"#\"\n- Mantén los saltos de línea cuando corresponda, principalmente en los listados o Bullet Point Lists.\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n- El mensaje debe sonar relajado, formal y respetuoso. \n- Si la respuesta es breve, rellena únicamente la parte1.\n- Si la respuesta es más extensa, considera rellenar la parte2 y la parte3.\n- Si el mensaje contiene una lista, déjala sola en una parte, *manteniendo el formato de lista* (con los saltos de línea correspondientes).\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\".\n- La respuesta final debe ser lo más similar posible a la respuesta inicial, no cambies radicalmente las palabras o el significado de la respuesta inicial si no es necesario.\n\n"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        620,
+        1440
+      ],
+      "id": "e47a8f09-7650-4587-b80f-b0de06800033",
+      "name": "Generador de respuestas1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c722cfec-cc19-43f0-804f-5ce50bacff2b",
+              "leftValue": "={{ $('Generador de respuestas1').item.json.output.response.parte2 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1600,
+        1640
+      ],
+      "id": "ddf895d6-784f-418f-a2a9-e9d8ea70903a",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        620,
+        1860
+      ],
+      "id": "555d5f9c-b9e4-4c07-8a0b-510ce812a153",
+      "name": "OpenAI Chat Model3",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90",
+          "mode": "list",
+          "cachedResultName": "CRM Inmobiliaria",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 508421015,
+          "mode": "list",
+          "cachedResultName": "Propiedades",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1K-Da6UmMdRylIiHRgg_PlMvdm12anzJnOpKqjJ_Ov90/edit#gid=508421015"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        -180,
+        1800
+      ],
+      "id": "a766fa67-0e6a-481d-8035-faf9ab2a0977",
+      "name": "Propiedades1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Envío respuesta \n- Envía la repuesta en partes",
+        "height": 740,
+        "width": 1640,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        1300
+      ],
+      "id": "4e908139-4792-41de-8089-06d983aad989",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Divide el mensaje\n- Divide el mensaje en varias partes",
+        "height": 740,
+        "width": 680,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        460,
+        1300
+      ],
+      "id": "2315a3f4-088f-4063-a4bf-9455e42d75d3",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## Agente IA\n- Encargado de generar la respuesta al mensaje recibido",
+        "height": 740,
+        "width": 1320,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -860,
+        1300
+      ],
+      "id": "7fd751ed-2ea0-4e1a-9f4c-c1279dee80d0",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## Guardar mensaje\n- Guarda el mensaje temporalmente",
+        "height": 740,
+        "width": 640,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1500,
+        1300
+      ],
+      "id": "7d276b8d-4bd2-4b78-9b1e-587092f52a86",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "height": 740,
+        "width": 920,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2420,
+        1300
+      ],
+      "id": "93643ce0-a7d1-4333-a53a-1fb78951809a",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mensaje",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -2680,
+        1620
+      ],
+      "id": "9e64ce8f-758d-4626-837a-6eb286fa78c3",
+      "name": "Webhook",
+      "webhookId": "6fc893eb-28e5-4693-89fd-00c2b91e87e5"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "text": "Aquí hay una imagen enviada por el usuario. Describe la imagen y transcribe cualquier texto visible en ella. Proporciona tantos detalles como sea posible.",
+        "inputType": "base64",
+        "binaryPropertyName": "image_data",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -1740,
+        1440
+      ],
+      "id": "c153706f-4837-4c5a-a150-3639ded330ca",
+      "name": "Analizar_Imagen",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import base64\nimport io\nfrom PIL import Image, UnidentifiedImageError\n\ndef convert_any_image_to_jpg(base64_string):\n    \"\"\"\n    Convierte cualquier imagen Base64 en un archivo binario JPG válido.\n\n    :param base64_string: Cadena Base64 que representa la imagen.\n    :return: Bytes de la imagen convertida a JPG o None si falla.\n    \"\"\"\n    try:\n        # Decodificar Base64\n        image_data = base64.b64decode(base64_string)\n\n        # Crear un buffer en memoria\n        image_buffer = io.BytesIO(image_data)\n\n        # Intentar abrir la imagen con PIL para verificar su formato\n        image = Image.open(image_buffer)\n\n        # Convertir a RGB para garantizar compatibilidad con JPG\n        if image.mode in (\"RGBA\", \"LA\") or (image.mode == \"P\" and \"transparency\" in image.info):\n            # Si la imagen tiene transparencia, convertirla con fondo blanco\n            new_image = Image.new(\"RGB\", image.size, (255, 255, 255))\n            new_image.paste(image, mask=image.split()[3] if image.mode == \"RGBA\" else None)\n        else:\n            new_image = image.convert(\"RGB\")\n\n        # Guardar la imagen en formato JPG en memoria\n        output_buffer = io.BytesIO()\n        new_image.save(output_buffer, format=\"JPEG\", quality=90)\n\n        return output_buffer.getvalue()  # Devuelve los bytes de la imagen en JPG\n\n    except UnidentifiedImageError:\n        return None, \"Error: No se pudo identificar el formato de la imagen.\"\n    except Exception as e:\n        return None, f\"Error al convertir la imagen: {e}\"\n\n# Extraer Base64 desde el nodo anterior (Switch1)\nenc_data = items[0][\"json\"][\"body\"][\"data\"][\"message\"].get(\"base64\", None)\n\nif not enc_data:\n    raise ValueError(\"No se encontró la imagen en Base64 en el JSON.\")\n\n# Convertir cualquier imagen a JPG\nimage_bytes = convert_any_image_to_jpg(enc_data)\n\nif image_bytes is None:\n    raise ValueError(\"No se pudo convertir la imagen correctamente.\")\n\n# Devolver la imagen como un archivo binario en n8n para su uso en OpenAI u otros nodos\nreturn [{\n    \"binary\": {\n        \"image_data\": {\n            \"data\": base64.b64encode(image_bytes).decode(\"utf-8\"),  # Codificar de nuevo para n8n\n            \"mimeType\": \"image/jpeg\",\n            \"fileName\": \"converted_image.jpg\"\n        }\n    }\n}]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2100,
+        1440
+      ],
+      "id": "4302a111-9323-42ad-8118-9d8c3d422aa8",
+      "name": "Transformar_a_JPG"
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import base64\n\n# ✅ Extraer Base64 desde el nodo `Set`\naudio_base64 = items[0][\"json\"][\"audioBase64\"]\n\nif not audio_base64:\n    raise ValueError(\"No se encontró el audio en Base64 en el JSON.\")\n\n# ✅ Decodificar Base64 a binario\naudio_bytes = base64.b64decode(audio_base64)\n\n# ✅ Devolver el archivo binario listo para OpenAI\nreturn [{\n    \"binary\": {\n        \"audio_data\": {\n            \"data\": base64.b64encode(audio_bytes).decode(\"utf-8\"),\n            \"mimeType\": \"audio/mp3\",  # Cambia según el formato detectado\n            \"fileName\": \"converted_audio.mp3\"\n        }\n    }\n}]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1920,
+        1620
+      ],
+      "id": "6538281a-af43-43dd-9e78-b56c180f431a",
+      "name": "Transformar_a_mp3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f9be9e3f-9513-4cd1-a6f4-a9832ea275b8",
+              "name": "audioBase64",
+              "value": "={{ $json.body.data.message.base64 }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2100,
+        1620
+      ],
+      "id": "eb9f5595-8bce-4dd4-ad21-f911ca523f57",
+      "name": "Traer_Base64"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2cb0e408-ccfa-4114-b3b9-f665e1d1773b",
+              "name": "Id",
+              "value": "={{ $('Webhook').item.json.body.data.key.remoteJid.split(\"@\")[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "e79cc065-62d7-41af-b31b-8bf85731bf14",
+              "name": "Nombre",
+              "value": "={{ $('Webhook').item.json.body.data.pushName }}",
+              "type": "string"
+            },
+            {
+              "id": "fe7ecc99-e1e8-4a5e-bdd6-6fce9757b234",
+              "name": "text",
+              "value": "={{ $('Webhook').item.json.body.data.message.conversation }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8c195694-0ff9-4328-a46d-f8baa395b65b",
+      "name": "Ordenar_Info_1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2100,
+        1840
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "51b64a23-027a-4c9e-b5ae-88eeb60876a3",
+                    "leftValue": "={{ $json.body.data.messageType }}",
+                    "rightValue": "imageMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Imagen"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8c844924-b2ed-48b0-935c-c66a8fd0c778",
+                    "leftValue": "={{ $json.body.data.messageType }}",
+                    "rightValue": "audioMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Audio"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.data.messageType }}",
+                    "rightValue": "conversation",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "texto"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7e721070-7bac-485d-823d-3b877748a8c9",
+      "name": "Tipo_Mensaje",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -2400,
+        1620
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('Ordenar_Info_1').item.json.values()[0] }}",
+        "messageData": "={{ $json.text }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1420,
+        1840
+      ],
+      "id": "8745aa10-f9d9-4358-95a0-0372f03c5e23",
+      "name": "Guardar mensaje",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1240,
+        1840
+      ],
+      "id": "e57d5318-923f-44f4-9c91-a6528c6e6f9a",
+      "name": "Wait",
+      "webhookId": "238db8f2-6f61-4145-8beb-1aec5c3782d5"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "Respuesta obtenida",
+        "key": "={{ $('Ordenar_Info_1').item.json.values()[0] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1060,
+        1840
+      ],
+      "id": "db6253e0-c82e-4725-9750-4597909af51f",
+      "name": "Recuperar mensajes",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "={{ $('Wait').item.json.values()[0] }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        260,
+        1440
+      ],
+      "id": "b8f5f535-7c7d-4312-92b4-14399c321ad8",
+      "name": "Limpiar base datos",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://evolutionapi.aittom.com/message/sendText/n4506",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "5FFEB26E03CD-48DE-8C1D-F3AB18022A48"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $('Ordenar_Info_1').item.json.values()[0] }}"
+            },
+            {
+              "name": "text",
+              "value": "={{ $json.output.response.parte1 }}"
+            },
+            {
+              "name": "delay",
+              "value": "={{ 1000 }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1240,
+        1440
+      ],
+      "id": "6ef304ca-e252-4d5e-9e50-a4f79f426d8b",
+      "name": "Enviar_Respuesta1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://evolutionapi.aittom.com/message/sendText/n4506",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "5FFEB26E03CD-48DE-8C1D-F3AB18022A48"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $('Ordenar_Info_1').item.json.values()[0] }}"
+            },
+            {
+              "name": "text",
+              "value": "={{ $('Generador de respuestas1').item.json.output.response.parte2 }}"
+            },
+            {
+              "name": "delay",
+              "value": "={{ 1000 }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1940,
+        1440
+      ],
+      "id": "8fb8520b-a06b-4f04-9e75-ab654e8daadb",
+      "name": "Enviar_Respuesta"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://evolutionapi.aittom.com/message/sendText/n4506",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "5FFEB26E03CD-48DE-8C1D-F3AB18022A48"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $('Ordenar_Info_1').item.json.values()[0] }}"
+            },
+            {
+              "name": "text",
+              "value": "={{ $('Generador de respuestas1').item.json.output.response.parte3 }}"
+            },
+            {
+              "name": "delay",
+              "value": "={{ 1000 }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2460,
+        1440
+      ],
+      "id": "5ec826a7-8421-436d-8509-ec5836b2383c",
+      "name": "Enviar_Respuesta2"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        -920,
+        1520
+      ],
+      "id": "ddb3fa4d-faeb-4c1b-942d-b88ac0623757",
+      "name": "Merge"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-26T07:16:45.007Z",
+      "updatedAt": "2025-02-26T07:16:53.420Z",
+      "id": "5XN4iFvQiP4gW0zh",
+      "name": "Agente IA 🤖"
+    },
+    {
+      "createdAt": "2025-02-26T07:17:34.787Z",
+      "updatedAt": "2025-02-27T17:47:03.175Z",
+      "id": "UFH6BosTRpNyXl3E",
+      "name": "💬🟢WhatsApp"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-01T16:14:09.000Z",
+  "versionId": "1f287006-e1ad-4458-af70-d555456cfd15"
+}
