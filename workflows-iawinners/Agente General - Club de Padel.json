@@ -1,0 +1,1860 @@
+{
+  "active": false,
+  "connections": {
+    "WhatsApp Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Numero1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set 'Text'1": {
+      "main": [
+        [
+          {
+            "node": "Guardar mensaje3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set 'Text'1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp Business Cloud6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribir1": {
+      "main": [
+        [
+          {
+            "node": "Audio_Transcrito1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud5": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Transcribir1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud6": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "OpenAI1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI1": {
+      "main": [
+        [
+          {
+            "node": "Imagen_Transcrita1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Audio_Transcrito1": {
+      "main": [
+        [
+          {
+            "node": "Guardar mensaje4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar mensaje3": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "Recuperar mensajes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar mensaje4": {
+      "main": [
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "Recuperar mensajes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar mensaje5": {
+      "main": [
+        [
+          {
+            "node": "Wait5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait5": {
+      "main": [
+        [
+          {
+            "node": "Recuperar mensajes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Imagen_Transcrita1": {
+      "main": [
+        [
+          {
+            "node": "Guardar mensaje5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Numero1": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recuperar mensajes1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud7": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-fixing Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Generador de respuestas1",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Auto-fixing Output Parser1",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait ": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Parte ": {
+      "main": [
+        [
+          {
+            "node": "Wait 4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 4": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "on_error1": {
+      "main": [
+        [
+          {
+            "node": "Generador de respuestas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generador de respuestas1": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "on_error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Wait ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If Parte ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Auto-fixing Output Parser1",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Generador de respuestas1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud8": {
+      "main": [
+        [
+          {
+            "node": "If Parte ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud9": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Borrar imagen1": {
+      "main": [
+        [
+          {
+            "node": "Generador de respuestas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Borrar imagen1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar_cliente": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Crear_cliente": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar_disponibilidad": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reservar_pista": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar_ID_Claveturno": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar_reservas": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Info_pistas": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar_confirmacion": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cerebro": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-06T12:33:09.638Z",
+  "id": "0foORTneFDJ9HP7P",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente General - Club de Padel",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Set \\'Text\\'1').item.json.text }}",
+        "options": {
+          "systemMessage": "=Eres un asistente virtual que gestiona reservas de pistas en el Club de Padel Winners a través de WhatsApp, Airtable y correo electrónico.\n\nFecha y hora actual: {{ $now.toISO() }}\n\nEl número del cliente es: {{ $('WhatsApp Trigger1').item.json.contacts[0].wa_id }}\n\nFlujo de Conversación\n1. Saludo Inicial\n\"Hola, soy el asistente de Club de Padel Winners. ¿En qué puedo ayudarte hoy?\"\n2. Si el cliente pregunta por información, proporciona:\nUbicación del Club\nHorarios de atención\nTeléfono de contacto\nSi quiere reservar, pasa al siguiente paso.\n\nVerificación de Cliente en Airtable\nAntes de proceder con la reserva, siempre debes verificar el ID del cliente en Airtable.\n\nUsa la herramienta Buscar_cliente para buscar el número de WhatsApp en la tabla Clientes.\n\nSi el número de WhatsApp no está disponible, pregunta al cliente por su número.\nSi el cliente está registrado:\n\nResponde: \"Tengo tu contacto registrado como {{ (\"nombrecliente\") }}, ¿es correcto?\"\nGuarda el ID del cliente en la variable \"idcliente\".\nSi el cliente no está registrado:\n\nPregunta: \"Antes de continuar, necesito tu nombre completo y correo electrónico.\"\nLuego, usa la herramienta Crear_cliente para registrarlo en Airtable.\nAlmacena el nuevo ID en \"idcliente\".\n\n*Importante\nEl campo Cliente en Airtable solo acepta IDs, no nombres.\nEl ID del cliente se enviará en un array, como lo requiere Airtable.\nEjemplo de ID de cliente en Airtable: \"recqzBT2WYaIcUoq9\"\nEjemplo del formato correcto en la variable: [\"recqzBT2WYaIcUoq9\"]\n\nSolicitud de Fecha y hora para la reserva de la pista\nPregunta: \"¿Para qué fecha y hora quieres reservar pista?\"\n\nExtrae la fecha y almacénala en variables:\n\nfecha → {{ (\"fecha\") }}\nFormato: \"YYYY-MM-DD\"\nEjemplo: \"2025-03-02\"\nhora → {{ (\"hora\") }}\nFormato: \"HH:mm\"\nEjemplo: \"13:00\"\nclaveturno → {{ (\"claveturno\") }}\nFormato: \"YYYY-MM-DD - HH:mm\"\nEjemplo: [\"2025-03-02 - 13:00\"]\nBusca la disponibilidad con la herramienta Consultar_disponibilidad en la tabla Disponibilidad de Turnos.\n\nSi hay disponibilidad, responde con los horarios y pistas disponibles.\n\nBúsqueda del ID de la Clave de Turno\nAntes de reservar, necesitas el ID de la Clave de Turno.\n\nUsa la herramienta Buscar_ID_claveturno para buscar en la tabla Disponibilidad de Turnos, aplicando la siguiente fórmula:\n\n{Clave Turno} = \"{{ (\"claveturno\") }}\"\nGuarda el ID de la Clave de Turno en idclaveturno.\n\nEjemplo de ID en Airtable: \"rec4Xa7Bz2WuGyQ9K\"\nConfirmación de Reserva\nPregunta al cliente:\n\"Tenemos disponibilidad el día {{ (\"fecha\") }} a las {{ (\"hora\") }} del pistas 1 y 2. ¿Que pista te gustaría reservar?\"\n\nSi el cliente acepta, sigue estos pasos:\n\nAntes de hacer la reserva, vuelve a ejecutar Buscar_cliente para asegurarte de que el ID del cliente sigue siendo válido y almacenarlo en \"idcliente\" nuevamente.\n\nLlama a la herramienta Reservar_pista para registrar la reserva en la tabla Reservas.\n\nEnvía los datos en este formato JSON:\n\n{\n  \"Cliente\": [\"{{ (\"idcliente\") }}\"],\n  \"Clave Turno\": [\"{{ (\"idclaveturno\") }}\"],\n  \"Fecha\": \"{{ (\"fecha\") }}\",\n  \"Hora\": \"{{ (\"hora\") }}\",\n  \"Pista\": {{ (\"pista\") }}\n}\nActualiza la disponibilidad en la tabla Disponibilidad de Turnos.\n\nEnvía confirmación por WhatsApp y correo electrónico.\n\nNotas importantes\nSiempre verifica el ID del cliente con Buscar_cliente antes de hacer la reserva.\nSi hay un error con los IDs, verifica que el ID del Cliente y la Clave Turno sean arrays en el formato requerido.\nCambio o Cancelación de Reserva\nCambio de Reserva\nSi el cliente quiere cambiar de hora o fecha:\nUsa Consultar_disponibilidad para verificar opciones.\nSi hay una alternativa, actualiza la reserva en Airtable.\nCancelación de Reserva\nSi el cliente quiere cancelar:\nBusca la reserva en Airtable por número de WhatsApp.\nLlama a la herramienta correspondiente para eliminar la reserva y actualizar la disponibilidad.\nRecordatorios Automáticos\n24 horas antes de la reserva, envía un mensaje recordatorio.\n1 hora antes de la reserva, envía un mensaje final de confirmación.\nCierre de Conversación\n\"Gracias por tu reserva. Esperamos verte pronto en el restaurante.\"\nSi el cliente necesita más ayuda, sigue atendiéndolo.\n\nTools Utilizadas:\n\nBuscar_cliente\tBusca en Airtable si el número de WhatsApp ya está registrado antes de realizar cualquier reserva.\nCrear_cliente\tRegistra nuevos clientes en Airtable.\nConsultar_disponibilidad\tVerifica los turnos disponibles en la tabla \"Disponibilidad de Turnos\".\nBuscar_ID_claveturno\tBusca el Record ID de la Clave de Turno en Airtable.\nReservar_pista\tAgrega la reserva en la tabla \"Reservas\" y envía los IDs en un array.\nInfo_pistas Usarás esta Tool para darle información de las pistas al cliente, zona, tipo de pista.."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -1140,
+        -580
+      ],
+      "id": "eb3f9ebf-3697-4696-8927-3fdf78776879",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ]
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3500,
+        -580
+      ],
+      "id": "d55ac071-8933-4d2d-b7b9-61a8897c81ac",
+      "name": "WhatsApp Trigger1",
+      "webhookId": "5b343092-5c3e-4af3-b347-fbba1aaf8a7c",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "l798ZfEHMMF1EM3y",
+          "name": "Test Number - Agente IA "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fe7ecc99-e1e8-4a5e-bdd6-6fce9757b234",
+              "name": "text",
+              "value": "={{ $('WhatsApp Trigger1').item.json.messages[0].text.body }}",
+              "type": "string"
+            },
+            {
+              "id": "359ee248-b32c-48e6-b6cf-193017f9ee39",
+              "name": "id",
+              "value": "={{ $json.contacts[0].wa_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ce8d706a-8e00-483c-9b62-7d45c883b180",
+      "name": "Set 'Text'1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2820,
+        -580
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('WhatsApp Trigger1').item.json.messages[0].type }}",
+                    "rightValue": "audio",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Voice"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8c844924-b2ed-48b0-935c-c66a8fd0c778",
+                    "leftValue": "={{ $('WhatsApp Trigger1').item.json.messages[0].type }}",
+                    "rightValue": "text",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "51b64a23-027a-4c9e-b5ae-88eeb60876a3",
+                    "leftValue": "={{ $('WhatsApp Trigger1').item.json.messages[0].type }}",
+                    "rightValue": "image",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Image"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "04920719-dadf-4644-add3-cbfa38b65f97",
+      "name": "Switch1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -3100,
+        -580
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "id": "2f63d537-cee5-4c0c-915a-dc5ee40958ef",
+      "name": "Transcribir1",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        -2460,
+        -800
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $('WhatsApp Trigger1').item.json.messages[0].audio.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -2820,
+        -800
+      ],
+      "id": "f34a382e-b739-40b1-8401-b4084092e889",
+      "name": "WhatsApp Business Cloud5",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2640,
+        -800
+      ],
+      "id": "48532537-0ba3-4bc5-abd1-549d3fa6848c",
+      "name": "HTTP Request2",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $('WhatsApp Trigger1').item.json.messages[0].image.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -2820,
+        -360
+      ],
+      "id": "7c8a83db-84f9-4640-9e43-9349951b8639",
+      "name": "WhatsApp Business Cloud6",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2640,
+        -360
+      ],
+      "id": "e841e05c-4f05-4b24-83ea-9bbe5636832f",
+      "name": "HTTP Request3",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "text": "Aquí hay una imagen enviada por el usuario. Describe la imagen y transcribe cualquier texto visible en ella. Proporciona tantos detalles como sea posible en no más de 300 caracteres.",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -2460,
+        -360
+      ],
+      "id": "40648266-5fd7-4798-91ab-33acbfaaa775",
+      "name": "OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fcd5ad2d-6e28-4f7e-b7ee-11888215972c",
+              "name": "text",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2260,
+        -800
+      ],
+      "id": "6d9f47aa-dc9d-4b9c-8dd6-d5642ba32cee",
+      "name": "Audio_Transcrito1"
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('Numero1').item.json.Numero }}",
+        "messageData": "={{ $json.text }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -2060,
+        -580
+      ],
+      "id": "db779410-df91-4cd5-ae62-6b20726dea42",
+      "name": "Guardar mensaje3",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "Respuesta obtenida",
+        "key": "={{ $('Numero1').item.json.Numero }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1520,
+        -580
+      ],
+      "id": "ddee551b-970c-4ac6-a7bc-023f10f3fcdc",
+      "name": "Recuperar mensajes1",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1840,
+        -580
+      ],
+      "id": "f55838ce-2468-4431-9fbd-bacfae1d8474",
+      "name": "Wait3",
+      "webhookId": "45306992-9640-4594-b89c-9b6d0faa7d6b"
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('Numero1').item.json.Numero }}",
+        "messageData": "={{ $json.text }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -2060,
+        -800
+      ],
+      "id": "f7235e1a-51b9-44e3-a8d7-c6a4f660ab0d",
+      "name": "Guardar mensaje4",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1840,
+        -800
+      ],
+      "id": "62061db6-1aa8-4c56-a7c6-688d54ea4253",
+      "name": "Wait4",
+      "webhookId": "5cd3c327-4671-4bd2-b6cc-c9343f188e45"
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('Numero1').item.json.Numero }}",
+        "messageData": "={{ $json.text }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -2060,
+        -360
+      ],
+      "id": "b1755ec4-97fa-4bf4-98de-52f6fcdaa110",
+      "name": "Guardar mensaje5",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1840,
+        -360
+      ],
+      "id": "4d74d7b9-7fbc-462c-a230-86e11c9e50dc",
+      "name": "Wait5",
+      "webhookId": "6ad0e85f-ed41-4913-88fe-e62efb643a61"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fcd5ad2d-6e28-4f7e-b7ee-11888215972c",
+              "name": "text",
+              "value": "={{ $json.content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2260,
+        -360
+      ],
+      "id": "b29fd7d9-48e2-4a78-8253-534f8aa3889d",
+      "name": "Imagen_Transcrita1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "85067916-af72-44a6-90a8-cbeaa0b4a4b8",
+              "name": "Numero",
+              "value": "={{ $json.contacts[0].wa_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3300,
+        -580
+      ],
+      "id": "808bbce6-6278-4bfb-8a74-93b3b25e1b30",
+      "name": "Numero1"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "533381876531896",
+        "recipientPhoneNumber": "={{ $('Numero1').item.json.Numero }}",
+        "textBody": "={{ $json.output.response.parte1 }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        560,
+        -580
+      ],
+      "id": "c5efa92e-a979-405f-877b-842e7c7bf54a",
+      "name": "WhatsApp Business Cloud7",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "prompt": "Instructions:\n--------------\n{instructions}\n--------------\nCompletion:\n--------------\n{completion}\n--------------\n\nAbove, the Completion did not satisfy the constraints given in the Instructions.\nError:\n--------------\n{error}\n--------------\n\nPlease try again. Please only respond with an answer that satisfies the constraints laid out in the Instructions:"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+      "typeVersion": 1,
+      "position": [
+        160,
+        -300
+      ],
+      "id": "72f2f7a5-b0fe-4b6a-9569-a2cdb22b00be",
+      "name": "Auto-fixing Output Parser1"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"response\": {\n    \"parte1\": \"Parte uno de la respuesta\",\n    \"parte2\": \"Parte dos de la respuesta\",\n    \"parte3\": \"Parte tres de la respuesta (opcional).\"   \n  }\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        400,
+        -140
+      ],
+      "id": "9894557b-1edc-4879-ad49-ad6ed2485cd5",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        880,
+        -740
+      ],
+      "id": "027b9b24-2f13-4243-ba86-4d4ed1072c2d",
+      "name": "Wait ",
+      "webhookId": "7464919f-964f-4aa9-ba70-85f458bbd429"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6c883ec3-6f23-4834-b4fc-a8f7ff5eacc5",
+              "leftValue": "={{ $('Generador de respuestas1').item.json.output.response.parte3 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1240,
+        -580
+      ],
+      "id": "cb6113ac-20b6-4fdc-be5c-37d05636ceb9",
+      "name": "If Parte "
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1360,
+        -740
+      ],
+      "id": "d04c4e7e-035d-4fcf-bdfd-d1da4dbc27ae",
+      "name": "Wait 4",
+      "webhookId": "f4f41d3e-2503-4719-89b0-46f5196453e7"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "806fb232-eb65-4d07-8d56-499f1da263d8",
+              "name": "output",
+              "value": "={{ $('AI Agent2').item.json.output }}\n\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        580,
+        -140
+      ],
+      "id": "576d3167-2090-4aec-9cff-8edc3c27e80e",
+      "name": "on_error1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        -580
+      ],
+      "id": "1b39e602-af04-4c7e-bfdb-04be06b45582",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('AI Agent2').item.json.output }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=# Adapta la respuesta \"{{ $json.output }}\" de acuerdo a las siguientes instrucciones:\n\n- Elimina estos caractéres:\n  •\"*\", \"¿\", \"¡\", \"#\"\n- Mantén los saltos de línea cuando corresponda, principalmente en los listados o Bullet Point Lists.\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n- El mensaje debe sonar relajado, formal y respetuoso. \n- Si la respuesta es breve, rellena únicamente la parte1.\n- Si la respuesta es más extensa, considera rellenar la parte2 y la parte3.\n- Si el mensaje contiene una lista, déjala sola en una parte, *manteniendo el formato de lista* (con los saltos de línea correspondientes).\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\".\n- La respuesta final debe ser lo más similar posible a la respuesta inicial, no cambies radicalmente las palabras o el significado de la respuesta inicial si no es necesario.\n\n"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        40,
+        -580
+      ],
+      "id": "d361dd62-1f7f-42ce-b897-5d61828eb53b",
+      "name": "Generador de respuestas1",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c722cfec-cc19-43f0-804f-5ce50bacff2b",
+              "leftValue": "={{ $('Generador de respuestas1').item.json.output.response.parte2 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        760,
+        -580
+      ],
+      "id": "eb37f319-ddc5-4913-92b3-23fb8056c2be",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        80,
+        -140
+      ],
+      "id": "6157ab26-5bc6-4b17-9830-0c81e0f48553",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "533381876531896",
+        "recipientPhoneNumber": "={{ $('Numero1').item.json.Numero }}",
+        "textBody": "={{ $('Generador de respuestas1').item.json.output.response.parte2 }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        -740
+      ],
+      "id": "745ed87f-6be5-49e6-aee4-518168ceed54",
+      "name": "WhatsApp Business Cloud8",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "533381876531896",
+        "recipientPhoneNumber": "={{ $('Numero1').item.json.Numero }}",
+        "textBody": "={{ $('Generador de respuestas1').item.json.output.response.parte3 }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        -740
+      ],
+      "id": "31100ce8-c23d-49c3-9ae3-3a248b39a8f9",
+      "name": "WhatsApp Business Cloud9",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "={{ $('Numero1').item.json.Numero }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        -580
+      ],
+      "id": "bd974c04-28f3-4e00-b5b3-eee637d660be",
+      "name": "Borrar imagen1",
+      "credentials": {
+        "redis": {
+          "id": "m1NGGppgy14vvkDq",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblED5Xp6eoM4LfJ6",
+          "mode": "list",
+          "cachedResultName": "Clientes",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tblED5Xp6eoM4LfJ6"
+        },
+        "filterByFormula": "={WhatsApp} = \"{{ $fromAI(\"whatsapp\") }}\"\n",
+        "options": {
+          "view": {
+            "__rl": true,
+            "value": "viwgUIw6wbTBaGai8",
+            "mode": "list",
+            "cachedResultName": "Grid view",
+            "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tblED5Xp6eoM4LfJ6/viwgUIw6wbTBaGai8"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -1340,
+        -120
+      ],
+      "id": "46aa0f48-ab20-4ab3-b6d2-f5e3ca840fbd",
+      "name": "Buscar_cliente",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblED5Xp6eoM4LfJ6",
+          "mode": "list",
+          "cachedResultName": "Clientes",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tblED5Xp6eoM4LfJ6"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre Completo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_Completo', `Aquí irá el nombre del cliente`, 'string') }}",
+            "WhatsApp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('WhatsApp', `Aquí irá el número de whats app del cliente`, 'string') }}",
+            "Correo Electrónico": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Correo_Electr_nico', `Aquí irá el correo electrónico del cliente`, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Nombre Completo",
+              "displayName": "Nombre Completo",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "WhatsApp",
+              "displayName": "WhatsApp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Correo Electrónico",
+              "displayName": "Correo Electrónico",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Historial de Reservas",
+              "displayName": "Historial de Reservas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Total de Reservas",
+              "displayName": "Total de Reservas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Reservas Confirmadas",
+              "displayName": "Reservas Confirmadas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Resumen de Reservas",
+              "displayName": "Resumen de Reservas",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Sugerencias de Marketing",
+              "displayName": "Sugerencias de Marketing",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -1200,
+        -120
+      ],
+      "id": "8928c6cd-9a46-4d2c-abbe-ed1475f385db",
+      "name": "Crear_cliente",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl19MIoptqxho73q",
+          "mode": "list",
+          "cachedResultName": "Disponibilidad Pistas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbl19MIoptqxho73q"
+        },
+        "filterByFormula": "=IF( {Fecha} = \"{{ $fromAI(\"fecha\") }}\" )\n",
+        "options": {
+          "view": {
+            "__rl": true,
+            "value": "viw6frDYrciruORIW",
+            "mode": "list",
+            "cachedResultName": "Grid view",
+            "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbl19MIoptqxho73q/viw6frDYrciruORIW"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -1060,
+        -120
+      ],
+      "id": "df1ac05a-3ac4-4f1b-a1db-077cd43dbf4e",
+      "name": "Consultar_disponibilidad",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbllzVlaLqRCz9cSR",
+          "mode": "list",
+          "cachedResultName": "Reservas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbllzVlaLqRCz9cSR"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $fromAI(\"fecha\") }}\n",
+            "Cliente": "=[\"{{$fromAI(\"idcliente\")}}\"]",
+            "Hora": "={{ $fromAI(\"hora\") }}",
+            "Clave Turno": "=[\"{{$fromAI(\"idclaveturno\")}}\"]"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Hora",
+              "displayName": "Hora",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Cliente",
+              "displayName": "Cliente",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Clave Turno",
+              "displayName": "Clave Turno",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Reservas (from Clave Turno)",
+              "displayName": "Reservas (from Clave Turno)",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "typecast": true
+        }
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -900,
+        -120
+      ],
+      "id": "a6524537-ea98-4430-b23b-da5b40c319a6",
+      "name": "Reservar_pista",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl19MIoptqxho73q",
+          "mode": "list",
+          "cachedResultName": "Disponibilidad Pistas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbl19MIoptqxho73q"
+        },
+        "filterByFormula": "={Clave Turno} = \"{{ $fromAI(\"claveturno\") }}\"",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -740,
+        -120
+      ],
+      "id": "586be000-c1a9-489a-a0bb-97aa9419e7e9",
+      "name": "Buscar_ID_Claveturno",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbllzVlaLqRCz9cSR",
+          "mode": "list",
+          "cachedResultName": "Reservas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbllzVlaLqRCz9cSR"
+        },
+        "filterByFormula": "={cliente} = \"{{ $fromAI(\"idcliente\") }}\"",
+        "options": {
+          "fields": [
+            "Clave Turno",
+            "Reservas (from Clave Turno)",
+            "Cliente",
+            "Hora",
+            "Fecha"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -560,
+        -120
+      ],
+      "id": "4d51bd57-4d17-4975-b1e3-f83c1820cd7a",
+      "name": "Consultar_reservas",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1s4YuTwsAVOfEM",
+          "mode": "list",
+          "cachedResultName": "Club de Padel",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbllVDPLLi045v5rF",
+          "mode": "list",
+          "cachedResultName": "Pistas",
+          "cachedResultUrl": "https://airtable.com/app1s4YuTwsAVOfEM/tbllVDPLLi045v5rF"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        -400,
+        -120
+      ],
+      "id": "d2eb30b1-67a6-4f19-84d4-3a5d0802ce96",
+      "name": "Info_pistas",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "emailType": "text",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -240,
+        -120
+      ],
+      "id": "30643083-e14e-4d2d-869b-97d831825784",
+      "name": "Enviar_confirmacion",
+      "webhookId": "76408822-c0ca-4ddd-a5bb-b1100c569455",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Numero1').item.json.Numero }}",
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1520,
+        -120
+      ],
+      "id": "6454aeba-ddf5-4e06-af19-8348d585c684",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1640,
+        -120
+      ],
+      "id": "eec52cc6-023d-48b5-bbca-d4bc2a55fc28",
+      "name": "Cerebro",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-26T07:17:34.787Z",
+      "updatedAt": "2025-02-27T17:47:03.175Z",
+      "id": "UFH6BosTRpNyXl3E",
+      "name": "💬🟢WhatsApp"
+    }
+  ],
+  "triggerCount": 4,
+  "updatedAt": "2025-03-09T00:53:11.000Z",
+  "versionId": "81d5ac76-5a72-43f6-9c0f-9cb3fc15b285"
+}
