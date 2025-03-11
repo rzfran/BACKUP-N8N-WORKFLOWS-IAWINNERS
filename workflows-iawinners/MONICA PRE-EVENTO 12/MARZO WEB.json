@@ -170,7 +170,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -360,
+        -460,
         -80
       ],
       "id": "7d441a4e-fd8a-4c23-b2c2-680337f5ea9f",
@@ -186,7 +186,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        260,
+        300,
         -80
       ],
       "id": "3f8b4eda-f683-4adf-96f8-47caa3bb6fbe",
@@ -207,6 +207,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-10T12:50:27.000Z",
-  "versionId": "88cbc001-17f8-4787-ae6e-260be38e1f4d"
+  "updatedAt": "2025-03-10T18:34:27.000Z",
+  "versionId": "cb59bb69-aeba-4ed3-b106-72a55c3207e0"
 }
