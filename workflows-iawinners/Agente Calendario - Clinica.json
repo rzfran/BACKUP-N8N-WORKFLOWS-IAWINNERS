@@ -411,8 +411,15 @@
     "executionOrder": "v1"
   },
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2025-03-10T19:44:04.175Z",
+      "updatedAt": "2025-03-10T19:44:04.175Z",
+      "id": "c9bDiV46PyflLgFP",
+      "name": "Agente Clinica"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2025-03-09T16:13:11.000Z",
-  "versionId": "a7061201-3b1d-42b9-b523-31a08d3949ec"
+  "updatedAt": "2025-03-10T19:48:46.000Z",
+  "versionId": "5f7cba22-ab55-4f19-992a-8d97621b3e9f"
 }
