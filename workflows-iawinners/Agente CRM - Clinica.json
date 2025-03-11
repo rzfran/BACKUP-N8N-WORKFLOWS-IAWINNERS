@@ -537,8 +537,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        -940,
-        320
+        -920,
+        400
       ],
       "id": "7ad94f26-6190-4442-a760-c4ee0264ff99",
       "name": "OpenAI Chat Model",
@@ -602,8 +602,15 @@
     "executionOrder": "v1"
   },
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2025-03-10T19:44:04.175Z",
+      "updatedAt": "2025-03-10T19:44:04.175Z",
+      "id": "c9bDiV46PyflLgFP",
+      "name": "Agente Clinica"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2025-03-09T16:14:35.000Z",
-  "versionId": "81d9db86-6f13-48e5-8c21-47d0ed1f6362"
+  "updatedAt": "2025-03-10T19:45:56.000Z",
+  "versionId": "343fe94b-a1cd-422b-a29e-1fb04d64c3c7"
 }
