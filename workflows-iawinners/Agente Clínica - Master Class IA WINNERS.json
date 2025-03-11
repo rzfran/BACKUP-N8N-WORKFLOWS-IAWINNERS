@@ -159,7 +159,7 @@
       "type": "n8n-nodes-base.gmailTool",
       "typeVersion": 2.1,
       "position": [
-        160,
+        180,
         520
       ],
       "id": "5d10283f-a63e-4e33-8dd5-9d499fbd833a",
@@ -181,7 +181,7 @@
       "type": "n8n-nodes-base.gmailTool",
       "typeVersion": 2.1,
       "position": [
-        280,
+        300,
         520
       ],
       "id": "a1e646f3-ac3d-4e05-a00f-eba85329a62f",
@@ -216,7 +216,7 @@
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 2,
       "position": [
-        780,
+        860,
         480
       ],
       "id": "1acfad03-bf3e-4838-a815-2d5beb4b73f4",
@@ -230,7 +230,7 @@
       "type": "n8n-nodes-base.googleDocsTool",
       "typeVersion": 2,
       "position": [
-        440,
+        480,
         520
       ],
       "id": "b70595f3-df95-460d-9ebe-8c33ab18210c",
@@ -264,8 +264,8 @@
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 2,
       "position": [
-        580,
-        520
+        700,
+        500
       ],
       "id": "a174d3f6-d51e-4564-bd85-0a6ae149d46e",
       "name": "Agente CRM Clinica1"
@@ -292,8 +292,15 @@
     "executionOrder": "v1"
   },
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2025-03-10T19:44:04.175Z",
+      "updatedAt": "2025-03-10T19:44:04.175Z",
+      "id": "c9bDiV46PyflLgFP",
+      "name": "Agente Clinica"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2025-03-10T12:12:11.000Z",
-  "versionId": "957bc77d-ab79-45c2-a737-498c73416fab"
+  "updatedAt": "2025-03-10T19:44:11.000Z",
+  "versionId": "d576fab2-649f-42bc-849f-becaadf5689c"
 }
