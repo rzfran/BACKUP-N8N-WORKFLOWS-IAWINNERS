@@ -6,24 +6,6 @@
         []
       ]
     },
-    "Google Sheets": {
-      "main": [
-        [
-          {
-            "node": "Gmail8",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Stop and Error1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Switch": {
       "main": [
         [
@@ -42,87 +24,9 @@
         ]
       ]
     },
-    "Google Sheets1": {
-      "main": [
-        [
-          {
-            "node": "Gmail7",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Stop and Error1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Google Sheets2": {
-      "main": [
-        [
-          {
-            "node": "Gmail6",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Stop and Error1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Google Sheets3": {
-      "main": [
-        [
-          {
-            "node": "Gmail9",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Stop and Error1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Google Sheets4": {
-      "main": [
-        [
-          {
-            "node": "Gmail10",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Stop and Error1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Google Sheets5": {
       "main": [
-        [
-          {
-            "node": "Gmail11",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         [
           {
             "node": "Stop and Error1",
@@ -134,12 +38,48 @@
     },
     "Switch1": {
       "main": [
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets5",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Google Drive7": {
@@ -266,16 +206,70 @@
     },
     "Google Sheets12": {
       "main": [
-        [
-          {
-            "node": "Gmail2",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         [
           {
             "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets4": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets3": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
             "type": "main",
             "index": 0
           }
@@ -338,224 +332,6 @@
     },
     {
       "parameters": {
-        "operation": "append",
-        "documentId": {
-          "__rl": true,
-          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
-          "mode": "list",
-          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 2132471341,
-          "mode": "list",
-          "cachedResultName": "Master Intensivo",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2132471341"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Fecha_Make": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm:ss') }}",
-            "Fecha_n8n": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm:ss') }}",
-            "Nombre": "={{ $('On form submission').item.json['Nombre y apellido'] }}",
-            "Curso Inscrito": "={{ $('On form submission').item.json['Curso al que perteneces'] }}",
-            "Correo": "={{ $('On form submission').item.json.Correo }}",
-            "Pregunta": "={{ $('On form submission').item.json['Tu pregunta'] }}",
-            "Área": "={{ $('On form submission').item.json['¿A qué área corresponde tu consulta?'] }}",
-            "Día de Clase": "Miércoles",
-            "Contestada": "No"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "Fecha_Make",
-              "displayName": "Fecha_Make",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Nombre",
-              "displayName": "Nombre",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Curso Inscrito",
-              "displayName": "Curso Inscrito",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Correo",
-              "displayName": "Correo",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Pregunta",
-              "displayName": "Pregunta",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Archivo adjunto",
-              "displayName": "Archivo adjunto",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Área",
-              "displayName": "Área",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Día de Clase",
-              "displayName": "Día de Clase",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Contestada",
-              "displayName": "Contestada",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Fecha_n8n",
-              "displayName": "Fecha_n8n",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Nombre",
-              "displayName": "Nombre",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Curso Inscrito",
-              "displayName": "Curso Inscrito",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Correo",
-              "displayName": "Correo",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Pregunta",
-              "displayName": "Pregunta",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Archivo adjunto",
-              "displayName": "Archivo adjunto",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Área",
-              "displayName": "Área",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Día de Clase",
-              "displayName": "Día de Clase",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Contestada",
-              "displayName": "Contestada",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        300,
-        -900
-      ],
-      "id": "4400603d-cf62-4fad-94f8-9c60ac825f02",
-      "name": "Google Sheets",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "SkQUSycZPhGPNNXN",
-          "name": "Google Sheets Fran"
-        }
-      },
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
         "rules": {
           "values": [
             {
@@ -615,551 +391,11 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -440,
-        200
+        -240,
+        60
       ],
       "id": "4e1a2e53-e4ac-4b8e-bf4c-e968219d06fd",
       "name": "Switch"
-    },
-    {
-      "parameters": {
-        "operation": "append",
-        "documentId": {
-          "__rl": true,
-          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
-          "mode": "list",
-          "cachedResultName": "PREGUNTAS COMUNIDAD/MASTER INTENSIVO",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 804520427,
-          "mode": "list",
-          "cachedResultName": "n8n",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=804520427"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Nombre": "={{ $('Switch').item.json.Nombre }}",
-            "Fecha": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm')}}",
-            "Correo": "={{ $('Switch').item.json.Correo }}",
-            "Pregunta": "={{ $('Switch').item.json['Tu pregunta'] }}",
-            "Archivo adjunto": "={{ $json.webViewLink }}",
-            "Clase/Temática": "={{ $('Switch').item.json['¿A qué clase corresponde tu consulta?'] }}",
-            "Día de Clase": "Jueves",
-            "Contestada": "No"
-          },
-          "matchingColumns": [
-            "Nombre"
-          ],
-          "schema": [
-            {
-              "id": "Fecha",
-              "displayName": "Fecha",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Nombre",
-              "displayName": "Nombre",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Correo",
-              "displayName": "Correo",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Pregunta",
-              "displayName": "Pregunta",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Archivo adjunto",
-              "displayName": "Archivo adjunto",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Clase/Temática",
-              "displayName": "Clase/Temática",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Día de Clase",
-              "displayName": "Día de Clase",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Contestada",
-              "displayName": "Contestada",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        360,
-        -700
-      ],
-      "id": "9203bc7b-70a9-4aad-bbd8-4f760b803fc6",
-      "name": "Google Sheets1",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "SkQUSycZPhGPNNXN",
-          "name": "Google Sheets Fran"
-        }
-      },
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "operation": "append",
-        "documentId": {
-          "__rl": true,
-          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
-          "mode": "list",
-          "cachedResultName": "PREGUNTAS COMUNIDAD/MASTER INTENSIVO",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 509689010,
-          "mode": "list",
-          "cachedResultName": "GHL",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=509689010"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Nombre": "={{ $('Switch').item.json.Nombre }}",
-            "Fecha": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm')}}",
-            "Correo": "={{ $('Switch').item.json.Correo }}",
-            "Pregunta": "={{ $('Switch').item.json['Tu pregunta'] }}",
-            "Archivo adjunto": "={{ $json.webViewLink }}",
-            "Clase/Temática": "={{ $('Switch').item.json['¿A qué clase corresponde tu consulta?'] }}",
-            "Día de Clase": "Jueves",
-            "Contestada": "No"
-          },
-          "matchingColumns": [
-            "Nombre"
-          ],
-          "schema": [
-            {
-              "id": "Fecha",
-              "displayName": "Fecha",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Nombre",
-              "displayName": "Nombre",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Correo",
-              "displayName": "Correo",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Pregunta",
-              "displayName": "Pregunta",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Archivo adjunto",
-              "displayName": "Archivo adjunto",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Clase/Temática",
-              "displayName": "Clase/Temática",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Día de Clase",
-              "displayName": "Día de Clase",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Contestada",
-              "displayName": "Contestada",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        440,
-        -500
-      ],
-      "id": "5e03e41e-10ad-48d1-952d-1c65265491f9",
-      "name": "Google Sheets2",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "SkQUSycZPhGPNNXN",
-          "name": "Google Sheets Fran"
-        }
-      },
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "operation": "append",
-        "documentId": {
-          "__rl": true,
-          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
-          "mode": "list",
-          "cachedResultName": "PREGUNTAS COMUNIDAD/MASTER INTENSIVO",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 14910667,
-          "mode": "list",
-          "cachedResultName": "Marca Personal, RRSS, Ventas",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=14910667"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Nombre": "={{ $('Switch').item.json.Nombre }}",
-            "Fecha": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm')}}",
-            "Correo": "={{ $('Switch').item.json.Correo }}",
-            "Pregunta": "={{ $('Switch').item.json['Tu pregunta'] }}",
-            "Archivo adjunto": "={{ $json.webViewLink }}",
-            "Clase/Temática": "={{ $('Switch').item.json['¿A qué clase corresponde tu consulta?'] }}",
-            "Día de Clase": "Martes",
-            "Contestada": "No"
-          },
-          "matchingColumns": [
-            "Nombre"
-          ],
-          "schema": [
-            {
-              "id": "Fecha",
-              "displayName": "Fecha",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Nombre",
-              "displayName": "Nombre",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Correo",
-              "displayName": "Correo",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Pregunta",
-              "displayName": "Pregunta",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Archivo adjunto",
-              "displayName": "Archivo adjunto",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Clase/Temática",
-              "displayName": "Clase/Temática",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Día de Clase",
-              "displayName": "Día de Clase",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Contestada",
-              "displayName": "Contestada",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        520,
-        -300
-      ],
-      "id": "df531dd2-3728-49f2-9c61-1106bb039521",
-      "name": "Google Sheets3",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "SkQUSycZPhGPNNXN",
-          "name": "Google Sheets Fran"
-        }
-      },
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "operation": "append",
-        "documentId": {
-          "__rl": true,
-          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
-          "mode": "list",
-          "cachedResultName": "PREGUNTAS COMUNIDAD/MASTER INTENSIVO",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 661125291,
-          "mode": "list",
-          "cachedResultName": "Agentes de Voz",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=661125291"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Nombre": "={{ $('Switch').item.json.Nombre }}",
-            "Fecha": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm')}}",
-            "Correo": "={{ $('Switch').item.json.Correo }}",
-            "Pregunta": "={{ $('Switch').item.json['Tu pregunta'] }}",
-            "Archivo adjunto": "={{ $json.webViewLink }}",
-            "Clase/Temática": "={{ $('Switch').item.json['¿A qué clase corresponde tu consulta?'] }}",
-            "Día de Clase": "Jueves",
-            "Contestada": "No"
-          },
-          "matchingColumns": [
-            "Nombre"
-          ],
-          "schema": [
-            {
-              "id": "Fecha",
-              "displayName": "Fecha",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Nombre",
-              "displayName": "Nombre",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Correo",
-              "displayName": "Correo",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Pregunta",
-              "displayName": "Pregunta",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Archivo adjunto",
-              "displayName": "Archivo adjunto",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Clase/Temática",
-              "displayName": "Clase/Temática",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Día de Clase",
-              "displayName": "Día de Clase",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Contestada",
-              "displayName": "Contestada",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        600,
-        -100
-      ],
-      "id": "f9941510-052e-4ec6-8272-25166146fa4b",
-      "name": "Google Sheets4",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "SkQUSycZPhGPNNXN",
-          "name": "Google Sheets Fran"
-        }
-      },
-      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -1283,8 +519,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        660,
-        100
+        300,
+        -120
       ],
       "id": "c7c50b34-faac-40d0-9f15-b17801c5ca4a",
       "name": "Google Sheets5",
@@ -1456,8 +692,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -140,
-        -40
+        80,
+        -240
       ],
       "id": "d110c4c6-a198-4bf9-97d9-49f3e9d59b12",
       "name": "Switch1"
@@ -1516,14 +752,14 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "n_Nombre": "={{ $('Formulario').item.json.data.data.v6zx04fiywuhxf4npkt7o3bo }}",
-            "n_Correo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-            "n_Pregunta": "={{ $('Formulario').item.json.data.data.w0xmi9ncyw7o8ij7w7km4ivc }}",
-            "n_Archivo adjunto": "={{ $('Formulario').item.json.data.meta.url }}",
-            "n_Área": "={{ $('Formulario').item.json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+            "n_Nombre": "={{ $json.data.data.v6zx04fiywuhxf4npkt7o3bo }}",
+            "n_Correo": "={{ $json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+            "n_Pregunta": "={{ $json.data.data.w0xmi9ncyw7o8ij7w7km4ivc }}",
+            "n_Archivo adjunto": "=",
+            "n_Área": "={{ $json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+            "n_Fecha": "={{ $json.data.createdAt }}",
             "n_Día de Clase": "Jueves",
-            "n_Contestada": "No",
-            "n_Fecha": "={{ $('Formulario').item.json.data.createdAt.toDateTime().format('dd-MM-yyyy hh:mm:ss') }}"
+            "n_Contestada": "No"
           },
           "matchingColumns": [],
           "schema": [
@@ -1534,7 +770,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "m_Nombre",
@@ -1543,7 +780,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "m_Correo",
@@ -1552,7 +790,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "m_Pregunta",
@@ -1561,7 +800,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "m_Archivo_Adjunto",
@@ -1571,7 +811,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "m_Área",
@@ -1580,7 +820,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "m_Día de clase",
@@ -1590,7 +831,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "m_Repondida",
@@ -1600,7 +841,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "n_Fecha",
@@ -1682,7 +923,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Nombre",
@@ -1692,7 +933,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Correo",
@@ -1702,7 +943,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Pregunta",
@@ -1712,7 +953,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Archivo adjunto",
@@ -1722,7 +963,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Área",
@@ -1732,7 +973,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Día de Clase",
@@ -1742,7 +983,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Contestada",
@@ -1752,7 +993,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Fecha",
@@ -1762,7 +1003,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Nombre",
@@ -1772,7 +1013,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Correo",
@@ -1782,7 +1023,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Pregunta",
@@ -1792,7 +1033,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Archivo adjunto",
@@ -1802,7 +1043,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Área",
@@ -1812,7 +1053,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Día de Clase",
@@ -1822,7 +1063,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Contestada",
@@ -1832,7 +1073,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Fecha",
@@ -1842,7 +1083,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Nombre",
@@ -1852,7 +1093,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Correo",
@@ -1862,7 +1103,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Pregunta",
@@ -1872,7 +1113,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Archivo adjunto",
@@ -1882,7 +1123,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Área",
@@ -1892,7 +1133,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Día de Clase",
@@ -1902,7 +1143,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Contestada",
@@ -1912,7 +1153,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Fecha",
@@ -1922,7 +1163,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Nombre",
@@ -1932,7 +1173,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Correo",
@@ -1942,7 +1183,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Pregunta",
@@ -1952,7 +1193,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Archivo adjunto",
@@ -1962,7 +1203,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Área",
@@ -1972,7 +1213,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Día de Clase",
@@ -1982,7 +1223,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Contestada",
@@ -1992,21 +1233,19 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             }
           ],
           "attemptToConvertTypes": false,
           "convertFieldsToString": false
         },
-        "options": {
-          "cellFormat": "USER_ENTERED"
-        }
+        "options": {}
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        600,
-        520
+        300,
+        380
       ],
       "id": "7baf65d1-27c0-42d5-a76e-c0a7397bd6f7",
       "name": "Google Sheets7",
@@ -2485,8 +1724,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        520,
-        720
+        740,
+        380
       ],
       "id": "aed2b3a0-2b87-4b46-b3e0-e3316db58e2b",
       "name": "Google Sheets8",
@@ -2510,8 +1749,8 @@
       "type": "@formbricks/n8n-nodes-formbricks.formbricks",
       "typeVersion": 1,
       "position": [
-        -720,
-        200
+        -380,
+        60
       ],
       "id": "f3b70308-d210-4bde-b3ad-78c125845c7e",
       "name": "Formulario",
@@ -2683,8 +1922,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -140,
-        320
+        80,
+        260
       ],
       "id": "42820913-282c-4232-83fe-93b75ac3b62d",
       "name": "Switch3"
@@ -2696,8 +1935,8 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        240,
-        1520
+        300,
+        620
       ],
       "id": "e1186481-ae23-494a-9737-f718e27a8870",
       "name": "Stop and Error"
@@ -2709,8 +1948,8 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        240,
-        -1060
+        280,
+        -400
       ],
       "id": "b601f6d1-57f5-49b7-b667-bdda309f3371",
       "name": "Stop and Error1"
@@ -3221,8 +2460,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        440,
-        920
+        960,
+        380
       ],
       "id": "d3d85c71-9842-4a97-906c-5146dd6fb4c1",
       "name": "Google Sheets9",
@@ -3740,8 +2979,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        360,
-        1120
+        1180,
+        380
       ],
       "id": "bb193c1a-1df4-4b87-816d-2c70af1ea2b9",
       "name": "Google Sheets10",
@@ -4259,8 +3498,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        280,
-        1320
+        1400,
+        380
       ],
       "id": "ad9b23f3-00c0-4d09-bba7-a6617ceee320",
       "name": "Google Sheets11",
@@ -4284,8 +3523,8 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        740,
-        720
+        840,
+        240
       ],
       "id": "2075d7f5-c500-4652-8df9-196efaacfaeb",
       "name": "Gmail",
@@ -4309,8 +3548,8 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        820,
-        520
+        620,
+        240
       ],
       "id": "1551f282-d8b6-4e01-85e1-0c21c19cb183",
       "name": "Gmail1",
@@ -4334,8 +3573,8 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        880,
-        320
+        400,
+        240
       ],
       "id": "b97d5dc3-f067-4314-96b9-c82c62d4d6b4",
       "name": "Gmail2",
@@ -4359,8 +3598,8 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        660,
-        920
+        1060,
+        240
       ],
       "id": "ab517d3f-7c6e-4347-ab03-88bbd2371eda",
       "name": "Gmail3",
@@ -4384,8 +3623,8 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        580,
-        1120
+        1280,
+        240
       ],
       "id": "54051ff8-fa1f-4827-8311-78e4cabc6e56",
       "name": "Gmail4",
@@ -4409,8 +3648,8 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        500,
-        1320
+        1500,
+        240
       ],
       "id": "2f6b821a-75ba-471e-be9d-dedf76d59b5d",
       "name": "Gmail5",
@@ -4424,153 +3663,530 @@
     },
     {
       "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>GohighLevel</strong> el día <span class=\"highlight\">Jueves a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
-        "options": {
-          "appendAttribution": false
-        }
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS COMUNIDAD/MASTER INTENSIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2118442775,
+          "mode": "list",
+          "cachedResultName": "Master IA Expert",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2118442775"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "m_Fecha": "={{ $json.data.createdAt }}",
+            "m_Nombre": "={{ $json.data.data.v6zx04fiywuhxf4npkt7o3bo }}",
+            "m_Correo": "={{ $json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+            "m_Pregunta": "={{ $json.data.data.w0xmi9ncyw7o8ij7w7km4ivc }}",
+            "m_Área": "={{ $json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+            "m_Día de clase": "Miércoles",
+            "m_Repondida": "No"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "m_Fecha",
+              "displayName": "m_Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "m_Nombre",
+              "displayName": "m_Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "m_Correo",
+              "displayName": "m_Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "m_Pregunta",
+              "displayName": "m_Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "m_Archivo_Adjunto",
+              "displayName": "m_Archivo_Adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "m_Área",
+              "displayName": "m_Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "m_Día de clase",
+              "displayName": "m_Día de clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "m_Repondida",
+              "displayName": "m_Repondida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "n_Fecha",
+              "displayName": "n_Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "n_Nombre",
+              "displayName": "n_Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "n_Correo",
+              "displayName": "n_Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "n_Pregunta",
+              "displayName": "n_Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "n_Archivo adjunto",
+              "displayName": "n_Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "n_Área",
+              "displayName": "n_Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "n_Día de Clase",
+              "displayName": "n_Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "n_Contestada",
+              "displayName": "n_Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "g_Fecha",
+              "displayName": "g_Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "g_Nombre",
+              "displayName": "g_Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "g_Correo",
+              "displayName": "g_Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "g_Pregunta",
+              "displayName": "g_Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "g_Archivo adjunto",
+              "displayName": "g_Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "g_Área",
+              "displayName": "g_Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "g_Día de Clase",
+              "displayName": "g_Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "g_Contestada",
+              "displayName": "g_Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "mp_Fecha",
+              "displayName": "mp_Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "mp_Nombre",
+              "displayName": "mp_Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "mp_Correo",
+              "displayName": "mp_Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "mp_Pregunta",
+              "displayName": "mp_Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "mp_Archivo adjunto",
+              "displayName": "mp_Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "mp_Área",
+              "displayName": "mp_Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "mp_Día de Clase",
+              "displayName": "mp_Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "mp_Contestada",
+              "displayName": "mp_Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "av_Fecha",
+              "displayName": "av_Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "av_Nombre",
+              "displayName": "av_Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "av_Correo",
+              "displayName": "av_Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "av_Pregunta",
+              "displayName": "av_Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "av_Archivo adjunto",
+              "displayName": "av_Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "av_Área",
+              "displayName": "av_Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "av_Día de Clase",
+              "displayName": "av_Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "av_Contestada",
+              "displayName": "av_Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "gp_Fecha",
+              "displayName": "gp_Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "gp_Nombre",
+              "displayName": "gp_Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "gp_Correo",
+              "displayName": "gp_Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "gp_Pregunta",
+              "displayName": "gp_Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "gp_Archivo adjunto",
+              "displayName": "gp_Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "gp_Área",
+              "displayName": "gp_Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "gp_Día de Clase",
+              "displayName": "gp_Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "gp_Contestada",
+              "displayName": "gp_Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
       },
-      "type": "n8n-nodes-base.gmail",
-      "typeVersion": 2.1,
-      "position": [
-        660,
-        -500
-      ],
-      "id": "e0e35b40-4356-4a13-a962-ba6754575996",
-      "name": "Gmail6",
-      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
-      "credentials": {
-        "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>N8N</strong> el día <span class=\"highlight\">Jueves a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
-        "options": {
-          "appendAttribution": false
-        }
-      },
-      "type": "n8n-nodes-base.gmail",
-      "typeVersion": 2.1,
-      "position": [
-        580,
-        -700
-      ],
-      "id": "c8e427db-2a42-4813-a67d-ea0c551e1b93",
-      "name": "Gmail7",
-      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
-      "credentials": {
-        "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>Make y Automatizaciones</strong> el día <span class=\"highlight\">JMiércoles a las 18:00 PM (Hora España)</span>.\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
-        "options": {
-          "appendAttribution": false
-        }
-      },
-      "type": "n8n-nodes-base.gmail",
-      "typeVersion": 2.1,
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
       "position": [
         520,
-        -900
+        380
       ],
-      "id": "2b4eeb2d-4e9f-40e4-898c-41018c768302",
-      "name": "Gmail8",
-      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
+      "id": "2f0aa126-afba-4df7-8de1-354c72fb699b",
+      "name": "Google Sheets12",
       "credentials": {
-        "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>Marca personal, RRSS y Ventas</strong> el día <span class=\"highlight\">Martes a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
-        "options": {
-          "appendAttribution": false
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
         }
       },
-      "type": "n8n-nodes-base.gmail",
-      "typeVersion": 2.1,
-      "position": [
-        740,
-        -300
-      ],
-      "id": "e1fb52dd-59d2-4494-8751-22227420d1d0",
-      "name": "Gmail9",
-      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
-      "credentials": {
-        "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>Marca personal, RRSS y Ventas</strong> el día <span class=\"highlight\">Martes a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
-        "options": {
-          "appendAttribution": false
-        }
-      },
-      "type": "n8n-nodes-base.gmail",
-      "typeVersion": 2.1,
-      "position": [
-        820,
-        -100
-      ],
-      "id": "0f0cf182-02b1-4a80-842f-87ffe95296c3",
-      "name": "Gmail10",
-      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
-      "credentials": {
-        "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>Marca personal, RRSS y Ventas</strong> el día <span class=\"highlight\">Martes a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
-        "options": {
-          "appendAttribution": false
-        }
-      },
-      "type": "n8n-nodes-base.gmail",
-      "typeVersion": 2.1,
-      "position": [
-        880,
-        100
-      ],
-      "id": "14867457-9fb6-490a-80b1-df5633c17857",
-      "name": "Gmail11",
-      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
-      "credentials": {
-        "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
-        }
-      }
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -4685,7 +4301,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "n_Nombre",
@@ -4694,7 +4311,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "n_Correo",
@@ -4703,7 +4321,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "n_Pregunta",
@@ -4712,7 +4331,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "n_Archivo adjunto",
@@ -4721,7 +4341,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "n_Área",
@@ -4730,7 +4351,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "n_Día de Clase",
@@ -4739,7 +4361,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "n_Contestada",
@@ -4748,7 +4371,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "g_Fecha",
@@ -4758,7 +4382,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Nombre",
@@ -4768,7 +4392,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Correo",
@@ -4778,7 +4402,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Pregunta",
@@ -4788,7 +4412,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Archivo adjunto",
@@ -4798,7 +4422,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Área",
@@ -4808,7 +4432,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Día de Clase",
@@ -4818,7 +4442,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "g_Contestada",
@@ -4828,7 +4452,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Fecha",
@@ -4838,7 +4462,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Nombre",
@@ -4848,7 +4472,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Correo",
@@ -4858,7 +4482,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Pregunta",
@@ -4868,7 +4492,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Archivo adjunto",
@@ -4878,7 +4502,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Área",
@@ -4888,7 +4512,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Día de Clase",
@@ -4898,7 +4522,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "mp_Contestada",
@@ -4908,7 +4532,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Fecha",
@@ -4918,7 +4542,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Nombre",
@@ -4928,7 +4552,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Correo",
@@ -4938,7 +4562,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Pregunta",
@@ -4948,7 +4572,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Archivo adjunto",
@@ -4958,7 +4582,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Área",
@@ -4968,7 +4592,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Día de Clase",
@@ -4978,7 +4602,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "av_Contestada",
@@ -4988,7 +4612,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Fecha",
@@ -4998,7 +4622,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Nombre",
@@ -5008,7 +4632,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Correo",
@@ -5018,7 +4642,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Pregunta",
@@ -5028,7 +4652,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Archivo adjunto",
@@ -5038,7 +4662,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Área",
@@ -5048,7 +4672,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Día de Clase",
@@ -5058,11 +4682,147 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": false
+              "removed": true
             },
             {
               "id": "gp_Contestada",
               "displayName": "gp_Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2380,
+        600
+      ],
+      "id": "fda1f778-2895-4fb5-af6d-b25d9a2987a2",
+      "name": "Google Sheets14",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "disabled": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS COMUNIDAD/MASTER INTENSIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 661125291,
+          "mode": "list",
+          "cachedResultName": "Agentes de Voz",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=661125291"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ $('Switch').item.json.Nombre }}",
+            "Fecha": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm')}}",
+            "Correo": "={{ $('Switch').item.json.Correo }}",
+            "Pregunta": "={{ $('Switch').item.json['Tu pregunta'] }}",
+            "Archivo adjunto": "={{ $json.webViewLink }}",
+            "Clase/Temática": "={{ $('Switch').item.json['¿A qué clase corresponde tu consulta?'] }}",
+            "Día de Clase": "Jueves",
+            "Contestada": "No"
+          },
+          "matchingColumns": [
+            "Nombre"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clase/Temática",
+              "displayName": "Clase/Temática",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -5074,18 +4834,639 @@
           "attemptToConvertTypes": false,
           "convertFieldsToString": false
         },
-        "options": {
-          "cellFormat": "USER_ENTERED"
-        }
+        "options": {}
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        660,
-        320
+        520,
+        -120
       ],
-      "id": "2f0aa126-afba-4df7-8de1-354c72fb699b",
-      "name": "Google Sheets12",
+      "id": "f9941510-052e-4ec6-8272-25166146fa4b",
+      "name": "Google Sheets4",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS COMUNIDAD/MASTER INTENSIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 14910667,
+          "mode": "list",
+          "cachedResultName": "Marca Personal, RRSS, Ventas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=14910667"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ $('Switch').item.json.Nombre }}",
+            "Fecha": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm')}}",
+            "Correo": "={{ $('Switch').item.json.Correo }}",
+            "Pregunta": "={{ $('Switch').item.json['Tu pregunta'] }}",
+            "Archivo adjunto": "={{ $json.webViewLink }}",
+            "Clase/Temática": "={{ $('Switch').item.json['¿A qué clase corresponde tu consulta?'] }}",
+            "Día de Clase": "Martes",
+            "Contestada": "No"
+          },
+          "matchingColumns": [
+            "Nombre"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clase/Temática",
+              "displayName": "Clase/Temática",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        740,
+        -120
+      ],
+      "id": "df531dd2-3728-49f2-9c61-1106bb039521",
+      "name": "Google Sheets3",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS COMUNIDAD/MASTER INTENSIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 509689010,
+          "mode": "list",
+          "cachedResultName": "GHL",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=509689010"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ $('Switch').item.json.Nombre }}",
+            "Fecha": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm')}}",
+            "Correo": "={{ $('Switch').item.json.Correo }}",
+            "Pregunta": "={{ $('Switch').item.json['Tu pregunta'] }}",
+            "Archivo adjunto": "={{ $json.webViewLink }}",
+            "Clase/Temática": "={{ $('Switch').item.json['¿A qué clase corresponde tu consulta?'] }}",
+            "Día de Clase": "Jueves",
+            "Contestada": "No"
+          },
+          "matchingColumns": [
+            "Nombre"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clase/Temática",
+              "displayName": "Clase/Temática",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        960,
+        -120
+      ],
+      "id": "5e03e41e-10ad-48d1-952d-1c65265491f9",
+      "name": "Google Sheets2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS COMUNIDAD/MASTER INTENSIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 804520427,
+          "mode": "list",
+          "cachedResultName": "n8n",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=804520427"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ $('Switch').item.json.Nombre }}",
+            "Fecha": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm')}}",
+            "Correo": "={{ $('Switch').item.json.Correo }}",
+            "Pregunta": "={{ $('Switch').item.json['Tu pregunta'] }}",
+            "Archivo adjunto": "={{ $json.webViewLink }}",
+            "Clase/Temática": "={{ $('Switch').item.json['¿A qué clase corresponde tu consulta?'] }}",
+            "Día de Clase": "Jueves",
+            "Contestada": "No"
+          },
+          "matchingColumns": [
+            "Nombre"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clase/Temática",
+              "displayName": "Clase/Temática",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1180,
+        -120
+      ],
+      "id": "9203bc7b-70a9-4aad-bbd8-4f760b803fc6",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2132471341,
+          "mode": "list",
+          "cachedResultName": "Master Intensivo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2132471341"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha_Make": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm:ss') }}",
+            "Fecha_n8n": "={{ $('On form submission').item.json.submittedAt.toDateTime().format('dd-MM-yyyy hh:mm:ss') }}",
+            "Nombre": "={{ $('On form submission').item.json['Nombre y apellido'] }}",
+            "Curso Inscrito": "={{ $('On form submission').item.json['Curso al que perteneces'] }}",
+            "Correo": "={{ $('On form submission').item.json.Correo }}",
+            "Pregunta": "={{ $('On form submission').item.json['Tu pregunta'] }}",
+            "Área": "={{ $('On form submission').item.json['¿A qué área corresponde tu consulta?'] }}",
+            "Día de Clase": "Miércoles",
+            "Contestada": "No"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha_Make",
+              "displayName": "Fecha_Make",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Curso Inscrito",
+              "displayName": "Curso Inscrito",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha_n8n",
+              "displayName": "Fecha_n8n",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Curso Inscrito",
+              "displayName": "Curso Inscrito",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1400,
+        -120
+      ],
+      "id": "4400603d-cf62-4fad-94f8-9c60ac825f02",
+      "name": "Google Sheets",
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "SkQUSycZPhGPNNXN",
@@ -5111,6 +5492,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2025-03-08T02:36:01.000Z",
-  "versionId": "559fbe56-d8dc-4a81-9765-5c964878e499"
+  "updatedAt": "2025-03-11T18:32:51.000Z",
+  "versionId": "8a74c1e5-7167-4fb7-a5e1-4c2d01d76a0d"
 }
