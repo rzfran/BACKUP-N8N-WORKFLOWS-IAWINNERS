@@ -1355,8 +1355,8 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.1,
       "position": [
-        -1320,
-        1380
+        -1340,
+        1320
       ],
       "id": "abd028f4-2e5c-4344-b23d-64712b31043b",
       "name": "When chat message received",
@@ -2102,6 +2102,19 @@
           "name": "AirTable - IA Winners"
         }
       }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        0,
+        0
+      ],
+      "id": "be73ed2b-d930-4d68-a0dc-abe88fa9c94c",
+      "name": "AI Agent2"
     }
   ],
   "pinData": {},
@@ -2118,6 +2131,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-03-07T18:29:40.000Z",
-  "versionId": "ad7fd912-8269-452e-9028-90eb530af466"
+  "updatedAt": "2025-03-11T18:26:14.000Z",
+  "versionId": "edd01809-7e2b-487f-8a98-2314a86f9911"
 }
