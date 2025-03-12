@@ -1,0 +1,164 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Airtable": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-11T18:27:16.702Z",
+  "id": "wNrEPUxCncODiMwM",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c50c3a3d-3394-47f5-a236-32e8d64a2b76",
+      "name": "When chat message received",
+      "webhookId": "3eb8898c-18d7-4572-9eca-15d66f282d0b"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Eres el asistente de Inmobiliaria Adexe.\n\nLlama a la Tool Airtable para ver las propiedades"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        220,
+        0
+      ],
+      "id": "f1d05754-495e-4ce3-a5e1-874f7612c783",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        60,
+        200
+      ],
+      "id": "89ad0b37-02f4-4231-9ade-e012ee210ebe",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        220,
+        200
+      ],
+      "id": "39c7f019-7adc-4047-8fcf-11dfe95378a8",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appoZuas9rxylxb8D",
+          "mode": "list",
+          "cachedResultName": "Gestión de Inmobiliaria - Reservas de Visitas en Barcelona",
+          "cachedResultUrl": "https://airtable.com/appoZuas9rxylxb8D"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblpWI7g3KB0GkRrc",
+          "mode": "list",
+          "cachedResultName": "Propiedades",
+          "cachedResultUrl": "https://airtable.com/appoZuas9rxylxb8D/tblpWI7g3KB0GkRrc"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        220
+      ],
+      "id": "66544152-e46c-4250-ba37-4e216a1256bf",
+      "name": "Airtable",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "X1eIyBWDlpFDtNMV",
+          "name": "AirTable - IA Winners"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-11T18:29:01.000Z",
+  "versionId": "8db605e3-c7e3-4966-a1c3-98c196ce396e"
+}
