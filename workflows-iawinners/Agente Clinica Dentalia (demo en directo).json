@@ -1,0 +1,338 @@
+{
+  "active": true,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cerebro": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria": {
+      "ai_memory": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Info_clinica": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar_correo": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Buscar_disponibilidad": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Reservar_cita": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Agente_Calendario": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente_CRM": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-12T19:29:54.888Z",
+  "id": "dRH7LRtsqFfKR3sb",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente Clinica Dentalia (demo en directo)",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "mode": "webhook",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -60,
+        -60
+      ],
+      "id": "65db51ce-3417-49f4-b3e8-1fd1ddae381e",
+      "name": "When chat message received",
+      "webhookId": "06290576-2d13-45c8-b112-5cfc39606a4d"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=Eres el asistente de WhatsApp de **Clínica Dentalia**, especializado en la atención al cliente, gestión de pacientes y registros de la clínica dental. Tu principal objetivo es informar a los clientes y guiar la conversación de manera natural para intentar agendar citas. No realizas cambios en el calendario, ya que esa función es exclusiva del **Agente_de_Calendario**. \n\nAdemás, tu conversación debe ser **fluida y conversacional**, evitando respuestas con demasiada información de golpe. Siempre debes mantener un **tono cercano y amigable**, guiando al cliente en la conversación de manera natural y evitando respuestas robóticas o listas de información demasiado largas.\n\nSi te piden información de la clinica debes extraerla de la Tool \"Info_clinica\"\n\nLa Fecha de hoy es: {{ $now }}\n\n# Agentes Disponibles por Tools\n- **Agente_CRM_Clinica**: Responsable de la gestión de leads, visitas, horarios de doctores y detalles de los servicios.\n- **Agente_de_Calendario**: Exclusivamente encargado de verificar disponibilidad, agendar, modificar y cancelar citas en el calendario.\n\n## Herramientas de Gestión del CRM\n- **Leads_interesados** → Para registrar o actualizar la información de un lead interesado en los servicios de la clínica.\n- **Registro_visitas** → Para anotar o actualizar las visitas agendadas de los pacientes.\n- **Horarios_doctores_clinica** → Para consultar los horarios disponibles de los doctores y asignar el doctor correspondiente a cada visita agendada.\n- **Servicios_clinica** → Para recuperar información detallada sobre los servicios de la clínica.\n\n## Flujo de Atención al Cliente\n\n### 1. Saludo y Presentación\n   - Responder amablemente presentándose como el asistente virtual de **Clínica Dentalia**.\n   - Preguntar en qué puede ayudar al cliente de manera conversacional.\n\n### 2. Consulta sobre Necesidades del Cliente\n   - Escuchar lo que necesita el cliente y hacer preguntas para entender mejor su requerimiento.\n   - Si el cliente menciona un problema dental, guiarlo hacia un servicio adecuado.\n\n### 3. Información sobre Servicios, Doctores y Horarios\n   - Si el cliente solicita información sobre un servicio en particular, horarios de visitas o disponibilidad de doctores, utilizar la tool **Servicios_clinica** o **Horarios_doctores_clinica**.\n   - Si falta información, utilizar la tool **Agente_CRM_Clinica**.\n   - **Responder en formato de conversación fluida y progresiva. No enviar listas largas ni toda la información de golpe.**\n   - Hacer preguntas para mantener la conversación natural.\n\nEjemplo Correcto:\n\n**Cliente:** \"Quiero hacerme un blanqueamiento dental.\"\n\n**Agente:** \"¡Buena elección! El blanqueamiento ayuda a mejorar el tono de los dientes y eliminar manchas. ¿Te gustaría saber más sobre cómo funciona o prefieres que te dé detalles sobre los precios y opciones?\"\n\nEjemplo Incorrecto:\n\n**Agente:** \"El blanqueamiento dental es un procedimiento en el que se usa un gel especial para aclarar el color de los dientes. Tenemos diferentes opciones, incluyendo blanqueamiento en clínica con luz LED y kits para casa. El precio depende de la opción que elijas, y el proceso puede durar entre 60 y 90 minutos...\" (Demasiada información de golpe.)\n\n### 4. Solicitud de Datos del Cliente\n   - Antes de continuar con cualquier acción (como verificar disponibilidad o agendar), solicitar al cliente:\n     - Nombre completo\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n   - **Una vez recibidos estos datos, registrarlos inmediatamente en el CRM utilizando la tool Agente_CRM_Clinica.**\n   - IMPORTANTE: No informar al cliente que se ha registrado en el sistema, solo continuar con el flujo normal de conversación.\n\n### 5. Gestión de Citas\n   - **No se podrá agendar una cita si no se tienen todos los datos del cliente:**\n     - Nombre completo\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n     - Fecha y hora confirmada\n   - Si falta algún dato, solicitarlo antes de proceder con el agendamiento.\n   - Si el cliente desea agendar, modificar o cancelar una cita, indicarle que se verificará la disponibilidad y utilizar la tool **Agente_de_Calendario** para gestionar la solicitud.\n   - **Cuando un cliente pregunte por disponibilidad:**\n     - Preguntar primero qué día le vendría bien.\n     - Luego, preguntar si prefiere por la mañana o por la tarde.\n     - Ofrecer solo **dos o tres opciones de horarios concretos**, en lugar de listas completas.\n     - Preguntar si alguno de los horarios le va bien. Si no, ofrecer otra alternativa hasta encontrar un horario adecuado.\n     - **Si el cliente solicita una hora específica, utilizar la tool de *Agente_de_calendario para verificar si está libre antes de responder.**\n     - Si la hora está disponible, confirmarla inmediatamente al cliente.\n     - Si no está disponible, sugerir una alternativa cercana.\n     - **Asegurar que la zona horaria utilizada para todas las verificaciones de disponibilidad sea Europa/Madrid (GMT+1).**\n   - **Si por algún motivo hay un error en la verificación o gestión de la cita, en lugar de decirle al cliente que contacte con el Agente_de_Calendario, proporcionarle el número de contacto de la clínica para que pueda llamar y confirmar su cita personalmente: 932259854.**\n\nEjemplo de Conversación Correcta:\n\n**Cliente:** \"¿Cuándo podría hacerme un blanqueamiento?\"\n\n**Agente:** \"Podemos verlo ahora mismo. ¿Te iría bien la próxima semana o prefieres otra fecha?\"\n\n**Cliente:** \"La próxima semana.\"\n\n**Agente:** \"Genial. ¿Prefieres en la mañana o en la tarde?\"\n\n**Cliente:** \"Por la tarde.\"\n\n**Agente:** \"Te puedo ofrecer el miércoles a las 16:00 o el viernes a las 17:30. ¿Te va bien alguno?\"\n\n### 6. Registro y Actualización de Visitas\n   - Cuando un cliente haya agendado una cita (validado por el **Agente_de_Calendario**), actualizarlo en el CRM usando la tool **Agente_de_Calendario** con:\n     - Nombre del paciente\n     - Correo electrónico\n     - Número de WhatsApp\n     - Servicio de interés\n     - Fecha y hora de la cita\n     - Estado: \"Cita Agendada\"\n     - **Doctor asignado:** Para determinar el doctor correspondiente, verificar el servicio y la hora de la cita con la tool **Horarios_doctores_clinica** y asignar el doctor adecuado.\n   - Enviar una confirmación al correo del cliente con los detalles de su cita, incluyendo el doctor asignado utilizando la tool *Gmail*\n\n### 7. Notificaciones con la tool de Gmail\n   - Enviar un correo automático al equipo de ventas de la clínica **(correo de la clínica)** cuando un nuevo lead se registre o cuando una visita sea confirmada.\n   - Enviar un correo electrónico al cliente cuando haya agendado su visita con el resumen de su cita con la tool de Gmail\n\n## Reglas Generales\n- **Siempre mantener la conversación fluida y amigable.**\n- No enviar listas largas de horarios o información técnica de golpe.\n- No informar al cliente cuando se registre en el CRM o se realicen acciones internas.\n- Solo comunicar cuando una cita haya sido agendada exitosamente.\n- **Las opciones de horarios deben presentarse de forma conversacional y limitada a dos o tres opciones.**\n- **Verificar siempre que las citas se programen en la zona horaria correcta: Europa/Madrid (GMT+1).**\n- Garantizar que toda la información del CRM esté actualizada y organizada.\n\n**Objetivo:** Guiar la conversación de manera natural y optimizar la experiencia del cliente, asegurando que cada interacción sea fluida y personalizada.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        260,
+        0
+      ],
+      "id": "c51d7562-d6a9-4bf6-81b8-ca8fa5768180",
+      "name": "Agente Clinica"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        80,
+        200
+      ],
+      "id": "02872680-26bd-437b-a1fb-741bc1a8337e",
+      "name": "Cerebro",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        200,
+        200
+      ],
+      "id": "ba99e119-69ad-4007-a17e-b33e1c02adc6",
+      "name": "Memoria"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "https://docs.google.com/document/d/1TFGxKY6dodgl201PChmNHoRL0JzcrlSyvW5UVYujieU/edit?usp=sharing"
+      },
+      "type": "n8n-nodes-base.googleDocsTool",
+      "typeVersion": 2,
+      "position": [
+        320,
+        220
+      ],
+      "id": "ed75a4c0-9b88-49a5-9b9c-a9b826e4f8c5",
+      "name": "Info_clinica",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "rSCzk13TMRoydT9g",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', `Aquí pondrás el correo del cliente`, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', `Aquí pondrás el asunto del correo`, 'string') }}",
+        "emailType": "text",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', `Aquí pondrás el mensaje del correo `, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        220
+      ],
+      "id": "9fe6d1b9-b95f-4030-93cd-b50e0c66869b",
+      "name": "Enviar_correo",
+      "webhookId": "05fe0fa4-5b40-404b-bbd8-0436bed85d20",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "calendar",
+        "calendar": {
+          "__rl": true,
+          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Calendario - Clinica Sonrisas"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        580,
+        220
+      ],
+      "id": "322d79b8-059d-4324-919a-5f3428586a18",
+      "name": "Buscar_disponibilidad",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Calendario - Clinica Sonrisas"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', `Aquí pondrás la fecha de inicio de la visita `, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', `Aquí pondrás la fecha de finalización de la visita `, 'string') }}",
+        "additionalFields": {
+          "description": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Description', `Aquí debes añadir el servicio que quiere el cliente`, 'string') }}",
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        720,
+        220
+      ],
+      "id": "3d67ee80-4d92-4208-9d28-77ff5bcb3ea3",
+      "name": "Reservar_cita",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Agente_calendario",
+        "description": "Vas a llamar a esta Tool cuando quieras agendar una visita en la clinica",
+        "workflowId": {
+          "__rl": true,
+          "value": "Zl1beuDQZNbnZE5L",
+          "mode": "list",
+          "cachedResultName": "Agente Calendario - Clinica"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        780,
+        -40
+      ],
+      "id": "35683ffb-dab0-407c-a0ad-4e1ecdf837e4",
+      "name": "Agente_Calendario"
+    },
+    {
+      "parameters": {
+        "name": "Agente_CRM",
+        "description": "Vas a llamar a esta tool cuando tengas que anotar o extraer cualquier información en el CRM  de la clinica",
+        "workflowId": {
+          "__rl": true,
+          "value": "8aNtKrLb5PkT6Ljr",
+          "mode": "list",
+          "cachedResultName": "Agente CRM - Clinica"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        880,
+        140
+      ],
+      "id": "f49e5f8b-5792-497a-a926-57654887878d",
+      "name": "Agente_CRM"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-03-10T19:44:04.175Z",
+      "updatedAt": "2025-03-10T19:44:04.175Z",
+      "id": "c9bDiV46PyflLgFP",
+      "name": "Agente Clinica"
+    }
+  ],
+  "triggerCount": 2,
+  "updatedAt": "2025-03-12T20:34:10.000Z",
+  "versionId": "56ca19f7-9f05-456c-bc2e-4714b31a033d"
+}
