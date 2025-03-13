@@ -311,8 +311,8 @@
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 2,
       "position": [
-        1480,
-        320
+        1500,
+        540
       ],
       "id": "2dc53f15-4712-413a-a36c-3b7c51bdda14",
       "name": "Agente de Instagram"
@@ -339,8 +339,8 @@
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 2,
       "position": [
-        1640,
-        320
+        1660,
+        520
       ],
       "id": "bccd7d43-09b6-47f0-9f94-36be2cd94e72",
       "name": "Agente de Youtube"
@@ -660,7 +660,7 @@
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 2,
       "position": [
-        1260,
+        1120,
         540
       ],
       "id": "8b5e98df-7013-4634-86dd-b5eb8ff10a56",
@@ -688,7 +688,7 @@
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 2,
       "position": [
-        1400,
+        1340,
         560
       ],
       "id": "f4eb6468-bca1-40a2-b274-d1df04efb211",
@@ -709,6 +709,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-11T16:34:01.000Z",
-  "versionId": "cc5b012c-efed-4ef4-a3ef-91caba2a908a"
+  "updatedAt": "2025-03-12T18:56:14.000Z",
+  "versionId": "d49585a5-a7ea-482c-ba01-9c70f1d32312"
 }
