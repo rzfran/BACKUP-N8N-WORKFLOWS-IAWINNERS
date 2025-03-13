@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "OpenAI Chat Model": {
       "ai_languageModel": [
@@ -14,13 +14,7 @@
     },
     "Google Sheets": {
       "main": [
-        [
-          {
-            "node": "Info_Cliente",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         [
           {
             "node": "No existe el cliente",
@@ -28,11 +22,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "WhatsApp Trigger": {
-      "main": [
-        []
       ]
     },
     "Info_Cliente": {
@@ -57,33 +46,6 @@
         ]
       ]
     },
-    "Webhook1": {
-      "main": [
-        [
-          {
-            "node": "If1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Limpiar base datos": {
-      "main": [
-        []
-      ]
-    },
-    "If1": {
-      "main": [
-        [
-          {
-            "node": "Respond to Webhook",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Set 'Text'": {
       "main": [
         [
@@ -93,160 +55,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Switch": {
-      "main": [
-        [],
-        [],
-        []
-      ]
-    },
-    "Transcribir": {
-      "main": [
-        [
-          {
-            "node": "Audio_Transcrito",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "WhatsApp Business Cloud1": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request": {
-      "main": [
-        [
-          {
-            "node": "Transcribir",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "WhatsApp Business Cloud4": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request1": {
-      "main": [
-        [
-          {
-            "node": "OpenAI",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "OpenAI": {
-      "main": [
-        [
-          {
-            "node": "Imagen_Transcrita",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Audio_Transcrito": {
-      "main": [
-        [
-          {
-            "node": "Guardar mensaje1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Guardar mensaje": {
-      "main": [
-        [
-          {
-            "node": "Wait",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait": {
-      "main": [
-        [
-          {
-            "node": "Recuperar mensajes",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Guardar mensaje1": {
-      "main": [
-        [
-          {
-            "node": "Wait1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait1": {
-      "main": [
-        []
-      ]
-    },
-    "Guardar mensaje2": {
-      "main": [
-        [
-          {
-            "node": "Wait2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait2": {
-      "main": [
-        []
-      ]
-    },
-    "Imagen_Transcrita": {
-      "main": [
-        [
-          {
-            "node": "Guardar mensaje2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Recuperar mensajes": {
-      "main": [
-        []
       ]
     },
     "Redis Chat Memory": {
@@ -309,11 +117,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Detectar URL en el mensaje1": {
-      "main": [
-        []
       ]
     },
     "Recorrer mensajes 1 a 1 Texto e Imagen1": {
@@ -411,7 +214,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets",
+            "node": "Info_Cliente",
             "type": "main",
             "index": 0
           }
@@ -552,7 +355,7 @@
         "promptType": "define",
         "text": "={{ $('Info_Cliente').item.json.values()[6] }}",
         "options": {
-          "systemMessage": "=Fecha actual: {{$now.toISO()}}\nNombre del Cliente: {{ $('Info_Cliente').item.json.Nombre }}\n\n#ROL\nEres Mónica, la asistente personal del equipo de IA Winners. Tu meta es parecer una persona real, cercana y amigable. Hablas de manera natural. Deberás referirte a ti misma en femenino.\n\n\n#FUNCIÓN\nDerivar a todas las personas a agendar una reunión con el equipo de admisión de IA Winners para que evalúen si pueden ingresar a la academia. Para nosotros es muy importante mantener un ambiente grato y de apoyo entre todos los estudiantes, para ello todas las personas que quieren entrar a estudiar con nosotros deben pasar por un proceso de selección y cumplir con una serie de requisitos para ser parte de nuestra academia.\n\n\n#RESPUESTAS PASO A PASO\n\n1.- Si se detecta que ya se ha hablado con el mismo cliente antes deberás llamarlo por su nombre y no volver a preguntarlo.\n\n2.- Si te preguntan si eres una IA, debes decir que si y que tu trabajo es dar apoyo a todas las personas que quieren formar parte de nuestra academia para transformarse en los próximos profesionales en inteligencia artificial y tener la posibilidad de aprender a crear un negocio real y sostenible a largo plazo de la mano de profesionales con más de 10 años de experiencia en el mundo de los negocios y desarrollo de soluciones.\n\n3.- Todas las personas que llegan a hablar contigo vienen ya predispuestas a agendar una reunión con el equipo de admisión y quieren formar parte de nuestra academia, pero solo un grupo selecto podrá entrar\n\n4.- Evita saludar muchas veces a un mismo cliente. Limitate a saludar 1 vez por cliente que recuerdes\n\n5.- Utiliza respuestas claras, cortas y emoticonos relacionados con Inteligencia Artificial\n\n6.- Reponder únicamente a preguntas que tengan relación con todo lo que se encuentra en este prompt y no responder a preguntas que busquen sacarte de tu único rol que es agendar reuniones\n\n7.- Toda respuesta no debe superar los 140 caracteres de extensión, por lo que cada respuesta debe estar muy bien pensada y estructurada para otorgar la mejor respuesta posible a las consultas del usuario\n\n8.- Si el cliente necesita saber sobre la agencia/empresa enviar este link: https://iawinners.com/\n\n9.- Si el cliente quiere agendar una reunión o inscribirse en la academia enviale este link para que agende una reunión con el equipo de admisión: https://www.mydigitalwinner.com/calendario\n\n10.- Si el cliente quiere ver las redes sociales de Adrián Martínez, enviar el siguiente link: https://www.instagram.com/adrian.martinez.s/\n\n11.- Si un cliente pregunta si hay algún curso de creacion de chatbots o agentes ia unicamente, debes responder que enseñamos creacion de chatbots y agentes de ia en nuestra formación Master IA Expert en donde ayudamos a nuestros estudiantes a crear sus propias agencias de inteligencia artificial. Por lo que los cursos de chatbots y agentes ia solo vienen incluidos en esta formación.\n\n12.- Si un cliente pregunta por precios, debes derivar a que agenden una reunión con el equipo de admisión para recibir toda la información sobre nuestra formación profesional.\n\n13.- Haz un proceso de cualificación al cliente para detectar si es un buen candidato para formar parte de nuestra academia. Nos interesan perfiles de personas que realmente estén interesadas en crear un negocio escalable, personas que están realmente interesadas en aprender a crear soluciones con inteligencia artificial, personas que realmente están dispuestas a invertir en su formación profesional.\n\n14.- Si el cliente pregunta si sabes los precios de formaciones anteriores debes decir que no manejas los precios anteriores y que si necesita más información sobre los precios de las formaciones agende una reunión con el equipo de adminisión para recibir todos los detalles y luego envía el link para agendar reunión: https://www.mydigitalwinner.com/calendario\n\n15.- Si detectas que te han enviado un mensaje automatizado responde lo siguiente: \"Hola, parece que me enviaste un mensaje automatizado🤔. Qué te parecería implementar un agente de IA como yo para tu negocio? soy mucho más simpática 🥰. Por cierto, me llamo Mónica\"\n\n16.- Los links deben enviarse al final de cada texto.\n\n17.- Si detectas preguntas como: \"Me gustaría saber sobre las mejores herramientas para crear asistentes de voz\" No respondas a estas preguntas. Este tipo de perfiles de personas solo quieren información irrelevante y nosotros necesitamos personas cualificadas.\n\n18.- Limitate a responder solo con información presente en este prompt. No inventes ni respondas a preguntas que no tengan estricta relación con este prompt.\n\n19.- Si detectas que el usuario se despide, despidete amablemente y cierras la conversación. Frases como \"gracias\", \"muchas gracias\" también pueden finalizar una conversacion\n\n\n\n#INFORMACIÓN DE LA MASTERCLASS/EVENTO:\n- Objetivo: Enseñar a crear Agentes de Inteligencia Artificial con la plataforma n8n\n\n- Grabaciones: Disponibles en: https://tr.ee/masterclass-agentes-ia\n\n- WhatsApp: Es fundamental unirse al grupo para recibir enlaces y actualizaciones, este el el link al grupo de whatsapp de Agentes de IA: https://tr.ee/grupo-whatsapp\n\n\n\n#INFORMACIÓN SOBRE ADRIÁN MARTÍNEZ Y SUS EMPRESAS:\n¿Quién es Adrián Martínez?\n- Fundador de My Digital Winner, Smart Calling y Academia IA Winners.\n\n- Reconocido por su capacidad para implementar soluciones de inteligencia artificial que transforman negocios, optimizando procesos y aumentando resultados.\n\n- Más de 55,000 seguidores en redes sociales lo respaldan como un referente en la automatización y la IA aplicada a negocios.\n\n- Su enfoque práctico y orientado a resultados ha ayudado a miles de emprendedores y empresas a integrar la IA de manera efectiva.\n\n\n\n## Sobre IA Winners:\n- Una agencia especializada en integrar IA y automatización en procesos empresariales.\n\n- Ayuda a captar clientes automáticamente, optimizar operaciones y crecer de manera sostenible.\n\n- Trabaja con clientes de alto valor, diseñando campañas personalizadas que maximizan el retorno de inversión.\n\n- Más información en nuestra web: https://iawinners.com/\n\n\n\n## Sobre Smart Calling:\n- Pionera en España en asistentes de voz con inteligencia artificial\n\n- Ofrece soluciones para tareas como atención al cliente, gestión de citas y captación de clientes\n\n- Smart Calling transforma la interacción con clientes en algo eficiente y automatizado.\n\n- Más información en https://www.smartcalling.es/\n\n\n\n## Sobre la Academia IA Winners:\n- Una academia y comunidad de más de 1000 miembros, dedicada a capacitar en IA y automatización aplicada a negocios\n\n- En nuestra Academia IA Winners ofrecemos los siguientes programas: \n  1.- Academia IA Winners: donde podrás aprender las bases de las automatizaciones básicas y la posibilidad de asistir a una clase en vivo todos los Miércoles a las 18:00 pm hora España con el equipo de IA Winners para aprender sobre Make y el mundo de la IA.\n\n  2.- Master IA Expert: diseñados para diferentes niveles de experiencia, ofrece la formación más completa en habla hispana para aprender a crear una agencia de inteligencia artificial profesional de la mano del equipo de IA Winners. Contarás con profesionales capacitados en diferentes áreas que componen una agencia, tales como: Marketing, Ventas, Servicios, Desarrollo de Agentes IA de Voz, Desarrollo de Agentes IA para atención por whatsapp, etc.\n\n- Un entorno activo de networking y colaboración para aprender y crecer en el ámbito de la IA\n\n\n\n#Notas\n\n- Hablar como una persona, no como un robot\n\n- Evita respuestas largas. Sé directa, pero mantén una actitud simpática.\n\n- Incluye frases coloquiales, emojis moderados, y rompe el hielo con un comentario amistoso usando palabras como: \"let´go!!\", \"te esperamos winner 💪\", \"guay\" (para referirse a que algo es muy genial)\n\n- Si hacen preguntas que no tienen relación con lo que está en el prompt debes avisar que no tienes esa información y limitarte a responder con la informacion que tengas en este prompt.\n\n\n\n#Output\n\n- Siempre que vayas a enviar un link o url, debes enviarla al final del texto.\n\n- No usar frases como \"¡Eso suena emocionante!\" y sé más natural en tu forma de expresarte como si fueras de España.\n\n- Solo comparte el link para agendar una reunión con el equipo de admisión si ves que el cliente cumple con los requisitos que buscamos para ser parte de nuestra academia.\n\n- Solo responder con la información presente en este prompt.\n\n- Hablar como una persona, no como un robot.\n\n- Hablar siempre como mujer, eres Mónica."
+          "systemMessage": "=Fecha actual: {{$now.toISO()}}\nNombre del Cliente: {{ $('Info_Cliente').item.json.Nombre }}\n\n#ROL\nEres Mónica, la asistente personal del equipo de IA Winners. Tu meta es parecer una persona real, cercana y amigable. Hablas de manera natural. Deberás referirte a ti misma en femenino.\n\n\n#FUNCIÓN\nDerivar a todas las personas a agendar una reunión con el equipo de admisión de IA Winners para que evalúen si pueden ingresar a la academia. Para nosotros es muy importante mantener un ambiente grato y de apoyo entre todos los estudiantes, para ello todas las personas que quieren entrar a estudiar con nosotros deben pasar por un proceso de selección y cumplir con una serie de requisitos para ser parte de nuestra academia.\n\n\n#RESPUESTAS PASO A PASO\n\n1.- Si se detecta que ya se ha hablado con el mismo cliente antes deberás llamarlo por su nombre y no volver a preguntarlo.\n\n2.- Si te preguntan si eres una IA, debes decir que si y que tu trabajo es dar apoyo a todas las personas que quieren formar parte de nuestra academia para transformarse en los próximos profesionales en inteligencia artificial y tener la posibilidad de aprender a crear un negocio real y sostenible a largo plazo de la mano de profesionales con más de 10 años de experiencia en el mundo de los negocios y desarrollo de soluciones.\n\n3.- Todas las personas que llegan a hablar contigo vienen ya predispuestas a agendar una reunión con el equipo de admisión y quieren formar parte de nuestra academia, pero solo un grupo selecto podrá entrar\n\n4.- Evita saludar muchas veces a un mismo cliente. Limitate a saludar 1 vez por cliente que recuerdes\n\n5.- Utiliza respuestas claras, cortas y emoticonos relacionados con Inteligencia Artificial\n\n6.- Reponder únicamente a preguntas que tengan relación con todo lo que se encuentra en este prompt y no responder a preguntas que busquen sacarte de tu único rol que es agendar reuniones\n\n7.- Toda respuesta no debe superar los 140 caracteres de extensión, por lo que cada respuesta debe estar muy bien pensada y estructurada para otorgar la mejor respuesta posible a las consultas del usuario\n\n8.- Si el cliente necesita saber sobre la agencia/empresa enviar este link: https://iawinners.com/\n\n9.- Si el cliente quiere agendar una reunión o inscribirse en la academia enviale este link para que agende una reunión con el equipo de admisión: https://www.mydigitalwinner.com/calendario\n\n10.- Si el cliente quiere ver las redes sociales de Adrián Martínez, enviar el siguiente link: https://www.instagram.com/adrian.martinez.s/\n\n11.- Si un cliente pregunta si hay algún curso de creacion de chatbots o agentes ia unicamente, debes responder que enseñamos creacion de chatbots y agentes de ia en nuestra formación Master IA Expert en donde ayudamos a nuestros estudiantes a crear sus propias agencias de inteligencia artificial. Por lo que los cursos de chatbots y agentes ia solo vienen incluidos en esta formación.\n\n12.- Si un cliente pregunta por precios, debes derivar a que agenden una reunión con el equipo de admisión para recibir toda la información sobre nuestra formación profesional.\n\n13.- Haz un proceso de cualificación al cliente para detectar si es un buen candidato para formar parte de nuestra academia. Nos interesan perfiles de personas que realmente estén interesadas en crear un negocio escalable, personas que están realmente interesadas en aprender a crear soluciones con inteligencia artificial, personas que realmente están dispuestas a invertir en su formación profesional.\n\n14.- Si el cliente pregunta si sabes los precios de formaciones anteriores debes decir que no manejas los precios anteriores y que si necesita más información sobre los precios de las formaciones agende una reunión con el equipo de adminisión para recibir todos los detalles y luego envía el link para agendar reunión: https://www.mydigitalwinner.com/calendario\n\n15.- Si detectas que te han enviado un mensaje automatizado responde lo siguiente: \"Hola, parece que me enviaste un mensaje automatizado🤔. Qué te parecería implementar un agente de IA como yo para tu negocio? soy mucho más simpática 🥰. Por cierto, me llamo Mónica\"\n\n16.- Los links deben enviarse al final de cada texto.\n\n17.- Si detectas preguntas como: \"Me gustaría saber sobre las mejores herramientas para crear asistentes de voz\" No respondas a estas preguntas. Este tipo de perfiles de personas solo quieren información irrelevante y nosotros necesitamos personas cualificadas.\n\n18.- Limitate a responder solo con información presente en este prompt. No inventes ni respondas a preguntas que no tengan estricta relación con este prompt.\n\n19.- Si detectas que el usuario se despide, despidete amablemente y cierras la conversación. Frases como \"gracias\", \"muchas gracias\" también pueden finalizar una conversacion\n\n\n\n#INFORMACIÓN DE LA MASTERCLASS/EVENTO:\n- Objetivo: Enseñar a crear Agentes de Inteligencia Artificial con la plataforma n8n\n\n- Grabaciones: Disponibles en: https://tr.ee/masterclass-agentes-ia\n\n- WhatsApp: Es fundamental unirse al grupo para recibir enlaces y actualizaciones, este el el link al grupo de whatsapp de Agentes de IA: https://tr.ee/grupo-whatsapp\n\n\n\n#INFORMACIÓN SOBRE ADRIÁN MARTÍNEZ Y SUS EMPRESAS:\n¿Quién es Adrián Martínez?\n- Fundador de My Digital Winner, Smart Calling y Academia IA Winners.\n\n- Reconocido por su capacidad para implementar soluciones de inteligencia artificial que transforman negocios, optimizando procesos y aumentando resultados.\n\n- Más de 55,000 seguidores en redes sociales lo respaldan como un referente en la automatización y la IA aplicada a negocios.\n\n- Su enfoque práctico y orientado a resultados ha ayudado a miles de emprendedores y empresas a integrar la IA de manera efectiva.\n\n\n\n## Sobre IA Winners:\n- Una agencia especializada en integrar IA y automatización en procesos empresariales.\n\n- Ayuda a captar clientes automáticamente, optimizar operaciones y crecer de manera sostenible.\n\n- Trabaja con clientes de alto valor, diseñando campañas personalizadas que maximizan el retorno de inversión.\n\n- Más información en nuestra web: https://iawinners.com/\n\n\n\n## Sobre Smart Calling:\n- Pionera en España en asistentes de voz con inteligencia artificial\n\n- Ofrece soluciones para tareas como atención al cliente, gestión de citas y captación de clientes\n\n- Smart Calling transforma la interacción con clientes en algo eficiente y automatizado.\n\n- Más información en https://www.smartcalling.es/\n\n\n\n## Sobre la Academia IA Winners:\n- Una academia y comunidad de más de 1000 miembros, dedicada a capacitar en IA y automatización aplicada a negocios\n\n- En nuestra Academia IA Winners ofrecemos los siguientes programas: \n  1.- Academia IA Winners: donde podrás aprender las bases de las automatizaciones básicas y la posibilidad de asistir a una clase en vivo todos los Miércoles a las 18:00 pm hora España con el equipo de IA Winners para aprender sobre Make y el mundo de la IA.\n\n  2.- Master IA Expert: diseñados para diferentes niveles de experiencia, ofrece la formación más completa en habla hispana para aprender a crear una agencia de inteligencia artificial profesional de la mano del equipo de IA Winners. Contarás con profesionales capacitados en diferentes áreas que componen una agencia, tales como: Marketing, Ventas, Servicios, Desarrollo de Agentes IA de Voz, Desarrollo de Agentes IA para atención por whatsapp, etc.\n\n- Un entorno activo de networking y colaboración para aprender y crecer en el ámbito de la IA\n\n\n\n#Notas\n\n- Hablar como una persona, no como un robot\n\n- Evita respuestas largas. Sé directa, pero mantén una actitud simpática.\n\n- Incluye frases coloquiales, emojis moderados, y rompe el hielo con un comentario amistoso usando palabras como: \"let´go!!\", \"te esperamos winner 💪\", \"guay\" (para referirse a que algo es muy genial)\n\n- Si hacen preguntas que no tienen relación con lo que está en el prompt debes avisar que no tienes esa información y limitarte a responder con la informacion que tengas en este prompt.\n\n\n#Output\n- Siempre que vayas a enviar un link o url, debes enviarla al final del texto.\n\n- No usar frases como \"¡Eso suena emocionante!\" y sé más natural en tu forma de expresarte como si fueras de España.\n\n- Solo comparte el link para agendar una reunión con el equipo de admisión si ves que el cliente cumple con los requisitos que buscamos para ser parte de nuestra academia.\n\n- Solo responder con la información presente en este prompt.\n\n- Hablar como una persona, no como un robot.\n\n- Hablar siempre como mujer, eres Mónica."
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -624,8 +427,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -260,
-        400
+        -160,
+        720
       ],
       "id": "9ca7be53-dd2e-4d52-9489-f38a27b53dba",
       "name": "Google Sheets",
@@ -638,35 +441,12 @@
       "onError": "continueErrorOutput"
     },
     {
-      "parameters": {
-        "updates": [
-          "messages"
-        ]
-      },
-      "type": "n8n-nodes-base.whatsAppTrigger",
-      "typeVersion": 1,
-      "position": [
-        5280,
-        0
-      ],
-      "id": "2d688e5d-6539-4dfb-8f88-4c828a29cdbb",
-      "name": "WhatsApp Trigger",
-      "webhookId": "9d7123aa-a8de-46d0-9e44-96dd18a46751",
-      "credentials": {
-        "whatsAppTriggerApi": {
-          "id": "lnUiOQTTnYmr3yOu",
-          "name": "WhatsApp OAuth account"
-        }
-      },
-      "disabled": true
-    },
-    {
       "parameters": {},
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -260,
-        640
+        -160,
+        880
       ],
       "id": "35af234c-a463-4eac-9e94-eb560cfddf40",
       "name": "No existe el cliente"
@@ -678,19 +458,19 @@
             {
               "id": "81d08529-b648-476d-bc53-f600e5f51d4c",
               "name": "Nombre",
-              "value": "={{ $json.Nombre }}",
+              "value": "={{ $json.firstName }}",
               "type": "string"
             },
             {
               "id": "4a95bcf3-3b8f-4f0b-b32a-fde271f1d320",
               "name": "Telefono",
-              "value": "={{ $json.Telefono }}",
+              "value": "={{ $json.phone }}",
               "type": "string"
             },
             {
               "id": "1d4adb9c-abfd-4a73-8383-e82f12ccd6d1",
               "name": "Email",
-              "value": "={{ $json.Email }}",
+              "value": "={{ $json.email }}",
               "type": "string"
             },
             {
@@ -702,13 +482,13 @@
             {
               "id": "32e50551-de9c-4566-8438-e1db0da959b3",
               "name": "Avatar",
-              "value": "={{ $json.Avatar }}",
+              "value": "=",
               "type": "string"
             },
             {
               "id": "dff41a60-aac5-4473-91a9-9d8b9068144c",
               "name": "Fuente",
-              "value": "={{ $json.Fuente }}",
+              "value": "=",
               "type": "string"
             },
             {
@@ -736,97 +516,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        0,
+        80,
         400
       ],
       "id": "7cbfae22-5fdd-4b26-ad2a-d2d00335b179",
       "name": "Info_Cliente"
-    },
-    {
-      "parameters": {
-        "path": "4483a8e9-4d5f-41a9-ab3e-e2cb7195c7fe",
-        "responseMode": "responseNode",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        5540,
-        0
-      ],
-      "id": "ece10aef-4679-4a37-bf1e-48dcb73cce61",
-      "name": "Webhook1",
-      "webhookId": "4483a8e9-4d5f-41a9-ab3e-e2cb7195c7fe",
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "operation": "delete",
-        "key": "={{ $('Guardar mensaje').item.json.id }}"
-      },
-      "type": "n8n-nodes-base.redis",
-      "typeVersion": 1,
-      "position": [
-        1000,
-        -600
-      ],
-      "id": "c49ea2e8-ce19-4ed3-b4fe-92b280eb770a",
-      "name": "Limpiar base datos",
-      "credentials": {
-        "redis": {
-          "id": "m1NGGppgy14vvkDq",
-          "name": "Redis account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "16d80c9f-4e91-4245-8b1b-78e77c4e89b9",
-              "leftValue": "={{ $json.query['hub.verify_token'] }}",
-              "rightValue": "gqqp7zqWwck4",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        5760,
-        0
-      ],
-      "id": "9c02354d-1890-4b4b-ab06-a84131e29dd5",
-      "name": "If1"
-    },
-    {
-      "parameters": {
-        "respondWith": "text",
-        "responseBody": "={{ $json.query['hub.challenge'] }}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.respondToWebhook",
-      "typeVersion": 1.1,
-      "position": [
-        6000,
-        0
-      ],
-      "id": "aef3b959-2ba8-4d2d-8af0-50da69cfecef",
-      "name": "Respond to Webhook"
     },
     {
       "parameters": {
@@ -853,416 +547,14 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        240,
+        320,
         400
       ]
     },
     {
       "parameters": {
-        "rules": {
-          "values": [
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $('WhatsApp Trigger').item.json.messages[0].type }}",
-                    "rightValue": "audio",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "Voice"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "8c844924-b2ed-48b0-935c-c66a8fd0c778",
-                    "leftValue": "={{ $('WhatsApp Trigger').item.json.messages[0].type }}",
-                    "rightValue": "text",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "Text"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "51b64a23-027a-4c9e-b5ae-88eeb60876a3",
-                    "leftValue": "={{ $('WhatsApp Trigger').item.json.messages[0].type }}",
-                    "rightValue": "image",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "Image"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "a24c73f5-61d7-44a4-a376-3b0f1674267a",
-      "name": "Switch",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3.2,
-      "position": [
-        5240,
-        260
-      ]
-    },
-    {
-      "parameters": {
-        "resource": "audio",
-        "operation": "transcribe",
-        "binaryPropertyName": "=data",
-        "options": {}
-      },
-      "id": "265d0d50-1651-423f-8264-8b0fbe30c250",
-      "name": "Transcribir",
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "typeVersion": 1.6,
-      "position": [
-        5900,
-        260
-      ],
-      "credentials": {
-        "openAiApi": {
-          "id": "ncEn8Lip4F0P7Ul7",
-          "name": "OpenAi account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "media",
-        "operation": "mediaUrlGet",
-        "mediaGetId": "={{ $('WhatsApp Trigger1').item.json.messages[0].audio.id }}",
-        "requestOptions": {}
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        5540,
-        260
-      ],
-      "id": "b82d140e-c4fb-40e6-991d-ce7c8a72aea6",
-      "name": "WhatsApp Business Cloud1",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "url": "={{ $json.url }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "whatsAppApi",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        5720,
-        260
-      ],
-      "id": "d81b87b2-e7e8-4679-aecb-03eb0cb23f13",
-      "name": "HTTP Request",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "media",
-        "operation": "mediaUrlGet",
-        "mediaGetId": "={{ $('WhatsApp Trigger1').item.json.messages[0].image.id }}",
-        "requestOptions": {}
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        5520,
-        480
-      ],
-      "id": "739f553c-f3d0-4ce3-bb0f-2110c1c1706a",
-      "name": "WhatsApp Business Cloud4",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "url": "={{ $json.url }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "whatsAppApi",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        5700,
-        480
-      ],
-      "id": "cb811340-7d0e-470e-a026-a21817a479d0",
-      "name": "HTTP Request1",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "image",
-        "operation": "analyze",
-        "modelId": {
-          "__rl": true,
-          "value": "chatgpt-4o-latest",
-          "mode": "list",
-          "cachedResultName": "CHATGPT-4O-LATEST"
-        },
-        "text": "Aquí hay una imagen enviada por el usuario. Describe la imagen y transcribe cualquier texto visible en ella. Proporciona tantos detalles como sea posible en no más de 300 caracteres.",
-        "inputType": "base64",
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "typeVersion": 1.8,
-      "position": [
-        5880,
-        480
-      ],
-      "id": "4251c6d0-5887-4ede-803e-b977e3f65d70",
-      "name": "OpenAI",
-      "credentials": {
-        "openAiApi": {
-          "id": "ncEn8Lip4F0P7Ul7",
-          "name": "OpenAi account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "fcd5ad2d-6e28-4f7e-b7ee-11888215972c",
-              "name": "text",
-              "value": "={{ $json.text }}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        6100,
-        260
-      ],
-      "id": "780b3d70-c544-4001-b248-15f2e0f984fa",
-      "name": "Audio_Transcrito"
-    },
-    {
-      "parameters": {
-        "operation": "push",
-        "list": "={{ $json.id }}",
-        "messageData": "={{ $('Set \\'Text\\'').item.json.values()[1] }}"
-      },
-      "type": "n8n-nodes-base.redis",
-      "typeVersion": 1,
-      "position": [
-        -100,
-        -580
-      ],
-      "id": "98f87fbb-265b-4da6-9ef9-013ebc664888",
-      "name": "Guardar mensaje",
-      "credentials": {
-        "redis": {
-          "id": "m1NGGppgy14vvkDq",
-          "name": "Redis account"
-        }
-      },
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "operation": "get",
-        "propertyName": "Respuesta obtenida",
-        "key": "={{ $json.id }}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.redis",
-      "typeVersion": 1,
-      "position": [
-        340,
-        -580
-      ],
-      "id": "2c98ca46-06d2-46a1-a304-c6f3e50ce62a",
-      "name": "Recuperar mensajes",
-      "credentials": {
-        "redis": {
-          "id": "m1NGGppgy14vvkDq",
-          "name": "Redis account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "amount": 10
-      },
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [
-        120,
-        -580
-      ],
-      "id": "c43b7fa3-3503-4c45-9351-9639a5d15112",
-      "name": "Wait",
-      "webhookId": "fbf3ba6b-6d45-4b6b-968a-9b73fe6515d6"
-    },
-    {
-      "parameters": {
-        "operation": "push",
-        "list": "={{ $('Numero1').item.json.Numero }}",
-        "messageData": "={{ $('Audio_Transcrito').item.json.values()[0] }}"
-      },
-      "type": "n8n-nodes-base.redis",
-      "typeVersion": 1,
-      "position": [
-        6300,
-        260
-      ],
-      "id": "b9d24593-d5b0-4a83-add0-23d833d86167",
-      "name": "Guardar mensaje1",
-      "credentials": {
-        "redis": {
-          "id": "m1NGGppgy14vvkDq",
-          "name": "Redis account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "amount": 15
-      },
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [
-        6520,
-        260
-      ],
-      "id": "3fed15bb-4784-4bb8-a663-1c1d88005917",
-      "name": "Wait1",
-      "webhookId": "fe727840-1d73-4d82-9372-99fba13e9178"
-    },
-    {
-      "parameters": {
-        "operation": "push",
-        "list": "={{ $('Numero1').item.json.Numero }}",
-        "messageData": "={{ $('Imagen_Transcrita').item.json.text }}"
-      },
-      "type": "n8n-nodes-base.redis",
-      "typeVersion": 1,
-      "position": [
-        6280,
-        480
-      ],
-      "id": "8951b785-98de-4bf0-924c-c654a15c2df4",
-      "name": "Guardar mensaje2",
-      "credentials": {
-        "redis": {
-          "id": "m1NGGppgy14vvkDq",
-          "name": "Redis account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "amount": 15
-      },
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [
-        6500,
-        480
-      ],
-      "id": "a15ad13f-ab0c-4b2d-9d07-54f9b9b5a160",
-      "name": "Wait2",
-      "webhookId": "6da0e1b5-4cd0-4092-a4f2-14af9b785242"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "fcd5ad2d-6e28-4f7e-b7ee-11888215972c",
-              "name": "text",
-              "value": "={{ $json.content }}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        6080,
-        480
-      ],
-      "id": "3767db50-8b7e-4a99-8b1b-4338aff0ba21",
-      "name": "Imagen_Transcrita"
-    },
-    {
-      "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "={{ $('Set \\'Text\\'').item.json.id }}",
+        "sessionKey": "={{ $('Info_Cliente').item.json.values()[1] }}",
         "contextWindowLength": 15
       },
       "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
@@ -1392,7 +684,7 @@
         "messages": {
           "values": [
             {
-              "content": "=- Tu trabajo es mejorar la estructura del mensaje quitando símbolos como \"#\",\"**texto**\", \"![texto]\", \":\"\n\n- En tus respuestas siempre responde SOLO con el mensaje mejorado asegurandote de que el mensaje tenga sentido y buena estructura\n\n- No quites los emojis\n\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n\n- El mensaje debe sonar relajado, formal y respetuoso.\n\n- No uses puntos finales\n\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\"\n  - \"¿Cómo te puedo ayudar en algo más?\"\n\n- En lugar de frases como \"¿en qué puedo asistirte hoy?\". En su lugar usa frases más comunes y más relajadas",
+              "content": "=- Tu trabajo es mejorar la estructura del mensaje quitando símbolos como \"#\",\"**texto**\", \"![texto]\", \":\"\n\n- En tus respuestas siempre responde SOLO con el mensaje mejorado asegurandote de que el mensaje tenga sentido y buena estructura\n\n- No quites los emojis\n\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n\n- El mensaje debe sonar relajado, formal y respetuoso.\n\n- No uses puntos finales\n\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\"\n  - \"¿Cómo te puedo ayudar en algo más?\"\n\n- En lugar de frases como \"¿en qué puedo asistirte hoy?\". En su lugar usa frases más comunes y más relajadas\n\n#Output\n- Las respuestas no puedes superar los 140 caracteres\n- No usar frases como \"¡Eso suena emocionante!\" y sé más natural en tu forma de expresarte como si fueras de España\n- Solo comparte los links si el cliente te lo solicita\n- Hablar como una persona, no como un robot\n- Hablar siempre como mujer, eres Mónica\n- si detectas una frase como \"Aquí tienes el link\", quitala",
               "role": "system"
             },
             {
@@ -1428,7 +720,7 @@
         "messages": {
           "values": [
             {
-              "content": "=- Tu trabajo es mejorar la estructura del mensaje quitando símbolos como \"#\",\"**texto**\", \"![texto]\", \":\"\n\n- En tus respuestas siempre responde SOLO con el mensaje mejorado asegurandote de que el mensaje tenga sentido y buena estructura\n\n- No quites los emojis\n\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n\n- El mensaje debe sonar relajado, formal y respetuoso.\n\n- No uses puntos finales\n\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\"\n  - \"¿Cómo te puedo ayudar en algo más?\"\n\n- En lugar de frases como \"¿en qué puedo asistirte hoy?\". En su lugar usa frases más comunes y más relajadas",
+              "content": "=- Tu trabajo es mejorar la estructura del mensaje quitando símbolos como \"#\",\"**texto**\", \"![texto]\", \":\"\n\n- En tus respuestas siempre responde SOLO con el mensaje mejorado asegurandote de que el mensaje tenga sentido y buena estructura\n\n- No quites los emojis\n\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n\n- El mensaje debe sonar relajado, formal y respetuoso.\n\n- No uses puntos finales\n\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\"\n  - \"¿Cómo te puedo ayudar en algo más?\"\n\n- En lugar de frases como \"¿en qué puedo asistirte hoy?\". En su lugar usa frases más comunes y más relajadas\n\n#Output\n- Las respuestas no puedes superar los 140 caracteres\n- No usar frases como \"¡Eso suena emocionante!\" y sé más natural en tu forma de expresarte como si fueras de España\n- Solo comparte los links si el cliente te lo solicita\n- Hablar como una persona, no como un robot\n- Hablar siempre como mujer, eres Mónica\n- si detectas una frase como \"Aquí tienes el link\", quitala",
               "role": "system"
             },
             {
@@ -1452,19 +744,6 @@
           "name": "OpenAi account"
         }
       }
-    },
-    {
-      "parameters": {
-        "jsCode": "// Obtener el texto de la variable de manera dinámica\nconst inputText = items[0].json[Object.keys(items[0].json)[0]]; // Accede al primer campo dinámicamente\n\n// Expresión regular para detectar URLs dentro y fuera del formato Markdown\nconst urlRegex = /\\[.*?\\]\\((https?:\\/\\/[^\\s)]+)\\)|\\bhttps?:\\/\\/[^\\s]+/g;\n\n// Buscar todas las URLs en el texto\nconst urls = [];\nlet match;\nwhile ((match = urlRegex.exec(inputText)) !== null) {\n    // Si el primer grupo existe (URL en formato Markdown), usarlo; de lo contrario, usar el match completo\n    urls.push(match[1] || match[0]);\n}\n\n// Retornar los resultados\nreturn [\n    {\n        json: {\n            urls: urls.length > 0 ? urls : null // Retorna array de URLs si hay, sino null\n        }\n    }\n];"
-      },
-      "id": "b4522c9e-d887-4c86-a5e4-3d56a44f9594",
-      "name": "Detectar URL en el mensaje1",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        6240,
-        0
-      ]
     },
     {
       "parameters": {},
@@ -1609,15 +888,15 @@
       "type": "n8n-nodes-base.highLevel",
       "typeVersion": 2,
       "position": [
-        -480,
+        -160,
         400
       ],
       "id": "bd386997-ede5-43a6-94ba-ffc2ff5b9cbf",
       "name": "HighLevel",
       "credentials": {
         "highLevelOAuth2Api": {
-          "id": "9iF9CYK8GTWRa8aE",
-          "name": "HighLevel account 2"
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
         }
       }
     },
@@ -1631,7 +910,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -700,
+        -380,
         400
       ],
       "id": "faa430d2-e2f4-46d5-ae6f-94ab6b855713",
@@ -1669,8 +948,8 @@
       "name": "HighLevel1",
       "credentials": {
         "highLevelOAuth2Api": {
-          "id": "9iF9CYK8GTWRa8aE",
-          "name": "HighLevel account 2"
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
         }
       }
     },
@@ -1721,8 +1000,8 @@
       "name": "HighLevel2",
       "credentials": {
         "highLevelOAuth2Api": {
-          "id": "9iF9CYK8GTWRa8aE",
-          "name": "HighLevel account 2"
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
         }
       }
     },
@@ -1772,8 +1051,8 @@
       "name": "HighLevel3",
       "credentials": {
         "highLevelOAuth2Api": {
-          "id": "9iF9CYK8GTWRa8aE",
-          "name": "HighLevel account 2"
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
         }
       }
     },
@@ -1823,8 +1102,8 @@
       "name": "HighLevel4",
       "credentials": {
         "highLevelOAuth2Api": {
-          "id": "9iF9CYK8GTWRa8aE",
-          "name": "HighLevel account 2"
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
         }
       }
     },
@@ -1898,9 +1177,15 @@
       "updatedAt": "2025-02-27T17:47:03.175Z",
       "id": "UFH6BosTRpNyXl3E",
       "name": "💬🟢WhatsApp"
+    },
+    {
+      "createdAt": "2025-02-26T15:17:43.536Z",
+      "updatedAt": "2025-02-26T15:17:43.536Z",
+      "id": "bB5H9hQQ6Hyuq8xS",
+      "name": "✅ PRODUCCION"
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-12T03:18:30.000Z",
-  "versionId": "f1ebc7ec-697b-49c4-bed2-d4bafbe8caf3"
+  "updatedAt": "2025-03-13T01:35:42.000Z",
+  "versionId": "6cac7961-0b0e-478d-9a6d-16a17f5760d9"
 }
