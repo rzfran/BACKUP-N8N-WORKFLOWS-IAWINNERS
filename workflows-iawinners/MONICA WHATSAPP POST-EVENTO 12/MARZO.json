@@ -14,7 +14,13 @@
     },
     "Google Sheets": {
       "main": [
-        [],
+        [
+          {
+            "node": "Info_Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "No existe el cliente",
@@ -214,7 +220,7 @@
       "main": [
         [
           {
-            "node": "Info_Cliente",
+            "node": "Google Sheets",
             "type": "main",
             "index": 0
           }
@@ -412,23 +418,30 @@
         "filtersUI": {
           "values": [
             {
-              "lookupColumn": "Telefono",
-              "lookupValue": "={{ $json.phone.toNumber() }}"
+              "lookupColumn": "Email",
+              "lookupValue": "={{ $json.emailLowerCase }}"
             },
             {
-              "lookupColumn": "=Email",
-              "lookupValue": "={{ $json.email }}"
+              "lookupColumn": "Telefono",
+              "lookupValue": "={{ $json.phone }}"
             }
           ]
         },
         "combineFilters": "OR",
-        "options": {}
+        "options": {
+          "outputFormatting": {
+            "values": {
+              "general": "UNFORMATTED_VALUE",
+              "date": "FORMATTED_STRING"
+            }
+          }
+        }
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -160,
-        720
+        -200,
+        400
       ],
       "id": "9ca7be53-dd2e-4d52-9489-f38a27b53dba",
       "name": "Google Sheets",
@@ -445,8 +458,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -160,
-        880
+        -200,
+        560
       ],
       "id": "35af234c-a463-4eac-9e94-eb560cfddf40",
       "name": "No existe el cliente"
@@ -458,19 +471,19 @@
             {
               "id": "81d08529-b648-476d-bc53-f600e5f51d4c",
               "name": "Nombre",
-              "value": "={{ $json.firstName }}",
+              "value": "={{ $json.Nombre }}",
               "type": "string"
             },
             {
               "id": "4a95bcf3-3b8f-4f0b-b32a-fde271f1d320",
               "name": "Telefono",
-              "value": "={{ $json.phone }}",
+              "value": "={{ $json.Telefono }}",
               "type": "string"
             },
             {
               "id": "1d4adb9c-abfd-4a73-8383-e82f12ccd6d1",
               "name": "Email",
-              "value": "={{ $json.email }}",
+              "value": "={{ $json.Email }}",
               "type": "string"
             },
             {
@@ -482,13 +495,13 @@
             {
               "id": "32e50551-de9c-4566-8438-e1db0da959b3",
               "name": "Avatar",
-              "value": "=",
+              "value": "={{ $json.Avatar }}",
               "type": "string"
             },
             {
               "id": "dff41a60-aac5-4473-91a9-9d8b9068144c",
               "name": "Fuente",
-              "value": "=",
+              "value": "={{ $json.Fuente }}",
               "type": "string"
             },
             {
@@ -554,7 +567,7 @@
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "={{ $('Info_Cliente').item.json.values()[1] }}",
+        "sessionKey": "={{ $('Set \\'Text\\'').item.json.values()[0] }}",
         "contextWindowLength": 15
       },
       "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
@@ -589,7 +602,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1100,
+        1000,
         400
       ],
       "id": "23959879-519d-462e-9e7d-54cb30895dc4",
@@ -604,7 +617,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1800,
+        1700,
         160
       ]
     },
@@ -644,7 +657,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1340,
+        1240,
         400
       ],
       "id": "28a30931-5b1c-43ed-8dfb-5dbd3e7d8d48",
@@ -667,7 +680,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1560,
+        1460,
         160
       ],
       "id": "bdd5e844-0741-4aa0-8867-3eff82c385bc",
@@ -697,7 +710,7 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.6,
       "position": [
-        1760,
+        1660,
         660
       ],
       "id": "94f9fa79-d300-4812-aacf-8a31ee89ac05",
@@ -733,7 +746,7 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.6,
       "position": [
-        2540,
+        2440,
         160
       ],
       "id": "dec20cbf-06c7-4143-9d00-feba0274e917",
@@ -752,7 +765,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2300,
+        2200,
         -40
       ]
     },
@@ -765,7 +778,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        2020,
+        1920,
         160
       ],
       "alwaysOutputData": true
@@ -787,7 +800,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2120,
+        2020,
         660
       ],
       "id": "3caeaaaf-ef30-4113-a0ca-dfd6cb5ee344",
@@ -816,7 +829,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2880,
+        2780,
         160
       ],
       "id": "98f6e349-9ec8-4a50-84ca-ee60c4bd1fc3",
@@ -850,7 +863,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2300,
+        2200,
         160
       ],
       "id": "6d055847-24f5-4776-a58d-da9f3981a0a1",
@@ -873,7 +886,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1560,
+        1460,
         660
       ],
       "id": "d12d608f-e96c-4cae-9ea8-9ab775e58825",
@@ -888,7 +901,7 @@
       "type": "n8n-nodes-base.highLevel",
       "typeVersion": 2,
       "position": [
-        -160,
+        -400,
         400
       ],
       "id": "bd386997-ede5-43a6-94ba-ffc2ff5b9cbf",
@@ -910,7 +923,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -380,
+        -620,
         400
       ],
       "id": "faa430d2-e2f4-46d5-ae6f-94ab6b855713",
@@ -941,7 +954,7 @@
       "type": "n8n-nodes-base.highLevel",
       "typeVersion": 2,
       "position": [
-        2340,
+        2240,
         660
       ],
       "id": "4bd1dc46-d29b-42ee-93db-5a420339e914",
@@ -962,7 +975,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        2560,
+        2460,
         660
       ],
       "id": "5db38b77-8592-461f-8031-0d7497d5b075",
@@ -993,7 +1006,7 @@
       "type": "n8n-nodes-base.highLevel",
       "typeVersion": 2,
       "position": [
-        2540,
+        2440,
         380
       ],
       "id": "9d06cb2e-3cb8-4817-87c1-f5df63ab162a",
@@ -1014,7 +1027,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        2760,
+        2660,
         380
       ],
       "id": "7bda6aa6-7c1a-4887-9925-d208df0bfceb",
@@ -1044,7 +1057,7 @@
       "type": "n8n-nodes-base.highLevel",
       "typeVersion": 2,
       "position": [
-        3100,
+        3000,
         -60
       ],
       "id": "def05b42-4ed0-45d9-948a-be0dbd6ece7d",
@@ -1065,7 +1078,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        3320,
+        3220,
         -60
       ],
       "id": "acae9993-37f0-48fc-abde-ae8642ab3f50",
@@ -1095,7 +1108,7 @@
       "type": "n8n-nodes-base.highLevel",
       "typeVersion": 2,
       "position": [
-        3760,
+        3660,
         -60
       ],
       "id": "7a6111f9-0a0a-4697-9f9b-fe9a9099706a",
@@ -1116,7 +1129,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        4180,
+        4080,
         -60
       ],
       "id": "c3c0b4d6-2f23-483b-a3f0-b19765899096",
@@ -1127,7 +1140,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3540,
+        3440,
         -60
       ],
       "id": "b5badc57-d379-4a99-b286-00b792327542",
@@ -1139,7 +1152,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3980,
+        3880,
         -60
       ],
       "id": "57bee2d1-63de-47e9-bc40-c639e888287d",
@@ -1186,6 +1199,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-13T01:35:42.000Z",
-  "versionId": "6cac7961-0b0e-478d-9a6d-16a17f5760d9"
+  "updatedAt": "2025-03-14T00:00:13.000Z",
+  "versionId": "3f71a672-3a4c-4874-83e9-86c698c4d072"
 }
