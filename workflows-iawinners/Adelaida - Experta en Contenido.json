@@ -536,8 +536,8 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        1800,
-        300
+        1680,
+        160
       ],
       "id": "db59cbd3-c911-4a0e-8ad3-a24d3e7d879e",
       "name": "Make"
@@ -709,6 +709,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-12T18:56:14.000Z",
-  "versionId": "d49585a5-a7ea-482c-ba01-9c70f1d32312"
+  "updatedAt": "2025-03-13T19:24:39.000Z",
+  "versionId": "edd5f32e-a42f-4c94-a6f9-b67cb845dc7b"
 }
