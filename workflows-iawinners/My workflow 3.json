@@ -1,92 +1,11 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Code",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Telegram",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [],
-        [
-          {
-            "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Code": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request": {
-      "main": [
-        [
-          {
-            "node": "Code1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Telegram": {
-      "main": [
-        [
-          {
-            "node": "OpenAI",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields": {
+    "When chat message received": {
       "main": [
         [
           {
             "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "OpenAI": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Code1": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
             "type": "main",
             "index": 0
           }
@@ -115,51 +34,7 @@
         ]
       ]
     },
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Telegram1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Disparador": {
-      "main": [
-        [
-          {
-            "node": "Switch",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Add_contenido": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Publicar": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Contenido_programado": {
+    "Enviar_correo": {
       "ai_tool": [
         [
           {
@@ -171,8 +46,8 @@
       ]
     }
   },
-  "createdAt": "2025-03-13T17:12:19.737Z",
-  "id": "Hc9PSX1o0ynXND4E",
+  "createdAt": "2025-03-14T16:54:23.786Z",
+  "id": "Z7b5rvYfeUP7NAkN",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -180,250 +55,32 @@
   "nodes": [
     {
       "parameters": {
-        "rules": {
-          "values": [
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $json.message.text }}",
-                    "rightValue": "https://",
-                    "operator": {
-                      "type": "string",
-                      "operation": "contains"
-                    },
-                    "id": "6fa29a37-1f17-4468-bd61-ce6026962d97"
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "Link YouTube"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "61de26ae-a17b-4d8a-a40f-c5eee8156c79",
-                    "leftValue": "={{ $json.message.voice.mime_type }}",
-                    "rightValue": "audio/ogg",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "Audio"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "f7525b98-69af-48d2-b006-da03e929bdc0",
-                    "leftValue": "={{ $json.message.photo }}",
-                    "rightValue": "",
-                    "operator": {
-                      "type": "array",
-                      "operation": "exists",
-                      "singleValue": true
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "Imagen"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "026a90f6-aeb1-4835-8cc8-aec73591433c",
-                    "leftValue": "={{ $json.message.text }}",
-                    "rightValue": "https://",
-                    "operator": {
-                      "type": "string",
-                      "operation": "notEquals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "Texto"
-            }
-          ]
-        },
         "options": {}
       },
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3.2,
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
       "position": [
-        220,
-        0
+        -280,
+        -120
       ],
-      "id": "7aebb704-3d74-441e-bb1c-5ad61362f056",
-      "name": "Switch"
+      "id": "55b8df91-595a-42fa-a070-1664e7559abc",
+      "name": "When chat message received",
+      "webhookId": "781ea120-54b8-4bd7-b0da-11e37294ce77"
     },
     {
       "parameters": {
-        "jsCode": "// Función para extraer el ID de un video de YouTube desde una URL\nfunction extraerIdYoutube(url) {\n    const patrones = [\n        /(?:youtube\\.com\\/watch\\?v=|youtu\\.be\\/)([^&\\n?#]+)/,\n        /youtube\\.com\\/shorts\\/([^&\\n?#]+)/\n    ];\n\n    for (const patron of patrones) {\n        const coincidencia = url.match(patron);\n        if (coincidencia && coincidencia[1]) {\n            return coincidencia[1];\n        }\n    }\n    return null;\n}\n\n// Código modificado\nconst mensaje = $input.first().json.message.text;\nconst regexUrl = /(https?:\\/\\/)?(www\\.)?(youtube\\.com|youtu\\.be)\\/.+/;\nconst urlYoutube = mensaje.match(regexUrl)?.[0];\n\nif (!urlYoutube) {\n    return [{json: {error: 'No se encontró una URL de YouTube'}}];\n}\n\nconst idVideo = extraerIdYoutube(urlYoutube);\nreturn [{json: {videoId: idVideo}}];\n"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        680,
-        -240
-      ],
-      "id": "2396dd9b-24b1-413b-b7c4-9518181a5e43",
-      "name": "Code"
-    },
-    {
-      "parameters": {
-        "url": "=https://www.searchapi.io/api/v1/search?engine=youtube_transcripts&api_key=n8z6rrc25THRMhHivGjRRe6r&video_id={{ $json.videoId }}&lang=en",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        900,
-        -240
-      ],
-      "id": "a62e5d8b-0306-46e3-9aeb-b29bb275b659",
-      "name": "HTTP Request"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Extraer el contenido de la propiedad 'text' de cada objeto dentro de 'transcripts'\nconst textos = $input.first().json.transcripts.map(t => t.text);\n\n// Unir todos los textos con un espacio entre ellos\nconst textoUnido = textos.join(' ');\n\n// Devolver el texto completo en un solo objeto\nreturn [{ json: { textoUnido } }];\n"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        1120,
-        -240
-      ],
-      "id": "3655f331-472c-4b60-9151-a22967ed7bf3",
-      "name": "Code1"
-    },
-    {
-      "parameters": {
-        "resource": "file",
-        "fileId": "={{ $('Disparador').item.json.message.voice.file_id }}"
-      },
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "position": [
-        720,
-        -80
-      ],
-      "id": "49cf362d-7b6f-483c-b586-013fe3cebeb5",
-      "name": "Telegram",
-      "webhookId": "6fb9297b-e62b-4136-967d-1e9e2fdf64ae",
-      "credentials": {
-        "telegramApi": {
-          "id": "jgYYUc9pLKrVifs3",
-          "name": "Redeswinner_Bot"
+        "options": {
+          "systemMessage": "Eres el agente asistente en una Clinica dental llamada Dentalia"
         }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "audio",
-        "operation": "transcribe",
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "typeVersion": 1.8,
-      "position": [
-        940,
-        -80
-      ],
-      "id": "24caadf0-138d-4116-97d6-71f23fe0c66d",
-      "name": "OpenAI",
-      "credentials": {
-        "openAiApi": {
-          "id": "ncEn8Lip4F0P7Ul7",
-          "name": "OpenAi account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=Aquí tienes el Input: {{ $json['Link YouTube'] }}{{ $json.Audio }}{{ $json.Texto }}\n\nLa fecha de hoy es: {{ $now }}\nEres el asistente experto en creación de contenido para Adrián Martinez\n\nCuando el usuario te pida crear contneido deberás separarlo en:\n\n\"Idea\": \"Aquí almacenarás la idea del contneido resumida en 2 palabras\"\n\"RedSocial\": \"Aquí almacenarás la red social en la que el usuario quiere crear el contendio\"\n\"TextoaPublicar\": \"Aquí almacenarás el contenido a publicar\"\n\"Fecha\": \"Aquí almacenarás la de publicación que quiere programar el usuario\"\n\nFormato de \"Fecha\" : ISO \nEjemplo: 2025-03-14 12:00am\n\nUna vez tengas todas las variables procerás a hacer la acción de añadir el contenido.\n\nAñadriás el contenido cuando el usuario te lo haya confirmado y te lo pida utilizando la Tool \"Añadir_contenido\"\n\nPublicarás el contenido cuando el usuario te lo pida utilizando la Tool \"Publicar\"\n\nSi el usuario te pide saber que contenido tiene programado usarás la tool \"Contenido_programado\"",
-        "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.7,
       "position": [
-        1540,
-        -140
+        -60,
+        -120
       ],
-      "id": "48536525-ca57-4b6c-8caa-01d7da4d3b78",
+      "id": "f357c2a9-f7f0-40fb-8a8d-4eac9384b8b3",
       "name": "AI Agent"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "1f928554-d086-4200-8414-fdb9c1ade52f",
-              "name": "Link YouTube",
-              "value": "={{ $json.textoUnido }}",
-              "type": "string"
-            },
-            {
-              "id": "556c5578-9c9e-4641-9766-c06f7fb3417e",
-              "name": "Audio",
-              "value": "={{ $json.text }}",
-              "type": "string"
-            },
-            {
-              "id": "784230d7-6fc3-4a7d-b931-e3d1d9e5a821",
-              "name": "Texto",
-              "value": "={{ $json.message.text }}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        1280,
-        20
-      ],
-      "id": "44029164-9124-48f9-8fd7-b1debbb33296",
-      "name": "Edit Fields"
     },
     {
       "parameters": {
@@ -437,10 +94,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        1160,
-        420
+        -240,
+        140
       ],
-      "id": "926159e7-1770-4a76-85ce-5c74370aae0d",
+      "id": "eac5d347-1d0d-4877-bb23-79d6435fae52",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
@@ -450,233 +107,48 @@
       }
     },
     {
-      "parameters": {
-        "sessionIdType": "customKey",
-        "sessionKey": "={{ $('Disparador').item.json.message.chat.id }}"
-      },
+      "parameters": {},
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        1360,
-        380
+        -40,
+        100
       ],
-      "id": "bae118e2-8879-47dc-9d27-90c3a7cd34bf",
+      "id": "35945f76-0081-4c43-862b-f58f92c21847",
       "name": "Window Buffer Memory"
     },
     {
       "parameters": {
-        "chatId": "={{ $('Disparador').item.json.message.chat.id }}",
-        "text": "={{ $json.output }}",
-        "additionalFields": {
-          "appendAttribution": false
-        }
-      },
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "position": [
-        2040,
-        -140
-      ],
-      "id": "2bfb4af7-d57d-4e78-bdd2-1b61982277b5",
-      "name": "Telegram1",
-      "webhookId": "1a4dcb38-6095-4947-b005-f1e2784b60cc",
-      "credentials": {
-        "telegramApi": {
-          "id": "jgYYUc9pLKrVifs3",
-          "name": "Redeswinner_Bot"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "updates": [
-          "message"
-        ],
-        "additionalFields": {}
-      },
-      "type": "n8n-nodes-base.telegramTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        0,
-        0
-      ],
-      "id": "73e00b53-7675-4bb2-8aa1-96b0eec55ca6",
-      "name": "Disparador",
-      "webhookId": "b2e85a43-1816-4576-9b05-771dc2835d2d",
-      "credentials": {
-        "telegramApi": {
-          "id": "jgYYUc9pLKrVifs3",
-          "name": "Redeswinner_Bot"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "create",
-        "base": {
-          "__rl": true,
-          "value": "appUJSMrmYENzM9t6",
-          "mode": "list",
-          "cachedResultName": "Contenido - IA Winners",
-          "cachedResultUrl": "https://airtable.com/appUJSMrmYENzM9t6"
-        },
-        "table": {
-          "__rl": true,
-          "value": "tblaOTnjcvh6o3UK5",
-          "mode": "list",
-          "cachedResultName": "Contenido",
-          "cachedResultUrl": "https://airtable.com/appUJSMrmYENzM9t6/tblaOTnjcvh6o3UK5"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Idea": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Idea', ``, 'string') }}",
-            "Red Social": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Red_Social', ``, 'string') }}",
-            "Texto a Publicar": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Texto_a_Publicar', ``, 'string') }}",
-            "Fecha": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha', `Formato ISO `, 'string') }}"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "Idea",
-              "displayName": "Idea",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Red Social",
-              "displayName": "Red Social",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Texto a Publicar",
-              "displayName": "Texto a Publicar",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Fecha",
-              "displayName": "Fecha",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "dateTime",
-              "readOnly": false,
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "emailType": "text",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
         "options": {}
       },
-      "type": "n8n-nodes-base.airtableTool",
+      "type": "n8n-nodes-base.gmailTool",
       "typeVersion": 2.1,
       "position": [
-        1940,
-        220
-      ],
-      "id": "b1f8bf32-eb80-4596-be1f-86bf8a8613df",
-      "name": "Add_contenido",
-      "credentials": {
-        "airtableTokenApi": {
-          "id": "X1eIyBWDlpFDtNMV",
-          "name": "AirTable - IA Winners"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "toolDescription": "Llama a esta Tool cuando tengas que publicarlo en las redes sociales que te pida el usuario",
-        "method": "POST",
-        "url": "https://hook.eu2.make.com/qk1lnz9xeq984bai0v0yqwrud13ku7ny",
-        "sendBody": true,
-        "parametersBody": {
-          "values": [
-            {
-              "name": "Idea"
-            },
-            {
-              "name": "Texto a Publicar"
-            },
-            {
-              "name": "Red Social"
-            }
-          ]
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "typeVersion": 1.1,
-      "position": [
-        1680,
-        260
-      ],
-      "id": "4cec953d-e925-44eb-8c8e-986e0a048d46",
-      "name": "Publicar"
-    },
-    {
-      "parameters": {
-        "operation": "search",
-        "base": {
-          "__rl": true,
-          "value": "appUJSMrmYENzM9t6",
-          "mode": "list",
-          "cachedResultName": "Contenido - IA Winners",
-          "cachedResultUrl": "https://airtable.com/appUJSMrmYENzM9t6"
-        },
-        "table": {
-          "__rl": true,
-          "value": "tblaOTnjcvh6o3UK5",
-          "mode": "list",
-          "cachedResultName": "Contenido",
-          "cachedResultUrl": "https://airtable.com/appUJSMrmYENzM9t6/tblaOTnjcvh6o3UK5"
-        },
-        "returnAll": false,
-        "limit": 10,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.airtableTool",
-      "typeVersion": 2.1,
-      "position": [
-        2060,
+        220,
         60
       ],
-      "id": "3e816c00-61fa-4d5c-9ced-10040e1b2ed9",
-      "name": "Contenido_programado",
+      "id": "b923bfbe-15e4-4538-b367-03b052a6b20b",
+      "name": "Enviar_correo",
+      "webhookId": "ce82dfc7-d3ea-46fb-9345-aaf91930d92d",
       "credentials": {
-        "airtableTokenApi": {
-          "id": "X1eIyBWDlpFDtNMV",
-          "name": "AirTable - IA Winners"
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
         }
       }
     }
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1",
-    "timezone": "Europe/Madrid",
-    "callerPolicy": "workflowsFromSameOwner"
+    "executionOrder": "v1"
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 1,
-  "updatedAt": "2025-03-13T18:38:00.000Z",
-  "versionId": "5babeae1-9428-45db-8f1a-67276f8ce51f"
+  "triggerCount": 0,
+  "updatedAt": "2025-03-14T16:57:04.000Z",
+  "versionId": "fe7465cc-f288-4d6c-ae86-dff24112b36d"
 }
