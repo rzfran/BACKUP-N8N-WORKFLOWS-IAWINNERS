@@ -1,0 +1,1327 @@
+{
+  "active": true,
+  "connections": {
+    "Formulario": {
+      "main": [
+        [
+          {
+            "node": "Area",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Make_Intensivo": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Area": {
+      "main": [
+        [
+          {
+            "node": "Make_Intensivo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "n8n_Expert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "GHL_Expert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "MarcaPersonal_Expert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AgentesVoz_Expert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "GPTs_Expert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GHL_Expert": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n_Expert": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MarcaPersonal_Expert": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AgentesVoz_Expert": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPTs_Expert": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-26T05:49:11.037Z",
+  "id": "lzGMpvbu1kzJ7pnD",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Formulario Consultas ACADEMIA",
+  "nodes": [
+    {
+      "parameters": {
+        "events": [
+          "responseFinished"
+        ],
+        "surveyIds": [
+          "cm7y4prll000gw194pey85ps6"
+        ]
+      },
+      "type": "@formbricks/n8n-nodes-formbricks.formbricks",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        140
+      ],
+      "id": "f3b70308-d210-4bde-b3ad-78c125845c7e",
+      "name": "Formulario",
+      "webhookId": "752db204-0f89-434b-8e65-7965f7175d22",
+      "credentials": {
+        "formbricksApi": {
+          "id": "ToOWOULfqNFrjcrw",
+          "name": "Formbricks account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2132471341,
+          "mode": "list",
+          "cachedResultName": "Master Intensivo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2132471341"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ $json.data.data.v6zx04fiywuhxf4npkt7o3bo }}",
+            "Correo": "={{ $json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+            "Pregunta": "={{ $json.data.data.w0xmi9ncyw7o8ij7w7km4ivc }}",
+            "Área": "={{ $json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+            "Día de Clase": "Miércoles",
+            "Contestada": "No",
+            "Archivo adjunto": "={{ $json.data.data.idzm3u8c0495j7ryobyg6knq[0] }}",
+            "Fecha": "={{ $json.data.createdAt.toDateTime().format('yyyy/MM/dd hh:mm:ss') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        300,
+        -400
+      ],
+      "id": "4400603d-cf62-4fad-94f8-9c60ac825f02",
+      "name": "Make_Intensivo",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "errorMessage": "Tu respuesta no ha podido ser enviada por un error interno. Ponte en contacto con el equipo de IA Winners a través del grupo de WhatsApp de la formación."
+      },
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        300,
+        800
+      ],
+      "id": "b601f6d1-57f5-49b7-b667-bdda309f3371",
+      "name": "Stop and Error1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Formulario').item.json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+                    "rightValue": "Make y Automatizaciones",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "bf5f0dc3-d555-45e2-81c6-d319f8551af6"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Make"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6789b53b-9196-4242-a5a3-381b02b3c628",
+                    "leftValue": "={{ $('Formulario').item.json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+                    "rightValue": "N8N",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "N8N"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4c25ed48-fbf3-497a-978e-41b5961bfdbf",
+                    "leftValue": "={{ $('Formulario').item.json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+                    "rightValue": "GoHighLevel",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "GoHighLevel"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f70fd712-84e2-43b2-b52c-91e820542ded",
+                    "leftValue": "={{ $('Formulario').item.json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+                    "rightValue": "Marca Personal, RRSS, Ventas",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Marca Personal, RRSS, Ventas"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a52cf63f-a807-4e69-bfdc-eecbc2085f40",
+                    "leftValue": "={{ $('Formulario').item.json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+                    "rightValue": "Agentes de Voz",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Agentes de Voz"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "799abccc-0609-42a2-a30f-0f3fb822478c",
+                    "leftValue": "={{ $('Formulario').item.json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+                    "rightValue": "GPTs y Prompt",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "GPTs y Prompt"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -40,
+        80
+      ],
+      "id": "d110c4c6-a198-4bf9-97d9-49f3e9d59b12",
+      "name": "Area"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+        "subject": "HEMOS RECIBIDO TU CONSULTA",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>GohighLevel</strong> el día <span class=\"highlight\">Jueves a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        520,
+        -400
+      ],
+      "id": "2075d7f5-c500-4652-8df9-196efaacfaeb",
+      "name": "Correo_Make",
+      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+        "subject": "HEMOS RECIBIDO TU CONSULTA",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>N8N</strong> el día <span class=\"highlight\">Jueves a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        520,
+        -200
+      ],
+      "id": "1551f282-d8b6-4e01-85e1-0c21c19cb183",
+      "name": "Correo_n8n",
+      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+        "subject": "HEMOS RECIBIDO TU CONSULTA",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>Make y Automatizaciones</strong> el día <span class=\"highlight\">Miércoles a las 18:00 PM (Hora España)</span>.\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        520,
+        0
+      ],
+      "id": "b97d5dc3-f067-4314-96b9-c82c62d4d6b4",
+      "name": "Correo_GHL",
+      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+        "subject": "HEMOS RECIBIDO TU CONSULTA",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>Marca personal, RRSS y Ventas</strong> el día <span class=\"highlight\">Martes a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        520,
+        200
+      ],
+      "id": "ab517d3f-7c6e-4347-ab03-88bbd2371eda",
+      "name": "Correo_MarcaPersonal",
+      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+        "subject": "HEMOS RECIBIDO TU CONSULTA",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>Agentes de Voz</strong> el día <span class=\"highlight\">Jueves a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        520,
+        400
+      ],
+      "id": "54051ff8-fa1f-4827-8311-78e4cabc6e56",
+      "name": "Correo_AgentesVoz",
+      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+        "subject": "HEMOS RECIBIDO TU CONSULTA",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>GPTs y Prompt</strong> el día <span class=\"highlight\">Martes a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        520,
+        600
+      ],
+      "id": "2f6b821a-75ba-471e-be9d-dedf76d59b5d",
+      "name": "Correo_GPTs y Prompting",
+      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1139528183,
+          "mode": "list",
+          "cachedResultName": "GoHighLevel",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=1139528183"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $json.data.createdAt.toDateTime().format('yyyy/MM/dd hh:mm:ss') }}",
+            "Nombre": "={{ $json.data.data.v6zx04fiywuhxf4npkt7o3bo }}",
+            "Correo": "={{ $json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+            "Pregunta": "={{ $json.data.data.w0xmi9ncyw7o8ij7w7km4ivc }}",
+            "Archivo adjunto": "={{ $json.data.data.idzm3u8c0495j7ryobyg6knq[0] }}",
+            "Área": "={{ $json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+            "Día de Clase": "Jueves",
+            "Contestada": "No"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        300,
+        0
+      ],
+      "id": "5c115d0d-8c0a-4d34-843c-d5d647dd712e",
+      "name": "GHL_Expert",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2118442775,
+          "mode": "list",
+          "cachedResultName": "N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2118442775"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $json.data.createdAt.toDateTime().format('yyyy/MM/dd hh:mm:ss') }}",
+            "Nombre": "={{ $json.data.data.v6zx04fiywuhxf4npkt7o3bo }}",
+            "Correo": "={{ $json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+            "Pregunta": "={{ $json.data.data.w0xmi9ncyw7o8ij7w7km4ivc }}",
+            "Archivo adjunto": "={{ $json.data.data.idzm3u8c0495j7ryobyg6knq[0] }}",
+            "Área": "={{ $json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+            "Día de Clase": "Jueves",
+            "Contestada": "No"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        300,
+        -200
+      ],
+      "id": "912e92a3-43de-4b51-878c-3b7df16adc55",
+      "name": "n8n_Expert",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1579050785,
+          "mode": "list",
+          "cachedResultName": "Marca Personal, RRSS y Ventas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=1579050785"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $json.data.createdAt.toDateTime().format('yyyy/MM/dd hh:mm:ss') }}",
+            "Nombre": "={{ $json.data.data.v6zx04fiywuhxf4npkt7o3bo }}",
+            "Correo": "={{ $json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+            "Pregunta": "={{ $json.data.data.w0xmi9ncyw7o8ij7w7km4ivc }}",
+            "Archivo adjunto": "={{ $json.data.data.idzm3u8c0495j7ryobyg6knq[0] }}",
+            "Area": "={{ $json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+            "Día de Clase": "Martes",
+            "Contestada": "No"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Area",
+              "displayName": "Area",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        300,
+        200
+      ],
+      "id": "164f09ab-3e2c-4f77-b93e-b8f6bd614c52",
+      "name": "MarcaPersonal_Expert",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2017748370,
+          "mode": "list",
+          "cachedResultName": "Agentes de Voz",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2017748370"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $json.data.createdAt.toDateTime().format('yyyy/MM/dd hh:mm:ss') }}",
+            "Nombre": "={{ $json.data.data.v6zx04fiywuhxf4npkt7o3bo }}",
+            "Correo": "={{ $json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+            "Pregunta": "={{ $json.data.data.w0xmi9ncyw7o8ij7w7km4ivc }}",
+            "Archivo adjunto": "={{ $json.data.data.idzm3u8c0495j7ryobyg6knq[0] }}",
+            "Área": "={{ $json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+            "Día de Clase": "Jueves",
+            "Contestada": "No"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        300,
+        400
+      ],
+      "id": "ba33dd6d-7a66-4703-93a2-dd93dd5f295d",
+      "name": "AgentesVoz_Expert",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 582219647,
+          "mode": "list",
+          "cachedResultName": "GPT y Prompting",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=582219647"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $json.data.createdAt.toDateTime().format('yyyy/MM/dd hh:mm:ss') }}",
+            "Nombre": "={{ $json.data.data.v6zx04fiywuhxf4npkt7o3bo }}",
+            "Correo": "={{ $json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
+            "Pregunta": "={{ $json.data.data.w0xmi9ncyw7o8ij7w7km4ivc }}",
+            "Archivo adjunto": "={{ $json.data.data.idzm3u8c0495j7ryobyg6knq[0] }}",
+            "Área": "={{ $json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
+            "Día de Clase": "Martes",
+            "Contestada": "No"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        300,
+        600
+      ],
+      "id": "b815f76f-2de3-4a55-80de-2c15486941b2",
+      "name": "GPTs_Expert",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": {
+    "node:Formulario": {
+      "webhookId": "cm8adr7h3004i9fbstpeccg8z"
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2025-03-05T13:43:40.613Z",
+      "updatedAt": "2025-03-05T13:43:40.613Z",
+      "id": "UZSZ6IVuXW7XuPZM",
+      "name": "📝Formularios"
+    },
+    {
+      "createdAt": "2025-02-26T15:17:43.536Z",
+      "updatedAt": "2025-02-26T15:17:43.536Z",
+      "id": "bB5H9hQQ6Hyuq8xS",
+      "name": "✅ PRODUCCION"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-15T15:47:14.000Z",
+  "versionId": "be6d68de-2744-4079-8a1c-8aac3a99fcf9"
+}
