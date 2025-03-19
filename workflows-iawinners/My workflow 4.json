@@ -1,0 +1,161 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agendar_reunion": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-18T18:53:58.678Z",
+  "id": "DV5cs7xEeiTqCOVT",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 4",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -220,
+        -140
+      ],
+      "id": "4ad05f4d-e5a8-4d38-832d-4bd889d75962",
+      "name": "When chat message received",
+      "webhookId": "fc786ec6-ff59-4d13-bc1c-0bab387bfba4"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=Eres el asistente personal del calendario de Adrián\n\nla fecha de hoy es: {{ $now }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        0,
+        -140
+      ],
+      "id": "683e8d6c-df72-461a-8723-1004ab2b49d2",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -80,
+        80
+      ],
+      "id": "ff40c99c-0a42-417a-bb29-4a58a01029ea",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        40,
+        80
+      ],
+      "id": "09a1fb13-c517-4124-8cfb-6af0a7d940db",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "academia.iawinners@gmail.com",
+          "mode": "list",
+          "cachedResultName": "academia.iawinners@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        220,
+        80
+      ],
+      "id": "070c6179-3d4d-43bd-a52a-63d841c38ff5",
+      "name": "Agendar_reunion",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-18T18:56:58.000Z",
+  "versionId": "c0895294-5411-4fe1-95d4-328e21ef52d5"
+}
