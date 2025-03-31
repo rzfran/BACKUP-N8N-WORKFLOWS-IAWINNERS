@@ -1,0 +1,1204 @@
+{
+  "active": false,
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Info_Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No existe el cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Info_Cliente": {
+      "main": [
+        [
+          {
+            "node": "Set 'Text'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set 'Text'": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Hay URL?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hay URL?1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "Separar Output en partes2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recorrer mensajes 1 a 1 Texto e Imagen1": {
+      "main": [
+        [
+          {
+            "node": "Flujo terminado2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "HighLevel1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "HighLevel3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "OpenAI3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HighLevel2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Separar Output en partes2": {
+      "main": [
+        [
+          {
+            "node": "Recorrer mensajes 1 a 1 Texto e Imagen1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "OpenAI1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HighLevel": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HighLevel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HighLevel1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HighLevel2": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook2": {
+      "main": [
+        [
+          {
+            "node": "Recorrer mensajes 1 a 1 Texto e Imagen1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HighLevel3": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HighLevel4": {
+      "main": [
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook3": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook4": {
+      "main": [
+        [
+          {
+            "node": "Recorrer mensajes 1 a 1 Texto e Imagen1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "HighLevel4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-08T12:21:11.549Z",
+  "id": "V0mro8wG6u1d6E4I",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "MONICA WHATSAPP POST-EVENTO 9/ABRIL",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Info_Cliente').item.json.values()[6] }}",
+        "options": {
+          "systemMessage": "=Fecha actual: {{$now.toISO()}}\nNombre del Cliente: {{ $('Info_Cliente').item.json.Nombre }}\n\n#ROL\nEres Mónica, la asistente personal del equipo de IA Winners. Tu meta es parecer una persona real, cercana y amigable. Hablas de manera natural. Deberás referirte a ti misma en femenino.\n\n\n#FUNCIÓN\nDerivar a todas las personas a agendar una reunión con el equipo de admisión de IA Winners para que evalúen si pueden ingresar a la academia. Para nosotros es muy importante mantener un ambiente grato y de apoyo entre todos los estudiantes, para ello todas las personas que quieren entrar a estudiar con nosotros deben pasar por un proceso de selección y cumplir con una serie de requisitos para ser parte de nuestra academia.\n\n\n#RESPUESTAS PASO A PASO\n\n1.- Si se detecta que ya se ha hablado con el mismo cliente antes deberás llamarlo por su nombre y no volver a preguntarlo.\n\n2.- Si te preguntan si eres una IA, debes decir que si y que tu trabajo es dar apoyo a todas las personas que quieren formar parte de nuestra academia para transformarse en los próximos profesionales en inteligencia artificial y tener la posibilidad de aprender a crear un negocio real y sostenible a largo plazo de la mano de profesionales con más de 10 años de experiencia en el mundo de los negocios y desarrollo de soluciones.\n\n3.- Todas las personas que llegan a hablar contigo vienen ya predispuestas a agendar una reunión con el equipo de admisión y quieren formar parte de nuestra academia, pero solo un grupo selecto podrá entrar\n\n4.- Evita saludar muchas veces a un mismo cliente. Limitate a saludar 1 vez por cliente que recuerdes\n\n5.- Utiliza respuestas claras, cortas y emoticonos relacionados con Inteligencia Artificial\n\n6.- Reponder únicamente a preguntas que tengan relación con todo lo que se encuentra en este prompt y no responder a preguntas que busquen sacarte de tu único rol que es agendar reuniones\n\n7.- Toda respuesta no debe superar los 140 caracteres de extensión, por lo que cada respuesta debe estar muy bien pensada y estructurada para otorgar la mejor respuesta posible a las consultas del usuario\n\n8.- Si el cliente necesita saber sobre la agencia/empresa enviar este link: https://iawinners.com/\n\n9.- Si el cliente quiere agendar una reunión o inscribirse en la academia enviale este link para que agende una reunión con el equipo de admisión: https://www.mydigitalwinner.com/calendario\n\n10.- Si el cliente quiere ver las redes sociales de Adrián Martínez, enviar el siguiente link: https://www.instagram.com/adrian.martinez.s/\n\n11.- Si un cliente pregunta si hay algún curso de creacion de chatbots o agentes ia unicamente, debes responder que enseñamos creacion de chatbots y agentes de ia en nuestra formación Master IA Expert en donde ayudamos a nuestros estudiantes a crear sus propias agencias de inteligencia artificial. Por lo que los cursos de chatbots y agentes ia solo vienen incluidos en esta formación.\n\n12.- Si un cliente pregunta por precios, debes derivar a que agenden una reunión con el equipo de admisión para recibir toda la información sobre nuestra formación profesional.\n\n13.- Haz un proceso de cualificación al cliente para detectar si es un buen candidato para formar parte de nuestra academia. Nos interesan perfiles de personas que realmente estén interesadas en crear un negocio escalable, personas que están realmente interesadas en aprender a crear soluciones con inteligencia artificial, personas que realmente están dispuestas a invertir en su formación profesional.\n\n14.- Si el cliente pregunta si sabes los precios de formaciones anteriores debes decir que no manejas los precios anteriores y que si necesita más información sobre los precios de las formaciones agende una reunión con el equipo de adminisión para recibir todos los detalles y luego envía el link para agendar reunión: https://www.mydigitalwinner.com/calendario\n\n15.- Si detectas que te han enviado un mensaje automatizado responde lo siguiente: \"Hola, parece que me enviaste un mensaje automatizado🤔. Qué te parecería implementar un agente de IA como yo para tu negocio? soy mucho más simpática 🥰. Por cierto, me llamo Mónica\"\n\n16.- Los links deben enviarse al final de cada texto.\n\n17.- Si detectas preguntas como: \"Me gustaría saber sobre las mejores herramientas para crear asistentes de voz\" No respondas a estas preguntas. Este tipo de perfiles de personas solo quieren información irrelevante y nosotros necesitamos personas cualificadas.\n\n18.- Limitate a responder solo con información presente en este prompt. No inventes ni respondas a preguntas que no tengan estricta relación con este prompt.\n\n19.- si te preguntan algo similar a \"Las plantillas las diste todas en el directo?\". Responde: \"Si, solo las personas que asistieron al evento en directo y se quedaron hasta el final recibieron las plantillas en el chat en vivo\"\n\n20.- Si detectas que el usuario se despide, despidete amablemente y cierras la conversación. Frases como \"gracias\", \"muchas gracias\" también pueden finalizar una conversacion\n\n\n\n#INFORMACIÓN DE LA MASTERCLASS/EVENTO:\n- Objetivo: Enseñar a crear Agentes de Inteligencia Artificial con la plataforma n8n\n\n- Grabaciones: Disponibles en: https://tr.ee/masterclass-agentes-ia\n\n- WhatsApp: Es fundamental unirse al grupo para recibir enlaces y actualizaciones, este el el link al grupo de whatsapp de Agentes de IA: https://tr.ee/grupo-whatsapp\n\n\n\n#INFORMACIÓN SOBRE ADRIÁN MARTÍNEZ Y SUS EMPRESAS:\n¿Quién es Adrián Martínez?\n- Fundador de My Digital Winner, Smart Calling y Academia IA Winners.\n\n- Reconocido por su capacidad para implementar soluciones de inteligencia artificial que transforman negocios, optimizando procesos y aumentando resultados.\n\n- Más de 55,000 seguidores en redes sociales lo respaldan como un referente en la automatización y la IA aplicada a negocios.\n\n- Su enfoque práctico y orientado a resultados ha ayudado a miles de emprendedores y empresas a integrar la IA de manera efectiva.\n\n\n\n## Sobre IA Winners:\n- Una agencia especializada en integrar IA y automatización en procesos empresariales.\n\n- Ayuda a captar clientes automáticamente, optimizar operaciones y crecer de manera sostenible.\n\n- Trabaja con clientes de alto valor, diseñando campañas personalizadas que maximizan el retorno de inversión.\n\n- Más información en nuestra web: https://iawinners.com/\n\n\n\n## Sobre Smart Calling:\n- Pionera en España en asistentes de voz con inteligencia artificial\n\n- Ofrece soluciones para tareas como atención al cliente, gestión de citas y captación de clientes\n\n- Smart Calling transforma la interacción con clientes en algo eficiente y automatizado.\n\n- Más información en https://www.smartcalling.es/\n\n\n\n## Sobre la Academia IA Winners:\n- Una academia y comunidad de más de 1000 miembros, dedicada a capacitar en IA y automatización aplicada a negocios\n\n- En nuestra Academia IA Winners ofrecemos los siguientes programas: \n  1.- Academia IA Winners: donde podrás aprender las bases de las automatizaciones básicas y la posibilidad de asistir a una clase en vivo todos los Miércoles a las 18:00 pm hora España con el equipo de IA Winners para aprender sobre Make y el mundo de la IA.\n\n  2.- Master IA Expert: diseñados para diferentes niveles de experiencia, ofrece la formación más completa en habla hispana para aprender a crear una agencia de inteligencia artificial profesional de la mano del equipo de IA Winners. Contarás con profesionales capacitados en diferentes áreas que componen una agencia, tales como: Marketing, Ventas, Servicios, Desarrollo de Agentes IA de Voz, Desarrollo de Agentes IA para atención por whatsapp, etc.\n\n- Un entorno activo de networking y colaboración para aprender y crecer en el ámbito de la IA\n\n\n\n#Notas\n\n- Hablar como una persona, no como un robot\n\n- Evita respuestas largas. Sé directa, pero mantén una actitud simpática.\n\n- Incluye frases coloquiales, emojis moderados, y rompe el hielo con un comentario amistoso usando palabras como: \"let´go!!\", \"te esperamos winner 💪\", \"guay\" (para referirse a que algo es muy genial)\n\n- Si hacen preguntas que no tienen relación con lo que está en el prompt debes avisar que no tienes esa información y limitarte a responder con la informacion que tengas en este prompt.\n\n\n#Output\n- Siempre que vayas a enviar un link o url, debes enviarla al final del texto.\n\n- No usar frases como \"¡Eso suena emocionante!\" y sé más natural en tu forma de expresarte como si fueras de España.\n\n- Solo comparte el link para agendar una reunión con el equipo de admisión si ves que el cliente cumple con los requisitos que buscamos para ser parte de nuestra academia.\n\n- Solo responder con la información presente en este prompt.\n\n- Hablar como una persona, no como un robot.\n\n- Hablar siempre como mujer, eres Mónica."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        540,
+        400
+      ],
+      "id": "82d5af13-048a-4fd6-9640-ca81ad09d10d",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        440,
+        620
+      ],
+      "id": "4cf32a25-ce72-4ffe-b0eb-f32aeaa68f21",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1y8SlQroJd9wrD7q9yIB_txujoS2Uf-tEo3s4pSu8Wew",
+          "mode": "list",
+          "cachedResultName": " FULL CAMPAIGN ANALYTIC | LANZAMIENTO AGENTES DE IA ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1y8SlQroJd9wrD7q9yIB_txujoS2Uf-tEo3s4pSu8Wew/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1683958641,
+          "mode": "list",
+          "cachedResultName": "Registros Evento",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1y8SlQroJd9wrD7q9yIB_txujoS2Uf-tEo3s4pSu8Wew/edit#gid=1683958641"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Email",
+              "lookupValue": "={{ $json.emailLowerCase }}"
+            },
+            {
+              "lookupColumn": "Telefono",
+              "lookupValue": "={{ $json.phone }}"
+            }
+          ]
+        },
+        "combineFilters": "OR",
+        "options": {
+          "outputFormatting": {
+            "values": {
+              "general": "UNFORMATTED_VALUE",
+              "date": "FORMATTED_STRING"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -200,
+        400
+      ],
+      "id": "9ca7be53-dd2e-4d52-9489-f38a27b53dba",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SkQUSycZPhGPNNXN",
+          "name": "Google Sheets Fran"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        560
+      ],
+      "id": "35af234c-a463-4eac-9e94-eb560cfddf40",
+      "name": "No existe el cliente"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "81d08529-b648-476d-bc53-f600e5f51d4c",
+              "name": "Nombre",
+              "value": "={{ $json.Nombre }}",
+              "type": "string"
+            },
+            {
+              "id": "4a95bcf3-3b8f-4f0b-b32a-fde271f1d320",
+              "name": "Telefono",
+              "value": "={{ $json.Telefono }}",
+              "type": "string"
+            },
+            {
+              "id": "1d4adb9c-abfd-4a73-8383-e82f12ccd6d1",
+              "name": "Email",
+              "value": "={{ $json.Email }}",
+              "type": "string"
+            },
+            {
+              "id": "d38859f3-86da-40b3-ab95-ab7e7bb662e4",
+              "name": "Email 2",
+              "value": "={{ $('HighLevel').item.json.email }}",
+              "type": "string"
+            },
+            {
+              "id": "32e50551-de9c-4566-8438-e1db0da959b3",
+              "name": "Avatar",
+              "value": "={{ $json.Avatar }}",
+              "type": "string"
+            },
+            {
+              "id": "dff41a60-aac5-4473-91a9-9d8b9068144c",
+              "name": "Fuente",
+              "value": "={{ $json.Fuente }}",
+              "type": "string"
+            },
+            {
+              "id": "142cae4d-9d1c-4899-9153-af7c6c24a4f2",
+              "name": "Mensaje",
+              "value": "={{ $('Webhook').item.json.body.message.body }}",
+              "type": "string"
+            },
+            {
+              "id": "5f216d98-7e38-4137-9077-85e046fd8b7d",
+              "name": "Contact ID",
+              "value": "={{ $('Webhook').item.json.body.contact_id }}",
+              "type": "string"
+            },
+            {
+              "id": "43956ea8-474f-4262-a6ee-a25b7d736bff",
+              "name": "Tags",
+              "value": "={{ $('Webhook').item.json.body.tags }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        80,
+        400
+      ],
+      "id": "7cbfae22-5fdd-4b26-ad2a-d2d00335b179",
+      "name": "Info_Cliente"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "359ee248-b32c-48e6-b6cf-193017f9ee39",
+              "name": "id",
+              "value": "={{ $('Info_Cliente').item.json.values()[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "fe7ecc99-e1e8-4a5e-bdd6-6fce9757b234",
+              "name": "text",
+              "value": "={{ $('Info_Cliente').item.json.values()[6] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "17015766-7444-4a70-b8ee-4db01f5b08a7",
+      "name": "Set 'Text'",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        320,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Set \\'Text\\'').item.json.values()[0] }}",
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
+      "typeVersion": 1.4,
+      "position": [
+        620,
+        620
+      ],
+      "id": "5b95abac-732f-43b4-b269-8f02ebb589c7",
+      "name": "Redis Chat Memory",
+      "credentials": {
+        "redis": {
+          "id": "cTJoz049sDpJ5TWM",
+          "name": "Redis MEMORY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e8e12d55-1c5f-4960-a31b-95ce251b7106",
+              "name": "Output Agente",
+              "value": "={{ $('AI Agent').item.json.output }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1000,
+        400
+      ],
+      "id": "23959879-519d-462e-9e7d-54cb30895dc4",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Accedemos al contenido de `Output Agente` directamente\nconst fullText = $json['Output Agente'];\n\n// Verificamos si `fullText` contiene los datos esperados\nif (!fullText) {\n    console.log('No se encontró el texto en la salida de \"Output Agente\". Verifica la estructura del JSON de salida.');\n    return [{ error: 'No se encontró el texto en la salida de \"Output Agente\".' }];\n}\n\n// Expresión regular para detectar URLs dentro y fuera del formato Markdown\nconst urlRegex = /\\[.*?\\]\\((https?:\\/\\/[^\\s)]+)\\)|\\bhttps?:\\/\\/[^\\s]+/g;\n\n// Extraemos todas las URLs del texto\nconst urls = [];\nlet cleanText = fullText;\n\n// Reemplazamos las URLs encontradas por un espacio en el texto limpio\ncleanText = cleanText.replace(urlRegex, (match, markdownUrl) => {\n    const url = markdownUrl || match; // Extrae la URL correcta\n    urls.push(url);\n    return ''; // Reemplaza la URL en el texto con un espacio\n}).trim();\n\n// Construimos el resultado con texto limpio y URLs\nreturn [\n    {\n        json: {\n            text: cleanText,\n            urls: urls.length > 0 ? urls : null // Retorna array de URLs si hay, sino null\n        }\n    }\n];"
+      },
+      "id": "708c477c-36ee-43d2-909c-86d7c2226124",
+      "name": "Separar Output en partes2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1700,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3e0aa757-4de8-492a-8412-f4603c4a1784",
+              "leftValue": "={{ $('Edit Fields2').item.json.values()[0] }}",
+              "rightValue": "https",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "69d3c0a1-6002-420d-ab99-3c89a6168e75",
+              "leftValue": "={{ $('Edit Fields2').item.json.values()[0] }}",
+              "rightValue": "http",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1240,
+        400
+      ],
+      "id": "28a30931-5b1c-43ed-8dfb-5dbd3e7d8d48",
+      "name": "Hay URL?1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cf9f2548-053b-472f-b601-4e34ca31511c",
+              "name": "Output Agente",
+              "value": "={{ $('Hay URL?1').item.json.values()[0] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1460,
+        160
+      ],
+      "id": "bdd5e844-0741-4aa0-8867-3eff82c385bc",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=- Tu trabajo es mejorar la estructura del mensaje quitando símbolos como \"#\",\"**texto**\", \"![texto]\", \":\"\n\n- En tus respuestas siempre responde SOLO con el mensaje mejorado asegurandote de que el mensaje tenga sentido y buena estructura\n\n- No quites los emojis\n\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n\n- El mensaje debe sonar relajado, formal y respetuoso.\n\n- No uses puntos finales\n\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\"\n  - \"¿Cómo te puedo ayudar en algo más?\"\n\n- En lugar de frases como \"¿en qué puedo asistirte hoy?\". En su lugar usa frases más comunes y más relajadas\n\n#Output\n- Las respuestas no puedes superar los 140 caracteres\n- No usar frases como \"¡Eso suena emocionante!\" y sé más natural en tu forma de expresarte como si fueras de España\n- Solo comparte los links si el cliente te lo solicita\n- Hablar como una persona, no como un robot\n- Hablar siempre como mujer, eres Mónica\n- si detectas una frase como \"Aquí tienes el link\", quitala",
+              "role": "system"
+            },
+            {
+              "content": "=Mejora la estructura del siguiente mensaje: {{ $('Hay URL?1').item.json.values()[0] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        1660,
+        660
+      ],
+      "id": "94f9fa79-d300-4812-aacf-8a31ee89ac05",
+      "name": "OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=- Tu trabajo es mejorar la estructura del mensaje quitando símbolos como \"#\",\"**texto**\", \"![texto]\", \":\"\n\n- En tus respuestas siempre responde SOLO con el mensaje mejorado asegurandote de que el mensaje tenga sentido y buena estructura\n\n- No quites los emojis\n\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n\n- El mensaje debe sonar relajado, formal y respetuoso.\n\n- No uses puntos finales\n\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\"\n  - \"¿Cómo te puedo ayudar en algo más?\"\n\n- En lugar de frases como \"¿en qué puedo asistirte hoy?\". En su lugar usa frases más comunes y más relajadas\n\n#Output\n- Las respuestas no puedes superar los 140 caracteres\n- No usar frases como \"¡Eso suena emocionante!\" y sé más natural en tu forma de expresarte como si fueras de España\n- Solo comparte los links si el cliente te lo solicita\n- Hablar como una persona, no como un robot\n- Hablar siempre como mujer, eres Mónica\n- si detectas una frase como \"Aquí tienes el link\", quitala",
+              "role": "system"
+            },
+            {
+              "content": "=Mejora el siguiente mensaje: {{$('If4').last().json.values()[0]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        2440,
+        160
+      ],
+      "id": "dec20cbf-06c7-4143-9d00-feba0274e917",
+      "name": "OpenAI3",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "6294a872-41fd-4aa3-97f7-7f547e5aefed",
+      "name": "Flujo terminado2",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2200,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b9391b62-6862-45b5-a73b-38f01ec17cd6",
+      "name": "Recorrer mensajes 1 a 1 Texto e Imagen1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1920,
+        160
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a5377465-87f5-4271-8d8e-2b0cd0f8b164",
+              "name": "mensaje",
+              "value": "={{ $('OpenAI1').item.json.message.values()[1] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2020,
+        660
+      ],
+      "id": "3caeaaaf-ef30-4113-a0ca-dfd6cb5ee344",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b4b47b6c-e9ae-4e88-bf32-1d93d96136e7",
+              "name": "mensaje",
+              "value": "={{ $('OpenAI3').item.json.message.values()[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "0bfe6b9b-91b4-4f2b-baa6-0aa127a512db",
+              "name": "url",
+              "value": "={{ $('If4').item.json.urls[0] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2780,
+        160
+      ],
+      "id": "98f6e349-9ec8-4a50-84ca-ee60c4bd1fc3",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "59babff8-137e-4659-994c-c56fe80d6bc2",
+              "leftValue": "={{ $json.urls[0] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2200,
+        160
+      ],
+      "id": "6d055847-24f5-4776-a58d-da9f3981a0a1",
+      "name": "If4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cf9f2548-053b-472f-b601-4e34ca31511c",
+              "name": "Output Agente",
+              "value": "={{ $('Hay URL?1').item.json.values()[0] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1460,
+        660
+      ],
+      "id": "d12d608f-e96c-4cae-9ea8-9ab775e58825",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "contactId": "={{ $json.body.contact_id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        400
+      ],
+      "id": "bd386997-ede5-43a6-94ba-ffc2ff5b9cbf",
+      "name": "HighLevel",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "monica-post",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -620,
+        400
+      ],
+      "id": "faa430d2-e2f4-46d5-ae6f-94ab6b855713",
+      "name": "Webhook",
+      "webhookId": "8d716e8c-0ddb-445a-9f8e-d4856bc08332"
+    },
+    {
+      "parameters": {
+        "email": "={{ $('HighLevel').item.json.emailLowerCase }}",
+        "phone": "={{ $('HighLevel').item.json.phone }}",
+        "additionalFields": {
+          "customFields": {
+            "values": [
+              {
+                "fieldId": {
+                  "__rl": true,
+                  "value": "a9gBJcawbV7nrFZixtJ4",
+                  "mode": "list",
+                  "cachedResultName": "Respuesta IA"
+                },
+                "fieldValue": "={{ $('Edit Fields').item.json.values()[0] }}"
+              }
+            ]
+          }
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        2240,
+        660
+      ],
+      "id": "4bd1dc46-d29b-42ee-93db-5a420339e914",
+      "name": "HighLevel1",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"message\": \"{{ $('Edit Fields').item.json.values()[0] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2460,
+        660
+      ],
+      "id": "5db38b77-8592-461f-8031-0d7497d5b075",
+      "name": "Respond to Webhook1",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "email": "={{ $('HighLevel').item.json.emailLowerCase }}",
+        "phone": "={{ $('HighLevel').item.json.phone }}",
+        "additionalFields": {
+          "customFields": {
+            "values": [
+              {
+                "fieldId": {
+                  "__rl": true,
+                  "value": "a9gBJcawbV7nrFZixtJ4",
+                  "mode": "list",
+                  "cachedResultName": "Respuesta IA"
+                },
+                "fieldValue": "={{ $('Recorrer mensajes 1 a 1 Texto e Imagen1').item.json.values()[0] }}"
+              }
+            ]
+          }
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        2440,
+        380
+      ],
+      "id": "9d06cb2e-3cb8-4817-87c1-f5df63ab162a",
+      "name": "HighLevel2",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"message\": \"{{ $('Recorrer mensajes 1 a 1 Texto e Imagen1').item.json.values()[0] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2660,
+        380
+      ],
+      "id": "7bda6aa6-7c1a-4887-9925-d208df0bfceb",
+      "name": "Respond to Webhook2"
+    },
+    {
+      "parameters": {
+        "email": "={{ $('HighLevel').item.json.emailLowerCase }}",
+        "phone": "={{ $('HighLevel').item.json.phone }}",
+        "additionalFields": {
+          "customFields": {
+            "values": [
+              {
+                "fieldId": {
+                  "__rl": true,
+                  "value": "a9gBJcawbV7nrFZixtJ4",
+                  "mode": "list",
+                  "cachedResultName": "Respuesta IA"
+                },
+                "fieldValue": "={{ $('Edit Fields1').item.json.values()[0] }}"
+              }
+            ]
+          }
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        3000,
+        -60
+      ],
+      "id": "def05b42-4ed0-45d9-948a-be0dbd6ece7d",
+      "name": "HighLevel3",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"message\": \"{{ $('Edit Fields1').item.json.mensaje }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        3220,
+        -60
+      ],
+      "id": "acae9993-37f0-48fc-abde-ae8642ab3f50",
+      "name": "Respond to Webhook3"
+    },
+    {
+      "parameters": {
+        "email": "={{ $('HighLevel').item.json.emailLowerCase }}",
+        "phone": "={{ $('HighLevel').item.json.phone }}",
+        "additionalFields": {
+          "customFields": {
+            "values": [
+              {
+                "fieldId": {
+                  "__rl": true,
+                  "value": "a9gBJcawbV7nrFZixtJ4",
+                  "mode": "list",
+                  "cachedResultName": "Respuesta IA"
+                },
+                "fieldValue": "={{ $('Edit Fields1').item.json.values()[1] }}"
+              }
+            ]
+          }
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        3660,
+        -60
+      ],
+      "id": "7a6111f9-0a0a-4697-9f9b-fe9a9099706a",
+      "name": "HighLevel4",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"message\": \"{{ $('Edit Fields1').item.json.values()[1] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        4080,
+        -60
+      ],
+      "id": "c3c0b4d6-2f23-483b-a3f0-b19765899096",
+      "name": "Respond to Webhook4"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3440,
+        -60
+      ],
+      "id": "b5badc57-d379-4a99-b286-00b792327542",
+      "name": "Wait3",
+      "webhookId": "fee5f263-9563-4f78-93c5-e7dc08418a8f"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3880,
+        -60
+      ],
+      "id": "57bee2d1-63de-47e9-bc40-c639e888287d",
+      "name": "Wait4",
+      "webhookId": "4bf01433-4b80-4188-9c51-d54511204f93"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        900,
+        620
+      ],
+      "id": "34dec9fa-c108-43f0-a3a9-f29d7e9515cc",
+      "name": "Calculator"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-03-10T12:50:25.838Z",
+      "updatedAt": "2025-03-10T12:50:25.838Z",
+      "id": "IfwmE4Wy4hV5SX5c",
+      "name": "Monica"
+    },
+    {
+      "createdAt": "2025-02-26T07:17:34.787Z",
+      "updatedAt": "2025-02-27T17:47:03.175Z",
+      "id": "UFH6BosTRpNyXl3E",
+      "name": "💬🟢WhatsApp"
+    },
+    {
+      "createdAt": "2025-02-26T15:17:43.536Z",
+      "updatedAt": "2025-02-26T15:17:43.536Z",
+      "id": "bB5H9hQQ6Hyuq8xS",
+      "name": "✅ PRODUCCION"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-31T00:39:32.000Z",
+  "versionId": "7056e87d-1a24-416c-806f-796eb4b48f3b"
+}
