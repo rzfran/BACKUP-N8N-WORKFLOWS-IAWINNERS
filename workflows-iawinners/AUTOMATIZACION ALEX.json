@@ -1,0 +1,184 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-03-31T14:42:14.088Z",
+  "id": "OKN5VfGzW708Idlt",
+  "meta": null,
+  "name": "AUTOMATIZACION ALEX",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -160
+      ],
+      "id": "5583a1f1-bc62-496b-805d-633a24078e9c",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.googleSlides",
+      "typeVersion": 2,
+      "position": [
+        200,
+        -160
+      ],
+      "id": "8bc623b4-ac23-45ec-a78f-91b892685d55",
+      "name": "Google Slides"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.googleSlides",
+      "typeVersion": 2,
+      "position": [
+        620,
+        -160
+      ],
+      "id": "ff6a2cb8-c238-4721-8f0f-c42fbfb89fe6",
+      "name": "Google Slides1"
+    },
+    {
+      "parameters": {
+        "content": "## doc 2 (min 70 pag)\n**Inteligencia Artificial**",
+        "height": 280,
+        "width": 380,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        480,
+        -260
+      ],
+      "id": "4fe6df23-da18-422c-843f-bc36d3eeb085",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## doc 1 (min 70 pag)\n**Ventas Digitales**",
+        "height": 280,
+        "width": 380,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        60,
+        -260
+      ],
+      "id": "a0b7e966-ecbc-45e5-9ab7-e0d46163df31",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## EMPRESA 1 \n",
+        "height": 480,
+        "width": 880,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        20,
+        -360
+      ],
+      "id": "1a0ce18b-5c87-4b4a-9c9e-3f38bff9bd51",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.googleSlides",
+      "typeVersion": 2,
+      "position": [
+        1160,
+        -160
+      ],
+      "id": "81fc7eb7-7af9-4717-a287-f27e35e08bf3",
+      "name": "Google Slides2"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.googleSlides",
+      "typeVersion": 2,
+      "position": [
+        1580,
+        -160
+      ],
+      "id": "9a7d9a60-7b0e-4467-b8d3-02cc1e02bfcb",
+      "name": "Google Slides3"
+    },
+    {
+      "parameters": {
+        "content": "## doc 2 (min 70 pag)\n**Inteligencia Artificial**",
+        "height": 280,
+        "width": 380,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        -260
+      ],
+      "id": "5ec05626-eb04-4cc9-9f2a-65f3d4bb3984",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## doc 1 (min 70 pag)\n**Ventas Digitales**",
+        "height": 280,
+        "width": 380,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        -260
+      ],
+      "id": "f26ba4f5-e848-4d96-9b7b-704adc732cc6",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## EMPRESA 2\n",
+        "height": 480,
+        "width": 880,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        980,
+        -360
+      ],
+      "id": "c07b49fb-4804-4c09-87f0-9d1bd1cf3a44",
+      "name": "Sticky Note5"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-31T15:30:30.000Z",
+  "versionId": "c2dad0fe-f49e-4a0a-aacf-8fa89a24248e"
+}
