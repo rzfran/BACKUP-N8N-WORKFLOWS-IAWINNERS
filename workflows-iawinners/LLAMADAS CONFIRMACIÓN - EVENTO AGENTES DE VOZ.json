@@ -1,0 +1,367 @@
+{
+  "active": false,
+  "connections": {
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-01T11:38:39.027Z",
+  "id": "WXIYk6rD4MTr4IOE",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "LLAMADAS CONFIRMACIÓN - EVENTO AGENTES DE VOZ",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/create-phone-call",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer key_18c259a1a892bdc0eecb9859511a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\"agent_id\": \"agent_37eb3812f142e09e74b889fe8d\",\n  \"retell_llm_dynamic_variables\": {\n    \"Nombre\": \"{{ $json.Nombre }}\",\n    \"avatar\": \"{{ $json.Avatar }}\",\n    \"email\": \"{{ $json.Email }}\"\n  },\n \"from_number\": \"+541152588217\",\n  \"to_number\": \"{{ $json.Telefono }}\",\n  \"direction\": \"outbound\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        0
+      ],
+      "id": "3476612c-8069-4aca-a538-6f1411940795",
+      "name": "HTTP Request",
+      "executeOnce": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e1e9ceab-c1e9-4e99-9734-3c0ab50b2493",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0",
+          "mode": "list",
+          "cachedResultName": "FULL CAMPAIGN ANALYTIC | LANZAMIENTO AGENTES DE IA (VOZ)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 980957311,
+          "mode": "list",
+          "cachedResultName": "TEST Registros IA",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit#gid=980957311"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "SE EJECUTÓ LA CONFIRMACIÓN?"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        360,
+        0
+      ],
+      "id": "738b04ac-4ce5-4e97-ab2b-421d28f47962",
+      "name": "Google Sheets",
+      "executeOnce": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0",
+          "mode": "list",
+          "cachedResultName": "FULL CAMPAIGN ANALYTIC | LANZAMIENTO AGENTES DE IA (VOZ)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 980957311,
+          "mode": "list",
+          "cachedResultName": "TEST Registros IA",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit#gid=980957311"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Google Sheets').item.json.row_number }}",
+            "SE EJECUTÓ LA CONFIRMACIÓN?": "SI"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "Fecha Registro",
+              "displayName": "Fecha Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Avatar",
+              "displayName": "Avatar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fuente",
+              "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Afiliado",
+              "displayName": "Afiliado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 1",
+              "displayName": "UTM 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 2",
+              "displayName": "UTM 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 3",
+              "displayName": "UTM 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 4",
+              "displayName": "UTM 4",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "SE EJECUTÓ LA CONFIRMACIÓN?",
+              "displayName": "SE EJECUTÓ LA CONFIRMACIÓN?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ATENDIÓ LA LLAMADA?",
+              "displayName": "ATENDIÓ LA LLAMADA?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "RESUMEN - LLAMADA 1",
+              "displayName": "RESUMEN - LLAMADA 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "SE EJECUTÓ EL RECORDATORIO?",
+              "displayName": "SE EJECUTÓ EL RECORDATORIO?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "RESPUESTA",
+              "displayName": "RESPUESTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RESUMEN - LLAMADA 2",
+              "displayName": "RESUMEN - LLAMADA 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1100,
+        0
+      ],
+      "id": "48f0adb2-c751-4a30-86f1-3ecc1b721218",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-01T11:43:52.000Z",
+  "versionId": "9a17c66e-03be-4349-a582-328f0170a6f8"
+}
