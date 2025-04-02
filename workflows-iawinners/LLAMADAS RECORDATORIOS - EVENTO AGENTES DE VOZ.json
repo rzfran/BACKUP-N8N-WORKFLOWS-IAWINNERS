@@ -1,0 +1,373 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-01T11:32:45.410Z",
+  "id": "XhjH4v4wYlKuFxJn",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "LLAMADAS RECORDATORIOS - EVENTO AGENTES DE VOZ",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a97029e9-3b82-4ebb-ad8d-1944d9441ef9",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0",
+          "mode": "list",
+          "cachedResultName": "FULL CAMPAIGN ANALYTIC | LANZAMIENTO AGENTES DE IA (VOZ)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 980957311,
+          "mode": "list",
+          "cachedResultName": "TEST Registros IA",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit#gid=980957311"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        220,
+        0
+      ],
+      "id": "aeadb9bd-4f90-405f-8594-9e01d929003e",
+      "name": "Google Sheets",
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/create-phone-call",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer key_18c259a1a892bdc0eecb9859511a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\"agent_id\": \"agent_8904dfed57b2cb78e369fca8bf\",\n  \"retell_llm_dynamic_variables\": {\n    \"Nombre\": \"{{ $json.Nombre }}\",\n    \"Email\": \"{{ $('Google Sheets').item.json.Email }}\"\n  },\n \"from_number\": \"+541152588217\",\n  \"to_number\": \"{{ $('Google Sheets').item.json.Telefono }}\",\n  \"direction\": \"outbound\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        780,
+        20
+      ],
+      "id": "8bc18c69-cf1c-4285-b2a5-53239e231a94",
+      "name": "HTTP Request",
+      "executeOnce": false,
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "amount": 60
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1500,
+        20
+      ],
+      "id": "88659cad-4e9e-4170-8f40-aa75ec000af2",
+      "name": "Wait",
+      "webhookId": "5178eec5-ed22-48a1-847a-9eb567280892"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0",
+          "mode": "list",
+          "cachedResultName": "FULL CAMPAIGN ANALYTIC | LANZAMIENTO AGENTES DE IA (VOZ)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 980957311,
+          "mode": "list",
+          "cachedResultName": "TEST Registros IA",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit#gid=980957311"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Google Sheets').item.json.row_number }}",
+            "SE EJECUTÓ EL RECORDATORIO?": "SI"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "Fecha Registro",
+              "displayName": "Fecha Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Avatar",
+              "displayName": "Avatar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "SE EJECUTÓ LA CONFIRMACIÓN?",
+              "displayName": "SE EJECUTÓ LA CONFIRMACIÓN?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ATENDIÓ LA LLAMADA?",
+              "displayName": "ATENDIÓ LA LLAMADA?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "RESUMEN - LLAMADA 1",
+              "displayName": "RESUMEN - LLAMADA 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "SE EJECUTÓ EL RECORDATORIO?",
+              "displayName": "SE EJECUTÓ EL RECORDATORIO?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "RESPUESTA",
+              "displayName": "RESPUESTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "RESUMEN - LLAMADA 2",
+              "displayName": "RESUMEN - LLAMADA 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1100,
+        20
+      ],
+      "id": "8b16544e-633e-4e31-96e7-c1fe43844fd9",
+      "name": "Google Sheets1",
+      "executeOnce": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        440,
+        0
+      ],
+      "id": "5339de38-6363-4621-89c4-fe7594a500e4",
+      "name": "Loop Over Items",
+      "executeOnce": false
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-01T11:48:10.000Z",
+  "versionId": "721950df-e979-4e36-9acd-a3cb52089460"
+}
