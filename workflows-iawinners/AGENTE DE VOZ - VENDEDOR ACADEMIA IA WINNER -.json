@@ -1,0 +1,69 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-01T11:49:31.624Z",
+  "id": "p7IvTSeqdI94dUIR",
+  "meta": null,
+  "name": "AGENTE DE VOZ - VENDEDOR ACADEMIA IA WINNER -",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -200
+      ],
+      "id": "2c41de6d-a75e-461a-aad7-fb232103a6d9",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/create-phone-call",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer key_18c259a1a892bdc0eecb9859511a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\"agent_id\": \"agent_0ec659be071b16cd44616f3c58\",\n  \"retell_llm_dynamic_variables\": {\n    \"Nombre\": \"Luz\",\n    \"interes\": \"Master intensivo\",\n    \"email\": \"ubueni@gmail.com\"\n  },\n \"from_number\": \"+541152588217\",\n  \"to_number\": \"5491133567448\",\n  \"direction\": \"outbound\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        180,
+        -200
+      ],
+      "id": "eac33687-f398-4492-bc78-be749067066a",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-01T11:49:34.000Z",
+  "versionId": "80715f4c-8bd0-4c8b-b865-009cf120488e"
+}
