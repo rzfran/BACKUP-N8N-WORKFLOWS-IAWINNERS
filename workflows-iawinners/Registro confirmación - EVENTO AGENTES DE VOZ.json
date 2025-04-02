@@ -1,0 +1,254 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-01T11:46:59.022Z",
+  "id": "YhpNqMHdMxMvI34c",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Registro confirmación - EVENTO AGENTES DE VOZ",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ddb13939-ed16-410e-8b9d-38f238c7b687",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -760,
+        -40
+      ],
+      "id": "7f2dc5ef-7b82-422f-9783-14290c6f7818",
+      "name": "Webhook",
+      "webhookId": "ddb13939-ed16-410e-8b9d-38f238c7b687"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0",
+          "mode": "list",
+          "cachedResultName": "FULL CAMPAIGN ANALYTIC | LANZAMIENTO AGENTES DE IA (VOZ)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 980957311,
+          "mode": "list",
+          "cachedResultName": "TEST Registros IA",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit#gid=980957311"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $json.body.call.retell_llm_dynamic_variables.email }}",
+            "ATENDIÓ LA LLAMADA?": "SI",
+            "RESUMEN - LLAMADA 1": "={{ $json.body.args.resumen }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Fecha Registro",
+              "displayName": "Fecha Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Avatar",
+              "displayName": "Avatar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "SE EJECUTÓ LA CONFIRMACIÓN?",
+              "displayName": "SE EJECUTÓ LA CONFIRMACIÓN?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ATENDIÓ LA LLAMADA?",
+              "displayName": "ATENDIÓ LA LLAMADA?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RESUMEN - LLAMADA 1",
+              "displayName": "RESUMEN - LLAMADA 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "SE EJECUTÓ EL RECORDATORIO?",
+              "displayName": "SE EJECUTÓ EL RECORDATORIO?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "RESPUESTA",
+              "displayName": "RESPUESTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "RESUMEN - LLAMADA 2",
+              "displayName": "RESUMEN - LLAMADA 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -320,
+        -40
+      ],
+      "id": "be86704c-a4d0-46ef-8785-68acfd394a19",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        40,
+        -40
+      ],
+      "id": "de5a905f-105c-4bcc-a556-c7c2e3f10f34",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-01T11:47:24.000Z",
+  "versionId": "c59e2437-58aa-49dd-8dd9-b989ded0a3d2"
+}
