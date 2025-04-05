@@ -1,0 +1,18 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-04-04T20:11:53.532Z",
+  "id": "CcRwXOu8gMRB1LGY",
+  "meta": null,
+  "name": "AGENTE DE VOZ - VENDEDOR SOLUCIÓN",
+  "nodes": [],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-04T20:11:53.532Z",
+  "versionId": "6b6a82c9-d454-4c59-a13f-5e489510f9e9"
+}
