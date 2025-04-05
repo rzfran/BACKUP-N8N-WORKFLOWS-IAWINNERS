@@ -1,0 +1,238 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Wassenger",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar_aviso_equipo": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tareas_equipo": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-04T15:45:28.943Z",
+  "id": "DHKVb3SWprIQdeF5",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente - CursosEcom",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "0a320c9f-bb95-41bc-a725-2c8505777097",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -560,
+        -220
+      ],
+      "id": "22d18ddd-156c-4a18-b56a-33af49b2c2ee",
+      "name": "Webhook",
+      "webhookId": "0a320c9f-bb95-41bc-a725-2c8505777097"
+    },
+    {
+      "parameters": {
+        "device": "674edf4bdd4e252bf003d0e9",
+        "phone": "={{ $('Webhook').item.json.body.data.chat.contact.phone }}",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-wassenger.wassenger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        -220
+      ],
+      "id": "b5184baf-4648-43d2-9f32-f9f7943fe8f4",
+      "name": "Wassenger",
+      "credentials": {
+        "apiKey": {
+          "id": "1A9bTraAZdafs9EO",
+          "name": "Wassenger Key account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Este es el mensaje del usuario que debes contestar: {{ $json.body.data.body }}",
+        "options": {
+          "systemMessage": "=Eres el asistente de ventas de Cursos Ecom.\n\nInformación de la empresa CursosEcom:\n\nCursosEcom es un negocio enfocado en la formación online para emprendedores que desean crear o potenciar negocios digitales, especialmente en el ámbito del eCommerce y el marketing digital. A continuación, se detalla la información clave sobre la empresa y su oferta educativa:\n\nDescripción General\nPropósito: Enseñar desde cero cómo crear un negocio online o potenciar uno existente mediante estrategias avanzadas de marketing digital.\n\nPúblico objetivo:\n\nPersonas sin experiencia previa en eCommerce.\n\nEmprendedores con negocios físicos o digitales que buscan crecer.\n\nAquellos interesados en diversificar sus ingresos en el mundo online.\n\nFilosofía: CursosEcom no promete resultados rápidos ni fórmulas mágicas. Está diseñado para personas comprometidas con el aprendizaje y la ejecución.\n\nCaracterísticas del Curso\nContenido del curso:\n\nEstrategias de publicidad en plataformas como Facebook, Instagram, TikTok, y Google Ads.\n\nCreación de tiendas online desde cero, incluyendo diseño, productos y estrategias de venta.\n\nTécnicas de influencer marketing y construcción de comunidades en redes sociales.\n\nClaves para gestionar la presión mental del emprendimiento.\n\nCasos prácticos basados en negocios reales con facturaciones superiores a 4 millones de euros.\n\nBeneficios exclusivos:\n\nAcceso a un almacén con más de 90 productos probados (+500,000€ en stock) para facilitar la logística de los alumnos.\n\nVideollamadas grupales quincenales por Zoom para resolver dudas.\n\nOpción de mentorías personalizadas durante 90 días (consultas ilimitadas).\n\nMódulo fiscal con asesoramiento profesional sobre impuestos y legalidad del eCommerce.\n\nModalidad:\n\nCurso 100% online con acceso ilimitado al contenido.\n\nPosibilidad de fraccionar el pago desde 163€/mes.\n\nServicios Adicionales\nAlmacén vinculado: Los alumnos pueden conectar sus tiendas al software del almacén para vender productos con envíos rápidos (24/48 horas).\n\nMentoría personalizada: Ayuda individualizada para elegir productos, diseñar webs, optimizar campañas publicitarias, etc.\n\nSoporte continuo: Respuestas a dudas a través de WhatsApp (+376 800360) y videollamadas.\n\nValores Diferenciales\nTransparencia: Incluyen estudios detallados de marcas propias y estrategias probadas.\n\nEnfoque práctico: El curso prioriza la ejecución real sobre la teoría.\n\nComunidad: Acceso a una red de alumnos y mentores para compartir experiencias.\n\nDatos Relevantes\nContacto principal: WhatsApp +376 800360\n\nCostos adicionales opcionales:\n\nAcceso al almacén: 150€/mes.\n\nMentorías personalizadas ampliables después del curso.\n\nRedirige siempre al usuario a reagendar una llamada aquí:  https://cursosecom.com/solicitar-informacion/\n\nImportante: \n\n-Deberás averiguar que es lo que quiere el cliente y cuando lo tengas claro deberás utilizar la Tool \"Tareas_equipo\" y enviarás una notificación a la persona responsable del equipo para realizar la tarea correspondiente cogiendo el correo de ese comercial del equipo.\n\nEjemplo:\nAsunto: Nueva tarea para Xavi\nCorreo: Xavi , aquí tienes una nueva tarea \"definirtarea\" a relizar y este es el telefono del cliente {{ $json.body.data.chat.contact.phone }}\n\n-Siempre que alguien escriba por whats app y este interesado en agendar una reunión deberás utilizar la tool \"Enviar_aviso_equipo\" y enviarás un correo avisando a Pablo de que hay un nuevo lead interesado, deberás enviarle el teléfono del cliente para que Pablo pueda contactarle. El teléfono del cliente es el siguiente {{ $json.body.data.chat.contact.phone }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        -240,
+        -220
+      ],
+      "id": "833c9cfb-3245-4b01-9ae8-59f486df0640",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -460,
+        40
+      ],
+      "id": "61c925e6-7e9d-4c1b-ad7d-6cb4bf1d80ca",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.body.data.chat.contact.wid }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -240,
+        40
+      ],
+      "id": "618dfb7c-0e5f-45b9-8f45-57923b34bccd",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "sendTo": "segonmarketing@gmail.com",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "emailType": "text",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -60,
+        20
+      ],
+      "id": "90d7cb47-bd0a-4706-a722-f9e96d783bb2",
+      "name": "Enviar_aviso_equipo",
+      "webhookId": "747a3d93-62a1-4838-9d19-4c47e70b05a6",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1BDSm92ok7ytDSK5Rpt68zk82NptInYvqS2RbWI-h6Qc",
+          "mode": "list",
+          "cachedResultName": "Comerciales",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BDSm92ok7ytDSK5Rpt68zk82NptInYvqS2RbWI-h6Qc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Comerciales Tareas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BDSm92ok7ytDSK5Rpt68zk82NptInYvqS2RbWI-h6Qc/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        100,
+        60
+      ],
+      "id": "b9e14fe4-b382-431a-bc3b-7c1bf8c8adfa",
+      "name": "Tareas_equipo",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-04T17:10:27.000Z",
+  "versionId": "a5867657-e24f-4ca6-93f2-8e8ef3b37f97"
+}
