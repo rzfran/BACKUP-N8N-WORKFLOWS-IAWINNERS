@@ -1,0 +1,35 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-04-07T16:41:33.871Z",
+  "id": "dJzEw6O2pmqEX3AH",
+  "meta": null,
+  "name": "Campaña - Agente de voz",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "d77c9082-6fa5-4bea-921b-c73c612ca26c",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "fc7db195-826b-4218-8d65-bbc7d745db39",
+      "name": "Webhook",
+      "webhookId": "d77c9082-6fa5-4bea-921b-c73c612ca26c"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-07T16:46:18.000Z",
+  "versionId": "fd8fd7f2-914d-4b71-a460-2357f69eb389"
+}
