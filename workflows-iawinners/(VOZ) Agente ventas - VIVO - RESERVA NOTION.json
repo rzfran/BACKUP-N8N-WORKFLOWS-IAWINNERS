@@ -1,0 +1,133 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-08T00:25:01.964Z",
+  "id": "KxaRmgt8NalIWshF",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "(VOZ) Agente ventas - VIVO - RESERVA NOTION",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "f57b585b-ecf4-4313-b672-6f04276a946c",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "760a41a9-3d85-4781-b155-c3f3cc132356",
+      "name": "Webhook",
+      "webhookId": "f57b585b-ecf4-4313-b672-6f04276a946c"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "1cf93e14-8bb4-80db-a58a-e926ad55cf23",
+          "mode": "list",
+          "cachedResultName": "Agencia - Solución agentes de voz",
+          "cachedResultUrl": "https://www.notion.so/1cf93e148bb480dba58ae926ad55cf23"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Nombre|title",
+              "title": "Prueba"
+            },
+            {
+              "key": "Fecha de reunion|date",
+              "range": true,
+              "dateStart": "={{ $json.body.args.fyhreunion }}",
+              "dateEnd": "={{ $json.body.args.fyhreunion }}"
+            },
+            {
+              "key": "Resumen llamada|rich_text",
+              "textContent": "={{ $json.body.args.summary }}"
+            },
+            {
+              "key": "Telefono|rich_text",
+              "textContent": "+541177223344"
+            },
+            {
+              "key": "Email|rich_text",
+              "textContent": "luzcgarcia.ia@gmail.com"
+            },
+            {
+              "key": "Estado|select",
+              "selectValue": "={{ $json.body.args.interes }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        220,
+        0
+      ],
+      "id": "9fd38c55-8c36-430f-8061-6db46f9edf17",
+      "name": "Notion",
+      "credentials": {
+        "notionApi": {
+          "id": "FUr3Z7jS0wCOGBNC",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        440,
+        0
+      ],
+      "id": "1671bf79-ecfb-4dcf-9e7e-2f802b80bcc9",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-08T01:24:51.000Z",
+  "versionId": "2f69d4bc-2983-4376-b656-4f9c3f32a6a6"
+}
