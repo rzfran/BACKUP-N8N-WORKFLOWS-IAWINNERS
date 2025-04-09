@@ -41,7 +41,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        60,
+        240,
         20
       ],
       "id": "37605a05-51d1-4a78-852f-252858cdd9fa",
@@ -70,8 +70,7 @@
               "key": "Fecha|date",
               "range": true,
               "dateStart": "={{ $('Webhook').item.json.body.args.fyh_reserva }}",
-              "dateEnd": "={{ $('Webhook').item.json.body.args.fyh_reserva }}",
-              "timezone": "Europe/Andorra"
+              "dateEnd": "={{ $('Webhook').item.json.body.args.fyh_reserva }}"
             },
             {
               "key": "Numero de personas|number",
@@ -84,7 +83,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        660,
+        560,
         20
       ],
       "id": "080f6830-ee11-4294-a497-ea46b019e37d",
@@ -105,20 +104,900 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        1100,
+        880,
         20
       ],
-      "id": "e698c70b-00a5-4a4c-a36c-82516de52b99",
+      "id": "55160caf-7087-40e7-9c69-dfd1e906c0c0",
       "name": "Respond to Webhook"
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n.iawinners.com",
+            "user-agent": "axios/1.7.7",
+            "content-length": "11484",
+            "accept": "application/json, text/plain, */*",
+            "accept-encoding": "gzip, br",
+            "cdn-loop": "cloudflare; loops=1",
+            "cf-connecting-ip": "100.20.5.228",
+            "cf-ipcountry": "US",
+            "cf-ray": "92d1f0347dc8ef6f-PDX",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "content-type": "application/json",
+            "x-forwarded-for": "100.20.5.228, 172.68.174.59",
+            "x-forwarded-host": "n8n.iawinners.com",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "1e96c02968f5",
+            "x-real-ip": "172.68.174.59",
+            "x-retell-signature": "v=1744117128343,d=7047bfbcd8a173a233e6649554cde02b1b1d93a54c3d93f69a05d8820dd6814b"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "call": {
+              "call_id": "call_14013c05bc7e284078f4989fac0",
+              "call_type": "phone_call",
+              "agent_id": "agent_ead292fa28860205fe28ef0516",
+              "collected_dynamic_variables": {
+                "current_agent_state": "reservar_mesa",
+                "previous_agent_state": "intro"
+              },
+              "call_status": "ongoing",
+              "start_timestamp": 1744117095108,
+              "transcript": "Agent: hola, como estas? Bienvenida a buena vida, soy Lucia la asistente virtual del restaurante. Te puedo ayudar con algo?\nUser: Sí, quiero reservar una mesa para cinco personas, mi nombre es María.\nAgent: ¡Perfecto, María! ¿Para qué día y a qué hora te gustaría hacer la reserva?\nUser: Mañana a las seis de la tarde.\nAgent: ¡Genial, María! Entonces, sería para mañana, miércoles 9 de abril, a las seis de la tarde. ¿Es correcto?\nUser: Sí.\n",
+              "transcript_object": [
+                {
+                  "role": "agent",
+                  "content": "hola, como estas? Bienvenida a buena vida, soy Lucia la asistente virtual del restaurante. Te puedo ayudar con algo?",
+                  "words": [
+                    {
+                      "word": "hola, ",
+                      "start": 0.409,
+                      "end": 1.547
+                    },
+                    {
+                      "word": "como ",
+                      "start": 1.547,
+                      "end": 1.872
+                    },
+                    {
+                      "word": "estas? ",
+                      "start": 1.872,
+                      "end": 2.417
+                    },
+                    {
+                      "word": "Bienvenida ",
+                      "start": 2.463375,
+                      "end": 2.963375
+                    },
+                    {
+                      "word": "a ",
+                      "start": 2.963375,
+                      "end": 3.009375
+                    },
+                    {
+                      "word": "buena ",
+                      "start": 3.009375,
+                      "end": 3.265375
+                    },
+                    {
+                      "word": "vida, ",
+                      "start": 3.265375,
+                      "end": 3.566375
+                    },
+                    {
+                      "word": "soy ",
+                      "start": 3.566375,
+                      "end": 3.926375
+                    },
+                    {
+                      "word": "Lucia ",
+                      "start": 3.926375,
+                      "end": 4.217375
+                    },
+                    {
+                      "word": "la ",
+                      "start": 4.217375,
+                      "end": 4.298375
+                    },
+                    {
+                      "word": "asistente ",
+                      "start": 4.298375,
+                      "end": 4.762375
+                    },
+                    {
+                      "word": "virtual ",
+                      "start": 4.762375,
+                      "end": 5.157375
+                    },
+                    {
+                      "word": "del ",
+                      "start": 5.157375,
+                      "end": 5.285375
+                    },
+                    {
+                      "word": "restaurante. ",
+                      "start": 5.285375,
+                      "end": 6.272375
+                    },
+                    {
+                      "word": "Te ",
+                      "start": 6.317875,
+                      "end": 6.468875
+                    },
+                    {
+                      "word": "puedo ",
+                      "start": 6.468875,
+                      "end": 6.677875
+                    },
+                    {
+                      "word": "ayudar ",
+                      "start": 6.677875,
+                      "end": 6.968875
+                    },
+                    {
+                      "word": "con ",
+                      "start": 6.968875,
+                      "end": 7.165875
+                    },
+                    {
+                      "word": "algo?",
+                      "start": 7.165875,
+                      "end": 7.804875
+                    }
+                  ],
+                  "metadata": {
+                    "response_id": 0
+                  }
+                },
+                {
+                  "role": "user",
+                  "content": "Sí, quiero reservar una mesa para cinco personas, mi nombre es María.",
+                  "words": [
+                    {
+                      "word": "Sí, ",
+                      "start": 8.914000999999999,
+                      "end": 9.234
+                    },
+                    {
+                      "word": "quiero ",
+                      "start": 9.234,
+                      "end": 9.633999999999999
+                    },
+                    {
+                      "word": "reservar ",
+                      "start": 9.633999999999999,
+                      "end": 9.874001
+                    },
+                    {
+                      "word": "una ",
+                      "start": 9.874001,
+                      "end": 10.033999999999999
+                    },
+                    {
+                      "word": "mesa ",
+                      "start": 10.033999999999999,
+                      "end": 10.193999999999999
+                    },
+                    {
+                      "word": "para ",
+                      "start": 10.193999999999999,
+                      "end": 10.514
+                    },
+                    {
+                      "word": "cinco ",
+                      "start": 10.514,
+                      "end": 10.834
+                    },
+                    {
+                      "word": "personas, ",
+                      "start": 10.834,
+                      "end": 11.314
+                    },
+                    {
+                      "word": "mi ",
+                      "start": 11.314,
+                      "end": 11.474
+                    },
+                    {
+                      "word": "nombre ",
+                      "start": 11.474,
+                      "end": 11.633999999999999
+                    },
+                    {
+                      "word": "es ",
+                      "start": 11.633999999999999,
+                      "end": 11.713999999999999
+                    },
+                    {
+                      "word": "María.",
+                      "start": 11.713999999999999,
+                      "end": 12.154
+                    }
+                  ]
+                },
+                {
+                  "role": "agent",
+                  "content": "¡Perfecto, María! ¿Para qué día y a qué hora te gustaría hacer la reserva?",
+                  "words": [
+                    {
+                      "word": "¡Perfecto, ",
+                      "start": 13.276,
+                      "end": 13.938
+                    },
+                    {
+                      "word": "María!",
+                      "start": 13.938,
+                      "end": 14.541
+                    },
+                    {
+                      "word": " ¿Para ",
+                      "start": 14.587333251953124,
+                      "end": 14.854333251953125
+                    },
+                    {
+                      "word": "qué ",
+                      "start": 14.854333251953125,
+                      "end": 15.029333251953124
+                    },
+                    {
+                      "word": "día ",
+                      "start": 15.029333251953124,
+                      "end": 15.389333251953126
+                    },
+                    {
+                      "word": "y ",
+                      "start": 15.389333251953126,
+                      "end": 15.493333251953125
+                    },
+                    {
+                      "word": "a ",
+                      "start": 15.493333251953125,
+                      "end": 15.586333251953125
+                    },
+                    {
+                      "word": "qué ",
+                      "start": 15.586333251953125,
+                      "end": 15.737333251953125
+                    },
+                    {
+                      "word": "hora ",
+                      "start": 15.737333251953125,
+                      "end": 15.957333251953125
+                    },
+                    {
+                      "word": "te ",
+                      "start": 15.957333251953125,
+                      "end": 16.050333251953123
+                    },
+                    {
+                      "word": "gustaría ",
+                      "start": 16.050333251953123,
+                      "end": 16.526333251953126
+                    },
+                    {
+                      "word": "hacer ",
+                      "start": 16.526333251953126,
+                      "end": 16.875333251953126
+                    },
+                    {
+                      "word": "la ",
+                      "start": 16.875333251953126,
+                      "end": 17.026333251953126
+                    },
+                    {
+                      "word": "reserva?",
+                      "start": 17.026333251953126,
+                      "end": 17.885333251953124
+                    }
+                  ],
+                  "metadata": {
+                    "response_id": 1
+                  }
+                },
+                {
+                  "role": "user",
+                  "content": "Mañana a las seis de la tarde.",
+                  "words": [
+                    {
+                      "word": "Mañana ",
+                      "start": 19.464,
+                      "end": 19.964
+                    },
+                    {
+                      "word": "a ",
+                      "start": 20.104,
+                      "end": 20.343999999999998
+                    },
+                    {
+                      "word": "las ",
+                      "start": 20.343999999999998,
+                      "end": 20.843999999999998
+                    },
+                    {
+                      "word": "seis ",
+                      "start": 21.404,
+                      "end": 21.418999
+                    },
+                    {
+                      "word": "de ",
+                      "start": 21.418999,
+                      "end": 21.684
+                    },
+                    {
+                      "word": "la ",
+                      "start": 21.684,
+                      "end": 21.934
+                    },
+                    {
+                      "word": "tarde.",
+                      "start": 21.934,
+                      "end": 22.184
+                    }
+                  ]
+                },
+                {
+                  "role": "agent",
+                  "content": "¡Genial, María! Entonces, sería para mañana, miércoles 9 de abril, a las seis de la tarde. ¿Es correcto?",
+                  "words": [
+                    {
+                      "word": "¡Genial, ",
+                      "start": 23.87,
+                      "end": 24.323
+                    },
+                    {
+                      "word": "María!",
+                      "start": 24.323,
+                      "end": 25.042
+                    },
+                    {
+                      "word": " Entonces, ",
+                      "start": 25.065458251953125,
+                      "end": 25.646458251953124
+                    },
+                    {
+                      "word": "sería ",
+                      "start": 25.646458251953124,
+                      "end": 25.936458251953123
+                    },
+                    {
+                      "word": "para ",
+                      "start": 25.936458251953123,
+                      "end": 26.133458251953126
+                    },
+                    {
+                      "word": "mañana, ",
+                      "start": 26.133458251953126,
+                      "end": 26.551458251953125
+                    },
+                    {
+                      "word": "miércoles ",
+                      "start": 26.551458251953125,
+                      "end": 27.051458251953125
+                    },
+                    {
+                      "word": "9 ",
+                      "start": 27.051458251953125,
+                      "end": 27.271458251953124
+                    },
+                    {
+                      "word": "de ",
+                      "start": 27.271458251953124,
+                      "end": 27.352458251953124
+                    },
+                    {
+                      "word": "abril, ",
+                      "start": 27.352458251953124,
+                      "end": 27.736458251953124
+                    },
+                    {
+                      "word": "a ",
+                      "start": 27.736458251953124,
+                      "end": 27.828458251953126
+                    },
+                    {
+                      "word": "las ",
+                      "start": 27.828458251953126,
+                      "end": 27.979458251953126
+                    },
+                    {
+                      "word": "seis ",
+                      "start": 27.979458251953126,
+                      "end": 28.177458251953126
+                    },
+                    {
+                      "word": "de ",
+                      "start": 28.177458251953126,
+                      "end": 28.270458251953126
+                    },
+                    {
+                      "word": "la ",
+                      "start": 28.270458251953126,
+                      "end": 28.397458251953125
+                    },
+                    {
+                      "word": "tarde.",
+                      "start": 28.397458251953125,
+                      "end": 29.129458251953125
+                    },
+                    {
+                      "word": " ¿Es ",
+                      "start": 29.175166748046873,
+                      "end": 29.373166748046874
+                    },
+                    {
+                      "word": "correcto?",
+                      "start": 29.373166748046874,
+                      "end": 30.244166748046876
+                    }
+                  ],
+                  "metadata": {
+                    "response_id": 2
+                  }
+                },
+                {
+                  "role": "user",
+                  "content": "Sí.",
+                  "words": [
+                    {
+                      "word": "Sí.",
+                      "start": 31.084,
+                      "end": 31.584
+                    }
+                  ]
+                }
+              ],
+              "transcript_with_tool_calls": [
+                {
+                  "role": "agent",
+                  "content": "hola, como estas? Bienvenida a buena vida, soy Lucia la asistente virtual del restaurante. Te puedo ayudar con algo?",
+                  "words": [
+                    {
+                      "word": "hola, ",
+                      "start": 0.409,
+                      "end": 1.547
+                    },
+                    {
+                      "word": "como ",
+                      "start": 1.547,
+                      "end": 1.872
+                    },
+                    {
+                      "word": "estas? ",
+                      "start": 1.872,
+                      "end": 2.417
+                    },
+                    {
+                      "word": "Bienvenida ",
+                      "start": 2.463375,
+                      "end": 2.963375
+                    },
+                    {
+                      "word": "a ",
+                      "start": 2.963375,
+                      "end": 3.009375
+                    },
+                    {
+                      "word": "buena ",
+                      "start": 3.009375,
+                      "end": 3.265375
+                    },
+                    {
+                      "word": "vida, ",
+                      "start": 3.265375,
+                      "end": 3.566375
+                    },
+                    {
+                      "word": "soy ",
+                      "start": 3.566375,
+                      "end": 3.926375
+                    },
+                    {
+                      "word": "Lucia ",
+                      "start": 3.926375,
+                      "end": 4.217375
+                    },
+                    {
+                      "word": "la ",
+                      "start": 4.217375,
+                      "end": 4.298375
+                    },
+                    {
+                      "word": "asistente ",
+                      "start": 4.298375,
+                      "end": 4.762375
+                    },
+                    {
+                      "word": "virtual ",
+                      "start": 4.762375,
+                      "end": 5.157375
+                    },
+                    {
+                      "word": "del ",
+                      "start": 5.157375,
+                      "end": 5.285375
+                    },
+                    {
+                      "word": "restaurante. ",
+                      "start": 5.285375,
+                      "end": 6.272375
+                    },
+                    {
+                      "word": "Te ",
+                      "start": 6.317875,
+                      "end": 6.468875
+                    },
+                    {
+                      "word": "puedo ",
+                      "start": 6.468875,
+                      "end": 6.677875
+                    },
+                    {
+                      "word": "ayudar ",
+                      "start": 6.677875,
+                      "end": 6.968875
+                    },
+                    {
+                      "word": "con ",
+                      "start": 6.968875,
+                      "end": 7.165875
+                    },
+                    {
+                      "word": "algo?",
+                      "start": 7.165875,
+                      "end": 7.804875
+                    }
+                  ],
+                  "metadata": {
+                    "response_id": 0
+                  }
+                },
+                {
+                  "role": "user",
+                  "content": "Sí, quiero reservar una mesa para cinco personas, mi nombre es María.",
+                  "words": [
+                    {
+                      "word": "Sí, ",
+                      "start": 8.914000999999999,
+                      "end": 9.234
+                    },
+                    {
+                      "word": "quiero ",
+                      "start": 9.234,
+                      "end": 9.633999999999999
+                    },
+                    {
+                      "word": "reservar ",
+                      "start": 9.633999999999999,
+                      "end": 9.874001
+                    },
+                    {
+                      "word": "una ",
+                      "start": 9.874001,
+                      "end": 10.033999999999999
+                    },
+                    {
+                      "word": "mesa ",
+                      "start": 10.033999999999999,
+                      "end": 10.193999999999999
+                    },
+                    {
+                      "word": "para ",
+                      "start": 10.193999999999999,
+                      "end": 10.514
+                    },
+                    {
+                      "word": "cinco ",
+                      "start": 10.514,
+                      "end": 10.834
+                    },
+                    {
+                      "word": "personas, ",
+                      "start": 10.834,
+                      "end": 11.314
+                    },
+                    {
+                      "word": "mi ",
+                      "start": 11.314,
+                      "end": 11.474
+                    },
+                    {
+                      "word": "nombre ",
+                      "start": 11.474,
+                      "end": 11.633999999999999
+                    },
+                    {
+                      "word": "es ",
+                      "start": 11.633999999999999,
+                      "end": 11.713999999999999
+                    },
+                    {
+                      "word": "María.",
+                      "start": 11.713999999999999,
+                      "end": 12.154
+                    }
+                  ]
+                },
+                {
+                  "role": "agent",
+                  "content": "¡Perfecto, María! ¿Para qué día y a qué hora te gustaría hacer la reserva?",
+                  "words": [
+                    {
+                      "word": "¡Perfecto, ",
+                      "start": 13.276,
+                      "end": 13.938
+                    },
+                    {
+                      "word": "María!",
+                      "start": 13.938,
+                      "end": 14.541
+                    },
+                    {
+                      "word": " ¿Para ",
+                      "start": 14.587333251953124,
+                      "end": 14.854333251953125
+                    },
+                    {
+                      "word": "qué ",
+                      "start": 14.854333251953125,
+                      "end": 15.029333251953124
+                    },
+                    {
+                      "word": "día ",
+                      "start": 15.029333251953124,
+                      "end": 15.389333251953126
+                    },
+                    {
+                      "word": "y ",
+                      "start": 15.389333251953126,
+                      "end": 15.493333251953125
+                    },
+                    {
+                      "word": "a ",
+                      "start": 15.493333251953125,
+                      "end": 15.586333251953125
+                    },
+                    {
+                      "word": "qué ",
+                      "start": 15.586333251953125,
+                      "end": 15.737333251953125
+                    },
+                    {
+                      "word": "hora ",
+                      "start": 15.737333251953125,
+                      "end": 15.957333251953125
+                    },
+                    {
+                      "word": "te ",
+                      "start": 15.957333251953125,
+                      "end": 16.050333251953123
+                    },
+                    {
+                      "word": "gustaría ",
+                      "start": 16.050333251953123,
+                      "end": 16.526333251953126
+                    },
+                    {
+                      "word": "hacer ",
+                      "start": 16.526333251953126,
+                      "end": 16.875333251953126
+                    },
+                    {
+                      "word": "la ",
+                      "start": 16.875333251953126,
+                      "end": 17.026333251953126
+                    },
+                    {
+                      "word": "reserva?",
+                      "start": 17.026333251953126,
+                      "end": 17.885333251953124
+                    }
+                  ],
+                  "metadata": {
+                    "response_id": 1
+                  }
+                },
+                {
+                  "role": "user",
+                  "content": "Mañana a las seis de la tarde.",
+                  "words": [
+                    {
+                      "word": "Mañana ",
+                      "start": 19.464,
+                      "end": 19.964
+                    },
+                    {
+                      "word": "a ",
+                      "start": 20.104,
+                      "end": 20.343999999999998
+                    },
+                    {
+                      "word": "las ",
+                      "start": 20.343999999999998,
+                      "end": 20.843999999999998
+                    },
+                    {
+                      "word": "seis ",
+                      "start": 21.404,
+                      "end": 21.418999
+                    },
+                    {
+                      "word": "de ",
+                      "start": 21.418999,
+                      "end": 21.684
+                    },
+                    {
+                      "word": "la ",
+                      "start": 21.684,
+                      "end": 21.934
+                    },
+                    {
+                      "word": "tarde.",
+                      "start": 21.934,
+                      "end": 22.184
+                    }
+                  ]
+                },
+                {
+                  "role": "tool_call_invocation",
+                  "tool_call_id": "d48510fb3430ec10",
+                  "name": "transition_to_reservar_mesa",
+                  "arguments": "{}"
+                },
+                {
+                  "role": "agent",
+                  "content": "¡Genial, María! Entonces, sería para mañana, miércoles 9 de abril, a las seis de la tarde. ¿Es correcto?",
+                  "words": [
+                    {
+                      "word": "¡Genial, ",
+                      "start": 23.87,
+                      "end": 24.323
+                    },
+                    {
+                      "word": "María!",
+                      "start": 24.323,
+                      "end": 25.042
+                    },
+                    {
+                      "word": " Entonces, ",
+                      "start": 25.065458251953125,
+                      "end": 25.646458251953124
+                    },
+                    {
+                      "word": "sería ",
+                      "start": 25.646458251953124,
+                      "end": 25.936458251953123
+                    },
+                    {
+                      "word": "para ",
+                      "start": 25.936458251953123,
+                      "end": 26.133458251953126
+                    },
+                    {
+                      "word": "mañana, ",
+                      "start": 26.133458251953126,
+                      "end": 26.551458251953125
+                    },
+                    {
+                      "word": "miércoles ",
+                      "start": 26.551458251953125,
+                      "end": 27.051458251953125
+                    },
+                    {
+                      "word": "9 ",
+                      "start": 27.051458251953125,
+                      "end": 27.271458251953124
+                    },
+                    {
+                      "word": "de ",
+                      "start": 27.271458251953124,
+                      "end": 27.352458251953124
+                    },
+                    {
+                      "word": "abril, ",
+                      "start": 27.352458251953124,
+                      "end": 27.736458251953124
+                    },
+                    {
+                      "word": "a ",
+                      "start": 27.736458251953124,
+                      "end": 27.828458251953126
+                    },
+                    {
+                      "word": "las ",
+                      "start": 27.828458251953126,
+                      "end": 27.979458251953126
+                    },
+                    {
+                      "word": "seis ",
+                      "start": 27.979458251953126,
+                      "end": 28.177458251953126
+                    },
+                    {
+                      "word": "de ",
+                      "start": 28.177458251953126,
+                      "end": 28.270458251953126
+                    },
+                    {
+                      "word": "la ",
+                      "start": 28.270458251953126,
+                      "end": 28.397458251953125
+                    },
+                    {
+                      "word": "tarde.",
+                      "start": 28.397458251953125,
+                      "end": 29.129458251953125
+                    },
+                    {
+                      "word": " ¿Es ",
+                      "start": 29.175166748046873,
+                      "end": 29.373166748046874
+                    },
+                    {
+                      "word": "correcto?",
+                      "start": 29.373166748046874,
+                      "end": 30.244166748046876
+                    }
+                  ],
+                  "metadata": {
+                    "response_id": 2
+                  }
+                },
+                {
+                  "role": "user",
+                  "content": "Sí.",
+                  "words": [
+                    {
+                      "word": "Sí.",
+                      "start": 31.084,
+                      "end": 31.584
+                    }
+                  ]
+                },
+                {
+                  "role": "tool_call_invocation",
+                  "tool_call_id": "8183e86c22ab0694",
+                  "name": "reservar",
+                  "arguments": "{\"fyh_reserva\":\"2025-04-09T18:00:00\",\"nombre\":\"María\",\"numero_personas\":\"5\",\"execution_message\":\"Un momento, por favor, mientras confirmo tu reserva.\"}"
+                }
+              ],
+              "public_log_url": "https://dxc03zgurdly9.cloudfront.net/0d40336e41fc77d0be335f3da5f8aec27a61df74e835f43d582ea9746293dd94/public.log",
+              "latency": {},
+              "call_cost": {
+                "total_duration_unit_price": 0,
+                "product_costs": [],
+                "total_one_time_price": 0,
+                "combined_cost": 0,
+                "total_duration_seconds": 0
+              },
+              "opt_out_sensitive_data_storage": false,
+              "from_number": "1133567448",
+              "to_number": "+541152588217",
+              "direction": "inbound"
+            },
+            "name": "reservar",
+            "args": {
+              "fyh_reserva": "2025-04-09T18:00:00",
+              "nombre": "María",
+              "numero_personas": "5"
+            }
+          },
+          "webhookUrl": "https://n8n.iawinners.com/webhook/8d56eb75-5233-4f70-912c-ae741fceb39b",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1"
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-04-08T01:31:25.000Z",
-  "versionId": "fd89fd9f-28f8-43e0-b165-3ef798f60dc8"
+  "triggerCount": 1,
+  "updatedAt": "2025-04-09T02:50:25.000Z",
+  "versionId": "b4c93a51-6857-4ec4-ae72-9edaf137e84a"
 }
