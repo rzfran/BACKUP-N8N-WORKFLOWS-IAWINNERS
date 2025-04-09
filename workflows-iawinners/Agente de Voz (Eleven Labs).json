@@ -228,7 +228,8 @@
             "Email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email', `Aquí pondrás el Email del cliente/paciente`, 'string') }}",
             "Teléfono": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tel_fono', `Aquí pondrás el Teléfono del cliente/paciente`, 'string') }}",
             "Fecha_reunion": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha_reunion', `Aquí pondrás La fehca_reunion en la que el cliente/paciente quiere la cita`, 'string') }}",
-            "Estado": "Confirmada"
+            "Estado": "Confirmada",
+            "Servicio interés": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Servicio_inter_s', `Aquí pondrás el Servicio en el que el paciente esta interesado`, 'string') }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -276,6 +277,16 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true
+            },
+            {
+              "id": "Servicio interés",
+              "displayName": "Servicio interés",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
             },
             {
               "id": "Estado",
@@ -342,6 +353,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-07T19:39:11.000Z",
-  "versionId": "b77c4224-71b2-4f49-a481-3b15d84c9717"
+  "updatedAt": "2025-04-08T21:48:13.000Z",
+  "versionId": "92cfb85f-2506-4246-960e-b261eb5e3ce6"
 }
