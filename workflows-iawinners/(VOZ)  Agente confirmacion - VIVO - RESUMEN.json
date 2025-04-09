@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Webhook": {
       "main": [
@@ -14,13 +14,7 @@
     },
     "Notion": {
       "main": [
-        [
-          {
-            "node": "Respond to Webhook",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     }
   },
@@ -35,14 +29,13 @@
       "parameters": {
         "httpMethod": "POST",
         "path": "ef31c830-7834-4d11-a681-5b359316ddbc",
-        "responseMode": "responseNode",
         "options": {}
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        0,
-        0
+        -80,
+        -120
       ],
       "id": "817b50ca-8edb-44eb-82d4-130cbe0966ac",
       "name": "Webhook",
@@ -58,21 +51,25 @@
           "cachedResultName": "Agente confirmación - VOZ",
           "cachedResultUrl": "https://www.notion.so/1cf93e148bb480aeac43c81e371eaf76"
         },
+        "simple": false,
         "propertiesUi": {
           "propertyValues": [
             {
               "key": "Name|title",
-              "title": "Adrian"
+              "title": "={{ $json.body.call.retell_llm_dynamic_variables.Nombre }}"
             },
             {
               "key": "Resumen llamada|rich_text",
               "textContent": "={{ $json.body.args.resumen }}"
+            },
+            {
+              "key": "Email|rich_text",
+              "textContent": "={{ $json.body.call.retell_llm_dynamic_variables.email }}"
+            },
+            {
+              "key": "Email|rich_text",
+              "textContent": "={{ $json.body.call.retell_llm_dynamic_variables.email }}"
             }
-          ]
-        },
-        "blockUi": {
-          "blockValues": [
-            {}
           ]
         },
         "options": {}
@@ -80,32 +77,18 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        220,
-        0
+        340,
+        -120
       ],
       "id": "6f514cea-1363-45c4-80e1-a1bc4e54355c",
       "name": "Notion",
+      "executeOnce": true,
       "credentials": {
         "notionApi": {
           "id": "FUr3Z7jS0wCOGBNC",
           "name": "Notion account"
         }
       }
-    },
-    {
-      "parameters": {
-        "options": {
-          "responseCode": 200
-        }
-      },
-      "type": "n8n-nodes-base.respondToWebhook",
-      "typeVersion": 1.1,
-      "position": [
-        440,
-        0
-      ],
-      "id": "b3ded485-6151-4cc9-aad1-374194a16342",
-      "name": "Respond to Webhook"
     }
   ],
   "pinData": {},
@@ -114,7 +97,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-04-08T01:24:36.000Z",
-  "versionId": "12e9f840-908c-4144-a749-143b4993405e"
+  "triggerCount": 1,
+  "updatedAt": "2025-04-08T15:06:55.000Z",
+  "versionId": "49135112-9668-465c-b915-44287f941c3e"
 }
