@@ -1,0 +1,74 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Llamar a Sofia",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-08T22:41:37.261Z",
+  "id": "V9IOJt1HVL1YpV6i",
+  "meta": null,
+  "name": "My workflow 6",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/create-phone-call",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer key_18c259a1a892bdc0eecb9859511a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\"agent_id\": \"agent_2fefea63725719e83290d2ca63\",\n  \"retell_llm_dynamic_variables\": {\n    \"nombre\":\"{{ $json.headers.nombre }}\",\n    \"email\": \"{{ $json.headers.email }}\"\n  },\n \"from_number\": \"+541152588217\",\n  \"to_number\": \"{{ $json.headers.tel }}\",\n  \"direction\": \"outbound\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        320,
+        0
+      ],
+      "id": "7a2c786d-2ee5-423f-adf1-a2893dc72074",
+      "name": "Llamar a Sofia"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "194fcb39-fac2-432a-92da-14ba00f98dfb",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        100
+      ],
+      "id": "a7d71eb3-2812-4ef3-91a0-e0c859255b6b",
+      "name": "Webhook",
+      "webhookId": "194fcb39-fac2-432a-92da-14ba00f98dfb"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-09T02:40:58.000Z",
+  "versionId": "c3572161-ceb1-4ed0-8ddc-04a119a4155f"
+}
