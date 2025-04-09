@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Webhook": {
       "main": [
@@ -29,8 +29,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        0,
-        0
+        -240,
+        80
       ],
       "id": "bd156969-e275-47ff-b9a3-f5b609bf95fd",
       "name": "Webhook",
@@ -51,14 +51,14 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n\"agent_id\": \"agent_2fefea63725719e83290d2ca63\",\n  \"retell_llm_dynamic_variables\": {\n    \"nombre\":\"\" ,\n    \"telefono\":\"\",\n    \"email\": \"\"\n  },\n \"from_number\": \"+541152588217\",\n  \"to_number\": \"5491133567448\",\n  \"direction\": \"outbound\"\n} ",
+        "jsonBody": "={\n\"agent_id\": \"agent_2fefea63725719e83290d2ca63\",\n  \"retell_llm_dynamic_variables\": {\n    \"nombre\":\"{{ $json.headers.nombre }}\",\n    \"email\": \"{{ $json.headers.email }}\"\n  },\n \"from_number\": \"+34936941323\",\n  \"to_number\": \"{{ $json.headers.telefono }}\",\n  \"direction\": \"outbound\"\n} ",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        260,
-        0
+        120,
+        80
       ],
       "id": "26939820-905e-48bb-acf1-8a94232df890",
       "name": "Llamar a Sofia"
@@ -70,7 +70,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-04-08T01:12:22.000Z",
-  "versionId": "ea3f172c-176b-48d3-aeb5-25da9d1c5ae9"
+  "triggerCount": 1,
+  "updatedAt": "2025-04-08T18:16:00.000Z",
+  "versionId": "7e875ca6-730b-44e2-a73b-07689c7c9659"
 }
