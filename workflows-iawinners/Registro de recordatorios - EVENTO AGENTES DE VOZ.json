@@ -75,10 +75,10 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": 980957311,
+          "value": 1078965486,
           "mode": "list",
-          "cachedResultName": "TEST Registros IA",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit#gid=980957311"
+          "cachedResultName": "Registros españa",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit#gid=1078965486"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -248,7 +248,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-04-01T11:45:43.000Z",
-  "versionId": "cec30d3e-ad98-4a62-a4bf-3306ee93c309"
+  "triggerCount": 1,
+  "updatedAt": "2025-04-09T14:57:40.000Z",
+  "versionId": "26aabf97-8f0d-4897-801f-e34b7cd573c4"
 }
