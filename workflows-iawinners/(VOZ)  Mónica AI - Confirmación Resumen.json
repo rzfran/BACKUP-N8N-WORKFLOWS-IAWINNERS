@@ -1,0 +1,110 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-04-08T01:20:02.633Z",
+  "id": "weOztZ6HJNOYWSrJ",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "(VOZ)  Mónica AI - Confirmación Resumen",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ef31c830-7834-4d11-a681-5b359316ddbc",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        -120
+      ],
+      "id": "817b50ca-8edb-44eb-82d4-130cbe0966ac",
+      "name": "Webhook",
+      "webhookId": "ef31c830-7834-4d11-a681-5b359316ddbc"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "1cf93e14-8bb4-80ae-ac43-c81e371eaf76",
+          "mode": "list",
+          "cachedResultName": "Agente confirmación - VOZ",
+          "cachedResultUrl": "https://www.notion.so/1cf93e148bb480aeac43c81e371eaf76"
+        },
+        "simple": false,
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Name|title",
+              "title": "={{ $json.body.call.retell_llm_dynamic_variables.Nombre }}"
+            },
+            {
+              "key": "Resumen llamada|rich_text",
+              "textContent": "={{ $json.body.args.resumen }}"
+            },
+            {
+              "key": "Email|rich_text",
+              "textContent": "={{ $json.body.call.retell_llm_dynamic_variables.email }}"
+            },
+            {
+              "key": "Email|rich_text",
+              "textContent": "={{ $json.body.call.retell_llm_dynamic_variables.email }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        340,
+        -120
+      ],
+      "id": "6f514cea-1363-45c4-80e1-a1bc4e54355c",
+      "name": "Notion",
+      "executeOnce": true,
+      "credentials": {
+        "notionApi": {
+          "id": "FUr3Z7jS0wCOGBNC",
+          "name": "Notion account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-04-09T11:06:18.319Z",
+      "updatedAt": "2025-04-09T11:06:18.319Z",
+      "id": "WgXEuLULsFNjuFVn",
+      "name": "Voz 09/04"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-09T11:10:11.000Z",
+  "versionId": "55ebe662-b175-4bdc-94c8-8b08cea69bb2"
+}
