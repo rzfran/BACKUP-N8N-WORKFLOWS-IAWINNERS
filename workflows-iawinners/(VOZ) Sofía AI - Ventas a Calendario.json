@@ -1,0 +1,263 @@
+{
+  "active": true,
+  "connections": {
+    "Google Calendar": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Google Calendar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-09T01:21:03.504Z",
+  "id": "k7pKfXh9TX9IMWGy",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "(VOZ) Sofía AI - Ventas a Calendario",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1460,
+        40
+      ],
+      "id": "a5d6ec9c-c89c-428f-be8b-2f2ea08eab99",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "7e07f6d693a0e2414fab8dbb64bc8acbd10d450f3e64dd32a64e7e4f37cd742d@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Agenda Equipo Ventas"
+        },
+        "start": "={{ $('Webhook').item.json.body.args.fyhreunion }}",
+        "end": "={{ $json.message.content.fecha_fin }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ $('Webhook').item.json.body.call.retell_llm_dynamic_variables.email }}"
+          ],
+          "conferenceDataUi": {
+            "conferenceDataValues": {
+              "conferenceSolution": "hangoutsMeet"
+            }
+          },
+          "summary": "=Reunion con {{ $('Webhook').item.json.body.call.retell_llm_dynamic_variables.nombre }}  "
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        620,
+        40
+      ],
+      "id": "f16ca9f9-a456-440f-b271-ebb8bad8b081",
+      "name": "Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "=luzcgarcia.ia@gmail.com",
+        "subject": "Reunion con IA WINNERS",
+        "emailType": "text",
+        "message": "=Hola  {{ $('Webhook').item.json.body.call.retell_llm_dynamic_variables.nombre }}\n\nTe paso el links de la reunión:\n\n{{ $json.hangoutLink }}\n\n\nUn saludo!",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        940,
+        40
+      ],
+      "id": "c0f73ec5-40f5-4dd5-97b7-50bb112bfcf6",
+      "name": "Gmail",
+      "webhookId": "e84e22b5-1e83-406f-b8e0-74cecbe2c77a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "1cf93e14-8bb4-80db-a58a-e926ad55cf23",
+          "mode": "list",
+          "cachedResultName": "Agencia - Solución agentes de voz",
+          "cachedResultUrl": "https://www.notion.so/1cf93e148bb480dba58ae926ad55cf23"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Nombre|title",
+              "title": "={{ $('Webhook').item.json.body.call.retell_llm_dynamic_variables.nombre }}"
+            },
+            {
+              "key": "Email|rich_text",
+              "textContent": "={{ $('Webhook').item.json.body.call.retell_llm_dynamic_variables.email }}"
+            },
+            {
+              "key": "Telefono|rich_text",
+              "textContent": "={{ $('Webhook').item.json.body.call.to_number }}"
+            },
+            {
+              "key": "Resumen llamada|rich_text",
+              "textContent": "={{ $('Webhook').item.json.body.args.summary }}"
+            },
+            {
+              "key": "Estado|select",
+              "selectValue": "={{ $('Webhook').item.json.body.args.interes }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1160,
+        40
+      ],
+      "id": "6b569deb-6449-45c0-903a-66ce0a58d9d7",
+      "name": "Notion",
+      "credentials": {
+        "notionApi": {
+          "id": "FUr3Z7jS0wCOGBNC",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "e134a0f4-2ad6-4866-a8a0-bfb9fa234881",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -440,
+        40
+      ],
+      "id": "75a166ef-3fad-4d55-b65e-b2424091b057",
+      "name": "Webhook",
+      "webhookId": "e134a0f4-2ad6-4866-a8a0-bfb9fa234881"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Suma 1 hora a esta variable:\n {{ $json.body.args.fyhreunion }}\nDevuelve la misma variable pero con una hora adicional\nSolo le fecha completa como \"fecha_fin\""
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -60,
+        40
+      ],
+      "id": "1e7a678b-4fc4-46f5-94a5-58148de45c98",
+      "name": "OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-04-09T11:06:18.319Z",
+      "updatedAt": "2025-04-09T11:06:18.319Z",
+      "id": "WgXEuLULsFNjuFVn",
+      "name": "Voz 09/04"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-09T16:25:27.000Z",
+  "versionId": "72a1ceba-1a31-4f92-ae6e-3f709cd3297e"
+}
