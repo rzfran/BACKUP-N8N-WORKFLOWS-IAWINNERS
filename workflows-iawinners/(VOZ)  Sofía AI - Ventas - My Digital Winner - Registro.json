@@ -1,0 +1,96 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-09T11:52:59.009Z",
+  "id": "5JEOs8J0xWD17SkH",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "(VOZ)  Sofía AI - Ventas - My Digital Winner - Registro",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "c55f4b93-9d60-4ce2-9ece-4cf544b0ee96",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8c104820-ba85-49e0-b931-7313ede77bbf",
+      "name": "Webhook",
+      "webhookId": "c55f4b93-9d60-4ce2-9ece-4cf544b0ee96"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "1cf93e14-8bb4-80db-a58a-e926ad55cf23",
+          "mode": "list",
+          "cachedResultName": "Sofía AI - Ventas My Digital Winner",
+          "cachedResultUrl": "https://www.notion.so/1cf93e148bb480dba58ae926ad55cf23"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Nombre|title",
+              "title": "={{ $json.body.call.retell_llm_dynamic_variables.nombre }}"
+            },
+            {
+              "key": "Email|rich_text",
+              "textContent": "={{ $json.body.call.retell_llm_dynamic_variables.email }}"
+            },
+            {
+              "key": "Telefono|rich_text",
+              "textContent": "={{ $json.body.call.to_number }}"
+            },
+            {
+              "key": "Estado|select",
+              "selectValue": "No interesado"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        220,
+        0
+      ],
+      "id": "d491ab18-8983-481d-b5a3-8baf863f27c0",
+      "name": "Notion",
+      "credentials": {
+        "notionApi": {
+          "id": "FUr3Z7jS0wCOGBNC",
+          "name": "Notion account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-09T12:00:03.000Z",
+  "versionId": "5239b6c0-7c06-4130-a380-f06b5bcbe8a9"
+}
