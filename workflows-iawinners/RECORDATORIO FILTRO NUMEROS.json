@@ -1,0 +1,435 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-09T13:13:34.220Z",
+  "id": "DIZaD2se5zgN4xkh",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "RECORDATORIO FILTRO NUMEROS",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "942d12b0-35d7-455f-bdc7-82cb5279b76f",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0",
+          "mode": "list",
+          "cachedResultName": "FULL CAMPAIGN ANALYTIC | LANZAMIENTO AGENTES DE IA (VOZ)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 183183783,
+          "mode": "list",
+          "cachedResultName": "Registros IA",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit#gid=183183783"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        220,
+        0
+      ],
+      "id": "afacc38e-c691-4fb3-b5b5-b7fcd5a7e2bd",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b4b416a2-edbb-4560-8037-3b7d7ff112e4",
+              "leftValue": "={{ $json.Telefono }}",
+              "rightValue": "34",
+              "operator": {
+                "type": "string",
+                "operation": "startsWith"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        440,
+        0
+      ],
+      "id": "83e0ec15-dcf4-488e-b5a6-7374d2a1ef40",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0",
+          "mode": "list",
+          "cachedResultName": "FULL CAMPAIGN ANALYTIC | LANZAMIENTO AGENTES DE IA (VOZ)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1078965486,
+          "mode": "list",
+          "cachedResultName": "Registros españa",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit#gid=1078965486"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha Registro": "={{ $json[\"Fecha Registro\"] }}",
+            "Nombre": "={{ $json.Nombre }}",
+            "Telefono": "={{ $json.Telefono }}",
+            "Email": "={{ $json.Email }}",
+            "Avatar": "={{ $json.Avatar }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha Registro",
+              "displayName": "Fecha Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Avatar",
+              "displayName": "Avatar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fuente",
+              "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Afiliado",
+              "displayName": "Afiliado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "SE EJECUTÓ EL RECORDATORIO?",
+              "displayName": "SE EJECUTÓ EL RECORDATORIO?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RESPUESTA",
+              "displayName": "RESPUESTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RESUMEN - LLAMADA 1",
+              "displayName": "RESUMEN - LLAMADA 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        840,
+        -120
+      ],
+      "id": "924f1814-8374-4f27-bfba-36ac3b82ecba",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0",
+          "mode": "list",
+          "cachedResultName": "FULL CAMPAIGN ANALYTIC | LANZAMIENTO AGENTES DE IA (VOZ)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 814874824,
+          "mode": "list",
+          "cachedResultName": "Registros otro paises",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7Vnx65YdyWIdvFUM2DoOMokjXxidgMt2n2ie-ntEu0/edit#gid=814874824"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha Registro": "={{ $json[\"Fecha Registro\"] }}",
+            "Nombre": "={{ $json.Nombre }}",
+            "Telefono": "={{ $json.Telefono }}",
+            "Email": "={{ $json.Email }}",
+            "Avatar": "={{ $json.Avatar }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha Registro",
+              "displayName": "Fecha Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Avatar",
+              "displayName": "Avatar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fuente",
+              "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Afiliado",
+              "displayName": "Afiliado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "SE EJECUTÓ EL RECORDATORIO?",
+              "displayName": "SE EJECUTÓ EL RECORDATORIO?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RESPUESTA",
+              "displayName": "RESPUESTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RESUMEN - LLAMADA 1",
+              "displayName": "RESUMEN - LLAMADA 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        860,
+        100
+      ],
+      "id": "35e1f05d-5059-41fa-8313-94aa81c83113",
+      "name": "Google Sheets2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-09T13:35:43.000Z",
+  "versionId": "0d558fd2-04ed-48fb-93dc-69daae995a9a"
+}
