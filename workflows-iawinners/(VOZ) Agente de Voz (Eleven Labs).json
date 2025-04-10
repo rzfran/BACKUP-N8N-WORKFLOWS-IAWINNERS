@@ -1,0 +1,365 @@
+{
+  "active": false,
+  "connections": {
+    "Cerebro": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria": {
+      "ai_memory": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(Webhook) Recibe Directrices": {
+      "main": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente Clinica": {
+      "main": [
+        [
+          {
+            "node": "(Respuesta Webhook) Envío respuesta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agendar_visita": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Registrar_Cita_crm": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar_confirmacion": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-13T16:09:34.886Z",
+  "id": "7fshxsXn2wHMEk8i",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "(VOZ) Agente de Voz (Eleven Labs)",
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -60,
+        220
+      ],
+      "id": "24d34508-5c10-434e-b7ed-eb06df4c6d0d",
+      "name": "Cerebro",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "Prueba"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        60,
+        220
+      ],
+      "id": "6db7b4d8-5eb0-42e3-92c4-3efac53271d8",
+      "name": "Memoria"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "a5485a9a-cc49-450e-9397-93aafe570b07",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "1e43008b-3a2d-4220-8b05-041c08e7a030",
+      "name": "(Webhook) Recibe Directrices",
+      "webhookId": "a5485a9a-cc49-450e-9397-93aafe570b07"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        580,
+        0
+      ],
+      "id": "8c8f80ee-9dc8-4915-a68e-0440c4bcc70f",
+      "name": "(Respuesta Webhook) Envío respuesta"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=El nombre del cliente es: {{ $json.body.nombre }}\nEl correo es: {{ $json.body.correo }}\nLa fecha de la reunión es: {{ $json.body.fecha_reunion }}\nEl servicio que quiere es: {{ $json.body.servicio }}",
+        "options": {
+          "systemMessage": "=Eres un agente en la web de una clínica dental llamada Dentalia y estas aqui para ayudar a los clientes a resolver dudas de la clínica y agendar sus visitas. \n\nLa Fecha de hoy es: {{ $now }}\n\nUtilizarás la Tool \"Agendar_visita\" para agendar la visita con el cliente\n\nDeberás confirmar la visita cuando este agendada con exito\n\nEres el agente de n8n encargado de gestionar las citas para la clínica Dentalia. Recibes la información proveniente del asistente de voz (integrado con ElevenLabs), y tu responsabilidad es procesar y agendar la reunión de manera automatizada. Para ello, debes:\n\n1. Recibir y validar que los datos (nombre, email, teléfono y fecha de reunión) estén completos.\n\n2. Ejecutar la acción de agendar la cita utilizando la tool \"agendar_cita\"\n\n3. Registrarás la cita en el CRM de la clínica utilizando la Tool \"Registrar_Cita_crm\" , deberás tener preparado el Nombre del paciente, el email, el telefono y la fecha de la cita/reunion.\n\n4. Una vez procesada la reserva, si es necesario, activar notificaciones automáticas (por ejemplo, enviar un correo de confirmación al paciente y/o avisar por Slack al equipo de la clínica). Utilizarás la tool \"Enviar_confirmacion\" para enviar un correo de confirmación de la cita al paciente\n\n\n\nActúa de forma directa, sin confirmaciones adicionales, para garantizar la máxima eficiencia en el proceso de agendamiento.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        220,
+        0
+      ],
+      "id": "49e75951-6bad-439b-b36b-0d559f53c196",
+      "name": "Agente Clinica"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Calendario - Clinica Sonrisas"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', `Aquí añadirás la fecha en la que el cliente quiere la cita`, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', `Sumarás 30 minutos a la fecha en la que el cliente quiere la cita y esa será la fecha de finalización `, 'string') }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Attendees', `Aquí añadirás el correo de la persona que agenda la reunión`, 'string') }}"
+          ],
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', `Aquí añadirás el servicio y nombre de la persona`, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        220
+      ],
+      "id": "af2c124b-2d67-4eb7-ad2b-b520d4c81041",
+      "name": "Agendar_visita",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1BERswIAMO6AJhD-kx8AFECxGKvgpUHZj6SmJoJk12-c",
+          "mode": "list",
+          "cachedResultName": "CRM - Clínica Dentalia",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BERswIAMO6AJhD-kx8AFECxGKvgpUHZj6SmJoJk12-c/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BERswIAMO6AJhD-kx8AFECxGKvgpUHZj6SmJoJk12-c/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha de hoy": "={{ $now }}",
+            "Nombre Paciente": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_Paciente', `Aquí pondrás el nombre del cliente/paciente`, 'string') }}",
+            "Email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email', `Aquí pondrás el Email del cliente/paciente`, 'string') }}",
+            "Teléfono": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tel_fono', `Aquí pondrás el Teléfono del cliente/paciente`, 'string') }}",
+            "Fecha_reunion": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha_reunion', `Aquí pondrás La fehca_reunion en la que el cliente/paciente quiere la cita`, 'string') }}",
+            "Estado": "Confirmada",
+            "Servicio interés": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Servicio_inter_s', `Aquí pondrás el Servicio en el que el paciente esta interesado`, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha de hoy",
+              "displayName": "Fecha de hoy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre Paciente",
+              "displayName": "Nombre Paciente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Teléfono",
+              "displayName": "Teléfono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha_reunion",
+              "displayName": "Fecha_reunion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Servicio interés",
+              "displayName": "Servicio interés",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Estado",
+              "displayName": "Estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        580,
+        220
+      ],
+      "id": "5d1f766d-5dbc-427e-a8ef-4857912463b8",
+      "name": "Registrar_Cita_crm",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        400,
+        220
+      ],
+      "id": "b59cdb69-eeeb-4243-b201-629ccb213b23",
+      "name": "Enviar_confirmacion",
+      "webhookId": "9ed509db-a978-4785-abb2-58cb37fbea49",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-04-09T11:06:18.319Z",
+      "updatedAt": "2025-04-09T11:06:18.319Z",
+      "id": "WgXEuLULsFNjuFVn",
+      "name": "Voz 09/04"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-09T11:10:40.000Z",
+  "versionId": "66416087-c548-4dd5-8800-1be843e02a9a"
+}
