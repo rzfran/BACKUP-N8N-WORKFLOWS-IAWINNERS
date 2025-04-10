@@ -1,0 +1,135 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-08T01:26:36.888Z",
+  "id": "m9BTVq8KKhuBfe7v",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "(VOZ) Lucía AI - Restaurante Buena Vida",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "8d56eb75-5233-4f70-912c-ae741fceb39b",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        240,
+        20
+      ],
+      "id": "37605a05-51d1-4a78-852f-252858cdd9fa",
+      "name": "Webhook",
+      "webhookId": "8d56eb75-5233-4f70-912c-ae741fceb39b"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "1c893e14-8bb4-804c-8395-d199c5035674",
+          "mode": "list",
+          "cachedResultName": "Restaurante - Buena vida",
+          "cachedResultUrl": "https://www.notion.so/1c893e148bb4804c8395d199c5035674"
+        },
+        "title": "=",
+        "simple": false,
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Nombre|title",
+              "title": "={{ $('Webhook').item.json.body.args.nombre }}"
+            },
+            {
+              "key": "Fecha|date",
+              "range": true,
+              "dateStart": "={{ $('Webhook').item.json.body.args.fyh_reserva }}",
+              "dateEnd": "={{ $('Webhook').item.json.body.args.fyh_reserva }}",
+              "timezone": "Europe/Madrid"
+            },
+            {
+              "key": "Numero de personas|number",
+              "numberValue": "={{ Number($('Webhook').item.json.body.args.numero_personas) }}"
+            },
+            {
+              "key": "Resumen de la llamada|rich_text",
+              "textContent": "={{ $json.body.args.summary }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        560,
+        20
+      ],
+      "id": "080f6830-ee11-4294-a497-ea46b019e37d",
+      "name": "Notion",
+      "credentials": {
+        "notionApi": {
+          "id": "FUr3Z7jS0wCOGBNC",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        880,
+        20
+      ],
+      "id": "55160caf-7087-40e7-9c69-dfd1e906c0c0",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-04-09T11:06:18.319Z",
+      "updatedAt": "2025-04-09T11:06:18.319Z",
+      "id": "WgXEuLULsFNjuFVn",
+      "name": "Voz 09/04"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-09T11:44:29.000Z",
+  "versionId": "5b85a4f3-516d-42d9-b368-fd6ff11f3ecf"
+}
