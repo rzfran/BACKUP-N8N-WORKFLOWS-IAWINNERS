@@ -1,0 +1,83 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Llamar a Sofia",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-07T17:02:51.810Z",
+  "id": "ZISG8Gry6NEv04ru",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "(VOZ)  Sofía AI - Ventas My Digital Winner",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "dd6aa0ea-3902-4ea8-841b-a41e1e8520d6",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        80
+      ],
+      "id": "bd156969-e275-47ff-b9a3-f5b609bf95fd",
+      "name": "Webhook",
+      "webhookId": "dd6aa0ea-3902-4ea8-841b-a41e1e8520d6"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/create-phone-call",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer key_18c259a1a892bdc0eecb9859511a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\"agent_id\": \"agent_2fefea63725719e83290d2ca63\",\n  \"retell_llm_dynamic_variables\": {\n    \"nombre\":\"{{ $json.headers.nombre }}\",\n    \"email\": \"{{ $json.headers.email }}\"\n  },\n \"from_number\": \"+541152588217\",\n  \"to_number\": \"{{ $json.headers.telefono }}\",\n  \"direction\": \"outbound\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        120,
+        80
+      ],
+      "id": "26939820-905e-48bb-acf1-8a94232df890",
+      "name": "Llamar a Sofia"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-04-09T11:06:18.319Z",
+      "updatedAt": "2025-04-09T11:06:18.319Z",
+      "id": "WgXEuLULsFNjuFVn",
+      "name": "Voz 09/04"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-09T14:45:05.000Z",
+  "versionId": "66344f24-8d89-45a0-8901-bc280c58f6a9"
+}
