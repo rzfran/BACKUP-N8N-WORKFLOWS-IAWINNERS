@@ -1,0 +1,343 @@
+{
+  "active": false,
+  "connections": {
+    "Cerebro": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria": {
+      "ai_memory": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(Webhook) Recibe Directrices": {
+      "main": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente Clinica": {
+      "main": [
+        [
+          {
+            "node": "(Respuesta Webhook) Envío respuesta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agendar_visita": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Registrar_Cita_crm": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar_confirmacion": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agente Clinica",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-09T18:30:44.846Z",
+  "id": "oeEvumflkterOCOm",
+  "meta": null,
+  "name": "My workflow 7",
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -60,
+        220
+      ],
+      "id": "72f80c9f-602f-45e6-99e0-ce11095bd703",
+      "name": "Cerebro",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "Prueba"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        60,
+        220
+      ],
+      "id": "8a8e881b-8a69-4720-9676-3946d6ee97df",
+      "name": "Memoria"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "a5485a9a-cc49-450e-9397-93aafe570b07",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b0f106ef-b485-4bd2-b77d-557c874d90e6",
+      "name": "(Webhook) Recibe Directrices",
+      "webhookId": "a5485a9a-cc49-450e-9397-93aafe570b07"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        580,
+        0
+      ],
+      "id": "f48f21f4-f88d-4261-9e5f-45555692c2ff",
+      "name": "(Respuesta Webhook) Envío respuesta"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=El nombre del cliente es: {{ $json.body.nombre }}\nEl correo es: {{ $json.body.correo }}\nLa fecha de la reunión es: {{ $json.body.fecha_reunion }}\nEl servicio que quiere es: {{ $json.body.servicio }}",
+        "options": {
+          "systemMessage": "=Eres un agente en la web de una clínica dental llamada Dentalia y estas aqui para ayudar a los clientes a resolver dudas de la clínica y agendar sus visitas. \n\nLa Fecha de hoy es: {{ $now }}\n\nUtilizarás la Tool \"Agendar_visita\" para agendar la visita con el cliente\n\nDeberás confirmar la visita cuando este agendada con exito\n\nEres el agente de n8n encargado de gestionar las citas para la clínica Dentalia. Recibes la información proveniente del asistente de voz (integrado con ElevenLabs), y tu responsabilidad es procesar y agendar la reunión de manera automatizada. Para ello, debes:\n\n1. Recibir y validar que los datos (nombre, email, teléfono y fecha de reunión) estén completos.\n\n2. Ejecutar la acción de agendar la cita utilizando la tool \"agendar_cita\"\n\n3. Registrarás la cita en el CRM de la clínica utilizando la Tool \"Registrar_Cita_crm\" , deberás tener preparado el Nombre del paciente, el email, el telefono y la fecha de la cita/reunion.\n\n4. Una vez procesada la reserva, si es necesario, activar notificaciones automáticas (por ejemplo, enviar un correo de confirmación al paciente y/o avisar por Slack al equipo de la clínica). Utilizarás la tool \"Enviar_confirmacion\" para enviar un correo de confirmación de la cita al paciente\n\n\n\nActúa de forma directa, sin confirmaciones adicionales, para garantizar la máxima eficiencia en el proceso de agendamiento.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        220,
+        0
+      ],
+      "id": "91f91eca-3f4b-47b7-a0c5-ca9ac1d1069e",
+      "name": "Agente Clinica"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Calendario - Clinica Sonrisas"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', `Aquí añadirás la fecha en la que el cliente quiere la cita`, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', `Sumarás 30 minutos a la fecha en la que el cliente quiere la cita y esa será la fecha de finalización `, 'string') }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Attendees', `Aquí añadirás el correo de la persona que agenda la reunión`, 'string') }}"
+          ],
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', `Aquí añadirás el servicio y nombre de la persona`, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        220
+      ],
+      "id": "806ec1bb-177a-4c19-a808-e236eef191c7",
+      "name": "Agendar_visita",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "kySGlys3HU1g1q6Y",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1BERswIAMO6AJhD-kx8AFECxGKvgpUHZj6SmJoJk12-c",
+          "mode": "list",
+          "cachedResultName": "CRM - Clínica Dentalia",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BERswIAMO6AJhD-kx8AFECxGKvgpUHZj6SmJoJk12-c/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BERswIAMO6AJhD-kx8AFECxGKvgpUHZj6SmJoJk12-c/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha de hoy": "={{ $now }}",
+            "Nombre Paciente": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_Paciente', `Aquí pondrás el nombre del cliente/paciente`, 'string') }}",
+            "Email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email', `Aquí pondrás el Email del cliente/paciente`, 'string') }}",
+            "Teléfono": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tel_fono', `Aquí pondrás el Teléfono del cliente/paciente`, 'string') }}",
+            "Fecha_reunion": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha_reunion', `Aquí pondrás La fehca_reunion en la que el cliente/paciente quiere la cita`, 'string') }}",
+            "Estado": "Confirmada"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha de hoy",
+              "displayName": "Fecha de hoy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre Paciente",
+              "displayName": "Nombre Paciente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Teléfono",
+              "displayName": "Teléfono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha_reunion",
+              "displayName": "Fecha_reunion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Estado",
+              "displayName": "Estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        580,
+        220
+      ],
+      "id": "babb33ec-e00a-43f1-b7d3-d5bd1f2f3059",
+      "name": "Registrar_Cita_crm",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        400,
+        220
+      ],
+      "id": "c2802b91-66f1-4e37-ae35-b7d72264e91e",
+      "name": "Enviar_confirmacion",
+      "webhookId": "9ed509db-a978-4785-abb2-58cb37fbea49",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jb949OirQ2BFqA5S",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-09T18:30:44.846Z",
+  "versionId": "bcd6c363-4b23-446d-87e9-ae0c04af46c4"
+}
