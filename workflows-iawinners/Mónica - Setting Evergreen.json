@@ -1,0 +1,464 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        []
+      ]
+    },
+    "HighLevel": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HighLevel1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HighLevel2": {
+      "main": [
+        []
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "ETAPA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Trigger": {
+      "main": [
+        [
+          {
+            "node": "HighLevel1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HighLevel3": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-04-11T12:50:01.950Z",
+  "id": "wTDTYDegIczPTbV3",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Mónica - Setting Evergreen",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        320,
+        -320
+      ],
+      "id": "531ed703-04a6-4039-b909-7d4f72b5763f",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 5,
+        "filters": {},
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "id": "2cb28a72-485e-4284-940d-9f52e6bce79c",
+      "name": "HighLevel",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "3b30bc24-c75f-496f-8ad9-8300d6d5543e"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        440,
+        0
+      ],
+      "id": "d9bc2612-b614-4b2e-9c69-1049fd3156d0",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 1,
+        "filters": {
+          "query": "=+{{ $json.contacts[0].wa_id }}"
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        800,
+        -580
+      ],
+      "id": "f75e7a39-dd79-4fc7-8c99-bea554e33015",
+      "name": "HighLevel1",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "contactId": "={{ $json.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        500,
+        -240
+      ],
+      "id": "45269da4-9572-4372-b043-c0f045f84031",
+      "name": "HighLevel2",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://rest.gohighlevel.com/v1/appointments",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6Ikg0eE9PVWlVT0l3NHlSREM4cmJhIiwidmVyc2lvbiI6MSwiaWF0IjoxNzI3MTg4MzM1MTU3LCJzdWIiOiJMZVlhWDdHdVdZMUdqaVJmdXhnSSJ9.Y-kCzxkXVec3aGo3sun8loRvJu0d4GPY0dX5DqMXm2k"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1640,
+        -260
+      ],
+      "id": "f0299351-5547-4cbb-a51c-de514fac06e2",
+      "name": "HTTP Request",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hook.eu2.make.com/08mruu4b1g861fd13impoe8j5bkr3ziq",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Email",
+              "value": "https"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        -240
+      ],
+      "id": "91a73382-c8ed-4855-8ebd-641ef79b7319",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "65e08ef0-30a8-4fc8-ad16-39d3c8933ee9",
+              "name": "CustomFields",
+              "value": "={{ $json.customFields }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1000,
+        -580
+      ],
+      "id": "2cacd40b-c40f-4b97-b557-80d5a3d8440c",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Obtener el string de CustomFields\nconst rawFields = $input.first().json.CustomFields;\n\n// 2. Parsear a JSON (es un string)\nconst customFields = JSON.parse(rawFields);\n\n// 3. ID que quieres encontrar\nconst targetId = \"H6AKfDHo6YgOP0Jv7hWW\";\n\n// 4. Buscar el campo\nconst field = customFields.find(f => f.id === targetId);\n\n// 5. Devolver como salida del nodo\nif (field) {\n  return [\n    {\n      json: {\n        campo: field.value\n      }\n    }\n  ];\n} else {\n  return [\n    {\n      json: {\n        error: \"Campo no encontrado\"\n      }\n    }\n  ];\n}\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1180,
+        -580
+      ],
+      "id": "ab3003c1-0a47-4652-856c-5a5dbc711d6a",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.campo }}",
+                    "rightValue": "-50%",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "63aeb22d-7334-476d-8496-94ec26e0726c"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "-50%"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2d7471dc-4174-4689-a930-cff0391f2ae4",
+                    "leftValue": "={{ $json.campo }}",
+                    "rightValue": "+50%",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "+50%"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "5d5429a9-385d-4553-866c-65c9b21d0c4c",
+                    "leftValue": "={{ $json.campo }}",
+                    "rightValue": "Agenda",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Agenda"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7c428b42-880d-4a18-9ab1-7ca47efc6c5e",
+                    "leftValue": "={{ $json.campo }}",
+                    "rightValue": "No Asiste",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "No Asiste"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1400,
+        -600
+      ],
+      "id": "e80ba87a-c42b-4fbc-95e8-cbbc1b9481fc",
+      "name": "ETAPA"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ],
+        "options": {}
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        560,
+        -580
+      ],
+      "id": "5618ecfc-822a-4287-9146-c16900708844",
+      "name": "WhatsApp Trigger",
+      "webhookId": "03672102-d649-45d1-94f7-529fc0b5c98c",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "l798ZfEHMMF1EM3y",
+          "name": "Test Number - Agente IA "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 1,
+        "filters": {
+          "query": "gastonluispatrito@gmail.com"
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        1240,
+        -140
+      ],
+      "id": "fa11aee7-53bf-4fd4-9173-ade2b207a899",
+      "name": "HighLevel3",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-11T19:15:34.000Z",
+  "versionId": "c47fd8c9-e9e5-49c0-a948-f8c119902149"
+}
