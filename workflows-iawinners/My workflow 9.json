@@ -1,0 +1,55 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-04-14T16:27:43.932Z",
+  "id": "RApLBbQuJinJX6no",
+  "meta": null,
+  "name": "My workflow 9",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "chatwoot",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -120,
+        -20
+      ],
+      "id": "ab73c344-0e5d-4bf1-83c0-b65eed0d1307",
+      "name": "Webhook",
+      "webhookId": "a6cca6a0-0e90-4ac5-b616-edf92c625b45"
+    },
+    {
+      "parameters": {
+        "baseUrl": "https://chatwood-chatwoot.6f60on.easypanel.host/webhooks/whatsapp/+56932914506",
+        "operation": "messageCreate"
+      },
+      "type": "n8n-nodes-chatwoot.chatwoot",
+      "typeVersion": 1,
+      "position": [
+        100,
+        -20
+      ],
+      "id": "0f85c6aa-53f5-40ba-ac31-1288ca9bf842",
+      "name": "ChatWoot"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-14T16:27:43.932Z",
+  "versionId": "1e7499bb-14ac-430a-9879-9f605556d4fc"
+}
