@@ -225,7 +225,7 @@
     },
     {
       "parameters": {
-        "url": "=https://www.searchapi.io/api/v1/search?engine=youtube_transcripts&api_key=25brK3xoGrgYmhFVMJkRSfER&video_id={{ $json.videoId }}&lang=en",
+        "url": "=https://www.searchapi.io/api/v1/search?engine=youtube_transcripts&api_key=25brK3xoGrgYmhFVMJkRSfER&video_id={{ $json.videoId }}&lang=es",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -709,6 +709,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-13T19:24:39.000Z",
-  "versionId": "edd5f32e-a42f-4c94-a6f9-b67cb845dc7b"
+  "updatedAt": "2025-04-15T10:23:10.000Z",
+  "versionId": "b19396e2-d828-4853-9212-35d8387ec71c"
 }
