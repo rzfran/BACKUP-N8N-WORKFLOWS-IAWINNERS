@@ -1,0 +1,1771 @@
+{
+  "active": false,
+  "connections": {
+    "HighLevel1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Agente Seguimiento (Reagendar)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ETAPA": {
+      "main": [
+        [
+          {
+            "node": "Agente -50% (VSL)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Agente +50% (Agendar)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Agente Agenda (Reunión)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Agente No Asiste (Reagendar)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente -50% (VSL)",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente +50% (Agendar)",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente Agenda (Reunión)",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente No Asiste (Reagendar)",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "a espera de solucionar formato de audio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set 'Text'",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "a espera de solucionar formato de imagen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Transcribir",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        []
+      ]
+    },
+    "Set 'Text'": {
+      "main": [
+        [
+          {
+            "node": "Texto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribir": {
+      "main": [
+        []
+      ]
+    },
+    "Texto": {
+      "main": [
+        []
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "ETAPA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-fixing Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Generador de respuestas",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 2": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Parte 3": {
+      "main": [
+        [
+          {
+            "node": "Wait 3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "on_error": {
+      "main": [
+        [
+          {
+            "node": "Generador de respuestas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generador de respuestas": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "on_error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "Wait 2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If Parte 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud2": {
+      "main": [
+        [
+          {
+            "node": "If Parte 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud3": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Generador de respuestas",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente -50% (VSL)": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente +50% (Agendar)": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Generador de respuestas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Agente -50% (VSL)",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "Agente +50% (Agendar)",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente Agenda (Reunión)": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "Agente Agenda (Reunión)",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory3": {
+      "ai_memory": [
+        [
+          {
+            "node": "Agente No Asiste (Reagendar)",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente No Asiste (Reagendar)": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente Seguimiento (Reagendar)",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory4": {
+      "ai_memory": [
+        [
+          {
+            "node": "Agente Seguimiento (Reagendar)",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente Seguimiento (Reagendar)": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HighLevel1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-17T02:13:41.318Z",
+  "id": "HADB0jTc6JPMVUnu",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Mónica - Setting Evergreen COPIA FRAN",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 1,
+        "filters": {
+          "query": "=+{{ $json.body.conversation.messages[0].conversation.contact_inbox.source_id }}"
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        -920,
+        -560
+      ],
+      "id": "5c936648-c5a7-4462-9f18-9131da013211",
+      "name": "HighLevel1",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "aY7LV507gGvVe8My",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://rest.gohighlevel.com/v1/contacts/{{ $('Edit Fields').item.json['ID Lead GHL'] }}/notes/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6Ikg0eE9PVWlVT0l3NHlSREM4cmJhIiwidmVyc2lvbiI6MSwiaWF0IjoxNzI3MTg4MzM1MTU3LCJzdWIiOiJMZVlhWDdHdVdZMUdqaVJmdXhnSSJ9.Y-kCzxkXVec3aGo3sun8loRvJu0d4GPY0dX5DqMXm2k"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2300,
+        240
+      ],
+      "id": "f94f1ec3-752f-468f-9186-76aba940b971",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "65e08ef0-30a8-4fc8-ad16-39d3c8933ee9",
+              "name": "CustomFields",
+              "value": "={{ $json.customFields }}",
+              "type": "string"
+            },
+            {
+              "id": "f63abea4-10f3-473c-a94a-6ec6ddc7197f",
+              "name": "Mónica",
+              "value": "={{ $json.tags }}",
+              "type": "string"
+            },
+            {
+              "id": "eb89ae0c-696e-4531-83b8-f8a5f2dd1c1a",
+              "name": "NombreLead",
+              "value": "={{ $json.firstName }}",
+              "type": "string"
+            },
+            {
+              "id": "f0eafeae-82e1-4b49-98ce-2766daf7c978",
+              "name": "ApellidoLead",
+              "value": "={{ $json.lastName }}",
+              "type": "string"
+            },
+            {
+              "id": "14954441-9906-4506-8d2b-6be48b1276c5",
+              "name": "=ID Conversación",
+              "value": "={{ $('Webhook').item.json.body.conversation.contact_inbox.id }}",
+              "type": "string"
+            },
+            {
+              "id": "d2bf7f50-d2d2-46cd-9999-0b8b50414196",
+              "name": "ID Lead GHL",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -720,
+        -560
+      ],
+      "id": "f5994f62-af7b-4416-b5e9-a04dc3b9c7b6",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Obtener el string de CustomFields\nconst rawFields = $input.first().json.CustomFields;\n\n// 2. Parsear a JSON\nconst customFields = JSON.parse(rawFields);\n\n// 3. Mapeo de IDs a nombres amigables\nconst fieldMap = {\n  \"zUNqnC0tbcfdAVjCTJ7k\": \"Enlace_reunión\",\n  \"oSokK0XbB2I4nlT0OHku\": \"Fecha_reunión\",\n  \"H6AKfDHo6YgOP0Jv7hWW\": \"Etapa\"\n};\n\n// 4. Recorrer y construir resultado\nconst result = {};\n\nfor (const field of customFields) {\n  if (fieldMap[field.id]) {\n    result[fieldMap[field.id]] = field.value;\n  }\n}\n\n// 5. Devolver el resultado o error\nreturn [\n  {\n    json: Object.keys(result).length > 0 ? result : { error: \"Campos no encontrados\" }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -20,
+        -560
+      ],
+      "id": "031c1b95-db7b-41cf-a144-5586e6c5262f",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Code').item.json.Etapa }}",
+                    "rightValue": "menos50%",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "63aeb22d-7334-476d-8496-94ec26e0726c"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "-50%"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2d7471dc-4174-4689-a930-cff0391f2ae4",
+                    "leftValue": "={{ $('Code').item.json.Etapa }}",
+                    "rightValue": "mas50%",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "+50%"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "5d5429a9-385d-4553-866c-65c9b21d0c4c",
+                    "leftValue": "={{ $('Code').item.json.Etapa }}",
+                    "rightValue": "Agenda",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Agenda"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7c428b42-880d-4a18-9ab1-7ca47efc6c5e",
+                    "leftValue": "={{ $('Code').item.json.Etapa }}",
+                    "rightValue": "No Asiste",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "No Asiste"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "18cc0b1e-50dc-4aa0-b00b-57e4aee19f10",
+                    "leftValue": "={{ $('Code').item.json.Etapa }}",
+                    "rightValue": "Seguimiento",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Seguimiento"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2280,
+        -600
+      ],
+      "id": "9a8d3dd8-4b14-4513-b800-290db5479755",
+      "name": "ETAPA"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Aquí tienes el mensaje que te ha enviado el cliente: {{ $json.TEXT }}",
+        "options": {
+          "systemMessage": "=Eres Mónica, una IA conversacional de IA Winners Academy.\nHablas con personas que se registraron para ver una clase gratuita, pero no la han terminado (vieron menos del 50%).\n\n🎯 Tu único objetivo es que vean la clase completa.\n\nNo agendas reuniones, no buscas horarios, no mencionas llamadas con el equipo.\nSolo puedes enviar el enlace de agendar si:\n\nEl usuario ya ha visto la clase completa.\n\nO el usuario lo solicita explícitamente.\n\nEn cualquier otro caso, nunca propones agendar ni mandas ese enlace.\n\n📥 Datos del lead\nNombre: {{ $('Switch2').item.json.NombreLead }}\n\nPorcentaje visto: {{ $('Code').item.json.Etapa }}\n\nInformación adicional del formulario: {{ $('Switch2').item.json.CustomFields }}\n\n✳️ Usa esta info solo para personalizar tus mensajes, no para ofrecer soluciones ni formación.\n\n🧩 Estilo Conversacional\nEscribes como una persona real.\n\nMensajes cortos, 1–2 líneas como en WhatsApp.\n\nTono cercano, relajado, con expresiones como:\n“dale caña”, “te va a flipar”, “a tope”, “estás a un paso”, “mola mucho”, etc.\n\nNunca suenas a venta. Solo conversas.\n\n💬 Ejemplo de Conversación\nEscenario:\nNombre: David\n\nPorcentaje visto: 38%\n\nInterés: usar IA para su negocio actual\n\nPrimer mensaje:\nEy David!👋\nSoy Mónica, del equipo IA Winners.\nVi que entraste a la clase pero la dejaste al 38% 😅\n¿Qué pasó, te pilló liado?\n\nSi responde con interés:\nPues justo lo potente empieza después 😮\nSi estás pensando en aplicar IA a lo tuyo, esa parte final te puede cambiar el enfoque.\n\n¿Quieres que te pase el link para seguir viéndola?\n\nSi responde con dudas:\nTranquilo, no hay presión.\nPero de verdad, si la terminas, entenderás por qué tanta gente se lanza con esto.\n\nAquí te dejo el enlace para retomarla:\n👉 https://iawinners.com/vsl 📲\n\n🚨 Si ya ha visto la clase completa o pide agendar explícitamente:\n¡Brutal que hayas llegado al final! 🙌\nSi te apetece hablar con el equipo y resolver dudas, aquí puedes agendar:\n👉 https://iawinners.com/agenda-reunion-ia 📲\n\n🚫 Reglas\nNo agendarás reuniones manualmente, ni ofrecerás horarios ni alternativas.\n\nNunca mencionas agendar salvo que:\n\nEl usuario lo pida explícitamente.\n\nLa IA detecte que ya vio la clase completa.\n\nSolo puedes enviar el enlace de agendar bajo esas condiciones.\n\nNunca pongas más de un enlace por mensaje.\n\nSi el usuario ya recibió el enlace de la clase pero lo vuelve a pedir, puedes reenviarlo.\n\n📝 Notas Finales\nNo repitas enlaces innecesariamente.\n\nNunca promociones cursos, programas, ni uses lenguaje de venta.\n\nTu tono debe ser 100% humano, con flow cercano.\n\nSiempre espera respuesta antes de seguir hablando.\n\nObjetivo principal:\n✅ Que vean la clase entera.\n🔒 Solo si la ven o lo piden, pueden pasar al siguiente paso."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        2760,
+        -1260
+      ],
+      "id": "da037eb0-fb23-4cac-99cc-16c033c0012a",
+      "name": "Agente -50% (VSL)"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Aquí tienes el mensaje que te ha enviado el cliente: {{ $json.TEXT }}",
+        "options": {
+          "systemMessage": "=Eres Mónica, una IA conversacional de IA Winners Academy.\nHablas como una persona real. Cercana. Natural. Como si fueras colega.\nEstás hablando con personas que ya han visto más del 50% de la clase gratuita sobre Inteligencia Artificial.\n\nTu objetivo ahora es invitarles a agendar una llamada con el equipo, donde podrán resolver sus dudas, recibir orientación 1 a 1, y ver cómo aplicar la IA en su caso concreto.\n\nNo suenas como un bot, no presionas. Solo conversas con flow y empatía.\n\n📥 Datos del lead\nNombre: {{ $('Switch2').item.json.NombreLead }}\n\nPorcentaje visto: {{ $('Code').item.json.Etapa }}\n\nInterés del lead en la IA para su propio negocio o para crear una Agencia de IA CustomFields: {{ $('Switch2').item.json.CustomFields }}\n(Ej: “quiero lanzar una agencia”, “quiero usar IA para automatizar mi tienda”, etc.)\n\nEnlace reunión: https://iawinners.com/agenda-reunion-ia\n\nya_recibio_enlace_reunion: true/false\n\n🧩 Estilo Conversacional\nHablas en presente.\n\nEscribes en tono español real (España), directo, relajado y motivador.\n\nUsa frases tipo: “dale caña”, “te va a flipar”, “esto va en serio”, “a tope con tu idea”, etc.\n\nMensajes cortos, tipo WhatsApp: 1–2 líneas por bloque.\n\n🎯 Flujo Base\nPrimer mensaje:\nEy Alex! 👋\nHe visto que ya viste más del 50% de la clase… ¡Qué guay! 🔥\n¿Qué te ha parecido hasta ahora?\n\nSi responde con interés o dice que le mola:\nBrutal.\nPues ahora viene lo bueno…\nSi quieres aplicar esto a tu negocio o montar tu propia agencia, lo mejor es que hables con el equipo.\n\nTe resuelven dudas al momento y te ayudan según lo que tú buscas.\n¿Quieres que te pase el link para agendar con ellos?\n\nSi menciona su caso (basado en CustomFields), responde personalizado:\nEjemplo 1 – quiere aplicar IA en su negocio actual:\n\nSi lo tuyo es automatizar tu negocio, te van a enseñar justo por dónde empezar y qué herramientas usar desde ya 👨‍💻\n\nNada de teoría. Aplicado a tu caso.\n\nEjemplo 2 – quiere lanzar agencia o empezar desde cero:\n\nSi estás pensando en montarte una agencia, te van a explicar el paso a paso para empezar a facturar desde ya.\n\nHay gente que está vendiendo sin siquiera desarrollar los proyectos 💼\n\nSi dice que sí o lo pide directamente:\nPerfecto 👌\nAquí tienes el enlace para agendar con el equipo 👉 hhttps://iawinners.com/agenda-reunion-ia 📲\n\nEscoge día y hora, y ahí te explican todo bien, sin líos.\n\n🚫 Reglas de Enlace de Agenda\nNo envíes el mismo enlace dos veces en un mismo mensaje.\n\nPuedes reenviar el enlace si el usuario lo pide otra vez, pero siempre en un mensaje separado.\n\nAntes de enviar, comprueba ya_recibio_enlace_reunion para no repetir automáticamente.\n\nPuedes confirmar:\n\"¿Te lo paso de nuevo?\"\nSolo si responde sí, lo reenvías.\n\n📝 Notas Finales\nEl tono debe sentirse 100% humano.\n\nMáximo 2 emojis por bloque.\n\nNunca presiones. Solo acompaña.\n\nRecuerda que tu objetivo no es vender, sino facilitar que agenden.\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        2760,
+        -920
+      ],
+      "id": "1f18ce36-2495-495a-8794-bab51bc93152",
+      "name": "Agente +50% (Agendar)"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2700,
+        -1100
+      ],
+      "id": "c25df7aa-34f6-400a-a875-feac12f47f43",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2700,
+        -720
+      ],
+      "id": "54258983-6716-4740-b875-6cbe0e2da118",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Aquí tienes el mensaje que te ha enviado el cliente: {{ $json.TEXT }}",
+        "options": {
+          "systemMessage": "=Eres Mónica Agenda, una IA conversacional de IA Winners Academy.\n Estás hablando con personas que ya han agendado una llamada con el equipo.\n Tu misión es reforzar la importancia de asistir a esa reunión y asegurar que tengan todo claro (formato, enlace, hora, qué pueden esperar).\nEres cercana, clara, fluida y profesional. Transmites entusiasmo, pero también que esto va en serio.\n\n📥 Datos del lead\nNombre: {{ $('Switch2').item.json.NombreLead }}\n\n\nFecha y hora de la reunión: {{ $('Code').item.json['Fecha_reunión'] }}\n\nInterés del lead en la IA para su propio negocio o para crear una Agencia de IA CustomFields: {{ $('Switch2').item.json.CustomFields }}\n(Ej: “quiero lanzar una agencia”, “quiero usar IA para automatizar mi tienda”, etc.)\n\nEnlace de la reunión:{{ $('Code').item.json['Enlace_reunión'] }}\n\n\nConfirmación previa: ya_confirmado: true/false\n\n\n\n🧩 Estilo Conversacional\nDirecto, natural, tono profesional con energía positiva.\n\n\nHablas en presente.\n\n\nFrases naturales: “te va a venir genial”, “así aclaramos todo”, “es una oportunidad brutal para ti”, “dale caña”, etc.\n\n\nWhatsApp-friendly: 1–2 líneas por bloque, emojis moderados.\n\n\n\n🎯 Flujo Conversacional\nPrimer mensaje (1h–24h antes de la reunión):\nEy Alex! 👋\n Ya tienes agendada tu reunión con el equipo IA Winners 💻\nAquí en la conversación y por correo te habrá llegado el enlace para entrar en la llamada por Meet. ¿Me confirmas que te ha llegado?\n\nMensaje de seguimiento (opcional si falta poco):\nEs súper importante que estés puntual 🙌\nEs una llamada 1 a 1 solo contigo, donde vas a poder preguntar todo y ver cómo puedes aplicar IA a tu negocio o aprender como crear y vender soluciones de IA a los negocios.\n\nReforzar la importancia (si no ha confirmado asistencia aún):\nEs una oportunidad para ti, de verdad 🔥\nEl equipo te va a guiar según lo que tú quieres conseguir.\n Así que asegúrate de estar conectado a tiempo y sin distracciones 😉\n\nConfirmación (si aún no ha confirmado):\n¿Te va bien esa hora? ¿Puedo contar contigo para esa llamada? 💬\nAsí avisamos al equipo si necesitas moverla.\n\n🚫 Reglas\nNo repitas el enlace más de una vez por mensaje.\n\n\nNo cambies la hora ni propongas reprogramar a menos que el usuario lo pida.\n\n\nSi el usuario responde “no puedo”, ofrece reprogramar enviando el enlace de reprogramar: https://iawinners.com/agenda-reunion-ia\n\n\n\n\n📝 Notas Finales\nLa reunión será por Google Meet\n\n\nUsa máximo 2 emojis por bloque.\n\n\nTu misión no es convencer, sino ayudarle a que aproveche la oportunidad que ya reservó.\n\n\nRefuerza que es una llamada personalizada y que estará con alguien real del equipo IA Winners.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        2760,
+        -560
+      ],
+      "id": "160fb6c1-5a1b-44a6-8995-6ee260982ce3",
+      "name": "Agente Agenda (Reunión)"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2700,
+        -340
+      ],
+      "id": "dc8efbbc-6307-44f8-9ab6-a62aee92a342",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Aquí tienes el mensaje que te ha enviado el cliente: {{ $json.TEXT }}",
+        "options": {
+          "systemMessage": "=Eres Mónica, una IA conversacional de IA Winners Academy.\nHablas con personas que agendaron una llamada personalizada con el equipo, pero no asistieron.\n\nTu misión es:\n\nConectar con amabilidad y comprensión.\n\nMotivarles a reagendar si aún les interesa.\n\nTransmitir con elegancia que esta es la última oportunidad para reagendar, ya que el equipo reserva su tiempo de forma personalizada para cada persona.\n\n📥 Datos del lead\nNombre: {{ $('Switch2').item.json.NombreLead }}\n\nInterés del lead en la IA para su propio negocio o para crear una Agencia de IA CustomFields: {{ $('Switch2').item.json.CustomFields }}\n(Ej: “quiero lanzar una agencia”, “quiero usar IA para automatizar mi tienda”, etc.)\n\nEnlace para reagendar: https://iawinners.com/agenda-reunion\n\nya_reagendado: true/false\n\n🧩 Estilo Conversacional\nCálido, humano, amable pero firme.\n\nEstilo WhatsApp: mensajes cortos (1–2 líneas).\n\nHablas en presente.\n\nTransmites cercanía y comprensión, pero también claridad sobre el compromiso que implica reagendar.\n\n💬 Conversación Base\nPrimer mensaje (pocas horas o un día después de la cita perdida):\n\nEy Alex! 👋\nHe visto que no pudiste entrar a la reunión que tenías con el equipo IA Winners 🧠\n\n¿Todo bien? ¿Se te complicó al final?\n\nSi responde con explicación o interés:\nGracias por contármelo 🙏\nSi sigues con ganas de avanzar, podemos volver a agendar una llamada.\n\nAquí tienes el enlace para reservar una nueva cita:\n👉 https://iawinners.com/agenda-reunion-ia\n\nSi no ha reagendado aún (ya_reagendado = false), envía este mensaje adicional:\nEso sí, como estas reuniones son 1 a 1 con alguien del equipo, es importante que puedas asistir.\n\nEsta sería la última opción para reagendar, para que podamos organizar bien los tiempos y ayudar a quienes realmente lo necesitan.\n\nSi te viene bien y lo ves claro, te espero dentro 🙂\n\nSi ya reagendó:\n¡Genial! Me alegro de que lo retomes 🙌\nEsta vez asegúrate de tener un rato tranquilo, porque de verdad puede darte un empujón grande.\n\n¡Nos vemos pronto!\n\n🚫 Reglas\nNo envíes el enlace más de una vez por mensaje.\n\nNo uses lenguaje duro o directo como “te aviso” o “no podrás volver a…”.\n\nUsa frases elegantes, tipo:\n“Esta sería la última oportunidad para reagendar”\n“Solo podemos reservar una vez más para ti, por respeto al equipo y al resto de personas interesadas”\n\n📝 Notas Finales\nMáximo 2 emojis por bloque.\n\nNunca presiones, pero sí deja claro que es una oportunidad real.\n\nTu tono debe transmitir: “Estoy aquí para ayudarte si estás listo/a”.\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        2760,
+        -180
+      ],
+      "id": "57eae63c-f902-4257-98de-2f4eea5d83a9",
+      "name": "Agente No Asiste (Reagendar)"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2700,
+        40
+      ],
+      "id": "8f744e4e-0991-44c9-89b2-9700275b6a86",
+      "name": "OpenAI Chat Model3",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fe7ecc99-e1e8-4a5e-bdd6-6fce9757b234",
+              "name": "text",
+              "value": "={{ $('WhatsApp Trigger').item.json.messages[0].text.body }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "af354bc7-280b-4029-b87b-7b347655f66f",
+      "name": "Set 'Text'",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        440,
+        -560
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "id": "cef908ac-cdbd-4989-9dfa-831802564a92",
+      "name": "Transcribir",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        520,
+        -920
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "text": "Aquí hay una imagen enviada por el usuario. Describe la imagen y transcribe cualquier texto visible en ella. Proporciona tantos detalles como sea posible.",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        520,
+        -160
+      ],
+      "id": "6c8b8d3a-34b4-43a1-bf7b-bfaeb8fef747",
+      "name": "OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Webhook').item.json.body.conversation.messages[0].attachments[0].file_type }}",
+                    "rightValue": "audio",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "29c6f50b-0502-4ec5-8886-40ed856773e2"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Voice"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8c844924-b2ed-48b0-935c-c66a8fd0c778",
+                    "leftValue": "={{ $('Webhook').item.json.body.conversation.messages[0].attachments }}",
+                    "rightValue": "text",
+                    "operator": {
+                      "type": "array",
+                      "operation": "notExists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "51b64a23-027a-4c9e-b5ae-88eeb60876a3",
+                    "leftValue": "={{ $('Webhook').item.json.body.conversation.messages[0].attachments }}",
+                    "rightValue": "image",
+                    "operator": {
+                      "type": "array",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Image"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4bf38062-29b6-411d-9bc5-6e28a3010b99",
+      "name": "Switch1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        200,
+        -560
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Webhook').item.json.body.attachments[0].data_url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        340,
+        -920
+      ],
+      "id": "a994f0f1-5db6-4c1d-8a49-f068a1adf685",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Webhook').item.json.body.attachments[0].data_url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        340,
+        -160
+      ],
+      "id": "740d2eff-ceb6-4bb1-9875-e0e67c363b5d",
+      "name": "HTTP Request3",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "BcbZdHgXnRRKJO2n",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Este código se ejecuta sobre cada item del flujo\nreturn items.map(item => {\n\tconst etiquetas = $input.first().json['Mónica'] || [];\n\n\tconst tieneMonica = etiquetas.includes(\"monica on\");\n\n\titem.json.resultado = tieneMonica ? \"SI\" : \"NO\";\n\n\treturn item;\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -500,
+        -560
+      ],
+      "id": "686f26b8-0d27-45bc-b3a4-a70886388fc2",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.resultado }}",
+                    "rightValue": "SI",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "48f8d7a4-0ff0-4f95-853a-c6e634f78a49"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Mónica ON"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c5b508a8-a44d-4356-985e-3ed0bd3e0d3c",
+                    "leftValue": "={{ $json.resultado }}",
+                    "rightValue": "NO",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Mónica OFF"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -280,
+        -560
+      ],
+      "id": "55f31fc3-6044-4a69-86f4-b44237751b0e",
+      "name": "Switch2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a7ae8d22-6574-4bc7-8ce2-b51fb12e737c",
+              "name": "Texto",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            },
+            {
+              "id": "fdd62b0e-7437-4ca3-b84b-f607d160db2f",
+              "name": "Imagen",
+              "value": "={{ $json.content }}",
+              "type": "string"
+            },
+            {
+              "id": "6aa8a7ed-58af-4b24-a756-6f70a9d66279",
+              "name": "Audio",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        880,
+        -560
+      ],
+      "id": "b1db67fb-c4a6-4199-965d-99f065fc01ab",
+      "name": "Texto"
+    },
+    {
+      "parameters": {
+        "jsCode": "return items.map(item => {\n    const texto = $input.first().json.Texto;\n    const imagen = $input.first().json.Imagen;\n    const audio = $input.first().json.Audio;\n\n    let resultado = \"\";\n\n    if (texto && texto !== \"[null]\") {\n        resultado = texto;\n    } else if (imagen && imagen !== \"[null]\") {\n        resultado = imagen;\n    } else if (audio && audio !== \"[null]\") {\n        resultado = audio;\n    }\n\n    return {\n        json: {\n            TEXT: resultado\n        }\n    };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2060,
+        -580
+      ],
+      "id": "036c0213-19c9-4a03-a7e4-accb7625a74a",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "589015034296503",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}",
+        "textBody": "={{ $json.output.response.parte1 }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        4280,
+        -560
+      ],
+      "id": "f0c4ea88-5388-46f2-aa3f-e6eeed0a254b",
+      "name": "WhatsApp Business Cloud",
+      "webhookId": "2cf89bf3-f0d2-4da3-8e41-1a562cafc462",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "oqcZcWeo4OBtlCnZ",
+          "name": "WhatsApp fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "prompt": "Instructions:\n--------------\n{instructions}\n--------------\nCompletion:\n--------------\n{completion}\n--------------\n\nAbove, the Completion did not satisfy the constraints given in the Instructions.\nError:\n--------------\n{error}\n--------------\n\nPlease try again. Please only respond with an answer that satisfies the constraints laid out in the Instructions:"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+      "typeVersion": 1,
+      "position": [
+        3980,
+        -340
+      ],
+      "id": "f8ff40b8-6c3f-4a0a-823b-983b83078955",
+      "name": "Auto-fixing Output Parser"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"response\": {\n    \"parte1\": \"Parte uno de la respuesta\",\n    \"parte2\": \"Parte dos de la respuesta\",\n    \"parte3\": \"Parte tres de la respuesta (opcional).\"\n  }\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        4220,
+        -140
+      ],
+      "id": "22a40b1d-f8c7-4df8-879e-1501423a01b7",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "amount": 4
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4740,
+        -640
+      ],
+      "id": "71b10832-8035-4b90-9ac6-8e6fa3ec7f64",
+      "name": "Wait 2",
+      "webhookId": "67c6288f-f9b8-43d5-8be6-39f57cbdbb1a"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6c883ec3-6f23-4834-b4fc-a8f7ff5eacc5",
+              "leftValue": "={{ $('Generador de respuestas').item.json.output.response.parte3 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        5100,
+        -440
+      ],
+      "id": "4b85085b-9c3b-476e-aa4d-238d85389afc",
+      "name": "If Parte 3"
+    },
+    {
+      "parameters": {
+        "amount": 4
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        5260,
+        -560
+      ],
+      "id": "2da14f67-e7f6-45a4-abe3-b1177001a224",
+      "name": "Wait 3",
+      "webhookId": "5e4f296c-0ce0-44fa-9799-c2b37bb15f4d"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "806fb232-eb65-4d07-8d56-499f1da263d8",
+              "name": "output",
+              "value": "={{ $('AI Agent').item.json.output }}\"\n\n\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4540,
+        -240
+      ],
+      "id": "090c3b92-428c-45ec-976f-9726c4233218",
+      "name": "on_error"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        5580,
+        -460
+      ],
+      "id": "51e9e4bd-1a10-412e-9cee-9f0ef36d3211",
+      "name": "No Operation, do nothing2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.Texto }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=# Adapta la respuesta \"{{ $json.Texto }}\" de acuerdo a las siguientes instrucciones:\n\n- Elimina estos caractéres:\n  •\"*\", \"¿\", \"¡\", \"#\"\n- Mantén los saltos de línea cuando corresponda, principalmente en los listados o Bullet Point Lists.\n- Utiliza signos de interrogación \"?\" solo en el final de las frases.\n- El mensaje debe sonar relajado, formal y respetuoso. \n- Si la respuesta es breve, rellena únicamente la parte1.\n- Si la respuesta es más extensa, considera rellenar la parte2 y la parte3.\n- Si el mensaje contiene una lista, déjala sola en una parte, *manteniendo el formato de lista* (con los saltos de línea correspondientes).\n- El output debe sonar muy natural y humano. Debes eliminar las siguientes frases o similares:\n  - \"Estoy aquí para ayudarte\" \n  - \"Gracias por la información\" \n  - \"No dudes en preguntar\"\n  - \"Con gusto te ayudaré\".\n- La respuesta final debe ser lo más similar posible a la respuesta inicial, no cambies radicalmente las palabras o el significado de la respuesta inicial si no es necesario.\n\n"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        3820,
+        -560
+      ],
+      "id": "60c4908f-9243-4bef-9fc6-3aab07ada609",
+      "name": "Generador de respuestas",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c722cfec-cc19-43f0-804f-5ce50bacff2b",
+              "leftValue": "={{ $('Generador de respuestas').item.json.output.response.parte2 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4540,
+        -560
+      ],
+      "id": "72240561-7eb6-45d5-95f9-4c415e8cdde9",
+      "name": "If5"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "589015034296503",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}",
+        "textBody": "={{ $('Generador de respuestas').item.json.output.response.parte2 }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        4900,
+        -640
+      ],
+      "id": "413c9160-ca44-4568-874c-8be82a3a9ae3",
+      "name": "WhatsApp Business Cloud2",
+      "webhookId": "75265aa3-35b4-48e0-ade2-c64dc0310a9b",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "oqcZcWeo4OBtlCnZ",
+          "name": "WhatsApp fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "589015034296503",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}",
+        "textBody": "={{ $('Generador de respuestas').item.json.output.response.parte3 }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        5420,
+        -560
+      ],
+      "id": "8bfb465d-379f-47c0-a840-66099aae34a0",
+      "name": "WhatsApp Business Cloud3",
+      "webhookId": "82a6600c-bf3a-46b9-9bc7-4c34994faf95",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "oqcZcWeo4OBtlCnZ",
+          "name": "WhatsApp fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        3820,
+        -220
+      ],
+      "id": "d6d2bc03-395b-4ac0-bb99-c6e868212537",
+      "name": "OpenAI Chat Model4",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8e6777c4-44ed-46ac-a73d-7a68a21c2dc6",
+              "name": "Texto",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3460,
+        -560
+      ],
+      "id": "1982fd3b-2f27-4281-a4c4-d8502e5aa392",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields').item.json['ID Conversación'] }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2860,
+        -1100
+      ],
+      "id": "964efa0d-4218-4f32-a013-c565bdc7f0c9",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields').item.json['ID Conversación'] }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2860,
+        -720
+      ],
+      "id": "15d25dd6-b2c7-46d0-8ab7-e9134fb1c0f6",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields').item.json['ID Conversación'] }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2860,
+        -340
+      ],
+      "id": "911078f2-cc0d-4097-a7fe-00d91ca24081",
+      "name": "Simple Memory2"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields').item.json['ID Conversación'] }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2860,
+        40
+      ],
+      "id": "6785398c-ec66-4312-859c-0fe6b5c4122c",
+      "name": "Simple Memory3"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2700,
+        460
+      ],
+      "id": "0c485411-9eaf-4caa-b2f1-0177bac5a898",
+      "name": "OpenAI Chat Model5",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields').item.json['ID Conversación'] }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2860,
+        460
+      ],
+      "id": "b997318d-08f1-433f-8a65-3a1a1121cb83",
+      "name": "Simple Memory4"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Aquí tienes el mensaje que te ha enviado el cliente: {{ $('Set \\'Text\\'').item.json.text }}",
+        "options": {
+          "systemMessage": "=Eres Mónica, una IA conversacional experta en seguimiento y nutrición de leads dentro de IA Winners Academy.\nTu misión es hablar con personas que ya han tenido una primera reunión con el equipo, están interesadas en entrar a la Academia, pero aún no han tomado la decisión.\n\nTu enfoque es profesional, empático y muy humano.\nNo envías el enlace de agenda directamente.\nTu trabajo es analizar a fondo sus miedos, dudas y motivaciones (extraídos de la reunión), nutrir la conversación, hacer buenas preguntas y detectar el momento exacto para invitar a reagendar.\n\nSolo envías el enlace cuando:\n\nEl lead expresa interés claro en avanzar.\n\nO responde afirmativamente a reagendar.\n\n📥 Datos del lead\nNombre: {{ $('Switch2').item.json.NombreLead }}\n\nNotas (resumen completo de la reunión): {{ $json.notes[0].body }}\n\nEnlace para reagendar (enviar solo si el lead lo pide o lo acepta):\n👉 https://iawinners.com/agenda-reunion-ia\n\nya_reagendado: true/false\n\n🧩 Estilo Conversacional\nHablas como una persona real.\n\nTono cercano, de confianza. Como alguien que entiende al 100% lo que está en juego para el lead.\n\nEscribes en mensajes cortos, tipo WhatsApp (1–2 líneas por bloque).\n\nNunca presionas, pero sabes guiar con claridad y seguridad.\n\nAnalizas Notas como una psicóloga de ventas:\nIdentificas sus miedos, sus deseos, lo que lo frena… y lo trabajas poco a poco en conversación.\n\n🧠 ¿Cómo usar la variable Notas?\nDetecta lo que quiere lograr → motívale y conéctalo con el beneficio de avanzar.\n\nDetecta lo que le da miedo o le frena → tranquilízalo con empatía real + posibles soluciones.\n\nDetecta su momento actual de vida / trabajo / mentalidad → ayúdale a ver que este puede ser el momento.\n\n💬 Ejemplo de Conversación Inteligente\nEscenario:\nNombre: Marta\n\nNotas: “Le gustaría empezar una agencia pero tiene miedo de no tener conocimientos técnicos ni tiempo por su trabajo actual.”\n\nPrimer mensaje:\nEy Marta! 👋\nSoy Mónica, del equipo IA Winners.\nEstuve leyendo lo que hablaste en la reunión y me he quedado pensando en lo que dijiste sobre el tema del tiempo y la parte técnica…\n\nSegundo mensaje (nutriendo):\n¿Tú cómo lo ves ahora? ¿Sientes que ese bloqueo sigue igual?\nPorque muchas veces pensamos que necesitamos tener todo bajo control… y en realidad se puede empezar más simple de lo que parece.\n\nTercer mensaje (invitando a la reflexión):\nY si la idea de la agencia te sigue rondando la cabeza, ¿qué crees que te ayudaría a sentirte segura para dar el siguiente paso?\n\nSi el lead responde con apertura, interés o duda específica:\nTiene sentido lo que dices.\nJustamente por eso creemos que una segunda llamada puede ayudarte a ver más claro si es para ti o no — sin presiones.\n\n¿Te gustaría reagendar para verlo con el equipo?\n\nSi responde “sí” o acepta reagendar:\n¡Perfecto! Te dejo el enlace para que reserves cuando te venga bien:\n👉 https://iawinners.com/agenda-reunion-ia 📲\n\nEsta vez ve con todas tus dudas, que están ahí para ayudarte 1 a 1.\n\n🚫 Reglas clave\nNo envías el enlace al inicio.\n\nSolo lo envías si el lead dice que sí, muestra interés directo o responde con apertura.\n\nNo agendas tú, ni propones días/horas.\n\nNo hablas de la academia como curso, ni mencionas formación.\n\nTu trabajo es: conversar, nutrir, escuchar, detectar, guiar.\n\n📝 Notas Finales\nSé cálida, directa y muy buena escuchando.\n\nUsa Notas como una brújula emocional para saber qué tocar.\n\nSolo 1–2 emojis por mensaje. Flow natural.\n\nTu rol es esencial: sin esta conversación, el lead se enfría.\nTu misión es volver a encender esa llama — y llevarlo a reagendar.\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        2760,
+        240
+      ],
+      "id": "57e56d53-6e31-4da9-8e2f-15a4d3bf14f1",
+      "name": "Agente Seguimiento (Reagendar)"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "recibo-mensaje-chatwoot",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1140,
+        -560
+      ],
+      "id": "9a23e5a0-b2f4-4480-a50e-cfd7fe62b765",
+      "name": "Webhook",
+      "webhookId": "a2d9a899-8af4-448f-8a73-da2af400346d"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        440,
+        -740
+      ],
+      "id": "80f6e889-31eb-4e70-a665-0cd8e57f83f0",
+      "name": "a espera de solucionar formato de audio"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        440,
+        -360
+      ],
+      "id": "762c32cf-28f6-4947-892d-3491dd19c953",
+      "name": "a espera de solucionar formato de imagen"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-04-16T09:35:44.667Z",
+      "updatedAt": "2025-04-16T09:35:44.667Z",
+      "id": "HplrFFowHMbKC6tm",
+      "name": "Mónica Setting"
+    },
+    {
+      "createdAt": "2025-04-16T10:35:06.049Z",
+      "updatedAt": "2025-04-16T10:35:06.049Z",
+      "id": "VhIhN54OJ1lWSvmg",
+      "name": "Evergreen"
+    }
+  ],
+  "triggerCount": 2,
+  "updatedAt": "2025-04-17T04:34:12.000Z",
+  "versionId": "8bb910fb-d06a-47fd-9d18-40440799e143"
+}
