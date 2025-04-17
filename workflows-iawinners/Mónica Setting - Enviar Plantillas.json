@@ -1,0 +1,500 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Plantilla -50%",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Plantilla +50%",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Plantilla Agenda",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Plantilla No Asiste",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-16T09:37:34.507Z",
+  "id": "Tag739xA3NSSKSuw",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Mónica Setting - Enviar Plantillas",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "dc67dd0a-83c9-411f-b80e-12dd45faee68",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        -60
+      ],
+      "id": "eb7d8992-64a4-4778-b33e-eb7ee7adbc8a",
+      "name": "Webhook",
+      "webhookId": "dc67dd0a-83c9-411f-b80e-12dd45faee68"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.Etapa }}",
+                    "rightValue": "menos50%",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "7834eddc-874d-4c3a-b411-582b9f466ec4"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "-50%"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8e1e8fd9-4b9e-45de-94fd-d2dcbd6b6de2",
+                    "leftValue": "={{ $json.Etapa }}",
+                    "rightValue": "mas50%",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "+50%"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1d564ce4-76fd-4cfc-86ae-42ae07920547",
+                    "leftValue": "={{ $json.Etapa }}",
+                    "rightValue": "Agenda",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Agenda"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0bddadac-9034-4695-b907-f2949bc921b0",
+                    "leftValue": "={{ $json.Etapa }}",
+                    "rightValue": "No Asiste",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "No Asiste"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4d65a13c-9ebc-41bd-833e-b8b08e6cce46",
+                    "leftValue": "={{ $json.Etapa }}",
+                    "rightValue": "Seguimiento",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Seguimiento"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        20,
+        -120
+      ],
+      "id": "c00a14eb-a03b-4c5d-b571-a11a00b4015d",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "589015034296503",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Telefono }}",
+        "template": "plantilla_menos50|es",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $json.Nombre }}"
+                  },
+                  {
+                    "text": "https://iawinners.com/vsl"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        380,
+        -520
+      ],
+      "id": "35407a1d-cc0d-408a-aba0-f2788b0ae757",
+      "name": "Plantilla -50%",
+      "webhookId": "14da6df0-d7f6-47ce-8c17-39020a161726",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "oqcZcWeo4OBtlCnZ",
+          "name": "WhatsApp fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "589015034296503",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Telefono }}",
+        "template": "plantilla_mas50|es",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $json.Nombre }}"
+                  },
+                  {
+                    "text": "https://iawinners.com/agenda-reunion-ia"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        380,
+        -300
+      ],
+      "id": "952a3bbe-e44b-412c-8cde-335e5bfeec90",
+      "name": "Plantilla +50%",
+      "webhookId": "14da6df0-d7f6-47ce-8c17-39020a161726",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "oqcZcWeo4OBtlCnZ",
+          "name": "WhatsApp fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "589015034296503",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Telefono }}",
+        "template": "plantilla_agenda|es",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $('Edit Fields').item.json.Nombre }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Enlace Reunión'] }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Fecha Reunión'] }}"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        380,
+        -80
+      ],
+      "id": "d7291737-e7e1-4809-a5c3-5759e558ee1f",
+      "name": "Plantilla Agenda",
+      "webhookId": "14da6df0-d7f6-47ce-8c17-39020a161726",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "oqcZcWeo4OBtlCnZ",
+          "name": "WhatsApp fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "589015034296503",
+        "recipientPhoneNumber": "={{ $('Webhook').item.json.body.customData.Telefono }}",
+        "template": "plantilla_no_asiste|es",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $json.Nombre }}"
+                  },
+                  {
+                    "text": "https://iawinners.com/agenda-reunion-ia"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        380,
+        120
+      ],
+      "id": "6963a8b9-62c7-4bd6-9242-f8d9ca6f0ec6",
+      "name": "Plantilla No Asiste",
+      "webhookId": "14da6df0-d7f6-47ce-8c17-39020a161726",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "oqcZcWeo4OBtlCnZ",
+          "name": "WhatsApp fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "589015034296503"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        380,
+        340
+      ],
+      "id": "e058509e-8ced-4110-ba64-7be22bfba8c8",
+      "name": "Plantilla Seguimiento",
+      "webhookId": "14da6df0-d7f6-47ce-8c17-39020a161726",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "oqcZcWeo4OBtlCnZ",
+          "name": "WhatsApp fran"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9b08ecde-4fe4-4dd5-b412-b7d7c2c16280",
+              "name": "Nombre",
+              "value": "={{ $json.body.customData.Nombre }}",
+              "type": "string"
+            },
+            {
+              "id": "231dbab8-31b0-4d93-a863-b7c799e3ce5a",
+              "name": "Apellido",
+              "value": "={{ $json.body.customData.Apellido }}",
+              "type": "string"
+            },
+            {
+              "id": "9cb69c34-0f28-4019-a539-b37bf6bcaaf3",
+              "name": "Telefono",
+              "value": "={{ $json.body.customData.Telefono }}",
+              "type": "string"
+            },
+            {
+              "id": "ca850a9c-e9a7-4bdb-80b8-909a86937b4f",
+              "name": "Email",
+              "value": "={{ $json.body.customData.Email }}",
+              "type": "string"
+            },
+            {
+              "id": "51842e52-7d3e-4165-8330-9ef0633053ef",
+              "name": "Avatar",
+              "value": "={{ $json.body.customData.Avatar }}",
+              "type": "string"
+            },
+            {
+              "id": "03729d9e-cc20-410c-a82b-21adaafbe33e",
+              "name": "ID",
+              "value": "={{ $json.body.customData.ID }}",
+              "type": "string"
+            },
+            {
+              "id": "811b63a8-c038-4908-b65d-ad3e9a9df24e",
+              "name": "Etapa",
+              "value": "={{ $json.body.customData.ETAPA }}",
+              "type": "string"
+            },
+            {
+              "id": "aa0a0e7f-d325-4b33-b15a-9eabd0fca670",
+              "name": "Fecha Registro",
+              "value": "={{ $json.body.customData['Fecha Registro'] }}",
+              "type": "string"
+            },
+            {
+              "id": "83ff7bf2-a61b-4db4-9996-d4e507e1628e",
+              "name": "Enlace Reunión",
+              "value": "={{ $json.body.customData['Meeting URL'] }}",
+              "type": "string"
+            },
+            {
+              "id": "987af4ea-60e5-4378-94ab-e84af3d50e2f",
+              "name": "Fecha Reunión",
+              "value": "={{ $json.body.customData['Fecha Agenda'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -180,
+        -60
+      ],
+      "id": "903f53ff-557b-484e-88da-f3b3c0927cff",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-04-16T09:35:44.667Z",
+      "updatedAt": "2025-04-16T09:35:44.667Z",
+      "id": "HplrFFowHMbKC6tm",
+      "name": "Mónica Setting"
+    },
+    {
+      "createdAt": "2025-04-16T10:35:06.049Z",
+      "updatedAt": "2025-04-16T10:35:06.049Z",
+      "id": "VhIhN54OJ1lWSvmg",
+      "name": "Evergreen"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-16T20:26:05.000Z",
+  "versionId": "f7165e52-bc84-498a-b51c-4f1352ed3b45"
+}
