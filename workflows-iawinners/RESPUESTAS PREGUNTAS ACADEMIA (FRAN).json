@@ -1,0 +1,43 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-04-16T17:12:32.500Z",
+  "id": "87tcEqsmN9ylmmM8",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "RESPUESTAS PREGUNTAS ACADEMIA (FRAN)",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "0b2c5446-045c-43b9-a04f-ba6781316512",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ca88ac0e-ea10-40fa-9a6d-b085e4f6608b",
+      "name": "Webhook",
+      "webhookId": "0b2c5446-045c-43b9-a04f-ba6781316512"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-03-05T13:43:40.613Z",
+      "updatedAt": "2025-03-05T13:43:40.613Z",
+      "id": "UZSZ6IVuXW7XuPZM",
+      "name": "📝Formularios"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-16T19:13:31.000Z",
+  "versionId": "712a343b-346d-4786-9cb8-fe74276fb505"
+}
