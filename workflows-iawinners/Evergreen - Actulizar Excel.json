@@ -1,0 +1,914 @@
+{
+  "active": true,
+  "connections": {
+    "Evergreen Excel": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Actualizar Excel (Registros)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Actualizar Excel (Reunion)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Actualizar Excel (Reunion)": {
+      "main": [
+        [
+          {
+            "node": "Actualizar Excel (Registros)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-16T10:35:14.837Z",
+  "id": "ZEZmcg89XBuaw78l",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Evergreen - Actulizar Excel",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "1e5dec19-62c2-45fb-b016-27f73bd78c06",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -340,
+        -100
+      ],
+      "id": "478c6064-8158-41aa-802f-e55390354e2d",
+      "name": "Evergreen Excel",
+      "webhookId": "1e5dec19-62c2-45fb-b016-27f73bd78c06"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json['Automatización'] }}",
+                    "rightValue": "Registro",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "a9c8f310-f42b-4bcb-9be2-f022d93f833c"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Registro"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "3db376de-0631-4cbf-87a4-645cf723bacd",
+                    "leftValue": "={{ $json['Automatización'] }}",
+                    "rightValue": "Reunion",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Reunion"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        120,
+        -160
+      ],
+      "id": "bc840feb-5c03-4dd6-9175-da6d769b4947",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "47beacdc-c583-4ae3-b82e-23c910eadab1",
+              "name": "ID",
+              "value": "={{ $json.body.customData.ID }}",
+              "type": "string"
+            },
+            {
+              "id": "02b97cfd-7a26-42b3-a638-8aa0225ab098",
+              "name": "Nombre Lead",
+              "value": "={{ $json.body.customData.Nombre }}",
+              "type": "string"
+            },
+            {
+              "id": "7f57f57b-9d7e-4dd9-96c1-0021d7975657",
+              "name": "Apellido Lead",
+              "value": "={{ $json.body.customData.Apellido }}",
+              "type": "string"
+            },
+            {
+              "id": "e30eb39f-a02d-4b02-92d4-f03ab5bb1e8a",
+              "name": "Telefono",
+              "value": "={{ $json.body.customData.Telefono }}",
+              "type": "string"
+            },
+            {
+              "id": "416dcf64-0e00-4a37-8c15-b98b824c5e39",
+              "name": "Email",
+              "value": "={{ $json.body.customData.Email }}",
+              "type": "string"
+            },
+            {
+              "id": "69045e50-02ff-4ce2-a939-30774f11aeba",
+              "name": "Avatar",
+              "value": "={{ $json.body.customData.Avatar }}",
+              "type": "string"
+            },
+            {
+              "id": "b0c37751-5c65-4d98-b8bf-22e4e49f31f0",
+              "name": "Fuente",
+              "value": "={{ $json.body.customData.Fuente }}",
+              "type": "string"
+            },
+            {
+              "id": "593ca9c6-668c-4aca-abc5-c0c3728c0453",
+              "name": "Afiliado",
+              "value": "={{ $json.body.customData.Afiliado }}",
+              "type": "string"
+            },
+            {
+              "id": "63000293-f387-447f-8af7-3bef68686875",
+              "name": "UTM 1",
+              "value": "={{ $json.body.customData['UTM 1 '] }}",
+              "type": "string"
+            },
+            {
+              "id": "ce3682ce-6aef-42b5-96e1-44bc298a961f",
+              "name": "UTM 2",
+              "value": "={{ $json.body.customData['UTM 2'] }}",
+              "type": "string"
+            },
+            {
+              "id": "4511b2ad-bf04-4e78-a344-cfd9545c2b76",
+              "name": "ETAPA",
+              "value": "={{ $json.body.customData.ETAPA }}",
+              "type": "string"
+            },
+            {
+              "id": "533d82c0-0121-4a7d-b51e-d6aba74ec612",
+              "name": "Automatización",
+              "value": "={{ $json.body.customData['Automatización'] }}",
+              "type": "string"
+            },
+            {
+              "id": "2daa076d-b34e-4b93-b35a-f39f349d01ca",
+              "name": "Fecha Reunión",
+              "value": "={{ $json.body.customData['Fecha Agenda'] }}",
+              "type": "string"
+            },
+            {
+              "id": "761a90d7-e871-455e-a960-de1fbd7365c7",
+              "name": "Enlace Reunión",
+              "value": "={{ $json.body.customData['Meeting URL'] }}",
+              "type": "string"
+            },
+            {
+              "id": "cfab8dfc-933d-4d26-8119-d699c920f53f",
+              "name": "Closer",
+              "value": "={{ $json.body.customData['Closer'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -120,
+        -100
+      ],
+      "id": "1bb0abf9-78a8-4dfa-baf4-7891f9788c45",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU",
+          "mode": "list",
+          "cachedResultName": "Evergreen CAMPAIGN ANALYTIC | ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1683958641,
+          "mode": "list",
+          "cachedResultName": "Registros Funnel VSL",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit#gid=1683958641"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json.ID }}",
+            "Fecha Registro": "={{ new Date($now).toLocaleString(\"es-ES\", { hour: '2-digit', minute: '2-digit', hour12: false }) + 'h ' + new Date($now).toLocaleDateString(\"es-ES\") }}\n",
+            "Nombre": "={{ $json['Nombre Lead'] }}",
+            "Apellido": "={{ $json['Apellido Lead'] }}",
+            "Telefono": "={{ $json.Telefono }}",
+            "Email": "={{ $json.Email }}",
+            "Avatar": "={{ $json.Avatar }}",
+            "ETAPA LEAD": "={{ $json.ETAPA }}",
+            "Fuente": "={{ $json.Fuente }}",
+            "Afiliado": "={{ $json.Afiliado }}",
+            "UTM": "={{ $json['UTM 1'] }}",
+            "UTM 2": "={{ $json['UTM 2'] }}"
+          },
+          "matchingColumns": [
+            "ID"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fecha Registro",
+              "displayName": "Fecha Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Avatar",
+              "displayName": "Avatar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ETAPA LEAD",
+              "displayName": "ETAPA LEAD",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fuente",
+              "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Afiliado",
+              "displayName": "Afiliado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "UTM",
+              "displayName": "UTM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "UTM 2",
+              "displayName": "UTM 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Columna 2",
+              "displayName": "Columna 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Columna 3",
+              "displayName": "Columna 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Columna 4",
+              "displayName": "Columna 4",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Columna 5",
+              "displayName": "Columna 5",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Columna 6",
+              "displayName": "Columna 6",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Columna 7",
+              "displayName": "Columna 7",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Columna 8",
+              "displayName": "Columna 8",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Columna 9",
+              "displayName": "Columna 9",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        460,
+        -320
+      ],
+      "id": "e362be66-0aff-44b3-ad0b-424e86032c13",
+      "name": "Actualizar Excel (Registros)",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU",
+          "mode": "list",
+          "cachedResultName": "Evergreen CAMPAIGN ANALYTIC | ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 462729164,
+          "mode": "list",
+          "cachedResultName": "Reuniones",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit#gid=462729164"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json.ID }}",
+            "Fecha": "={{ $json['Fecha Reunión'] }}",
+            "Nombre Cliente": "={{ $json['Nombre Lead'] }}",
+            "Correo ": "={{ $json.Email }}",
+            "Closer": "={{ $json.Closer}}",
+            "Estado reunión": "={{ $json.ETAPA }}"
+          },
+          "matchingColumns": [
+            "ID"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre Cliente",
+              "displayName": "Nombre Cliente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo ",
+              "displayName": "Correo ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Estado reunión",
+              "displayName": "Estado reunión",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Closer",
+              "displayName": "Closer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Transcripción",
+              "displayName": "Transcripción",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Resumen",
+              "displayName": "Resumen",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Próximos pasos",
+              "displayName": "Próximos pasos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Actualizar pipeline",
+              "displayName": "Actualizar pipeline",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Estado del Pipeline",
+              "displayName": "Estado del Pipeline",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        460,
+        -40
+      ],
+      "id": "f1004431-96e1-4ed0-82ea-e509aa54bedf",
+      "name": "Actualizar Excel (Reunion)",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU",
+          "mode": "list",
+          "cachedResultName": "Evergreen CAMPAIGN ANALYTIC | ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1683958641,
+          "mode": "list",
+          "cachedResultName": "Registros Funnel VSL",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit#gid=1683958641"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json.ID }}",
+            "ETAPA LEAD": "={{ $('Edit Fields').item.json.ETAPA }}"
+          },
+          "matchingColumns": [
+            "ID"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fecha Registro",
+              "displayName": "Fecha Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Avatar",
+              "displayName": "Avatar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ETAPA LEAD",
+              "displayName": "ETAPA LEAD",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fuente",
+              "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Afiliado",
+              "displayName": "Afiliado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "UTM",
+              "displayName": "UTM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "UTM 2",
+              "displayName": "UTM 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 2",
+              "displayName": "Columna 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 3",
+              "displayName": "Columna 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 4",
+              "displayName": "Columna 4",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 5",
+              "displayName": "Columna 5",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 6",
+              "displayName": "Columna 6",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 7",
+              "displayName": "Columna 7",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 8",
+              "displayName": "Columna 8",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 9",
+              "displayName": "Columna 9",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        640,
+        -40
+      ],
+      "id": "8cffa976-a9f8-4ef5-8fb2-ec1646df6485",
+      "name": "Actualizar Excel (Registros)1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-04-16T10:35:06.049Z",
+      "updatedAt": "2025-04-16T10:35:06.049Z",
+      "id": "VhIhN54OJ1lWSvmg",
+      "name": "Evergreen"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-16T20:11:26.000Z",
+  "versionId": "efd50d91-2bc2-4c2b-b782-789ff1089e0b"
+}
