@@ -1,0 +1,18 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-04-17T12:29:30.578Z",
+  "id": "y84JeInexdPXwgLF",
+  "meta": null,
+  "name": "Ads Facebook",
+  "nodes": [],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-17T12:29:30.578Z",
+  "versionId": "c89e9228-b561-4501-8bce-3d13b05bcccf"
+}
