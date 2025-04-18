@@ -34,7 +34,7 @@
         ],
         [
           {
-            "node": "Actualizar Excel (Reunion)",
+            "node": "Buscar Lead",
             "type": "main",
             "index": 0
           }
@@ -46,6 +46,57 @@
         [
           {
             "node": "Actualizar Excel (Registros)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Lead": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Actualizar Excel (Reunion)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Actualizar Excel (Reunion)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Actualizar Excel (Reunion)1": {
+      "main": [
+        [
+          {
+            "node": "Actualizar Excel (Registros)2",
             "type": "main",
             "index": 0
           }
@@ -397,22 +448,24 @@
               "removed": false
             },
             {
-              "id": "Columna 2",
-              "displayName": "Columna 2",
+              "id": "Llamada Setting",
+              "displayName": "Llamada Setting",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": false
             },
             {
-              "id": "Columna 3",
-              "displayName": "Columna 3",
+              "id": "Notas Setting",
+              "displayName": "Notas Setting",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": false
             },
             {
               "id": "Columna 4",
@@ -477,8 +530,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        460,
-        -320
+        360,
+        -340
       ],
       "id": "e362be66-0aff-44b3-ad0b-424e86032c13",
       "name": "Actualizar Excel (Registros)",
@@ -509,12 +562,13 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "ID": "={{ $json.ID }}",
-            "Fecha": "={{ $json['Fecha Reunión'] }}",
-            "Nombre Cliente": "={{ $json['Nombre Lead'] }}",
-            "Correo ": "={{ $json.Email }}",
-            "Closer": "={{ $json.Closer}}",
-            "Estado reunión": "={{ $json.ETAPA }}"
+            "ID": "={{ $('Edit Fields').item.json.ID }}",
+            "Fecha": "={{ $('Edit Fields').item.json['Fecha Reunión'] }}",
+            "Nombre Cliente": "={{ $('Edit Fields').item.json['Nombre Lead'] }}",
+            "Correo ": "={{ $('Edit Fields').item.json.Email }}",
+            "Closer": "={{ $('Edit Fields').item.json.Closer }}",
+            "Estado reunión": "={{ $('Edit Fields').item.json.ETAPA }}",
+            "Fuente": "={{ $('Edit Fields').item.json.Fuente }}"
           },
           "matchingColumns": [
             "ID"
@@ -577,6 +631,16 @@
               "canBeUsedToMatch": true
             },
             {
+              "id": "Fuente",
+              "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Transcripción",
               "displayName": "Transcripción",
               "required": false,
@@ -605,26 +669,6 @@
               "type": "string",
               "canBeUsedToMatch": true,
               "removed": true
-            },
-            {
-              "id": "Actualizar pipeline",
-              "displayName": "Actualizar pipeline",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Estado del Pipeline",
-              "displayName": "Estado del Pipeline",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
             }
           ],
           "attemptToConvertTypes": false,
@@ -635,8 +679,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        460,
-        -40
+        1040,
+        -100
       ],
       "id": "f1004431-96e1-4ed0-82ea-e509aa54bedf",
       "name": "Actualizar Excel (Reunion)",
@@ -667,7 +711,7 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "ID": "={{ $json.ID }}",
+            "ID": "={{ $('Edit Fields').item.json.ID }}",
             "ETAPA LEAD": "={{ $('Edit Fields').item.json.ETAPA }}"
           },
           "matchingColumns": [
@@ -692,7 +736,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Nombre",
@@ -702,7 +746,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Apellido",
@@ -712,7 +756,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Telefono",
@@ -722,7 +766,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Email",
@@ -732,7 +776,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Avatar",
@@ -742,7 +786,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "ETAPA LEAD",
@@ -761,7 +805,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Afiliado",
@@ -771,7 +815,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "UTM",
@@ -781,7 +825,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "UTM 2",
@@ -791,27 +835,27 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
-              "id": "Columna 2",
-              "displayName": "Columna 2",
+              "id": "Llamada Setting",
+              "displayName": "Llamada Setting",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
-              "id": "Columna 3",
-              "displayName": "Columna 3",
+              "id": "Notas Setting",
+              "displayName": "Notas Setting",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Columna 4",
@@ -882,8 +926,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        640,
-        -40
+        1280,
+        -100
       ],
       "id": "8cffa976-a9f8-4ef5-8fb2-ec1646df6485",
       "name": "Actualizar Excel (Registros)1",
@@ -893,9 +937,899 @@
           "name": "Google Sheets account"
         }
       }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU",
+          "mode": "list",
+          "cachedResultName": "Evergreen CAMPAIGN ANALYTIC | ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1683958641,
+          "mode": "list",
+          "cachedResultName": "Registros Funnel VSL",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit#gid=1683958641"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "ID",
+              "lookupValue": "={{ $json.ID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        400,
+        -60
+      ],
+      "id": "f93f81d7-a35a-41e3-87c2-720ec15cabd4",
+      "name": "Buscar Lead",
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.resultado }}",
+                    "rightValue": "SI",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ac3e01c1-e184-4ee4-9c4e-9c7e2cf4ace0"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Existe"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "57260095-2dd5-4667-81ea-2ea5759e0039",
+                    "leftValue": "={{ $json.resultado }}",
+                    "rightValue": "NO",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "No Existe"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        800,
+        -60
+      ],
+      "id": "af48474e-13b0-47d2-8213-3953510e8edc",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\n  json: {\n    resultado: $json.ID && $json.ID.trim() !== '' ? \"SI\" : \"NO\"\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        620,
+        -60
+      ],
+      "id": "385e6107-cbad-42a9-9270-11afdfd48fd1",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU",
+          "mode": "list",
+          "cachedResultName": "Evergreen CAMPAIGN ANALYTIC | ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 462729164,
+          "mode": "list",
+          "cachedResultName": "Reuniones",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit#gid=462729164"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $('Edit Fields').item.json.ID }}",
+            "Fecha": "={{ $('Edit Fields').item.json['Fecha Reunión'] }}",
+            "Nombre Cliente": "={{ $('Edit Fields').item.json['Nombre Lead'] }}",
+            "Correo ": "={{ $('Edit Fields').item.json.Email }}",
+            "Closer": "={{ $('Edit Fields').item.json.Closer }}",
+            "Estado reunión": "={{ $('Edit Fields').item.json.ETAPA }}",
+            "Fuente": "={{ $('Edit Fields').item.json.Fuente }}"
+          },
+          "matchingColumns": [
+            "ID"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre Cliente",
+              "displayName": "Nombre Cliente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo ",
+              "displayName": "Correo ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Estado reunión",
+              "displayName": "Estado reunión",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Closer",
+              "displayName": "Closer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fuente",
+              "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Transcripción",
+              "displayName": "Transcripción",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Resumen",
+              "displayName": "Resumen",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Próximos pasos",
+              "displayName": "Próximos pasos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1040,
+        140
+      ],
+      "id": "690cd707-3d9a-4bbb-b05b-952b401a9405",
+      "name": "Actualizar Excel (Reunion)1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU",
+          "mode": "list",
+          "cachedResultName": "Evergreen CAMPAIGN ANALYTIC | ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1683958641,
+          "mode": "list",
+          "cachedResultName": "Registros Funnel VSL",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LgFzDNUw_NtnCdw7VzQKwtQGdHhPwJG3DQzV7k_9ZIU/edit#gid=1683958641"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json.ID }}",
+            "ETAPA LEAD": "={{ $('Edit Fields').item.json.ETAPA }}",
+            "Fecha Registro": "={{ new Date($now).toLocaleString(\"es-ES\", { hour: '2-digit', minute: '2-digit', hour12: false }) + 'h ' + new Date($now).toLocaleDateString(\"es-ES\") }}",
+            "Nombre": "={{ $('Edit Fields').item.json['Nombre Lead'] }}",
+            "Apellido": "={{ $('Edit Fields').item.json['Apellido Lead'] }}",
+            "Telefono": "={{ $('Edit Fields').item.json.Telefono }}",
+            "Email": "={{ $('Edit Fields').item.json.Email }}",
+            "Avatar": "={{ $('Edit Fields').item.json.Avatar }}",
+            "Fuente": "={{ $('Edit Fields').item.json.Fuente }}",
+            "Afiliado": "={{ $('Edit Fields').item.json.Afiliado }}",
+            "UTM": "={{ $('Edit Fields').item.json['UTM 1'] }}",
+            "UTM 2": "={{ $('Edit Fields').item.json['UTM 2'] }}"
+          },
+          "matchingColumns": [
+            "ID"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fecha Registro",
+              "displayName": "Fecha Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Avatar",
+              "displayName": "Avatar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ETAPA LEAD",
+              "displayName": "ETAPA LEAD",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fuente",
+              "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Afiliado",
+              "displayName": "Afiliado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM",
+              "displayName": "UTM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 2",
+              "displayName": "UTM 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Llamada Setting",
+              "displayName": "Llamada Setting",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Notas Setting",
+              "displayName": "Notas Setting",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Columna 4",
+              "displayName": "Columna 4",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 5",
+              "displayName": "Columna 5",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 6",
+              "displayName": "Columna 6",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 7",
+              "displayName": "Columna 7",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 8",
+              "displayName": "Columna 8",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Columna 9",
+              "displayName": "Columna 9",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1240,
+        140
+      ],
+      "id": "de46fa14-735c-435e-9fb0-38fc1d0523de",
+      "name": "Actualizar Excel (Registros)2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "Evergreen Excel": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n.iawinners.com",
+            "user-agent": "axios/1.7.7",
+            "content-length": "13546",
+            "accept": "application/json, text/plain, */*",
+            "accept-encoding": "gzip, br",
+            "cdn-loop": "cloudflare; loops=1",
+            "cf-connecting-ip": "34.55.172.43",
+            "cf-ipcountry": "US",
+            "cf-ray": "931d5c961ea1e98e-ORD",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "content-type": "application/json",
+            "x-forwarded-for": "34.55.172.43, 172.70.100.141",
+            "x-forwarded-host": "n8n.iawinners.com",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "1e96c02968f5",
+            "x-real-ip": "172.70.100.141"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "Do you have a way of knowing your staff is calling new leads within five minutes?": "",
+            "Do you currently have the ability to listen to recordings of conversations between new leads and your staff?": "",
+            "Topic for call": "",
+            "Lead Automation": "",
+            "Website": "",
+            "Do you currently have any auto-mated replies set up for people who message your Facebook page?": "",
+            "Do you currently send automated email/text messages to no-shows encouraging them to re-schedule?": "",
+            "Lead Management": "",
+            "Are you interested in implementing any of the things you responded 'No' to for your business?": "",
+            "Can your staff send text message to leads from a business number without using a personal phone?": "",
+            "Are you currently generating a steady flow of new leads each month? ": "",
+            "Do you currently send emails/text appointment reminders? ": "",
+            "Do you currently offer a way for new leads to book a call/appointment with you online?": "",
+            "Brief description of your situation": "",
+            "How would you like to be contacted?": "",
+            "Facturación anual ": "",
+            "Nombre de tu empresa": "",
+            "Instagram": "",
+            "¿Dispones de agencia de marketing?": "",
+            "¿A que se dedica tu empresa?": "",
+            "Facturación anual empresa": "",
+            "Selecciona la opción correcta": "",
+            "Cual es tu objetivo con nosotros?": "",
+            "Cif": "",
+            "Dni": "",
+            "Telefono empresa": "",
+            "Email empresa": "",
+            "¿Dispones de web actualmente?": "",
+            "Dominio web": "",
+            "Plataforma de alojamiento web": "",
+            "Selecciona las RRSS ": "",
+            "Selecciona las RRSS que tiene tu negocio": "",
+            "TikTok": "",
+            "YouTube": "",
+            "Razón Social": "",
+            "¿Te gustaría mejorarla?": "",
+            "Objetivo principal": "",
+            "Género": "",
+            "Rango de edad": "",
+            "Ubicación ": "",
+            "Otros datos de interés": "",
+            "Día \"tipo\" de mi cliente ideal": "",
+            "¿Con qué frecuencia compra tu cliente ideal productos o servicios como el tuyo?": "",
+            "¿Cuánto suele gastar en productos como el tuyo?": "",
+            "¿Que podría influir en su decisión de compra?": "",
+            "¿Qué necesidad satisface tu producto/servicio a tu cliente?": "",
+            "¿Qué espera el cliente obtener de tu producto/servicio?": "",
+            "¿Cuál es el beneficio más importante de tu producto/servicio?": "",
+            "¿Qué problema principal resuelves a tu cliente con tu producto o servicio?": "",
+            "¿Cuál es la pregunta más frecuente que le surge a tu cliente cuando piensa en tu producto o servicio? ": "",
+            "Problema 1": "",
+            "Problema 2": "",
+            "Problema 3": "",
+            "¿Hay algo específico en tu sector que debamos saber?": "",
+            "Phone Number": "",
+            "Do you have any suggestions for new menu items?": "",
+            "Email Address": "",
+            "Are you totally and permanently disabled?": "",
+            "What were the outcomes or results achieved from your previous marketing efforts?": "",
+            "What specific deliverables do you expect from the marketing agency?": "",
+            "Are there any accessibility issues for our team (e.g., locked gates, pets)?": "",
+            "Mileage:": "",
+            "Location Cleanliness (scale of 1 to 5)": "",
+            " Description of the Issue:": "",
+            "Are they your dependent?": "",
+            "What was your least favourite item(s)": "",
+            "Other (Please specify):": "",
+            "Any Additional Comments, Questions Or Special Requests?": "",
+            "Allergies or Sensitivities:": "",
+            "Is there anything else you would like to share with us about your visit?": "",
+            "Location Name": "",
+            "Are you currently renting?": "",
+            "Taxpayer Signature": "",
+            "Is this a residential or commercial property?": "",
+            "Spouse Occupation ": "",
+            "Have you implemented any marketing strategies in the past? If yes, please describe them briefly.": "",
+            "Give us a brief description of the project:": "",
+            "How did you hear about us?": "",
+            "Preferred Time:": "",
+            "Overall Atmosphere Rating (scale of 1 to 5)": "",
+            "Type of Service (Check all that apply)": "",
+            "Are you contributing to 401k or other pre-tax account?": "",
+            "Check All Services Requested:": "",
+            "What are your objectives and goals for the project?": "",
+            "How satisfied were you with the food you were served?": "",
+            "Vehicle Year:": "",
+            "Any Previous Cosmetic Procedures?": "",
+            "Overall satisfaction rating (scale of 1 to 5)": "",
+            "Are you legally blind?": "",
+            "Which specific services are required for your project? Please select all that apply:": "",
+            "Current Medications": "",
+            "Are they totally and permanently disabled?": "",
+            "Was our staff knowledgeable and helpful with the menu? (scale of 1 to 5)": "",
+            "What is budget range allocated for the marketing project?": "",
+            "Are they a full-time student?": "",
+            "Any Allergies?": "",
+            "Is there any other relevant information or specific requirements that you would like to communicate to potential marketing agencies?": "",
+            "Do you have any additional comments, feedback, or suggestions regarding the legal services market?": "",
+            "Occupation": "",
+            "Who is your primary target audience and demographic?": "",
+            "Date Signed": "",
+            "Could you provide a breakdown of how you intend to allocate the budget across different marketing activities (e.g., advertising, content creation, website development)?": "",
+            "Type of visit": "",
+            "Any Known Medical Conditions": "",
+            "Enter your dependents here": "",
+            "Enter the following expenses total amount": "",
+            "What Was Your Favorite Item(s) You Tried?": "",
+            "Spouse Full Name": "",
+            "Preferred Barber (if any):": "",
+            " Type of Service Needed (Check all that apply):": "",
+            "Attach any relevant photos or documents related to the service request (if applicable).": "",
+            "Service speed (scale of 1 to 5)": "",
+            "Address": "",
+            "Preferred Date for Consultation": "",
+            "Spouse Date Of Birth": "",
+            "Are they legally blind?": "",
+            "Preferred Hair Products (if any):": "",
+            "How can we help?": "",
+            "Solutions": "",
+            "Message": "",
+            "What can we help with?": "",
+            "Other": "",
+            "Total Expenses": "",
+            "Event Start Time": "",
+            "Are any of these affecting currently you?": "",
+            "I consent to the above statements and affirm my honesty regarding my health.": "",
+            "Vehicle Model:": "",
+            "Choose a time slot:": "",
+            "What is the monthly rental amount?": "",
+            "Gender": "",
+            "Event start date ": "",
+            "Special Instructions ": "",
+            "Filing Status ": "",
+            "Are there any specific qualifications or expertise you prioritize in the evaluation process?": "",
+            "Reason for Consultation": "",
+            "How friendly was our staff? (scale of 1 to 5)": "",
+            "Preferred Date:": "",
+            "Requested Media": "",
+            "Do you have an ideal timeline in mind for the project?": "",
+            "Is this your first time opening a pre-tax account?": "",
+            "Would you recommend us?": "",
+            "Employment Status": "",
+            "Today's Date": "",
+            "How efficient was the service? (scale of 1 to 5)": "",
+            "Any Specific Concerns or Goals for the Consultation": "",
+            "Vehicle Make:": "",
+            "Service(s) Needed": "",
+            "Are you a full-time student?": "",
+            "Dirección cliente": "",
+            "Responde Chat Gpt": "",
+            "Número de empleados": "",
+            "Single Line 6602j": "",
+            "¿Tienes experiencia con IA y automatizaciones?": "",
+            "Describe brevemente tu experiencia": "",
+            "¿Qué áreas de la IA y automatizaciones te interesan más?": "",
+            "¿Por qué estás interesado en el Máster en IA y Automatizaciones?": "",
+            "¿Prefieres clases grabadas, online en directo o híbridas?": "",
+            "¿Que esperas obtener de este Master?": "",
+            "¿Cuánto estas dispuesto a invertir en un Master de Ia y Automatizaciones que te enseñe todo de 0 a 100?": "",
+            "¿Te gustaría tener opción de financiación?": "",
+            "¿Estás interesado en opciones de financiamiento?": "",
+            "¿Cuánto estas dispuesto a invertir en un Master de IA y Automatizaciones que te enseñe todo de 0 a 100?": "",
+            "¿Que esperas obtener de este Master?1": "",
+            "¿Hay algo más que te gustaría que supiéramos sobre ti?": "",
+            "Single Line 67emc": "",
+            "Servicios solicitados con My Digital Winner": "",
+            "Precio pactado con My Digital Winner": "",
+            "Servicios pactados con My Digital Winner": "",
+            "Te gustaría acceder a este evento para...": "",
+            "¿Cuánto dinero estás dispuesto/a a invertir para conseguir tu objetivo? *": "",
+            "Actualmente, ¿qué te gustaría conseguir con la IA? ¿Cuál es tu objetivo específicamente? *": "",
+            "¿Algo más que nos quieras comentar?": "",
+            "¿Tienes una empresa actualmente?": "",
+            "Tu situación es...": "",
+            "Selecciona la cantidad de emplados": "",
+            "Radio 29djr": "",
+            "Selecciona la cantidad de empleados": "",
+            "Presupuesto": "",
+            "Objetivo": "",
+            "Sector": "",
+            "Objetivos": "",
+            "Objetivo de la formación": "",
+            "objetivo-agencia-ia": "",
+            "Expreriencia  IA": "",
+            "Nombre de afiliado": "",
+            "Que avatar eres": "",
+            "Nombre empresa": "",
+            "Capital para formación": "",
+            "obstaculo": "",
+            "Objetivo de Facturacion": "",
+            "Para poder empezar a hacer crecer tu Agencia de IA es necesaria una inversión económica . Ahora mismo, ¿estás dispuesto a invertir? ": "",
+            "Mensaje enviado": "",
+            "Respuesta IA": "",
+            "Fecha Factura": "",
+            "Código Postal": "",
+            "Ciudad": "",
+            "Producto": "",
+            "Precio pactado (297€, 1797€ , 1997€ o 2497€)": "",
+            "PRUEBA": "",
+            "ETAPA_LEAD": "Agenda",
+            "Meeting_URL": "https://meet.google.com/tva-hnts-dor",
+            "Fecha_Reunion": "jueves, 17 de abril de 2025 8:00 PM",
+            "Evergreen-VSL": "vsl-corto",
+            "contact_id": "EPlWXOxLmIAbT0yyXP9m",
+            "first_name": "Armando ",
+            "last_name": "Laguna",
+            "full_name": "Armando  Laguna",
+            "email": "armandolaguna639@gmail.com",
+            "phone": "+34641129978",
+            "tags": "monica on",
+            "country": "US",
+            "timezone": "Europe/Madrid",
+            "date_created": "2025-04-17T13:52:50.704Z",
+            "contact_source": "evergreen | vsl funnel",
+            "full_address": "",
+            "contact_type": "lead",
+            "location": {
+              "name": "MY DIGITAL WINNER",
+              "address": "30 N GOULD ST STE N",
+              "city": "SHERIDAN ",
+              "state": "WY",
+              "country": "US",
+              "postalCode": "82801",
+              "fullAddress": "30 N GOULD ST STE N, SHERIDAN  WY 82801",
+              "id": "H4xOOUiUOIw4yRDC8rba"
+            },
+            "user": {
+              "firstName": "Alida",
+              "lastName": "M",
+              "email": "alidacloser33@gmail.com"
+            },
+            "calendar": {
+              "title": "Armando Laguna",
+              "selectedTimezone": "Europe/Madrid",
+              "appointmentId": "TWg1KKvYfjfasTCk9zFl",
+              "startTime": "2025-04-17T20:00:00",
+              "endTime": "2025-04-17T20:30:00",
+              "status": "booked",
+              "appoinmentStatus": "confirmed",
+              "address": "https://meet.google.com/tva-hnts-dor",
+              "notes": "",
+              "date_created": "2025-04-17T16:39:56.238Z",
+              "created_by": "Adrian Martinez",
+              "created_by_user_id": "Wxme6YaVWkit35z6q0eJ",
+              "created_by_meta": {
+                "source": "calendar_page",
+                "channel": "web_app"
+              },
+              "last_updated_by_meta": {
+                "source": "calendar_page",
+                "channel": "web_app"
+              },
+              "id": "wToJRlDQgQpyQt0lbISr",
+              "calendarName": "Calendario | Formación IA WINNERS"
+            },
+            "workflow": {
+              "id": "5727fbc1-c1ab-4c40-a6ad-738416be3fcc",
+              "name": "02 -Secuencia Agenda | Calendario ACADEMIA de IA |"
+            },
+            "triggerData": {},
+            "contact": {
+              "attributionSource": {
+                "sessionSource": "Social media",
+                "url": "https://iawinners.com/registro-ia2?utm_source=facebookads&utm_medium=cpa&utm_campaign=EVERGREEN+🟢|+ES+|+PROS+|+LEADS+|+GENERAL&utm_content=(GENERAL)+A+que+te+dedicas?&utm_id=6755181677142_v2_s03&utm_term=6755181676942&fbclid=PAZXh0bgNhZW0BMABhZGlkAAAGJNBCC24BpxCN02S5wAdEDw_rxTeDHTGsEW1PzAFuYFIGoA0HjOVLTxgCxi17fPpVQiDk_aem_snEC2HOh5Qipe8pCCxGvBg#bulletList-ailEFs6yix",
+                "campaign": "EVERGREEN 🟢| ES | PROS | LEADS | GENERAL",
+                "utmSource": "facebookads",
+                "utmMedium": "cpa",
+                "utmContent": "(GENERAL) A que te dedicas?",
+                "utmTerm": "6755181676942",
+                "utmKeyword": null,
+                "utmMatchtype": null,
+                "referrer": null,
+                "fbclid": "PAZXh0bgNhZW0BMABhZGlkAAAGJNBCC24BpxCN02S5wAdEDw_rxTeDHTGsEW1PzAFuYFIGoA0HjOVLTxgCxi17fPpVQiDk_aem_snEC2HOh5Qipe8pCCxGvBg",
+                "gclid": null,
+                "fbc": "fb.1.1744897946011.PAZXh0bgNhZW0BMABhZGlkAAAGJNBCC24BpxCN02S5wAdEDw_rxTeDHTGsEW1PzAFuYFIGoA0HjOVLTxgCxi17fPpVQiDk_aem_snEC2HOh5Qipe8pCCxGvBg",
+                "fbp": "fb.1.1744897946013.770352155543983872",
+                "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/21G93 Instagram 375.2.0.33.77 (iPhone11,8; iOS 17_6_1; es_ES; es-ES; scale=2.00; 828x1792; 719346134; IABMV/1)",
+                "ip": "66.81.160.196",
+                "gaClientId": null,
+                "medium": "form",
+                "mediumId": "342OOPvv4Uui2MBDHxPN",
+                "adName": null,
+                "adGroupId": null,
+                "adId": null,
+                "gbraid": null,
+                "wbraid": null
+              },
+              "lastAttributionSource": {
+                "sessionSource": "Social media",
+                "url": "https://iawinners.com/registro-ia2?utm_source=facebookads&utm_medium=cpa&utm_campaign=EVERGREEN+🟢|+ES+|+PROS+|+LEADS+|+GENERAL&utm_content=(GENERAL)+A+que+te+dedicas?&utm_id=6755181677142_v2_s03&utm_term=6755181676942&fbclid=PAZXh0bgNhZW0BMABhZGlkAAAGJNBCC24BpxCN02S5wAdEDw_rxTeDHTGsEW1PzAFuYFIGoA0HjOVLTxgCxi17fPpVQiDk_aem_snEC2HOh5Qipe8pCCxGvBg#bulletList-ailEFs6yix",
+                "campaign": "EVERGREEN 🟢| ES | PROS | LEADS | GENERAL",
+                "utmSource": "facebookads",
+                "utmMedium": "cpa",
+                "utmContent": "(GENERAL) A que te dedicas?",
+                "utmTerm": "6755181676942",
+                "utmKeyword": null,
+                "utmMatchtype": null,
+                "referrer": null,
+                "fbclid": "PAZXh0bgNhZW0BMABhZGlkAAAGJNBCC24BpxCN02S5wAdEDw_rxTeDHTGsEW1PzAFuYFIGoA0HjOVLTxgCxi17fPpVQiDk_aem_snEC2HOh5Qipe8pCCxGvBg",
+                "gclid": null,
+                "fbc": "fb.1.1744897946011.PAZXh0bgNhZW0BMABhZGlkAAAGJNBCC24BpxCN02S5wAdEDw_rxTeDHTGsEW1PzAFuYFIGoA0HjOVLTxgCxi17fPpVQiDk_aem_snEC2HOh5Qipe8pCCxGvBg",
+                "fbp": "fb.1.1744897946013.770352155543983872",
+                "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/21G93 Instagram 375.2.0.33.77 (iPhone11,8; iOS 17_6_1; es_ES; es-ES; scale=2.00; 828x1792; 719346134; IABMV/1)",
+                "ip": "66.81.160.196",
+                "gaClientId": null,
+                "medium": "form",
+                "mediumId": "342OOPvv4Uui2MBDHxPN",
+                "adName": null,
+                "adGroupId": null,
+                "adId": null,
+                "gbraid": null,
+                "wbraid": null
+              }
+            },
+            "attributionSource": {},
+            "customData": {
+              "Nombre": "Armando ",
+              "Apellido": "Laguna",
+              "Email": "armandolaguna639@gmail.com",
+              "Telefono": "+34 641 12 99 78",
+              "ETAPA": "Agenda",
+              "ID": "EPlWXOxLmIAbT0yyXP9m",
+              "Meeting URL": "https://meet.google.com/tva-hnts-dor",
+              "Fecha Agenda": "jueves, 17 de abril de 2025 8:00 PM",
+              "Automatización": "Reunion",
+              "Closer": "Alida M",
+              "UTM": "facebookads",
+              "UTM 2": "facebookads",
+              "Fuente": "https://iawinners.com/registro-ia2?utm_source=facebookads&utm_medium=cpa&utm_campaign=EVERGREEN+🟢|+ES+|+PROS+|+LEADS+|+GENERAL&utm_content=(GENERAL)+A+que+te+dedicas?&utm_id=6755181677142_v2_s03&utm_term=6755181676942&fbclid=PAZXh0bgNhZW0BMABhZGlkAAAGJNBCC24BpxCN02S5wAdEDw_rxTeDHTGsEW1PzAFuYFIGoA0HjOVLTxgCxi17fPpVQiDk_aem_snEC2HOh5Qipe8pCCxGvBg#bulletList-ailEFs6yix"
+            }
+          },
+          "webhookUrl": "https://n8n.iawinners.com/webhook/1e5dec19-62c2-45fb-b016-27f73bd78c06",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1"
   },
@@ -909,6 +1843,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-16T20:11:26.000Z",
-  "versionId": "efd50d91-2bc2-4c2b-b782-789ff1089e0b"
+  "updatedAt": "2025-04-17T17:31:55.000Z",
+  "versionId": "13433993-4bf0-4f8f-93a5-b63c193b48d7"
 }
