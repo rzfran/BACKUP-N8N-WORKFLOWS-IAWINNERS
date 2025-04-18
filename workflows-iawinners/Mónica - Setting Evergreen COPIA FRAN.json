@@ -533,6 +533,242 @@
           }
         ]
       ]
+    },
+    "a espera de solucionar formato de imagen": {
+      "main": [
+        []
+      ]
+    },
+    "a espera de solucionar formato de audio": {
+      "main": [
+        []
+      ]
+    },
+    "Format Chain": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request8",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Identificar conversacion terminada": {
+      "main": [
+        [
+          {
+            "node": "If10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If10": {
+      "main": [
+        [
+          {
+            "node": "Gmail1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail1": {
+      "main": [
+        [
+          {
+            "node": "Apagar Bot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-fixing Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Format Chain",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Auto-fixing Output Parser1",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model6": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Format Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model7": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Auto-fixing Output Parser1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request8": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request9": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-17T02:13:41.318Z",
@@ -555,7 +791,7 @@
       "type": "n8n-nodes-base.highLevel",
       "typeVersion": 2,
       "position": [
-        -920,
+        -560,
         -560
       ],
       "id": "5c936648-c5a7-4462-9f18-9131da013211",
@@ -584,7 +820,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2300,
+        2080,
         240
       ],
       "id": "f94f1ec3-752f-468f-9186-76aba940b971",
@@ -629,6 +865,12 @@
               "name": "ID Lead GHL",
               "value": "={{ $json.id }}",
               "type": "string"
+            },
+            {
+              "id": "a45a162e-0782-478e-aa82-17745ec8d63b",
+              "name": "Valor",
+              "value": "={{ $json.customFields[0].value }}",
+              "type": "string"
             }
           ]
         },
@@ -637,7 +879,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -720,
+        -360,
         -560
       ],
       "id": "f5994f62-af7b-4416-b5e9-a04dc3b9c7b6",
@@ -650,7 +892,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -20,
+        340,
         -560
       ],
       "id": "031c1b95-db7b-41cf-a144-5586e6c5262f",
@@ -670,7 +912,7 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $('Code').item.json.Etapa }}",
+                    "leftValue": "={{ $('Edit Fields').item.json.Valor }}",
                     "rightValue": "menos50%",
                     "operator": {
                       "type": "string",
@@ -695,7 +937,7 @@
                 "conditions": [
                   {
                     "id": "2d7471dc-4174-4689-a930-cff0391f2ae4",
-                    "leftValue": "={{ $('Code').item.json.Etapa }}",
+                    "leftValue": "={{ $('Edit Fields').item.json.Valor }}",
                     "rightValue": "mas50%",
                     "operator": {
                       "type": "string",
@@ -791,7 +1033,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        2280,
+        2060,
         -600
       ],
       "id": "9a8d3dd8-4b14-4513-b800-290db5479755",
@@ -808,7 +1050,7 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.8,
       "position": [
-        2760,
+        2540,
         -1260
       ],
       "id": "da037eb0-fb23-4cac-99cc-16c033c0012a",
@@ -825,7 +1067,7 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.8,
       "position": [
-        2760,
+        2540,
         -920
       ],
       "id": "1f18ce36-2495-495a-8794-bab51bc93152",
@@ -843,7 +1085,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        2700,
+        2480,
         -1100
       ],
       "id": "c25df7aa-34f6-400a-a875-feac12f47f43",
@@ -867,7 +1109,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        2700,
+        2480,
         -720
       ],
       "id": "54258983-6716-4740-b875-6cbe0e2da118",
@@ -890,7 +1132,7 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.8,
       "position": [
-        2760,
+        2540,
         -560
       ],
       "id": "160fb6c1-5a1b-44a6-8995-6ee260982ce3",
@@ -908,7 +1150,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        2700,
+        2480,
         -340
       ],
       "id": "dc8efbbc-6307-44f8-9ab6-a62aee92a342",
@@ -931,7 +1173,7 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.8,
       "position": [
-        2760,
+        2540,
         -180
       ],
       "id": "57eae63c-f902-4257-98de-2f4eea5d83a9",
@@ -949,7 +1191,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        2700,
+        2480,
         40
       ],
       "id": "8f744e4e-0991-44c9-89b2-9700275b6a86",
@@ -980,7 +1222,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        440,
+        800,
         -560
       ]
     },
@@ -996,8 +1238,8 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.6,
       "position": [
-        520,
-        -920
+        880,
+        -940
       ],
       "credentials": {
         "openAiApi": {
@@ -1023,8 +1265,8 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.8,
       "position": [
-        520,
-        -160
+        880,
+        -140
       ],
       "id": "6c8b8d3a-34b4-43a1-bf7b-bfaeb8fef747",
       "name": "OpenAI",
@@ -1122,7 +1364,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        200,
+        560,
         -560
       ]
     },
@@ -1134,8 +1376,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        340,
-        -920
+        700,
+        -940
       ],
       "id": "a994f0f1-5db6-4c1d-8a49-f068a1adf685",
       "name": "HTTP Request2"
@@ -1150,8 +1392,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        340,
-        -160
+        700,
+        -140
       ],
       "id": "740d2eff-ceb6-4bb1-9875-e0e67c363b5d",
       "name": "HTTP Request3",
@@ -1169,7 +1411,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -500,
+        -140,
         -560
       ],
       "id": "686f26b8-0d27-45bc-b3a4-a70886388fc2",
@@ -1235,7 +1477,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -280,
+        80,
         -560
       ],
       "id": "55f31fc3-6044-4a69-86f4-b44237751b0e",
@@ -1270,7 +1512,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        880,
+        1080,
         -560
       ],
       "id": "b1db67fb-c4a6-4199-965d-99f065fc01ab",
@@ -1283,8 +1525,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2060,
-        -580
+        1600,
+        -560
       ],
       "id": "036c0213-19c9-4a03-a7e4-accb7625a74a",
       "name": "Code2"
@@ -1585,7 +1827,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3460,
+        3240,
         -560
       ],
       "id": "1982fd3b-2f27-4281-a4c4-d8502e5aa392",
@@ -1600,7 +1842,7 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        2860,
+        2640,
         -1100
       ],
       "id": "964efa0d-4218-4f32-a013-c565bdc7f0c9",
@@ -1615,7 +1857,7 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        2860,
+        2640,
         -720
       ],
       "id": "15d25dd6-b2c7-46d0-8ab7-e9134fb1c0f6",
@@ -1630,7 +1872,7 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        2860,
+        2640,
         -340
       ],
       "id": "911078f2-cc0d-4097-a7fe-00d91ca24081",
@@ -1645,7 +1887,7 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        2860,
+        2640,
         40
       ],
       "id": "6785398c-ec66-4312-859c-0fe6b5c4122c",
@@ -1663,7 +1905,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        2700,
+        2480,
         460
       ],
       "id": "0c485411-9eaf-4caa-b2f1-0177bac5a898",
@@ -1684,7 +1926,7 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        2860,
+        2640,
         460
       ],
       "id": "b997318d-08f1-433f-8a65-3a1a1121cb83",
@@ -1701,7 +1943,7 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.8,
       "position": [
-        2760,
+        2540,
         240
       ],
       "id": "57e56d53-6e31-4da9-8e2f-15a4d3bf14f1",
@@ -1716,7 +1958,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -1140,
+        -780,
         -560
       ],
       "id": "9a23e5a0-b2f4-4480-a50e-cfd7fe62b765",
@@ -1728,7 +1970,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        440,
+        800,
         -740
       ],
       "id": "80f6e889-31eb-4e70-a665-0cd8e57f83f0",
@@ -1739,11 +1981,495 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        440,
+        800,
         -360
       ],
       "id": "762c32cf-28f6-4947-892d-3491dd19c953",
       "name": "a espera de solucionar formato de imagen"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Respuesta a formatear:\n{{ $json.output }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=# Tarea  \nTu función principal consiste en crear un JSON que contenga las diferentes partes importantes  del mensaje que vayas a recibir   \nNotas :  \n. debes seguir la siguiente estructura de JSON:  \n{\n  \"response\": {\n    \"part_1\": \"Responde con la primera parte de la respuesta.\",\n    \"part_2\": \"Responde con la segunda parte de la respuesta.\",\n    \"part_3\": \"Responde con la tercera parte de la respuesta (opcional).\",\n    \"part_4\": \"Responde con la cuarta parte de la respuesta (opcional).\",\n    \"part_5\": \"Responde con la quinta parte de la respuesta (opcional).\"\n  }\n}\n .  debes dividir los mensajes de una manera que suene bien,  me explico debes analizar que tan largo es el mensaje que recibes y en base en eso dividir el mensaje en las partes que sean necesarias, por ejemplo si el mensaje es breve divídelo en 1 o 2 partes y si el mensaje es extenso divídelo en 3 o 4 partes   \n. las partes que dividas deben tener sentido, no dividas las partes por hacerlo, piensa 2 veces antes de hacerlo\n. "
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        3380,
+        460
+      ],
+      "id": "53e59633-7842-4381-a1f0-c410411c3d24",
+      "name": "Format Chain",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8d46d583-b82d-4d85-a0b8-2c30006082a0",
+              "leftValue": "={{ $('Format Chain').item.json.output.response.part_2 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4080,
+        220
+      ],
+      "id": "0cf03b99-b3f0-46e8-91cf-a764c159da3b",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4300,
+        180
+      ],
+      "id": "8eb7b7ad-20e3-4ab5-a842-2ad77a294b30",
+      "name": "Wait",
+      "webhookId": "a87f8c54-00cf-456e-99fd-dfa7116e48e2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3c7eb0e9-13ee-40d6-9738-057a02ac1306",
+              "leftValue": "={{ $('Format Chain').item.json.output.response.part_3 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4300,
+        420
+      ],
+      "id": "c88dff26-f6a2-4d65-b5f6-35d4e11737bb",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4600,
+        200
+      ],
+      "id": "3b2f2873-a9b0-4cd8-86d0-030b6104c580",
+      "name": "Wait1",
+      "webhookId": "09b958ad-8fa5-4fdf-9247-9d90fba41415"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "10bc21c7-e460-458f-b0cb-d9e37e9bde8a",
+              "leftValue": "={{ $('Format Chain').item.json.output.response.part_4 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4600,
+        440
+      ],
+      "id": "8898921e-ef04-42ce-8e3a-52492c46a597",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4820,
+        380
+      ],
+      "id": "f906244f-73a5-442b-8f99-07e7aef1ff97",
+      "name": "Wait2",
+      "webhookId": "e1418732-af66-4f40-ae81-976575c83712"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3c7eb0e9-13ee-40d6-9738-057a02ac1306",
+              "leftValue": "= {{ $('Format Chain').item.json.output.response.part_5 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4780,
+        640
+      ],
+      "id": "7dd567e9-bf8e-461f-af4d-e515754e9dfd",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        5000,
+        640
+      ],
+      "id": "39fc8c76-7a81-4bc2-8961-38cac8eebc8f",
+      "name": "Wait3",
+      "webhookId": "a7002056-0888-4b79-a9e5-efebc6ad35c1"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=A continuación te vamos a mostrar el último mensaje de una conversación donde un usuario está interactuando con un asistente sobre propiedades inmobiliarias (no tendrás la conversación completa).\n\nDebes identificar si el mensaje indica que el cliente quiere hablar con Javi Manzano, ya sea pidiéndolo de forma directa (por ejemplo: \"quiero hablar con Javi Manzano\") o indirecta (por ejemplo: \"quiero hablar con Javi\", \"quiero que me contacte Javi\", \"prefiero tratar esto con una persona\").\n\nSi el mensaje indica que el cliente quiere hablar con un agente, debes responder: \"true\"\nEjemplo: true\n\nSi el mensaje no indica que el cliente quiere hablar con un agente, debes responder: \"false\"\nEjemplo: false",
+              "role": "system"
+            },
+            {
+              "content": "=Este es el mensaje:\n{{ $('AI Agent').item.json.output }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        6620,
+        380
+      ],
+      "id": "128f563f-d7da-4d95-a189-452e747f757e",
+      "name": "Identificar conversacion terminada",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## ¿Avisos por algún evento?",
+        "height": 400,
+        "width": 1140
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6540,
+        220
+      ],
+      "typeVersion": 1,
+      "id": "83115163-d369-4db1-8ca6-469ad3f73612",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3c963008-c7ec-46bd-912e-d83f151f1469",
+              "leftValue": "={{ $json.message.content }}",
+              "rightValue": "True",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        6980,
+        380
+      ],
+      "id": "bb96c3ad-6f2d-4dc6-ab8a-9fba9fabbf42",
+      "name": "If10"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://chatwoot-production-ab57.up.railway.app/api/v1/accounts/1/contacts/{{ $('Webhook1').item.json.body.conversation.contact_inbox.contact_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api_access_token",
+              "value": "(tu api key)"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"custom_attributes\": {\n    \"bot\": \"off\"\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        7420,
+        360
+      ],
+      "id": "ee8698da-e255-4092-a8df-993ea67fbeee",
+      "name": "Apagar Bot"
+    },
+    {
+      "parameters": {
+        "sendTo": "=javimanzano180@gmail.com",
+        "subject": "=¡{{ $('WhatsApp Trigger1').item.json.contacts[0].profile.name }} necesita tu ayuda!",
+        "message": "=ALERTA DE INTERVENCIÓN 🔔<br><br>\nTienes que intervenir en la conversación del cliente: {{ $('WhatsApp Trigger1').item.json.contacts[0].profile.name }}<br>\ny su número de teléfono es {{ $('WhatsApp Trigger1').item.json.contacts[0].wa_id }}<br><br>\n\n¡El cliente quiere hablar con Javi Manzano! 🏠\n",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        7220,
+        360
+      ],
+      "id": "5d1b59f7-d191-4fa7-bceb-d637b068c92e",
+      "name": "Gmail1",
+      "webhookId": "812600ae-1df3-4266-92a0-046d4aae3824",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+      "typeVersion": 1,
+      "position": [
+        3440,
+        620
+      ],
+      "id": "fde42805-3f0d-4e84-a90b-b2416305a20b",
+      "name": "Auto-fixing Output Parser1"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"response\": {\n    \"part_1\": \"Responde con la primera parte de la respuesta.\",\n    \"part_2\": \"Responde con la segunda parte de la respuesta.\",\n    \"part_3\": \"Responde con la tercera parte de la respuesta (opcional).\",\n    \"part_4\": \"Responde con la cuarta parte de la respuesta (opcional).\",\n    \"part_5\": \"Responde con la quinta parte de la respuesta (opcional).\"\n  }\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        3600,
+        740
+      ],
+      "id": "468b536f-5f45-4cbe-8a18-4758fd600f1c",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "temperature": 0
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        3280,
+        620
+      ],
+      "id": "26bcba74-9485-4778-849d-e00bbbbcab8a",
+      "name": "OpenAI Chat Model6",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "temperature": 0
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        3420,
+        740
+      ],
+      "id": "292d657c-3339-4127-bdd2-2988acc8a9fa",
+      "name": "OpenAI Chat Model7",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://chatwoot-production-ab57.up.railway.app/api/v1/accounts/1/conversations/{{ $('Webhook1').item.json.body.conversation.messages[0].conversation_id }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api_access_token",
+              "value": "(tu api key)"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"content\": \"{{ JSON.stringify($('Format Chain').item.json.output.response.part_1).slice(1, -1) }}\",\n  \"message_type\": \"outgoing\",\n  \"private\": \"false\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3880,
+        220
+      ],
+      "id": "7cb4c111-e98d-4114-afaa-107a23dac0b5",
+      "name": "HTTP Request8"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://chatwoot-production-ab57.up.railway.app/api/v1/accounts/1/conversations/{{ $('Webhook1').item.json.body.conversation.messages[0].conversation_id }}\n/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api_access_token",
+              "value": "(tu api key)"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"content\": \"{{ $json.output }}\",\n  \"message_type\": \"outgoing\",\n  \"private\": false\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3860,
+        600
+      ],
+      "id": "72ae4cf5-6b29-485d-a610-fabd486d3cb2",
+      "name": "HTTP Request9"
     }
   ],
   "pinData": {},
@@ -1766,6 +2492,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2025-04-17T04:34:12.000Z",
-  "versionId": "8bb910fb-d06a-47fd-9d18-40440799e143"
+  "updatedAt": "2025-04-17T14:10:07.000Z",
+  "versionId": "559eaa30-a65a-4694-a40b-f70b71c2d25e"
 }
