@@ -3,9 +3,121 @@
   "connections": {
     "Webhook": {
       "main": [
+        []
+      ]
+    },
+    "Google Sheets": {
+      "main": [
         [
           {
-            "node": "Switch",
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Crea Contacto ChatWoot": {
+      "main": [
+        [
+          {
+            "node": "Crear Conversación",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Crear Conversación": {
+      "main": [
+        [
+          {
+            "node": "Enviar Template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET CONTACT": {
+      "main": [
+        [
+          {
+            "node": "Si Contacto Existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Si Contacto Existe": {
+      "main": [
+        [
+          {
+            "node": "Coger Id conversations",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Crea Contacto ChatWoot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coger Id conversations": {
+      "main": [
+        [
+          {
+            "node": "Activar bot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Activar bot": {
+      "main": [
+        [
+          {
+            "node": "Enviar Template1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "GET CONTACT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Template1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Template": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
@@ -263,6 +375,17 @@
         ]
       ]
     },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "OpenAI": {
       "main": [
         [
@@ -367,6 +490,17 @@
         [
           {
             "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "If7",
             "type": "main",
             "index": 0
           }
@@ -479,7 +613,13 @@
     },
     "If12": {
       "main": [
-        []
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Gmail1": {
@@ -487,17 +627,6 @@
         [
           {
             "node": "Apagar Bot",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request": {
-      "main": [
-        [
-          {
-            "node": "OpenAI",
             "type": "main",
             "index": 0
           }
@@ -521,50 +650,151 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -1200,
-        60
+        -4980,
+        -2040
       ],
       "id": "a6406792-2a9d-4b30-8095-10e3c74b3f57",
       "name": "Webhook",
-      "webhookId": "8d422738-ad3f-408a-b53c-9904a183ad6c"
+      "webhookId": "8d422738-ad3f-408a-b53c-9904a183ad6c",
+      "disabled": true
     },
     {
       "parameters": {
-        "operation": "send",
-        "phoneNumberId": "589015034296503",
-        "recipientPhoneNumber": "={{ $json.body.conversation.messages[0].conversation.contact_inbox.source_id }}",
-        "textBody": "mensaje de prueba",
-        "additionalFields": {}
+        "documentId": {
+          "__rl": true,
+          "value": "1wv-QYEOH9bphU9V265NJxgR2oXUCGH_KWNtRr-AdFn8",
+          "mode": "list",
+          "cachedResultName": "Envío plantillas Inmobiliaria",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1wv-QYEOH9bphU9V265NJxgR2oXUCGH_KWNtRr-AdFn8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1wv-QYEOH9bphU9V265NJxgR2oXUCGH_KWNtRr-AdFn8/edit#gid=0"
+        },
+        "options": {}
       },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
       "position": [
-        180,
-        -340
+        2380,
+        -200
       ],
-      "id": "cacb433a-0882-4357-8aaf-e0d674005994",
-      "name": "WhatsApp Business Cloud",
-      "webhookId": "b87d6669-ce58-437b-ac28-8c2be5a3f551",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
-        }
-      },
+      "id": "b2125a3f-51f2-43ba-bdc2-7a2acb86bae5",
+      "name": "Google Sheets",
       "disabled": true
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://chatwood-chatwoot.6f60on.easypanel.host/api/v1/accounts/2/conversations/{{ $json.body.conversation.contact_inbox.id }}/messages",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendQuery": true,
-        "queryParameters": {
+        "url": "=https://chatwoot-production-ab57.up.railway.app/api/v1/accounts/1/contacts",
+        "sendHeaders": true,
+        "headerParameters": {
           "parameters": [
             {
-              "name": "content",
-              "value": "mensaje de prueba"
+              "name": "api_access_token",
+              "value": "(tu api key)"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"{{ $('Google Sheets').item.json.nombre }}\",\n  \"phone_number\": \"+{{ $('Google Sheets').item.json.numero }}\",\n  \"identifier\": \"{{ $('Google Sheets').item.json.numero }}\",\n  \"inbox_id\": 2,\n  \"source_id\": \"{{ $('Google Sheets').item.json.numero }}\",\n \"custom_attributes\": {\n    \"bot\": \"on\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3400,
+        -20
+      ],
+      "id": "63a28c07-b51e-42e4-ba8c-6ceb6ab05f47",
+      "name": "Crea Contacto ChatWoot",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://chatwoot-production-ab57.up.railway.app/api/v1/accounts/1/conversations",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api_access_token",
+              "value": "(tu api key)"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"source_id\": \"{{ $('Google Sheets').item.json.numero }}\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3640,
+        -20
+      ],
+      "id": "18dec06a-b9c2-4395-a5f9-c57feff2dad5",
+      "name": "Crear Conversación",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://chatwoot-production-ab57.up.railway.app/api/v1/accounts/1/conversations/{{ $json.id }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api_access_token",
+              "value": "(tu api key)"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"content\": \"Hola {1}, te escribo de Inmobiliaria Manzano, estamos buscando propiedades a reformar en Barcelona. ¿Tienes alguna oportunidad? 🏡\",\n  \"message_type\": \"outgoing\",\n  \"private\": false,\n  \"template_params\": {\n    \"name\": \"inmobiliaria2\",\n    \"category\": \"marketing\",\n    \"language\": \"es_ES\",\n    \"processed_params\": {\n      \"1\": \"{{ $('Google Sheets').item.json.nombre }}\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3900,
+        -20
+      ],
+      "id": "ccb47e3b-1ea4-4c08-a3c6-c7bbaa98b41b",
+      "name": "Enviar Template",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "=https://chatwoot-production-ab57.up.railway.app/api/v1/accounts/1/contacts/search?q=%2B{{ $('Google Sheets').item.json.numero }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api_access_token",
+              "value": "(tu api key)"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
             }
           ]
         },
@@ -573,17 +803,155 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        0,
-        -500
+        2880,
+        -200
       ],
-      "id": "325f7114-9482-40fe-9212-c00cf726bcb9",
-      "name": "Enviar_Mensaje_chatwoot",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "3PBbOCyeYyCCoCcA",
-          "name": "Header Auth account"
-        }
+      "id": "4457cee8-0d56-4a33-8bc7-cfd8bf3c82bf",
+      "name": "GET CONTACT",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c072ad80-1948-4c04-afaa-827d250d0412",
+              "leftValue": "={{ $json.payload[0].name }}",
+              "rightValue": "={{ $('Google Sheets').item.json.nombre }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
       },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3060,
+        -200
+      ],
+      "id": "534baaec-c0a9-41ff-9bf6-1644cf2a0787",
+      "name": "Si Contacto Existe",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://chatwoot-production-ab57.up.railway.app/api/v1/accounts/1/conversations/{{ $('Coger Id conversations').item.json.data.payload[0].id }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api_access_token",
+              "value": "(tu api key)"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"content\": \"Hola {1}, te escribo de Inmobiliaria Manzano, estamos buscando propiedades a reformar en Barcelona. ¿Tienes alguna oportunidad? 🏡\",\n  \"message_type\": \"outgoing\",\n  \"private\": false,\n  \"template_params\": {\n    \"name\": \"inmobiliaria2\",\n    \"category\": \"marketing\",\n    \"language\": \"es_ES\",\n    \"processed_params\": {\n      \"1\": \"{{ $('Google Sheets').item.json.nombre }}\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3900,
+        -520
+      ],
+      "id": "33f3b611-ad71-4487-bb08-ad3cd8af2178",
+      "name": "Enviar Template1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "=https://chatwoot-production-ab57.up.railway.app/api/v1/accounts/1/conversations",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api_access_token",
+              "value": "(tu api key)"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"source_id\": \"{{ $('Google Sheets').item.json.numero }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3380,
+        -520
+      ],
+      "id": "dcd74193-2670-4071-b1da-7efba1f15a36",
+      "name": "Coger Id conversations",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://chatwoot-production-ab57.up.railway.app/api/v1/accounts/1/contacts/{{ $json.data.payload[0].meta.sender.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api_access_token",
+              "value": "(tu api key)"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n \"custom_attributes\": {\n    \"bot\": \"on\"\n  }\n}\n\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3640,
+        -520
+      ],
+      "id": "fc07ddfa-2d10-4014-9130-c86c133324cd",
+      "name": "Activar bot",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2600,
+        -200
+      ],
+      "id": "133f71ac-8675-4b5b-826d-063c39c6ccea",
+      "name": "Loop Over Items",
       "disabled": true
     },
     {
@@ -593,11 +961,12 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
       "typeVersion": 1,
       "position": [
-        2740,
-        520
+        -220,
+        -1340
       ],
-      "id": "6aa5f739-7fda-434b-95c3-5c31352c77a4",
-      "name": "Auto-fixing Output Parser"
+      "id": "3cb47b79-aaa3-4af1-95e2-3446e1220da2",
+      "name": "Auto-fixing Output Parser",
+      "disabled": true
     },
     {
       "parameters": {
@@ -606,11 +975,12 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.2,
       "position": [
-        2900,
-        640
+        -60,
+        -1220
       ],
-      "id": "2d57edfb-1cb6-4ad0-b7d8-5e95c1ba3d7f",
-      "name": "Structured Output Parser"
+      "id": "1bee0cd3-f0a5-46ff-9008-ecf836bd4ec4",
+      "name": "Structured Output Parser",
+      "disabled": true
     },
     {
       "parameters": {
@@ -628,13 +998,14 @@
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.5,
       "position": [
-        2680,
-        360
+        -280,
+        -1500
       ],
-      "id": "59a375da-008f-49ea-a264-b7ca0c048fd7",
+      "id": "55b033b5-2d88-41af-8c67-58bc7b6919c1",
       "name": "Format Chain",
       "retryOnFail": true,
       "maxTries": 5,
+      "disabled": true,
       "onError": "continueErrorOutput"
     },
     {
@@ -665,11 +1036,12 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3380,
-        220
+        420,
+        -1640
       ],
-      "id": "d1975e6d-6e06-40f7-8097-2bb33d6a029e",
-      "name": "If"
+      "id": "d53c8c4e-f2c2-4073-a48c-587174b9cf09",
+      "name": "If",
+      "disabled": true
     },
     {
       "parameters": {
@@ -678,12 +1050,13 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3580,
-        120
+        620,
+        -1740
       ],
-      "id": "1e0a269d-8ff3-43e0-8576-6d2b2e61c9b2",
+      "id": "73df2eb5-0d3f-4307-9259-df8991809b31",
       "name": "Wait",
-      "webhookId": "a87f8c54-00cf-456e-99fd-dfa7116e48e2"
+      "webhookId": "a87f8c54-00cf-456e-99fd-dfa7116e48e2",
+      "disabled": true
     },
     {
       "parameters": {
@@ -713,11 +1086,12 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3940,
-        240
+        980,
+        -1620
       ],
-      "id": "d17f4991-46da-4776-9e1c-ccfeee762fa9",
-      "name": "If1"
+      "id": "5e5f18ad-df81-45f6-87d9-07d3aae7bdc5",
+      "name": "If1",
+      "disabled": true
     },
     {
       "parameters": {
@@ -726,12 +1100,13 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        4120,
-        120
+        1160,
+        -1740
       ],
-      "id": "1b6aefe4-9c30-4a33-835e-b37d377a0368",
+      "id": "b9d9b160-257a-4e26-ac6b-bb7d282dbb54",
       "name": "Wait1",
-      "webhookId": "09b958ad-8fa5-4fdf-9247-9d90fba41415"
+      "webhookId": "09b958ad-8fa5-4fdf-9247-9d90fba41415",
+      "disabled": true
     },
     {
       "parameters": {
@@ -761,11 +1136,12 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4500,
-        260
+        1540,
+        -1600
       ],
-      "id": "6af81734-6542-4e83-b50b-b6b8e7696b54",
-      "name": "If2"
+      "id": "e720b980-c928-4cc0-a35e-94d6fe5f26d2",
+      "name": "If2",
+      "disabled": true
     },
     {
       "parameters": {
@@ -774,12 +1150,13 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        4680,
-        120
+        1720,
+        -1740
       ],
-      "id": "f0f7b32d-0618-456d-81ce-c76776ac4af3",
+      "id": "c861dbfb-25b0-47f2-abd1-bed1079a3c0d",
       "name": "Wait2",
-      "webhookId": "e1418732-af66-4f40-ae81-976575c83712"
+      "webhookId": "e1418732-af66-4f40-ae81-976575c83712",
+      "disabled": true
     },
     {
       "parameters": {
@@ -809,11 +1186,12 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        5120,
-        280
+        2160,
+        -1580
       ],
-      "id": "97cb91e4-c9c6-414e-844e-da8cd07203f5",
-      "name": "If3"
+      "id": "68c54ea4-8a98-43d0-ae5c-9048139020e0",
+      "name": "If3",
+      "disabled": true
     },
     {
       "parameters": {
@@ -822,12 +1200,13 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        5420,
-        280
+        2460,
+        -1580
       ],
-      "id": "c83447b9-8fd3-4e0b-b60d-85254993979e",
+      "id": "bb8ee2a5-30b9-418c-8086-35a9585d660c",
       "name": "Wait3",
-      "webhookId": "a7002056-0888-4b79-a9e5-efebc6ad35c1"
+      "webhookId": "a7002056-0888-4b79-a9e5-efebc6ad35c1",
+      "disabled": true
     },
     {
       "parameters": {
@@ -838,11 +1217,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -2200,
-        240
+        -5160,
+        -1620
       ],
       "typeVersion": 1,
-      "id": "694c60c7-708e-4a66-8740-bdac73973efc",
+      "id": "18ad9ac7-f60a-4a86-ad1c-7e5f745e916a",
       "name": "Sticky Note1"
     },
     {
@@ -855,10 +1234,10 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        940,
-        360
+        -2020,
+        -1500
       ],
-      "id": "4a8769ca-ba06-4e33-9234-db3ceca4711e",
+      "id": "fbaf887c-5cce-4913-bbfd-d31de54fc523",
       "name": "Redis6",
       "disabled": true
     },
@@ -871,10 +1250,10 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        540,
-        360
+        -2420,
+        -1500
       ],
-      "id": "25c0b34c-bd9e-45c6-9aae-7275774977a8",
+      "id": "75c36ee6-1af0-46ae-8f51-44e89a89a560",
       "name": "Redis7",
       "disabled": true
     },
@@ -885,12 +1264,13 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        740,
-        360
+        -2220,
+        -1500
       ],
-      "id": "5c4a5a64-1361-46df-8067-e9e9013a249c",
+      "id": "948273d9-6221-4a44-9f1f-72d1ef93bc2d",
       "name": "Wait6",
-      "webhookId": "a8d5702b-2fe2-4f23-bad7-8bf42fe80ee8"
+      "webhookId": "a8d5702b-2fe2-4f23-bad7-8bf42fe80ee8",
+      "disabled": true
     },
     {
       "parameters": {
@@ -920,11 +1300,12 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1140,
-        360
+        -1820,
+        -1500
       ],
-      "id": "1a04a9e8-79eb-4a2d-990f-c57f0f8f7ba9",
-      "name": "If6"
+      "id": "dfa4e4ad-192d-41e3-bfe9-a3264b78ac5a",
+      "name": "If6",
+      "disabled": true
     },
     {
       "parameters": {
@@ -949,11 +1330,12 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1400,
-        360
+        -1560,
+        -1500
       ],
-      "id": "e6648ca1-7795-4986-932a-67a4b40e46c6",
-      "name": "Edit Fields2"
+      "id": "cc374144-eac6-45a0-9dc5-b72de31316e7",
+      "name": "Edit Fields2",
+      "disabled": true
     },
     {
       "parameters": {
@@ -963,10 +1345,10 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        1640,
-        360
+        -1320,
+        -1500
       ],
-      "id": "b2a7232a-87bc-4d60-8bbf-1db194ef2970",
+      "id": "72075bb4-0464-4f37-9f06-c7ca8adc1042",
       "name": "Redis9",
       "disabled": true
     },
@@ -977,10 +1359,10 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        -380,
-        360
+        -3340,
+        -1500
       ],
-      "id": "35bef763-e345-44bd-9d72-c787b64b079b",
+      "id": "2e79d151-d634-4cbd-9c5f-fdbc80331335",
       "name": "Date & Time1"
     },
     {
@@ -997,7 +1379,7 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $('Webhook').item.json.body.attachments[0].file_type }}",
+                    "leftValue": "={{ $('Webhook1').item.json.body.attachments[0].file_type }}",
                     "rightValue": "audio",
                     "operator": {
                       "type": "string",
@@ -1021,7 +1403,7 @@
                 "conditions": [
                   {
                     "id": "f3c7dc40-708e-4541-88d8-04e128f7a490",
-                    "leftValue": "={{ $('Webhook').item.json.body.content_type }}",
+                    "leftValue": "={{ $('Webhook1').item.json.body.content_type }}",
                     "rightValue": "text",
                     "operator": {
                       "type": "string",
@@ -1045,7 +1427,7 @@
                 "conditions": [
                   {
                     "id": "f97f8b7d-9218-4ee9-b938-72a34a7544e7",
-                    "leftValue": "={{ $('Webhook').item.json.body.attachments[0].file_type }}",
+                    "leftValue": "={{ $('Webhook1').item.json.body.attachments[0].file_type }}",
                     "rightValue": "=imágenes",
                     "operator": {
                       "type": "string",
@@ -1068,11 +1450,25 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -720,
-        360
+        -3680,
+        -1500
       ],
-      "id": "43d0a2bc-689d-4ea3-828b-0a53b35a5c73",
+      "id": "7469e34d-7bcb-44fc-809e-977768041c3b",
       "name": "Switch"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Webhook1').item.json.body.attachments[0].data_url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -3340,
+        -1680
+      ],
+      "id": "2d1b71a3-55da-46aa-8ad6-2084f421fb18",
+      "name": "HTTP Request"
     },
     {
       "parameters": {
@@ -1083,17 +1479,12 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.7,
       "position": [
-        -200,
-        180
+        -3160,
+        -1680
       ],
-      "id": "9e30f65e-5557-4eba-ba90-c98a4faf7aa4",
+      "id": "63968697-3fa3-424a-b603-450ea164d9ce",
       "name": "OpenAI",
-      "credentials": {
-        "openAiApi": {
-          "id": "ncEn8Lip4F0P7Ul7",
-          "name": "OpenAi account"
-        }
-      }
+      "disabled": true
     },
     {
       "parameters": {
@@ -1112,10 +1503,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -20,
-        180
+        -2980,
+        -1680
       ],
-      "id": "5e82d5e4-5af9-468f-86a1-212cb278c867",
+      "id": "3549b127-b035-48d5-b621-8ae06ec2b29d",
       "name": "Edit Fields1"
     },
     {
@@ -1128,10 +1519,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1,
       "position": [
-        2020,
-        560
+        -940,
+        -1300
       ],
-      "id": "c5dbffd2-df74-4934-b43f-2ff9ada9bc8b",
+      "id": "d88c6172-ad4e-4d5e-a128-7c7ac36f17c6",
       "name": "OpenAI Chat Model",
       "disabled": true
     },
@@ -1173,10 +1564,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -1640,
-        360
+        -4600,
+        -1500
       ],
-      "id": "a4e6cb26-dfdc-4b53-b28a-4572ff02a924",
+      "id": "3545900a-4177-482b-af4b-938f93dbc9f7",
       "name": "If4",
       "onError": "continueRegularOutput"
     },
@@ -1203,10 +1594,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1360,
-        360
+        -4320,
+        -1500
       ],
-      "id": "5c811e4f-ecf0-4f73-a11d-c4d2b28d60e4",
+      "id": "a24bb125-861f-4ddd-aacf-4a645b1015f8",
       "name": "Edit Fields4"
     },
     {
@@ -1223,10 +1614,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        2580,
-        520
+        -380,
+        -1340
       ],
-      "id": "5cd24fa5-a19a-4b42-9373-90a757e5178e",
+      "id": "ed9be31d-4d05-4bcc-b105-c701cf3bbeae",
       "name": "OpenAI Chat Model1",
       "disabled": true
     },
@@ -1244,10 +1635,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        2720,
-        640
+        -240,
+        -1220
       ],
-      "id": "26eef598-4955-4774-9c40-d6ff4453922a",
+      "id": "ca0f786f-080f-4e33-a444-1924795f2e1c",
       "name": "OpenAI Chat Model2",
       "disabled": true
     },
@@ -1261,10 +1652,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
       "typeVersion": 1.3,
       "position": [
-        2160,
-        560
+        -800,
+        -1300
       ],
-      "id": "6a22edbd-20e0-4343-b3f1-251f3cd19517",
+      "id": "1bddf79c-cf6a-41da-856c-f0c79ac0ca3a",
       "name": "Postgres Chat Memory",
       "disabled": true
     },
@@ -1277,12 +1668,13 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2500,
-        40
+        -460,
+        -1820
       ],
       "typeVersion": 1,
-      "id": "ad7782aa-4d1a-4264-8358-071edd8211d8",
-      "name": "Sticky Note2"
+      "id": "5691ff54-f64a-42b6-8bb7-2086bb62e311",
+      "name": "Sticky Note2",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1293,11 +1685,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        480,
-        160
+        -2480,
+        -1700
       ],
       "typeVersion": 1,
-      "id": "7737afac-afa4-4bd0-a83e-91b1aeddda41",
+      "id": "58d07712-148b-402c-99a8-1e30c73babea",
       "name": "Sticky Note"
     },
     {
@@ -1309,11 +1701,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -820,
-        100
+        -3780,
+        -1760
       ],
       "typeVersion": 1,
-      "id": "817f252f-9523-45f9-bc39-5b37dd2d8dd4",
+      "id": "11ec9dd9-1aa0-462a-bef2-c5f5230381a8",
       "name": "Sticky Note5"
     },
     {
@@ -1327,11 +1719,12 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.7,
       "position": [
-        2040,
-        360
+        -920,
+        -1500
       ],
-      "id": "2865739a-f886-40fd-b6d6-e07511e9a5bd",
-      "name": "AI Agent"
+      "id": "bda5b4e9-e4b5-4241-b197-313ebeebb38a",
+      "name": "AI Agent",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1414,10 +1807,10 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.5,
       "position": [
-        1400,
-        620
+        -1560,
+        -1240
       ],
-      "id": "424cd206-6f94-4568-9ba8-f8298e746518",
+      "id": "b76fdc01-054f-47b8-b7af-21ed3c50f13b",
       "name": "Postgres3",
       "disabled": true
     },
@@ -1430,23 +1823,41 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1880,
-        240
+        -1080,
+        -1620
       ],
       "typeVersion": 1,
-      "id": "8904e237-b622-4f34-a9fb-652b22e6683d",
-      "name": "Sticky Note4"
+      "id": "2bbfc9cd-2ffc-46df-966f-4f90cf572046",
+      "name": "Sticky Note4",
+      "disabled": true
     },
     {
       "parameters": {},
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1640,
-        620
+        -1320,
+        -1240
       ],
-      "id": "d2a104e4-2926-4fce-aa42-fa65fbdea00a",
-      "name": "No Operation, do nothing1"
+      "id": "6a99f355-2232-444d-952f-bb453478422d",
+      "name": "No Operation, do nothing1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "5f16570a-f7f9-4177-bda5-ad1d0786ac93",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -5060,
+        -1500
+      ],
+      "id": "33f1edc0-1c8b-432c-9d23-0db2a8fd83fa",
+      "name": "Webhook1",
+      "webhookId": "5f16570a-f7f9-4177-bda5-ad1d0786ac93"
     },
     {
       "parameters": {
@@ -1473,11 +1884,12 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3160,
-        220
+        200,
+        -1640
       ],
-      "id": "8805447a-a15e-40aa-9680-90af03602199",
-      "name": "HTTP Request2"
+      "id": "3ba665c6-e379-40d8-a198-f24a6d7910ff",
+      "name": "HTTP Request2",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1504,11 +1916,12 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3120,
-        440
+        160,
+        -1420
       ],
-      "id": "b2ebd913-2b96-4208-a715-ac187dc602c7",
-      "name": "HTTP Request3"
+      "id": "8aaf10dc-31e6-45e4-a89b-185a83c93375",
+      "name": "HTTP Request3",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1535,11 +1948,12 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3740,
-        120
+        780,
+        -1740
       ],
-      "id": "db137f99-f761-439f-b2f5-8ed56979d0cf",
-      "name": "HTTP Request4"
+      "id": "d26c8fbe-1c1f-4fbe-8660-d13588be4193",
+      "name": "HTTP Request4",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1566,11 +1980,12 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        4860,
-        120
+        1900,
+        -1740
       ],
-      "id": "531bd793-d703-4fc7-b1ef-0301249090b3",
-      "name": "HTTP Request5"
+      "id": "eb90a5a8-6419-49fd-8dea-e071425435e6",
+      "name": "HTTP Request5",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1597,11 +2012,12 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        4280,
-        120
+        1320,
+        -1740
       ],
-      "id": "0651f576-66cb-4956-9011-fe4679ce4394",
-      "name": "HTTP Request6"
+      "id": "c4579403-461f-4a8d-88d4-e7a52d802771",
+      "name": "HTTP Request6",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1628,11 +2044,12 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        5600,
-        280
+        2640,
+        -1580
       ],
-      "id": "b651c1b1-dcaa-4af9-be14-00594bcd316f",
-      "name": "HTTP Request7"
+      "id": "1b9a7928-376b-4788-8402-ce5cf4855634",
+      "name": "HTTP Request7",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1651,10 +2068,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        240,
-        360
+        -2720,
+        -1500
       ],
-      "id": "8c786ae5-8243-4a78-ab03-071bed7f7fb3",
+      "id": "6f6a53af-06de-4726-a8dd-a20a2b5b9010",
       "name": "Edit Fields"
     },
     {
@@ -1674,10 +2091,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -20,
-        360
+        -2980,
+        -1500
       ],
-      "id": "ce6ac38f-90e9-45e8-ac51-327a468d914c",
+      "id": "0adeda19-01fa-434c-b33b-cbedfe37a3c8",
       "name": "Edit Fields5"
     },
     {
@@ -1708,10 +2125,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -1900,
-        360
+        -4860,
+        -1500
       ],
-      "id": "f5019de7-b8fd-47ad-aabe-46465ce1f36b",
+      "id": "9cbf5786-83c3-452b-bf7b-a602f07f78aa",
       "name": "If7"
     },
     {
@@ -1722,11 +2139,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1160,
-        220
+        -4120,
+        -1640
       ],
       "typeVersion": 1,
-      "id": "ca3d6bac-c604-40af-915c-7366c8aff0c0",
+      "id": "80767725-ed23-4386-910e-a8166d3f9f8a",
       "name": "Sticky Note8"
     },
     {
@@ -1753,10 +2170,10 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.8,
       "position": [
-        5920,
-        280
+        2960,
+        -1580
       ],
-      "id": "24745d70-d5ee-436c-8537-c6dd092a403d",
+      "id": "e49f25ab-1b20-4ece-8f72-1edc9f6c9514",
       "name": "Identificar conversacion terminada",
       "disabled": true
     },
@@ -1768,12 +2185,13 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5840,
-        120
+        2880,
+        -1740
       ],
       "typeVersion": 1,
-      "id": "09d25b2a-1569-4367-a2c2-b36565eb5264",
-      "name": "Sticky Note9"
+      "id": "7aff7e04-da28-421e-ab17-7407507c5d26",
+      "name": "Sticky Note9",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1803,11 +2221,12 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        6280,
-        280
+        3320,
+        -1580
       ],
-      "id": "7e5f07f1-f01c-4a32-9eec-e11d294ffe48",
-      "name": "If10"
+      "id": "504a2a36-c2c5-4e6d-921c-8f38a8cc55d3",
+      "name": "If10",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1834,11 +2253,12 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        6720,
-        260
+        3760,
+        -1600
       ],
-      "id": "2fe5ace1-2452-4844-b07a-a1b343eddf3c",
-      "name": "Apagar Bot"
+      "id": "ae04e3e4-d8b3-4c81-9066-0a676a8f69e2",
+      "name": "Apagar Bot",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1867,10 +2287,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -1080,
-        360
+        -4040,
+        -1500
       ],
-      "id": "b7fcd175-0901-4596-88e2-c8af44c9f172",
+      "id": "dbe8cd5d-11a8-469b-b948-4036504e30d4",
       "name": "If12"
     },
     {
@@ -1885,27 +2305,13 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        6520,
-        260
+        3560,
+        -1600
       ],
-      "id": "b7070d46-993f-4dc8-872e-1b7ca470696c",
+      "id": "1f683dce-56d4-4a2c-86bf-52c3f219c32f",
       "name": "Gmail1",
       "webhookId": "812600ae-1df3-4266-92a0-046d4aae3824",
       "disabled": true
-    },
-    {
-      "parameters": {
-        "url": "=http://https/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ef18005d8620bb9d0e8d4de81a81474ce2a01051/File.ogg",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        -380,
-        180
-      ],
-      "id": "c5f95b46-950c-4241-8eb0-1822f7383d22",
-      "name": "HTTP Request"
     }
   ],
   "pinData": {},
@@ -1922,6 +2328,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-04-17T04:29:37.000Z",
-  "versionId": "e7bb9b95-2d59-423c-b38d-45a70c5e80ec"
+  "updatedAt": "2025-04-17T13:51:38.000Z",
+  "versionId": "40c2e99f-c574-4c8d-b05f-d8eb0cddd87a"
 }
