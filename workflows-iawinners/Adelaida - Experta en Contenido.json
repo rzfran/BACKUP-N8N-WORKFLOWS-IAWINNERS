@@ -693,6 +693,32 @@
       ],
       "id": "f4eb6468-bca1-40a2-b274-d1df04efb211",
       "name": "Agente de LinkedIn"
+    },
+    {
+      "parameters": {
+        "resource": "board",
+        "operation": "get",
+        "id": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.trello",
+      "typeVersion": 1,
+      "position": [
+        300,
+        360
+      ],
+      "id": "67f104c6-0aa5-49a0-b683-db8cc3836c25",
+      "name": "Trello",
+      "credentials": {
+        "trelloApi": {
+          "id": "Az8BeaowsUmavWdu",
+          "name": "Trello account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -709,6 +735,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-15T10:23:10.000Z",
-  "versionId": "b19396e2-d828-4853-9212-35d8387ec71c"
+  "updatedAt": "2025-04-18T17:31:09.000Z",
+  "versionId": "0d749f10-1c48-48e5-a8b9-7438a4e54a26"
 }
