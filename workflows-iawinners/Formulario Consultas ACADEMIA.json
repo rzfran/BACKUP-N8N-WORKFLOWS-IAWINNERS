@@ -177,7 +177,7 @@
           "__rl": true,
           "value": 2132471341,
           "mode": "list",
-          "cachedResultName": "Master Intensivo",
+          "cachedResultName": "Make y Automatizaciones",
           "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2132471341"
         },
         "columns": {
@@ -259,6 +259,36 @@
               "canBeUsedToMatch": true
             },
             {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Contestada",
               "displayName": "Contestada",
               "required": false,
@@ -266,6 +296,16 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -722,8 +762,48 @@
               "removed": false
             },
             {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Contestada",
               "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -857,8 +937,48 @@
               "removed": false
             },
             {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Contestada",
               "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -992,8 +1112,48 @@
               "removed": false
             },
             {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Contestada",
               "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -1127,8 +1287,48 @@
               "removed": false
             },
             {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Contestada",
               "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -1262,8 +1462,48 @@
               "removed": false
             },
             {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Contestada",
               "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -1304,7 +1544,7 @@
   },
   "staticData": {
     "node:Formulario": {
-      "webhookId": "cm8ro7d86009f9fbsg1qo5hvm"
+      "webhookId": "cm9quwjrb00br9fbsldbbk141"
     }
   },
   "tags": [
@@ -1322,6 +1562,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-27T18:11:49.000Z",
-  "versionId": "e3ce0f58-9a12-46be-a764-fa5c7760bca5"
+  "updatedAt": "2025-04-21T09:11:18.000Z",
+  "versionId": "b60a43c3-019e-427c-8570-5fbf044bb298"
 }
