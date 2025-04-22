@@ -1,6 +1,104 @@
 {
-  "active": false,
-  "connections": {},
+  "active": true,
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "CORREO-LINK",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "CORREO-TEXTO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CORREO-LINK": {
+      "main": [
+        [
+          {
+            "node": "Area",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CORREO-TEXTO": {
+      "main": [
+        [
+          {
+            "node": "Area",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Area": {
+      "main": [
+        [
+          {
+            "node": "MAKE",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "N8N",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "GHL",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "MARCA PERSONAL",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AGENTES VOZ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "GPTS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
   "createdAt": "2025-04-16T17:12:32.500Z",
   "id": "87tcEqsmN9ylmmM8",
   "meta": {
@@ -10,14 +108,1211 @@
   "nodes": [
     {
       "parameters": {
-        "path": "0b2c5446-045c-43b9-a04f-ba6781316512",
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c76ade14-5cfd-4d15-bea4-b13e67714488",
+              "leftValue": "={{ $json.body['Link Video Explicativo'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -340,
+        60
+      ],
+      "id": "d225aa2e-987f-429d-8d6b-a2e22a0bb656",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.body.Correo }}",
+        "subject": "=RESPONDIERON A TU PREGUNTA - {{ $('Webhook').item.json.body.ticket }}",
+        "message": "=<!DOCTYPE html> <html lang=\"es\"> <head>     <meta charset=\"UTF-8\">     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">     <title>Respuesta a tu Consulta (con video) - Ticket {{ $('Webhook').item.json.body.ticket }}</title> </head> <body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">     <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">                  <p style=\"margin-bottom: 1em;\">Hola, {{ $('Webhook').item.json.body.Nombre }}</p>          <p style=\"margin-bottom: 1em;\">Gracias por ponerte en contacto con Academia IA Winners. Hemos recibido tu consulta y hemos preparado una respuesta para ti.</p>          <p style=\"margin-bottom: 1em;\">Nos preguntaste sobre:</p>                  <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">             <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>{{ $('Webhook').item.json.body.Pregunta }}</em></p>             <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em></em></small></p> <!-- Mantenido según tu plantilla, aunque está vacío -->         </blockquote>          <p style=\"margin-bottom: 1em;\">             Para ayudarte a comprenderlo mejor, hemos creado un breve video explicativo:         </p>                  <!-- ======= INICIO RESPUESTA VIDEO ======= -->         <div style=\"margin-top: 20px; margin-bottom: 20px; padding: 15px; background-color: #eef7ff; border-left: 4px solid #007bff; border-radius: 4px;\">             <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>Puedes ver la explicación en video aquí:</strong></p>             <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"{{ $json.body['Link Video Explicativo'] }}\" target=\"_blank\" style=\"color: #007bff; text-decoration: none; font-weight: bold; word-break: break-all;\">{{ $json.body['Link Video Explicativo'] }}</a></p>         </div>         <!-- ======= FIN RESPUESTA VIDEO ======= -->          <p style=\"margin-bottom: 1em;\">Esperamos que este video explicativo te sea de gran ayuda. Por favor, mira el video y si después de verlo todavía tienes alguna duda, no dudes en preguntar por los grupos de WhatsApp de la academia.</p>          <p style=\"margin-bottom: 1em;\">¡Estamos comprometidos con tu éxito en el mundo de la Inteligencia Artificial!</p>          <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>          <div style=\"line-height: 1.4;\">             <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>             <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://iawinners.app.clientclub.net/\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Visita Academia IA Winners</a></p>         </div>     </div> </body> </html>",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "Academia IA Winners"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -80,
+        -20
+      ],
+      "id": "e4043ab5-a0b8-4b18-b3b3-75526238b042",
+      "name": "CORREO-LINK",
+      "webhookId": "fbd4a98d-d7a6-41e3-a92d-589298d853ec",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.body.Correo }}",
+        "subject": "=RESPONDIERON A TU PREGUNTA - {{ $('Webhook').item.json.body.ticket }}",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta a tu Consulta - Ticket {{ $('Webhook').item.json.body.ticket }}</title>\n</head>\n<body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">\n    <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">\n        \n        <p style=\"margin-bottom: 1em;\">Hola, {{ $('Webhook').item.json.body.Nombre }}</p>\n\n        <p style=\"margin-bottom: 1em;\">Gracias por ponerte en contacto con Academia IA Winners. Hemos recibido tu consulta y estamos aquí para ayudarte.</p>\n\n        <p style=\"margin-bottom: 1em;\">Nos preguntaste lo siguiente:</p>\n        \n        <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>{{ $('Webhook').item.json.body.Pregunta }}</em></p>\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em></em></small></p>\n        </blockquote>\n\n        <p style=\"margin-bottom: 1em;\">Aquí tienes nuestra respuesta:</p>\n        \n        <!-- ======= INICIO RESPUESTA ======= -->\n         <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>{{ $json.body['Respuesta Texto'] }}</em></p>\n        </blockquote>\n        <!-- ======= FIN RESPUESTA ======= -->\n\n        <p style=\"margin-bottom: 1em;\">Esperamos que esta información aclare tu duda. Si tienes alguna otra pregunta o necesitas más detalles sobre este u otro tema de la formación, no dudes en preguntar por los grupos de WhatsApp de la academia.</p>\n\n        <p style=\"margin-bottom: 1em;\">¡Seguimos aquí para apoyarte en tu aprendizaje sobre Inteligencia Artificial!</p>\n\n        <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>\n\n        <div style=\"line-height: 1.4;\">\n            <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>\n            <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://iawinners.app.clientclub.net/\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Visita Academia IA Winners</a></p>\n        </div>\n    </div>\n</body>\n</html>",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "Academia IA Winners"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -80,
+        160
+      ],
+      "id": "21633556-718f-4326-811c-c0eeda9ecad0",
+      "name": "CORREO-TEXTO",
+      "webhookId": "fbd4a98d-d7a6-41e3-a92d-589298d853ec",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Webhook').item.json.body['Área'] }}",
+                    "rightValue": "Make y Automatizaciones",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "bf5f0dc3-d555-45e2-81c6-d319f8551af6"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Make"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6789b53b-9196-4242-a5a3-381b02b3c628",
+                    "leftValue": "={{ $('Webhook').item.json.body['Área'] }}",
+                    "rightValue": "N8N",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "N8N"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4c25ed48-fbf3-497a-978e-41b5961bfdbf",
+                    "leftValue": "={{ $('Webhook').item.json.body['Área'] }}",
+                    "rightValue": "GoHighLevel",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "GoHighLevel"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f70fd712-84e2-43b2-b52c-91e820542ded",
+                    "leftValue": "={{ $('Webhook').item.json.body['Área'] }}",
+                    "rightValue": "Marca Personal, RRSS, Ventas",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Marca Personal, RRSS, Ventas"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a52cf63f-a807-4e69-bfdc-eecbc2085f40",
+                    "leftValue": "={{ $('Webhook').item.json.body['Área'] }}",
+                    "rightValue": "Agentes de Voz",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Agentes de Voz"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "799abccc-0609-42a2-a30f-0f3fb822478c",
+                    "leftValue": "={{ $('Webhook').item.json.body['Área'] }}",
+                    "rightValue": "GPTs y Prompt",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "GPTs y Prompt"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        180,
+        0
+      ],
+      "id": "5a8c50f0-debf-4afe-a473-059450892ba6",
+      "name": "Area"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2132471341,
+          "mode": "list",
+          "cachedResultName": "Make y Automatizaciones",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2132471341"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticket": "={{ $('If').item.json.body.ticket }}",
+            "Contestada": "Si"
+          },
+          "matchingColumns": [
+            "ticket"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        -340
+      ],
+      "id": "42c18281-464d-4f7f-97a0-78150e3c444b",
+      "name": "MAKE",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2118442775,
+          "mode": "list",
+          "cachedResultName": "N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2118442775"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticket": "={{ $('If').item.json.body.ticket }}",
+            "Contestada": "Si"
+          },
+          "matchingColumns": [
+            "ticket"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        -180
+      ],
+      "id": "8f6fd134-55e2-4f5a-a5e2-ec2b89902b4b",
+      "name": "N8N",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1139528183,
+          "mode": "list",
+          "cachedResultName": "GoHighLevel",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=1139528183"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticket": "={{ $('If').item.json.body.ticket }}",
+            "Contestada": "Si"
+          },
+          "matchingColumns": [
+            "ticket"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        -20
+      ],
+      "id": "696dff5e-7d41-4494-8dca-114cf8f97367",
+      "name": "GHL",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1579050785,
+          "mode": "list",
+          "cachedResultName": "Marca Personal, RRSS y Ventas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=1579050785"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticket": "={{ $('If').item.json.body.ticket }}",
+            "Contestada": "Si"
+          },
+          "matchingColumns": [
+            "ticket"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        140
+      ],
+      "id": "b3d8cc7d-eb69-4880-ac7e-04830c8662c8",
+      "name": "MARCA PERSONAL",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2017748370,
+          "mode": "list",
+          "cachedResultName": "Agentes de Voz",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2017748370"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticket": "={{ $('If').item.json.body.ticket }}",
+            "Contestada": "Si"
+          },
+          "matchingColumns": [
+            "ticket"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        300
+      ],
+      "id": "bf1c7d29-e3f1-4410-aa91-080a44e6abb9",
+      "name": "AGENTES VOZ",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 582219647,
+          "mode": "list",
+          "cachedResultName": "GPT y Prompting",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=582219647"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticket": "={{ $('If').item.json.body.ticket }}",
+            "Contestada": "Si"
+          },
+          "matchingColumns": [
+            "ticket"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pregunta",
+              "displayName": "Pregunta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Archivo adjunto",
+              "displayName": "Archivo adjunto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Área",
+              "displayName": "Área",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Día de Clase",
+              "displayName": "Día de Clase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Respuesta Texto",
+              "displayName": "Respuesta Texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Link Video Explicativo",
+              "displayName": "Link Video Explicativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Enviar",
+              "displayName": "Enviar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Contestada",
+              "displayName": "Contestada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        460
+      ],
+      "id": "df8446bd-3409-4072-afe9-0109612a8ad6",
+      "name": "GPTS",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "respuestas-formulario",
         "options": {}
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        0,
-        0
+        -560,
+        60
       ],
       "id": "ca88ac0e-ea10-40fa-9a6d-b085e4f6608b",
       "name": "Webhook",
@@ -35,9 +1330,15 @@
       "updatedAt": "2025-03-05T13:43:40.613Z",
       "id": "UZSZ6IVuXW7XuPZM",
       "name": "📝Formularios"
+    },
+    {
+      "createdAt": "2025-02-26T15:17:43.536Z",
+      "updatedAt": "2025-02-26T15:17:43.536Z",
+      "id": "bB5H9hQQ6Hyuq8xS",
+      "name": "✅ PRODUCCION"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2025-04-16T19:13:31.000Z",
-  "versionId": "712a343b-346d-4786-9cb8-fe74276fb505"
+  "triggerCount": 1,
+  "updatedAt": "2025-04-21T20:11:50.000Z",
+  "versionId": "a6067a10-88d6-40a8-9d18-995fa593a2eb"
 }
