@@ -538,7 +538,7 @@
       "credentials": {
         "redis": {
           "id": "cTJoz049sDpJ5TWM",
-          "name": "Redis MEMORY"
+          "name": "Redis MEMORY db1"
         }
       }
     },
@@ -1231,6 +1231,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-09T19:05:37.000Z",
-  "versionId": "4879877d-0fb0-4305-98e1-52f2652d72e7"
+  "updatedAt": "2025-04-23T15:44:54.000Z",
+  "versionId": "81828d3d-6f56-456d-b043-d614397278e2"
 }
