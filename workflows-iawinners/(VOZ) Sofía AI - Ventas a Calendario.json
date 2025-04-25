@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Google Calendar": {
       "main": [
@@ -258,6 +258,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-09T16:25:27.000Z",
+  "updatedAt": "2025-04-24T21:08:21.000Z",
   "versionId": "72a1ceba-1a31-4f92-ae6e-3f709cd3297e"
 }
