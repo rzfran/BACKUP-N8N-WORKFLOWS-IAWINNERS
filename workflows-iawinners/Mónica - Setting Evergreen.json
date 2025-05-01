@@ -994,7 +994,7 @@
       "type": "n8n-nodes-base.highLevel",
       "typeVersion": 2,
       "position": [
-        -1260,
+        -920,
         -560
       ],
       "id": "f75e7a39-dd79-4fc7-8c99-bea554e33015",
@@ -1076,7 +1076,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1060,
+        -720,
         -560
       ],
       "id": "2cacd40b-c40f-4b97-b557-80d5a3d8440c",
@@ -1089,7 +1089,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -360,
+        -20,
         -560
       ],
       "id": "ab3003c1-0a47-4652-856c-5a5dbc711d6a",
@@ -1250,7 +1250,7 @@
       "type": "n8n-nodes-base.whatsAppTrigger",
       "typeVersion": 1,
       "position": [
-        -1500,
+        -1160,
         -560
       ],
       "id": "5618ecfc-822a-4287-9146-c16900708844",
@@ -1446,7 +1446,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        360,
+        700,
         -560
       ]
     },
@@ -1462,7 +1462,7 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.6,
       "position": [
-        740,
+        1080,
         -760
       ],
       "credentials": {
@@ -1481,7 +1481,7 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        360,
+        700,
         -760
       ],
       "id": "a1fed423-2bd8-490c-bb4e-b994ac7c19ca",
@@ -1503,7 +1503,7 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        360,
+        700,
         -360
       ],
       "id": "042acda4-d653-4cc7-8da6-da3cbb5b944f",
@@ -1533,7 +1533,7 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.8,
       "position": [
-        740,
+        1080,
         -360
       ],
       "id": "7b01689f-fd10-4cbd-86dd-498b7780097d",
@@ -1631,7 +1631,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        80,
+        420,
         -560
       ]
     },
@@ -1645,7 +1645,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        560,
+        900,
         -760
       ],
       "id": "4be03f3b-139d-47cb-9faf-8f03f01238d6",
@@ -1667,7 +1667,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        560,
+        900,
         -360
       ],
       "id": "cdfc4af2-53af-477b-9b7b-b7f1dab09009",
@@ -1686,7 +1686,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -840,
+        -500,
         -560
       ],
       "id": "57834015-1e47-4a53-8f1d-8e5aeeed81fd",
@@ -1752,7 +1752,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -620,
+        -280,
         -560
       ],
       "id": "260c1e96-2a43-42e4-ad65-237864ca2ad2",
@@ -2609,7 +2609,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        940,
+        1280,
         -560
       ],
       "id": "f424903d-7c88-43c7-8b07-6f2902d95a8b",
@@ -2629,7 +2629,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1160,
+        1500,
         -560
       ],
       "id": "dd411ca8-efc2-4a4a-a9e7-870c93514ac1",
@@ -2646,7 +2646,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        940,
+        1280,
         -760
       ],
       "id": "863c244f-9bdc-4e57-ae95-b84ae5027e54",
@@ -2668,7 +2668,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        940,
+        1280,
         -360
       ],
       "id": "0552837a-4122-4c6e-9a74-2bf92f357309",
@@ -2687,7 +2687,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1160,
+        1500,
         -360
       ],
       "id": "87b6ec7e-e877-4e29-bfb7-6262c2e24de3",
@@ -2701,7 +2701,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1160,
+        1500,
         -760
       ],
       "id": "6221b0bb-01de-4324-a103-741a384e4225",
@@ -2718,7 +2718,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        1400,
+        1740,
         -760
       ],
       "id": "389c5dba-724b-46d0-8170-90dbe763dd54",
@@ -2740,7 +2740,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        1400,
+        1740,
         -560
       ],
       "id": "68bedc2a-62d0-4914-bb93-1e7168b07b4b",
@@ -2762,7 +2762,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        1400,
+        1740,
         -360
       ],
       "id": "da3f0507-3cf6-4b3b-831a-43d77d1a1ea5",
@@ -2781,7 +2781,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
       "position": [
-        1760,
+        2100,
         -560
       ],
       "id": "95653509-a874-4e2b-af19-f16e2a04174e",
@@ -2854,7 +2854,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -140,
+        200,
         -560
       ],
       "id": "5d9dc476-c666-4204-8228-90da725b0e21",
@@ -2993,7 +2993,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1980,
+        2320,
         -560
       ],
       "id": "40fad0e2-b462-4cdd-8019-600696e317f2",
@@ -3020,6 +3020,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2025-04-26T04:44:15.000Z",
-  "versionId": "19f09520-37bc-4dee-91e8-f1ece9eb8d9c"
+  "updatedAt": "2025-04-30T13:17:28.000Z",
+  "versionId": "b09f39ee-8544-4518-a725-4e660db7e42d"
 }
