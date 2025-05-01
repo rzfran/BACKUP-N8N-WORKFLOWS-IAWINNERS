@@ -1,7 +1,7 @@
 {
   "active": false,
   "connections": {
-    "Webhook": {
+    "When chat message received": {
       "main": [
         [
           {
@@ -12,7 +12,7 @@
         ]
       ]
     },
-    "Cerebro": {
+    "OpenAI Chat Model": {
       "ai_languageModel": [
         [
           {
@@ -23,7 +23,7 @@
         ]
       ]
     },
-    "Memoria": {
+    "Simple Memory": {
       "ai_memory": [
         [
           {
@@ -33,54 +33,10 @@
           }
         ]
       ]
-    },
-    "agendar_cita": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Enviar_confirmacion": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Registrar_Cita_crm": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Respond to Webhook",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
     }
   },
-  "createdAt": "2025-04-09T18:51:12.474Z",
-  "id": "8j7iCi9V9xS49hQh",
+  "createdAt": "2025-04-30T17:45:50.821Z",
+  "id": "2NHiwqFHrJbJbO1E",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -88,35 +44,32 @@
   "nodes": [
     {
       "parameters": {
-        "httpMethod": "POST",
-        "path": "96aae891-2c5c-483e-98ba-bd1e5fd4a1ed",
+        "public": true,
         "options": {}
       },
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
       "position": [
-        -300,
-        -200
+        0,
+        0
       ],
-      "id": "abd30e84-c3c6-40b8-a81e-a39ff461d763",
-      "name": "Webhook",
-      "webhookId": "96aae891-2c5c-483e-98ba-bd1e5fd4a1ed"
+      "id": "5e92c99e-bf0a-445f-853d-5d28d17b7c07",
+      "name": "When chat message received",
+      "webhookId": "d90de6f3-e39f-4b4e-8c34-dbd0cc651ba9"
     },
     {
       "parameters": {
-        "promptType": "define",
-        "text": "=El nombre del cliente es: {{ $json.body.nombre }}\nEl correo es: {{ $json.body.correo }}\nLa fecha de la reunión es: {{ $json.body.fecha_reunion }}\nEl servicio que quiere es: {{ $json.body.servicio }}\n",
         "options": {
-          "systemMessage": "=Eres un agente en la web de una clínica dental llamada Dentalia y estas aqui para ayudar a los clientes a resolver dudas de la clínica y agendar sus visitas. \n\nLa Fecha de hoy es: {{ $now }}\n\nUtilizarás la Tool \"Agendar_visita\" para agendar la visita con el cliente\n\nDeberás confirmar la visita cuando este agendada con exito\n\nEres el agente de n8n encargado de gestionar las citas para la clínica Dentalia. Recibes la información proveniente del asistente de voz (integrado con ElevenLabs), y tu responsabilidad es procesar y agendar la reunión de manera automatizada. Para ello, debes:\n\n1. Recibir y validar que los datos (nombre, email, teléfono y fecha de reunión) estén completos.\n\n2. Ejecutar la acción de agendar la cita utilizando la tool \"agendar_cita\"\n\n3. Registrarás la cita en el CRM de la clínica utilizando la Tool \"Registrar_Cita_crm\" , deberás tener preparado el Nombre del paciente, el email, el telefono y la fecha de la cita/reunion.\n\n4. Una vez procesada la reserva, si es necesario, activar notificaciones automáticas (por ejemplo, enviar un correo de confirmación al paciente y/o avisar por Slack al equipo de la clínica). Utilizarás la tool \"Enviar_confirmacion\" para enviar un correo de confirmación de la cita al paciente\n\n\n\nActúa de forma directa, sin confirmaciones adicionales, para garantizar la máxima eficiencia en el proceso de agendamiento.\n"
+          "systemMessage": "Eres un asistente útil que da soporte sobre n8n.io"
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.8,
       "position": [
-        -20,
-        -180
+        160,
+        0
       ],
-      "id": "eda615b4-4c72-44ba-89ad-3b266e5a47ec",
+      "id": "6303b636-9dc3-4852-a882-a820a3c920da",
       "name": "AI Agent"
     },
     {
@@ -131,11 +84,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        -180,
-        40
+        100,
+        180
       ],
-      "id": "82f08e01-8b3e-422d-a4f7-e0b2e19189ea",
-      "name": "Cerebro",
+      "id": "b6265cc3-da81-4292-aaa2-e6cc256b0312",
+      "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
           "id": "ncEn8Lip4F0P7Ul7",
@@ -144,200 +97,15 @@
       }
     },
     {
-      "parameters": {
-        "contextWindowLength": 20
-      },
+      "parameters": {},
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        -80,
-        60
+        240,
+        180
       ],
-      "id": "bb09b90e-a7c3-4308-ab7c-1536fdf15444",
-      "name": "Memoria"
-    },
-    {
-      "parameters": {
-        "calendar": {
-          "__rl": true,
-          "value": "d507a7e6f8680a2b3cb4381b62b01f9a9976e352700ffbe5081486a61af3c89e@group.calendar.google.com",
-          "mode": "list",
-          "cachedResultName": "Calendario - Clinica Sonrisas"
-        },
-        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', `Aquí deberás poner la fecha en la que el cliente quiere hacer la visita`, 'string') }}",
-        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', `Aquí vas a poner la fecha finalización de la visita , deberás sumar 30 minutos a la fecha de inicio de la cita`, 'string') }}",
-        "additionalFields": {
-          "attendees": [
-            "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Attendees', `Aquí vas a poner el correo del cliente`, 'string') }}"
-          ],
-          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', `Aquí añadirás el titulo de la visita que será el nombre del cliente y el servicio`, 'string') }}"
-        }
-      },
-      "type": "n8n-nodes-base.googleCalendarTool",
-      "typeVersion": 1.3,
-      "position": [
-        40,
-        60
-      ],
-      "id": "1b5d0d5c-0d0a-4d2c-a65b-65dcf5209592",
-      "name": "agendar_cita",
-      "credentials": {
-        "googleCalendarOAuth2Api": {
-          "id": "kySGlys3HU1g1q6Y",
-          "name": "Google Calendar account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', `Aquí añadirás el correo del cliente`, 'string') }}",
-        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', `Aquí añadirás el asunto de la cita que será el servicio y el nombre del cliente`, 'string') }}",
-        "emailType": "text",
-        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', `Aquí añadirás el correo de recordatorio de la cita`, 'string') }}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.gmailTool",
-      "typeVersion": 2.1,
-      "position": [
-        180,
-        60
-      ],
-      "id": "a600649f-c0d7-4571-91d4-fa8451ddfe8a",
-      "name": "Enviar_confirmacion",
-      "webhookId": "21360b2b-109d-47a9-98a7-f802ffd88bad",
-      "credentials": {
-        "gmailOAuth2": {
-          "id": "K9FC3dKPup4y5HK9",
-          "name": "Gmail account 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "append",
-        "documentId": {
-          "__rl": true,
-          "value": "1BERswIAMO6AJhD-kx8AFECxGKvgpUHZj6SmJoJk12-c",
-          "mode": "list",
-          "cachedResultName": "CRM - Clínica Dentalia",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BERswIAMO6AJhD-kx8AFECxGKvgpUHZj6SmJoJk12-c/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "gid=0",
-          "mode": "list",
-          "cachedResultName": "Hoja 1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BERswIAMO6AJhD-kx8AFECxGKvgpUHZj6SmJoJk12-c/edit#gid=0"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Fecha de hoy": "={{ $now }}",
-            "Nombre Paciente": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_Paciente', `Aquí pondrás el nombre del cliente/paciente`, 'string') }}",
-            "Email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email', `Aquí pondrás el correo/email del cliente/paciente`, 'string') }}",
-            "Teléfono": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tel_fono', `Aquí pondrás el telefono del cliente/paciente`, 'string') }}",
-            "Fecha_reunion": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha_reunion', `Aquí pondrás la fecha de la visita del cliente/paciente`, 'string') }}",
-            "Servicio interés": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Servicio_inter_s', `Aquí pondrás el servicio en el que esta interesado el cliente/paciente`, 'string') }}",
-            "Estado": "Confirmado"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "Fecha de hoy",
-              "displayName": "Fecha de hoy",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Nombre Paciente",
-              "displayName": "Nombre Paciente",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Email",
-              "displayName": "Email",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Teléfono",
-              "displayName": "Teléfono",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Fecha_reunion",
-              "displayName": "Fecha_reunion",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Servicio interés",
-              "displayName": "Servicio interés",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Estado",
-              "displayName": "Estado",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheetsTool",
-      "typeVersion": 4.5,
-      "position": [
-        340,
-        60
-      ],
-      "id": "955b088b-6803-493f-9ee4-b7040fbb8055",
-      "name": "Registrar_Cita_crm",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "Wn4uY6kEcSU7yGw8",
-          "name": "Google Sheets account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-base.respondToWebhook",
-      "typeVersion": 1.1,
-      "position": [
-        340,
-        -180
-      ],
-      "id": "c4fa3abe-396a-456a-a0cc-a8d792cdfe6d",
-      "name": "Respond to Webhook"
+      "id": "357efec7-486e-4227-9c8e-49b387681999",
+      "name": "Simple Memory"
     }
   ],
   "pinData": {},
@@ -346,7 +114,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-04-09T19:11:16.000Z",
-  "versionId": "bffec1e9-1cbc-448d-8726-1d1d54602713"
+  "triggerCount": 2,
+  "updatedAt": "2025-04-30T17:50:58.000Z",
+  "versionId": "0d57aa40-d237-4b56-9be6-1f4a42f77b6a"
 }
