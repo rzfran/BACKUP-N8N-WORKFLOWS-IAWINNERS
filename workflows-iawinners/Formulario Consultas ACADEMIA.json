@@ -14,14 +14,14 @@
     },
     "Make_Intensivo": {
       "main": [
-        [],
         [
           {
-            "node": "Stop and Error1",
+            "node": "Google Sheets",
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "Area": {
@@ -72,58 +72,124 @@
     },
     "GHL_Expert": {
       "main": [
-        [],
         [
           {
-            "node": "Stop and Error1",
+            "node": "Google Sheets2",
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "n8n_Expert": {
       "main": [
-        [],
         [
           {
-            "node": "Stop and Error1",
+            "node": "Google Sheets1",
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "MarcaPersonal_Expert": {
       "main": [
-        [],
         [
           {
-            "node": "Stop and Error1",
+            "node": "Google Sheets3",
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "AgentesVoz_Expert": {
       "main": [
-        [],
         [
           {
-            "node": "Stop and Error1",
+            "node": "Google Sheets4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "GPTs_Expert": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Correo_Make",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "GPTs_Expert": {
+    "Google Sheets1": {
       "main": [
-        [],
         [
           {
-            "node": "Stop and Error1",
+            "node": "Correo_n8n",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets2": {
+      "main": [
+        [
+          {
+            "node": "Correo_GHL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets3": {
+      "main": [
+        [
+          {
+            "node": "Correo_MarcaPersonal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets4": {
+      "main": [
+        [
+          {
+            "node": "Correo_AgentesVoz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets5": {
+      "main": [
+        [
+          {
+            "node": "Correo_GPTs y Prompting",
             "type": "main",
             "index": 0
           }
@@ -328,8 +394,7 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      },
-      "onError": "continueErrorOutput"
+      }
     },
     {
       "parameters": {
@@ -512,17 +577,18 @@
     },
     {
       "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>GohighLevel</strong> el día <span class=\"highlight\">Jueves a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "sendTo": "=franciscorozasmira@gmail.com",
+        "subject": "NUEVA PREGUNTA DE MAKE",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Nueva Pregunta de Make - Ticket {{ $json.ticket }}</title>\n</head>\n<body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">\n    <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">\n        \n        <p style=\"margin-bottom: 1em;\">Hola</p>\n\n        <p style=\"margin-bottom: 1em;\">Hemos recibido una nueva pregunta en el formulario.</p>\n\n        <p style=\"margin-bottom: 1em;\">Estos son los datos:</p>\n        \n        <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>Nombre: {{ $json.Nombre }}</em></p>\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Correo: {{ $json.Correo }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Pregunta: {{ $json.Pregunta }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Área: {{ $json['Área'] }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Ticket: {{ $json.ticket }}</em></small></p>\n        </blockquote>\n\n        <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>\n\n        <div style=\"line-height: 1.4;\">\n            <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>\n            <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?gid=2132471341#gid=2132471341\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Clic aquí para ver el formulario</a></p>\n        </div>\n    </div>\n</body>\n</html>",
         "options": {
-          "appendAttribution": false
+          "appendAttribution": false,
+          "ccList": "academia@iawinners.com"
         }
       },
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        520,
+        720,
         -400
       ],
       "id": "2075d7f5-c500-4652-8df9-196efaacfaeb",
@@ -530,24 +596,25 @@
       "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
       "credentials": {
         "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
         }
       }
     },
     {
       "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>N8N</strong> el día <span class=\"highlight\">Jueves a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "sendTo": "franciscorozasmira@gmail.com",
+        "subject": "NUEVA PREGUNTA DE N8N",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Nueva Pregunta de N8N - Ticket {{ $json.ticket }}</title>\n</head>\n<body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">\n    <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">\n        \n        <p style=\"margin-bottom: 1em;\">Hola</p>\n\n        <p style=\"margin-bottom: 1em;\">Hemos recibido una nueva pregunta en el formulario.</p>\n\n        <p style=\"margin-bottom: 1em;\">Estos son los datos:</p>\n        \n        <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>Nombre: {{ $json.Nombre }}</em></p>\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Correo: {{ $json.Correo }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Pregunta: {{ $json.Pregunta }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Área: {{ $json['Área'] }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Ticket: {{ $json.ticket }}</em></small></p>\n        </blockquote>\n\n        <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>\n\n        <div style=\"line-height: 1.4;\">\n            <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>\n            <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?gid=2132471341#gid=2132471341\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Clic aquí para ver el formulario</a></p>\n        </div>\n    </div>\n</body>\n</html>",
         "options": {
-          "appendAttribution": false
+          "appendAttribution": false,
+          "replyTo": "academia@iawinners.com"
         }
       },
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        520,
+        720,
         -200
       ],
       "id": "1551f282-d8b6-4e01-85e1-0c21c19cb183",
@@ -555,16 +622,16 @@
       "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
       "credentials": {
         "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
         }
       }
     },
     {
       "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>Make y Automatizaciones</strong> el día <span class=\"highlight\">Miércoles a las 18:00 PM (Hora España)</span>.\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "sendTo": "academia@iawinners.com",
+        "subject": "NUEVA PREGUNTA DE GHL",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Nueva Pregunta de GHL - Ticket {{ $json.ticket }}</title>\n</head>\n<body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">\n    <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">\n        \n        <p style=\"margin-bottom: 1em;\">Hola</p>\n\n        <p style=\"margin-bottom: 1em;\">Hemos recibido una nueva pregunta en el formulario.</p>\n\n        <p style=\"margin-bottom: 1em;\">Estos son los datos:</p>\n        \n        <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>Nombre: {{ $json.Nombre }}</em></p>\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Correo: {{ $json.Correo }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Pregunta: {{ $json.Pregunta }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Área: {{ $json['Área'] }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Ticket: {{ $json.ticket }}</em></small></p>\n        </blockquote>\n\n        <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>\n\n        <div style=\"line-height: 1.4;\">\n            <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>\n            <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?gid=2132471341#gid=2132471341\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Clic aquí para ver el formulario</a></p>\n        </div>\n    </div>\n</body>\n</html>",
         "options": {
           "appendAttribution": false
         }
@@ -572,7 +639,7 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        520,
+        720,
         0
       ],
       "id": "b97d5dc3-f067-4314-96b9-c82c62d4d6b4",
@@ -580,24 +647,25 @@
       "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
       "credentials": {
         "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
         }
       }
     },
     {
       "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>Marca personal, RRSS y Ventas</strong> el día <span class=\"highlight\">Martes a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "sendTo": "=adridigitalwinner@gmail.com",
+        "subject": "NUEVA PREGUNTA DE MARCA PERSONAL",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Nueva Pregunta de Marca Personal y RRSS - Ticket {{ $json.ticket }}</title>\n</head>\n<body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">\n    <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">\n        \n        <p style=\"margin-bottom: 1em;\">Hola</p>\n\n        <p style=\"margin-bottom: 1em;\">Hemos recibido una nueva pregunta en el formulario.</p>\n\n        <p style=\"margin-bottom: 1em;\">Estos son los datos:</p>\n        \n        <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>Nombre: {{ $json.Nombre }}</em></p>\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Correo: {{ $json.Correo }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Pregunta: {{ $json.Pregunta }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Área: {{ $json['Área'] }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Ticket: {{ $json.ticket }}</em></small></p>\n        </blockquote>\n\n        <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>\n\n        <div style=\"line-height: 1.4;\">\n            <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>\n            <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?gid=2132471341#gid=2132471341\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Clic aquí para ver el formulario</a></p>\n        </div>\n    </div>\n</body>\n</html>",
         "options": {
-          "appendAttribution": false
+          "appendAttribution": false,
+          "ccList": "academia@iawinners.com"
         }
       },
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        520,
+        720,
         200
       ],
       "id": "ab517d3f-7c6e-4347-ab03-88bbd2371eda",
@@ -605,49 +673,25 @@
       "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
       "credentials": {
         "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
         }
       }
     },
     {
       "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>Agentes de Voz</strong> el día <span class=\"highlight\">Jueves a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
+        "sendTo": "=franciscorozasmira@gmail.com",
+        "subject": "NUEVA PREGUNTA DE GPTs Y PROMPTING",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Nueva Pregunta de GPTs y Prompting - Ticket {{ $json.ticket }}</title>\n</head>\n<body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">\n    <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">\n        \n        <p style=\"margin-bottom: 1em;\">Hola</p>\n\n        <p style=\"margin-bottom: 1em;\">Hemos recibido una nueva pregunta en el formulario.</p>\n\n        <p style=\"margin-bottom: 1em;\">Estos son los datos:</p>\n        \n        <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>Nombre: {{ $json.Nombre }}</em></p>\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Correo: {{ $json.Correo }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Pregunta: {{ $json.Pregunta }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Área: {{ $json['Área'] }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Ticket: {{ $json.ticket }}</em></small></p>\n        </blockquote>\n\n        <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>\n\n        <div style=\"line-height: 1.4;\">\n            <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>\n            <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?gid=2132471341#gid=2132471341\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Clic aquí para ver el formulario</a></p>\n        </div>\n    </div>\n</body>\n</html>",
         "options": {
-          "appendAttribution": false
+          "appendAttribution": false,
+          "ccList": "academia@iawinners.com"
         }
       },
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        520,
-        400
-      ],
-      "id": "54051ff8-fa1f-4827-8311-78e4cabc6e56",
-      "name": "Correo_AgentesVoz",
-      "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
-      "credentials": {
-        "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "sendTo": "={{ $('Formulario').item.json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
-        "subject": "HEMOS RECIBIDO TU CONSULTA",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta enviada</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            max-width: 600px;\n            margin: 40px auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            background-color: #ffffff;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        h2 {\n            color: #333;\n            text-align: center;\n        }\n        p {\n            margin: 10px 0;\n            color: #555;\n        }\n        .highlight {\n            font-weight: bold;\n            color: #d9534f;\n        }\n        .calendar-link {\n            display: block;\n            text-align: center;\n            margin-top: 20px;\n            padding: 10px 15px;\n            background-color: #007bff;\n            color: white;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n        }\n        .calendar-link:hover {\n            background-color: #0056b3;\n        }\n        .container {\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Tu respuesta ha sido enviada al equipo de IA Winners</h2>\n        <p>Atenderemos tu duda en la próxima clase de <strong>GPTs y Prompt</strong> el día <span class=\"highlight\">Martes a las 18:00 PM (Hora España)</span>.</p>\n        <p><strong>Recuerda que esta es una clase exclusiva para miembros del IA Expert.</strong></p>\n        <p>📅 Puedes ver el calendario de clases aquí:</p>\n        <a href=\"https://linktr.ee/iawinners\" class=\"calendar-link\" target=\"_blank\">Ver calendario</a>\n    </div>\n</body>\n</html>\n",
-        "options": {
-          "appendAttribution": false
-        }
-      },
-      "type": "n8n-nodes-base.gmail",
-      "typeVersion": 2.1,
-      "position": [
-        520,
+        720,
         600
       ],
       "id": "2f6b821a-75ba-471e-be9d-dedf76d59b5d",
@@ -655,8 +699,8 @@
       "webhookId": "dd911cee-2c26-420c-88df-65d63026f13a",
       "credentials": {
         "gmailOAuth2": {
-          "id": "Jb949OirQ2BFqA5S",
-          "name": "Gmail account"
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
         }
       }
     },
@@ -832,8 +876,7 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      },
-      "onError": "continueErrorOutput"
+      }
     },
     {
       "parameters": {
@@ -1007,8 +1050,7 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      },
-      "onError": "continueErrorOutput"
+      }
     },
     {
       "parameters": {
@@ -1182,8 +1224,7 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      },
-      "onError": "continueErrorOutput"
+      }
     },
     {
       "parameters": {
@@ -1357,8 +1398,7 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      },
-      "onError": "continueErrorOutput"
+      }
     },
     {
       "parameters": {
@@ -1532,19 +1572,313 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2132471341,
+          "mode": "list",
+          "cachedResultName": "Make y Automatizaciones",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2132471341"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Nombre",
+              "lookupValue": "={{ $json.Nombre }}"
+            },
+            {
+              "lookupColumn": "Pregunta",
+              "lookupValue": "={{ $json.Pregunta }}"
+            }
+          ]
+        },
+        "options": {}
       },
-      "onError": "continueErrorOutput"
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        520,
+        -400
+      ],
+      "id": "b8fd19e9-5543-4b9b-9128-babba4365fe8",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2118442775,
+          "mode": "list",
+          "cachedResultName": "N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2118442775"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Nombre",
+              "lookupValue": "={{ $json.Nombre }}"
+            },
+            {
+              "lookupColumn": "Pregunta",
+              "lookupValue": "={{ $json.Pregunta }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        520,
+        -200
+      ],
+      "id": "8729888d-7484-41be-b18e-7df8a6c15819",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1139528183,
+          "mode": "list",
+          "cachedResultName": "GoHighLevel",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=1139528183"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Nombre",
+              "lookupValue": "={{ $json.Nombre }}"
+            },
+            {
+              "lookupColumn": "Pregunta",
+              "lookupValue": "={{ $json.Pregunta }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        520,
+        0
+      ],
+      "id": "2c95a8ec-e3a0-400f-b72d-ed1cc46f3dec",
+      "name": "Google Sheets2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1579050785,
+          "mode": "list",
+          "cachedResultName": "Marca Personal, RRSS y Ventas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=1579050785"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Nombre",
+              "lookupValue": "={{ $json.Nombre }}"
+            },
+            {
+              "lookupColumn": "Pregunta",
+              "lookupValue": "={{ $json.Pregunta }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        520,
+        200
+      ],
+      "id": "683cd4d3-1d15-4d48-aee9-8c73ced24cf6",
+      "name": "Google Sheets3",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2017748370,
+          "mode": "list",
+          "cachedResultName": "Agentes de Voz",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=2017748370"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Nombre",
+              "lookupValue": "={{ $json.Nombre }}"
+            },
+            {
+              "lookupColumn": "Pregunta",
+              "lookupValue": "={{ $json.Pregunta }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        520,
+        400
+      ],
+      "id": "4376684b-0d8d-4807-bf78-5cde6a4a89e8",
+      "name": "Google Sheets4",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo",
+          "mode": "list",
+          "cachedResultName": "PREGUNTAS ACADEMIA IA WINNERS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 582219647,
+          "mode": "list",
+          "cachedResultName": "GPT y Prompting",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit#gid=582219647"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Nombre",
+              "lookupValue": "={{ $json.Nombre }}"
+            },
+            {
+              "lookupColumn": "Pregunta",
+              "lookupValue": "={{ $json.Pregunta }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        520,
+        600
+      ],
+      "id": "6c5ecb5e-433b-4328-b963-61ae7a1a1b67",
+      "name": "Google Sheets5",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Cu6zJ48iSEjW5Hc8",
+          "name": "Google Sheets fran"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "luzcgarcia.ia@gmail.com",
+        "subject": "NUEVA PREGUNTA DE AGENTES DE VOZ",
+        "message": "=<!DOCTYPE html> <html lang=\"es\"> <head>     <meta charset=\"UTF-8\">     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">     <title>Nueva Pregunta de Agentes de Voz - Ticket {{ $json.ticket }}</title> </head> <body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">     <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">                  <p style=\"margin-bottom: 1em;\">Hola</p>          <p style=\"margin-bottom: 1em;\">Hemos recibido una nueva pregunta en el formulario.</p>          <p style=\"margin-bottom: 1em;\">Estos son los datos:</p>                  <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">             <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>Nombre: {{ $json.Nombre }}</em></p>             <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Correo: {{ $json.Correo }}</em></small></p> <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Pregunta: {{ $json.Pregunta }}</em></small></p> <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Área: {{ $json['Área'] }}</em></small></p> <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Ticket: {{ $json.ticket }}</em></small></p>         </blockquote>          <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>          <div style=\"line-height: 1.4;\">             <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>             <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?gid=2017748370#gid=2017748370\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Clic aquí para ver el formulario</a></p>         </div>     </div> </body> </html>",
+        "options": {
+          "appendAttribution": false,
+          "ccList": "academia@iawinners.com"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        720,
+        400
+      ],
+      "id": "884d9421-933d-4a86-9efa-de45a05c7b5d",
+      "name": "Correo_AgentesVoz",
+      "webhookId": "19af7a77-757e-44b8-bf71-6f83e965a6cf",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
+        }
+      }
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1",
-    "timezone": "Europe/Madrid",
     "callerPolicy": "workflowsFromSameOwner"
   },
   "staticData": {
     "node:Formulario": {
-      "webhookId": "cm9quwjrb00br9fbsldbbk141"
+      "webhookId": "cma72hh3b00e69fbsb7d4d2j3"
     }
   },
   "tags": [
@@ -1562,6 +1896,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-21T09:11:18.000Z",
-  "versionId": "b60a43c3-019e-427c-8570-5fbf044bb298"
+  "updatedAt": "2025-05-02T17:27:51.000Z",
+  "versionId": "e8d0a5fb-bcc1-431b-b258-7146a904f02a"
 }
