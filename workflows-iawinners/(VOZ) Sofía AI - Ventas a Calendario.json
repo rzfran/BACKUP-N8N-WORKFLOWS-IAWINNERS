@@ -91,14 +91,8 @@
         "end": "={{ $json.message.content.fecha_fin }}",
         "additionalFields": {
           "attendees": [
-            "={{ $('Webhook').item.json.body.call.retell_llm_dynamic_variables.email }}"
-          ],
-          "conferenceDataUi": {
-            "conferenceDataValues": {
-              "conferenceSolution": "hangoutsMeet"
-            }
-          },
-          "summary": "=Reunion con {{ $('Webhook').item.json.body.call.retell_llm_dynamic_variables.nombre }}  "
+            "={{ $('Webhook').item.json.body.args.email }}"
+          ]
         }
       },
       "type": "n8n-nodes-base.googleCalendar",
@@ -244,7 +238,979 @@
       }
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n.iawinners.com",
+            "user-agent": "axios/1.7.7",
+            "content-length": "8786",
+            "accept": "application/json, text/plain, */*",
+            "accept-encoding": "gzip, br",
+            "cdn-loop": "cloudflare; loops=1",
+            "cf-connecting-ip": "100.20.5.228",
+            "cf-ipcountry": "US",
+            "cf-ray": "9397cb80cd70debd-PDX",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "content-type": "application/json",
+            "x-forwarded-for": "100.20.5.228, 104.23.160.121",
+            "x-forwarded-host": "n8n.iawinners.com",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "1e96c02968f5",
+            "x-real-ip": "104.23.160.121",
+            "x-retell-signature": "v=1746191805509,d=d1ef21eee85071c506b170555e13325df82d1d98c56cdb1c113abd99b403d266"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "call": {
+              "call_id": "playground",
+              "call_type": "web_call",
+              "retell_llm_dynamic_variables": {},
+              "transcript": "User: Hola\nAgent: ¡Hola! ¿Cómo estás? Soy Sofia, una asistente de My Digital Winner. Vi que estuviste interesado en incorporar agentes de voz en tu negocio. ¡Me alegra mucho eso! ¿Te gustaría tener una asistente virtual como yo trabajando por ti?\nUser: si\nAgent: ¡Genial! ¿Te gustaría que agendemos una cita con el equipo para que te expliquen cómo podemos ayudarte? ¿Qué día y hora te vendría bien?\nUser: manana las 10 hs\nAgent: ¡Perfecto! Entonces agendamos para mañana a las 10 de la mañana. ¿Te parece bien?\nUser: si\n",
+              "transcript_object": [
+                {
+                  "role": "user",
+                  "content": "Hola",
+                  "words": [
+                    {
+                      "word": "Hola",
+                      "start": 0,
+                      "end": 0
+                    }
+                  ]
+                },
+                {
+                  "role": "agent",
+                  "content": "¡Hola! ¿Cómo estás? Soy Sofia, una asistente de My Digital Winner. Vi que estuviste interesado en incorporar agentes de voz en tu negocio. ¡Me alegra mucho eso! ¿Te gustaría tener una asistente virtual como yo trabajando por ti?",
+                  "words": [
+                    {
+                      "word": "¡Hola! ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "¿Cómo ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "estás? ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "Soy ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "Sofia, ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "una ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "asistente ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "de ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "My ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "Digital ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "Winner. ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "Vi ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "que ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "estuviste ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "interesado ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "en ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "incorporar ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "agentes ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "de ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "voz ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "en ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "tu ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "negocio. ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "¡Me ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "alegra ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "mucho ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "eso! ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "¿Te ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "gustaría ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "tener ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "una ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "asistente ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "virtual ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "como ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "yo ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "trabajando ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "por ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "ti?",
+                      "start": 1,
+                      "end": 1
+                    }
+                  ]
+                },
+                {
+                  "role": "user",
+                  "content": "si",
+                  "words": [
+                    {
+                      "word": "si",
+                      "start": 2,
+                      "end": 2
+                    }
+                  ]
+                },
+                {
+                  "role": "agent",
+                  "content": "¡Genial! ¿Te gustaría que agendemos una cita con el equipo para que te expliquen cómo podemos ayudarte? ¿Qué día y hora te vendría bien?",
+                  "words": [
+                    {
+                      "word": "¡Genial! ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "¿Te ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "gustaría ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "que ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "agendemos ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "una ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "cita ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "con ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "el ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "equipo ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "para ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "que ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "te ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "expliquen ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "cómo ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "podemos ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "ayudarte? ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "¿Qué ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "día ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "y ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "hora ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "te ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "vendría ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "bien?",
+                      "start": 4,
+                      "end": 4
+                    }
+                  ]
+                },
+                {
+                  "role": "user",
+                  "content": "manana las 10 hs",
+                  "words": [
+                    {
+                      "word": "manana ",
+                      "start": 5,
+                      "end": 5
+                    },
+                    {
+                      "word": "las ",
+                      "start": 5,
+                      "end": 5
+                    },
+                    {
+                      "word": "10 ",
+                      "start": 5,
+                      "end": 5
+                    },
+                    {
+                      "word": "hs",
+                      "start": 5,
+                      "end": 5
+                    }
+                  ]
+                },
+                {
+                  "role": "agent",
+                  "content": "¡Perfecto! Entonces agendamos para mañana a las 10 de la mañana. ¿Te parece bien?",
+                  "words": [
+                    {
+                      "word": "¡Perfecto! ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "Entonces ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "agendamos ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "para ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "mañana ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "a ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "las ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "10 ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "de ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "la ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "mañana. ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "¿Te ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "parece ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "bien?",
+                      "start": 7,
+                      "end": 7
+                    }
+                  ]
+                },
+                {
+                  "role": "user",
+                  "content": "si",
+                  "words": [
+                    {
+                      "word": "si",
+                      "start": 8,
+                      "end": 8
+                    }
+                  ]
+                }
+              ],
+              "transcript_with_tool_calls": [
+                {
+                  "role": "user",
+                  "content": "Hola",
+                  "words": [
+                    {
+                      "word": "Hola",
+                      "start": 0,
+                      "end": 0
+                    }
+                  ]
+                },
+                {
+                  "role": "agent",
+                  "content": "¡Hola! ¿Cómo estás? Soy Sofia, una asistente de My Digital Winner. Vi que estuviste interesado en incorporar agentes de voz en tu negocio. ¡Me alegra mucho eso! ¿Te gustaría tener una asistente virtual como yo trabajando por ti?",
+                  "words": [
+                    {
+                      "word": "¡Hola! ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "¿Cómo ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "estás? ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "Soy ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "Sofia, ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "una ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "asistente ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "de ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "My ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "Digital ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "Winner. ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "Vi ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "que ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "estuviste ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "interesado ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "en ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "incorporar ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "agentes ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "de ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "voz ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "en ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "tu ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "negocio. ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "¡Me ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "alegra ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "mucho ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "eso! ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "¿Te ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "gustaría ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "tener ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "una ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "asistente ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "virtual ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "como ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "yo ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "trabajando ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "por ",
+                      "start": 1,
+                      "end": 1
+                    },
+                    {
+                      "word": "ti?",
+                      "start": 1,
+                      "end": 1
+                    }
+                  ]
+                },
+                {
+                  "role": "user",
+                  "content": "si",
+                  "words": [
+                    {
+                      "word": "si",
+                      "start": 2,
+                      "end": 2
+                    }
+                  ]
+                },
+                {
+                  "role": "agent",
+                  "content": "¡Genial! ¿Te gustaría que agendemos una cita con el equipo para que te expliquen cómo podemos ayudarte? ¿Qué día y hora te vendría bien?",
+                  "words": [
+                    {
+                      "word": "¡Genial! ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "¿Te ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "gustaría ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "que ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "agendemos ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "una ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "cita ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "con ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "el ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "equipo ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "para ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "que ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "te ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "expliquen ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "cómo ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "podemos ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "ayudarte? ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "¿Qué ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "día ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "y ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "hora ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "te ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "vendría ",
+                      "start": 4,
+                      "end": 4
+                    },
+                    {
+                      "word": "bien?",
+                      "start": 4,
+                      "end": 4
+                    }
+                  ]
+                },
+                {
+                  "role": "user",
+                  "content": "manana las 10 hs",
+                  "words": [
+                    {
+                      "word": "manana ",
+                      "start": 5,
+                      "end": 5
+                    },
+                    {
+                      "word": "las ",
+                      "start": 5,
+                      "end": 5
+                    },
+                    {
+                      "word": "10 ",
+                      "start": 5,
+                      "end": 5
+                    },
+                    {
+                      "word": "hs",
+                      "start": 5,
+                      "end": 5
+                    }
+                  ]
+                },
+                {
+                  "role": "agent",
+                  "content": "¡Perfecto! Entonces agendamos para mañana a las 10 de la mañana. ¿Te parece bien?",
+                  "words": [
+                    {
+                      "word": "¡Perfecto! ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "Entonces ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "agendamos ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "para ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "mañana ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "a ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "las ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "10 ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "de ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "la ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "mañana. ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "¿Te ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "parece ",
+                      "start": 7,
+                      "end": 7
+                    },
+                    {
+                      "word": "bien?",
+                      "start": 7,
+                      "end": 7
+                    }
+                  ]
+                },
+                {
+                  "role": "user",
+                  "content": "si",
+                  "words": [
+                    {
+                      "word": "si",
+                      "start": 8,
+                      "end": 8
+                    }
+                  ]
+                },
+                {
+                  "role": "tool_call_invocation",
+                  "tool_call_id": "tool_call_68b13c",
+                  "name": "agendar_reunion",
+                  "arguments": "{\"summary\":\"El usuario mostró interés en incorporar agentes de voz en su negocio y agendó una reunión para mañana a las 10 de la mañana.\",\"fyhreunion\":\"2025-05-03T10:00:00+02:00\",\"interes\":\"Interesado\"}"
+                }
+              ],
+              "latency": {},
+              "tool_mocks": []
+            },
+            "name": "agendar_reunion",
+            "args": {
+              "summary": "El usuario mostró interés en incorporar agentes de voz en su negocio y agendó una reunión para mañana a las 10 de la mañana.",
+              "fyhreunion": "2025-05-03T10:00:00+02:00",
+              "interes": "Interesado",
+              "email": "luz@ejemplo.com"
+            }
+          },
+          "webhookUrl": "https://n8n.iawinners.com/webhook-test/e134a0f4-2ad6-4866-a8a0-bfb9fa234881",
+          "executionMode": "test"
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1"
   },
@@ -258,6 +1224,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-24T21:08:21.000Z",
-  "versionId": "72a1ceba-1a31-4f92-ae6e-3f709cd3297e"
+  "updatedAt": "2025-05-02T13:36:41.000Z",
+  "versionId": "2adacbe6-188d-484c-af4f-8f26ed517399"
 }
