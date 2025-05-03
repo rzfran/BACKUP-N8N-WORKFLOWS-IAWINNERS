@@ -91,6 +91,96 @@
       "main": [
         [
           {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPTS": {
+      "main": [
+        [],
+        [
+          {
+            "node": "MENSAJE-ERROR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AGENTES VOZ": {
+      "main": [
+        [],
+        [
+          {
+            "node": "MENSAJE-ERROR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MARCA PERSONAL": {
+      "main": [
+        [],
+        [
+          {
+            "node": "MENSAJE-ERROR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GHL": {
+      "main": [
+        [],
+        [
+          {
+            "node": "MENSAJE-ERROR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "N8N": {
+      "main": [
+        [],
+        [
+          {
+            "node": "MENSAJE-ERROR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MAKE": {
+      "main": [
+        [],
+        [
+          {
+            "node": "MENSAJE-ERROR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "nada",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
             "node": "If",
             "type": "main",
             "index": 0
@@ -134,7 +224,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -340,
+        -120,
         60
       ],
       "id": "d225aa2e-987f-429d-8d6b-a2e22a0bb656",
@@ -142,9 +232,9 @@
     },
     {
       "parameters": {
-        "sendTo": "={{ $json.body.Correo }}",
+        "sendTo": "=mastercontabo@gmail.com",
         "subject": "=RESPONDIERON A TU PREGUNTA - {{ $('Webhook').item.json.body.ticket }}",
-        "message": "=<!DOCTYPE html> <html lang=\"es\"> <head>     <meta charset=\"UTF-8\">     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">     <title>Respuesta a tu Consulta (con video) - Ticket {{ $('Webhook').item.json.body.ticket }}</title> </head> <body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">     <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">                  <p style=\"margin-bottom: 1em;\">Hola, {{ $('Webhook').item.json.body.Nombre }}</p>          <p style=\"margin-bottom: 1em;\">Gracias por ponerte en contacto con Academia IA Winners. Hemos recibido tu consulta y hemos preparado una respuesta para ti.</p>          <p style=\"margin-bottom: 1em;\">Nos preguntaste sobre:</p>                  <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">             <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>{{ $('Webhook').item.json.body.Pregunta }}</em></p>             <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em></em></small></p> <!-- Mantenido según tu plantilla, aunque está vacío -->         </blockquote>          <p style=\"margin-bottom: 1em;\">             Para ayudarte a comprenderlo mejor, hemos creado un breve video explicativo:         </p>                  <!-- ======= INICIO RESPUESTA VIDEO ======= -->         <div style=\"margin-top: 20px; margin-bottom: 20px; padding: 15px; background-color: #eef7ff; border-left: 4px solid #007bff; border-radius: 4px;\">             <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>Puedes ver la explicación en video aquí:</strong></p>             <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"{{ $json.body['Link Video Explicativo'] }}\" target=\"_blank\" style=\"color: #007bff; text-decoration: none; font-weight: bold; word-break: break-all;\">{{ $json.body['Link Video Explicativo'] }}</a></p>         </div>         <!-- ======= FIN RESPUESTA VIDEO ======= -->          <p style=\"margin-bottom: 1em;\">Esperamos que este video explicativo te sea de gran ayuda. Por favor, mira el video y si después de verlo todavía tienes alguna duda, no dudes en preguntar por los grupos de WhatsApp de la academia.</p>          <p style=\"margin-bottom: 1em;\">¡Estamos comprometidos con tu éxito en el mundo de la Inteligencia Artificial!</p>          <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>          <div style=\"line-height: 1.4;\">             <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>             <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://iawinners.app.clientclub.net/\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Visita Academia IA Winners</a></p>         </div>     </div> </body> </html>",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Respuesta a tu Consulta (con video) - Ticket Ticket-N8N0010</title>\n</head>\n\n<body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">\n    <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">\n        <p style=\"margin-bottom: 1em;\">Hola, {{ $json.body.Nombre }}</p>\n        <p style=\"margin-bottom: 1em;\">Gracias por ponerte en contacto con Academia IA Winners. Hemos recibido tu consulta y hemos preparado una respuesta para ti.</p>\n        <p style=\"margin-bottom: 1em;\">Nos preguntaste sobre:</p>\n        <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>{{ $json.body.Pregunta }}</em></p>\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em></em></small></p> <!-- Mantenido según tu plantilla, aunque está vacío -->\n        </blockquote>\n        <p style=\"margin-bottom: 1em;\"> Para ayudarte a comprenderlo mejor, hemos creado un breve video explicativo:\n        <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>{{ $json.body['Respuesta Texto'] }} </em></p>\n        </blockquote>\n        <!-- ======= FIN RESPUESTA ======= -->\n        </p> <!-- ======= INICIO RESPUESTA VIDEO ======= -->\n        <div style=\"margin-top: 20px; margin-bottom: 20px; padding: 15px; background-color: #eef7ff; border-left: 4px solid #007bff; border-radius: 4px;\">\n            <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>Puedes ver la explicación en video aquí:</strong></p>\n            <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"{{ $json.body['Link Video Explicativo'] }}\" target=\"_blank\" style=\"color: #007bff; text-decoration: none; font-weight: bold; word-break: break-all;\">{{ $json.body['Link Video Explicativo'] }}</a></p>\n        </div> <!-- ======= FIN RESPUESTA VIDEO ======= -->\n        <p style=\"margin-bottom: 1em;\">Esperamos que este video explicativo te sea de gran ayuda. Por favor, mira el video y si después de verlo todavía tienes alguna duda, no dudes en preguntar por los grupos de WhatsApp de la academia.</p>\n        <p style=\"margin-bottom: 1em;\">¡Estamos comprometidos con tu éxito en el mundo de la Inteligencia Artificial!</p>\n        <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>\n        <div style=\"line-height: 1.4;\">\n            <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>\n            <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://iawinners.app.clientclub.net/\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Visita Academia IA Winners</a></p>\n        </div>\n    </div>\n</body>\n\n</html>",
         "options": {
           "appendAttribution": false,
           "senderName": "Academia IA Winners"
@@ -153,7 +243,7 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        -80,
+        140,
         -20
       ],
       "id": "e4043ab5-a0b8-4b18-b3b3-75526238b042",
@@ -179,7 +269,7 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        -80,
+        140,
         160
       ],
       "id": "21633556-718f-4326-811c-c0eeda9ecad0",
@@ -352,7 +442,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        180,
+        400,
         0
       ],
       "id": "5a8c50f0-debf-4afe-a473-059450892ba6",
@@ -503,7 +593,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        440,
+        780,
         -340
       ],
       "id": "42c18281-464d-4f7f-97a0-78150e3c444b",
@@ -513,7 +603,8 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -660,7 +751,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        440,
+        780,
         -180
       ],
       "id": "8f6fd134-55e2-4f5a-a5e2-ec2b89902b4b",
@@ -670,7 +761,8 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -817,7 +909,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        440,
+        780,
         -20
       ],
       "id": "696dff5e-7d41-4494-8dca-114cf8f97367",
@@ -827,7 +919,8 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -975,7 +1068,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        440,
+        780,
         140
       ],
       "id": "b3d8cc7d-eb69-4880-ac7e-04830c8662c8",
@@ -985,7 +1078,8 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -1133,7 +1227,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        440,
+        780,
         300
       ],
       "id": "bf1c7d29-e3f1-4410-aa91-080a44e6abb9",
@@ -1143,7 +1237,8 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -1290,7 +1385,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        440,
+        780,
         460
       ],
       "id": "df8446bd-3409-4072-afe9-0109612a8ad6",
@@ -1300,7 +1395,8 @@
           "id": "Cu6zJ48iSEjW5Hc8",
           "name": "Google Sheets fran"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -1311,12 +1407,93 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -560,
+        -640,
         60
       ],
       "id": "ca88ac0e-ea10-40fa-9a6d-b085e4f6608b",
       "name": "Webhook",
       "webhookId": "0b2c5446-045c-43b9-a04f-ba6781316512"
+    },
+    {
+      "parameters": {
+        "sendTo": "=franciscorozasmira@gmail.com",
+        "subject": "=ERROR EN UNA RESPUESTA DEL FORMULARIO",
+        "message": "=Hola Fran, ha habido un problema para poder actualizar el estado de un google sheets. Echale un vistazo.",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "Academia IA Winners"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1200,
+        20
+      ],
+      "id": "dded7429-05bc-4990-a73c-8d0995d4e42e",
+      "name": "MENSAJE-ERROR",
+      "webhookId": "fbd4a98d-d7a6-41e3-a92d-589298d853ec",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "565a6337-217b-4c2d-bd30-bae42b80fb29",
+              "leftValue": "={{ $json.body['Respuesta Texto'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "6321de1e-2cff-4694-ab51-8ea27909081a",
+              "leftValue": "={{ $json.body['Link Video Explicativo'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -420,
+        60
+      ],
+      "id": "a5fd8e7d-6a10-4a53-b43e-22d61deca342",
+      "name": "If1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        -120
+      ],
+      "id": "c6c6ae21-46ac-426a-b97c-f2cebaa6fd77",
+      "name": "nada"
     }
   ],
   "pinData": {},
@@ -1339,6 +1516,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-21T20:11:50.000Z",
-  "versionId": "a6067a10-88d6-40a8-9d18-995fa593a2eb"
+  "updatedAt": "2025-05-02T15:47:01.000Z",
+  "versionId": "fecdeb49-4234-4d10-98b4-2b20602c1291"
 }
