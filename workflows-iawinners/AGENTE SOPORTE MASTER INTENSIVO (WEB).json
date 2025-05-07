@@ -1,0 +1,143 @@
+{
+  "active": false,
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-04-30T17:45:50.821Z",
+  "id": "2NHiwqFHrJbJbO1E",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "AGENTE SOPORTE MASTER INTENSIVO (WEB)",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Eres un asistente útil que da soporte sobre n8n.io"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        160,
+        0
+      ],
+      "id": "6303b636-9dc3-4852-a882-a820a3c920da",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        100,
+        180
+      ],
+      "id": "b6265cc3-da81-4292-aaa2-e6cc256b0312",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        180
+      ],
+      "id": "357efec7-486e-4227-9c8e-49b387681999",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "agente-master-intensivo",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        0
+      ],
+      "id": "0e9ef5ed-9915-4cb8-a5f8-0490d87516d9",
+      "name": "Webhook",
+      "webhookId": "d742f989-7d45-4c76-825f-5849e56bfc7c"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        560,
+        0
+      ],
+      "id": "b3be4a63-985e-472c-9324-0a42145cda5d",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-03-13T17:48:10.301Z",
+      "updatedAt": "2025-03-13T17:48:10.301Z",
+      "id": "5EshHYPLuOMF4DS5",
+      "name": "Fran"
+    },
+    {
+      "createdAt": "2025-05-07T00:47:08.352Z",
+      "updatedAt": "2025-05-07T00:47:46.890Z",
+      "id": "R9pbuM9fzn1YTu4C",
+      "name": "🎥Formación"
+    }
+  ],
+  "triggerCount": 2,
+  "updatedAt": "2025-05-07T00:48:54.000Z",
+  "versionId": "8486f5a0-11ef-4658-a2c0-b7b963f061c4"
+}
