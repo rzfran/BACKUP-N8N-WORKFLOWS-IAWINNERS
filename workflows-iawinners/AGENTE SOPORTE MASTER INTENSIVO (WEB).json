@@ -63,7 +63,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        100,
+        80,
         180
       ],
       "id": "b6265cc3-da81-4292-aaa2-e6cc256b0312",
@@ -138,6 +138,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2025-05-07T00:48:54.000Z",
-  "versionId": "8486f5a0-11ef-4658-a2c0-b7b963f061c4"
+  "updatedAt": "2025-05-09T04:04:18.000Z",
+  "versionId": "96fc0b7d-9d45-45e9-a75b-e14df452e708"
 }
