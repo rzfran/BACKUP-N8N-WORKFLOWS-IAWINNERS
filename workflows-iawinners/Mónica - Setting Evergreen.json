@@ -986,7 +986,7 @@
         "operation": "getAll",
         "limit": 1,
         "filters": {
-          "query": "=+{{ $json.messages[0].from }}"
+          "query": "=+{{ $json.contacts[0].wa_id }}"
         },
         "options": {},
         "requestOptions": {}
@@ -2820,13 +2820,13 @@
             {
               "id": "8e415c44-41e7-4bd0-b3e8-483deed51f7e",
               "name": "Numero",
-              "value": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}",
+              "value": "=+{{ $('Switch2').item.json['ID Conversación'] }}",
               "type": "string"
             },
             {
               "id": "d28920d7-75d2-44ca-ab11-0e52eac5f6de",
               "name": "id",
-              "value": "={{ $('WhatsApp Trigger').item.json.messages[0].id }}",
+              "value": "={{ $('Switch2').item.json['ID Conversación'] }}",
               "type": "string"
             },
             {
@@ -3000,7 +3000,39 @@
       "name": "If1"
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "WhatsApp Trigger": [
+      {
+        "json": {
+          "messaging_product": "whatsapp",
+          "metadata": {
+            "display_phone_number": "56932914506",
+            "phone_number_id": "589015034296503"
+          },
+          "contacts": [
+            {
+              "profile": {
+                "name": "Adri"
+              },
+              "wa_id": "34627242091"
+            }
+          ],
+          "messages": [
+            {
+              "from": "34627242091",
+              "id": "wamid.HBgLMzQ2MjcyNDIwOTEVAgASGBYzRUIwMDYwNkEwQjYwRUM5QkM2RUZFAA==",
+              "timestamp": "1746957567",
+              "text": {
+                "body": "ee"
+              },
+              "type": "text"
+            }
+          ],
+          "field": "messages"
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1"
   },
@@ -3020,6 +3052,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2025-04-30T13:17:28.000Z",
-  "versionId": "b09f39ee-8544-4518-a725-4e660db7e42d"
+  "updatedAt": "2025-05-11T10:01:58.000Z",
+  "versionId": "67d0df36-3331-453a-8e39-4e63ba08d538"
 }
