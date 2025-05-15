@@ -3000,39 +3000,7 @@
       "name": "If1"
     }
   ],
-  "pinData": {
-    "WhatsApp Trigger": [
-      {
-        "json": {
-          "messaging_product": "whatsapp",
-          "metadata": {
-            "display_phone_number": "56932914506",
-            "phone_number_id": "589015034296503"
-          },
-          "contacts": [
-            {
-              "profile": {
-                "name": "Adri"
-              },
-              "wa_id": "34627242091"
-            }
-          ],
-          "messages": [
-            {
-              "from": "34627242091",
-              "id": "wamid.HBgLMzQ2MjcyNDIwOTEVAgASGBYzRUIwMDYwNkEwQjYwRUM5QkM2RUZFAA==",
-              "timestamp": "1746957567",
-              "text": {
-                "body": "ee"
-              },
-              "type": "text"
-            }
-          ],
-          "field": "messages"
-        }
-      }
-    ]
-  },
+  "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
@@ -3052,6 +3020,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2025-05-11T10:01:58.000Z",
-  "versionId": "67d0df36-3331-453a-8e39-4e63ba08d538"
+  "updatedAt": "2025-05-14T19:48:43.000Z",
+  "versionId": "bdc015a0-7279-4476-b5b7-368f3cccb08d"
 }
