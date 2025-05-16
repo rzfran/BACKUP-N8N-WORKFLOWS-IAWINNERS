@@ -1,0 +1,463 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack": {
+      "main": [
+        []
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-05-15T07:59:26.722Z",
+  "id": "OUQeCuogxfyMOGPv",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Tracking Evergreen",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "9d907812-2fe8-4e02-a9ab-97385f73bf70",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        180,
+        -140
+      ],
+      "id": "05d495e8-bf5b-481c-bfb6-82466cb350ce",
+      "name": "Webhook",
+      "webhookId": "9d907812-2fe8-4e02-a9ab-97385f73bf70"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "15eBrfwf764_OoH2uNfGsAagO-fDZdB6eO6SaQK9qv94",
+          "mode": "list",
+          "cachedResultName": "Tracking Diario Evergreen",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15eBrfwf764_OoH2uNfGsAagO-fDZdB6eO6SaQK9qv94/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Mayo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15eBrfwf764_OoH2uNfGsAagO-fDZdB6eO6SaQK9qv94/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $json.Fecha }}",
+            "Inversion": "={{ $json['Inversión'] }}",
+            "Alcance": "={{ $json.Alcance }}",
+            "CPM": "={{ $json.CPM }}",
+            "Clicks": "={{ $json.Clicks }}",
+            "CPC": "={{ $json.CPC }}",
+            "CTR": "={{ $json.CTR }}",
+            "Leads | FB": "={{ $json.Leads }}",
+            "CPL": "={{ $json['Coste Registro Lead'] }}",
+            "Agendas": "={{ $json.Reuniones }}",
+            "CP Agenda": "={{ $json['Coste Agenda'] }}",
+            "Ventas": "={{ $json.Compras }}",
+            "CAC": "={{ $json['Coste Por Venta'] }}"
+          },
+          "matchingColumns": [
+            "Fecha"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Inversion",
+              "displayName": "Inversion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Alcance",
+              "displayName": "Alcance",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CPM",
+              "displayName": "CPM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clicks",
+              "displayName": "Clicks",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CPC",
+              "displayName": "CPC",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CTR",
+              "displayName": "CTR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Leads | FB",
+              "displayName": "Leads | FB",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CPL",
+              "displayName": "CPL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Agendas",
+              "displayName": "Agendas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CP Agenda",
+              "displayName": "CP Agenda",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ventas",
+              "displayName": "Ventas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CAC",
+              "displayName": "CAC",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1000,
+        -140
+      ],
+      "id": "fe5c51b3-1439-4ad4-8c4c-725e81c06ed4",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Obtener string desde el webhook\nlet raw = $('Webhook').first().json.body;\n\n// 2. Arreglar el formato (pegar objetos separados por coma)\nlet fixed = raw.replace(/}\\s*{/g, '},{');\n\n// 3. Convertir en array válido\nfixed = `[${fixed}]`;\n\n// 4. Parsear\nlet input;\ntry {\n  input = JSON.parse(fixed);\n} catch (err) {\n  throw new Error(\"❌ Error al parsear JSON: \" + err.message);\n}\n\n// 5. Armar objeto de salida con sufijos si hay claves repetidas\nlet output = {};\nlet counters = {}; // Para llevar la cuenta de repeticiones\n\ninput.forEach(item => {\n  const baseKey = item.action_type;\n  const value = parseFloat(item.value);\n\n  if (output[baseKey] === undefined) {\n    // Primera vez → usar el nombre tal cual\n    output[baseKey] = value;\n    counters[baseKey] = 1;\n  } else {\n    // Ya existe → crear nombre con sufijo\n    counters[baseKey]++;\n    const newKey = `${baseKey}_${counters[baseKey]}`;\n    output[newKey] = value;\n  }\n});\n\n// 6. Devolver el objeto con claves únicas\nreturn [\n  {\n    json: output\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        -140
+      ],
+      "id": "c265bab7-847b-4f44-a8be-1542393b65de",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9a8dfb49-8605-4d25-ae0c-10b0dba9544d",
+              "name": "Store Purchase",
+              "value": "={{ $json.web_in_store_purchase }}",
+              "type": "string"
+            },
+            {
+              "id": "d387fd9d-10d8-4615-a090-696e52074949",
+              "name": "Page Engagement",
+              "value": "={{ $json.page_engagement }}",
+              "type": "string"
+            },
+            {
+              "id": "afa787cc-51cb-425c-a49f-bf8a59ed3c7a",
+              "name": "Compras",
+              "value": "={{ $json.purchase }}",
+              "type": "string"
+            },
+            {
+              "id": "1a24e052-021c-4d8a-8190-dffe2b168def",
+              "name": "Landing Page Views",
+              "value": "={{ $json.landing_page_view }}",
+              "type": "string"
+            },
+            {
+              "id": "6169aa87-bb22-4660-80f2-de3dfff472ab",
+              "name": "Leads",
+              "value": "={{ $json.complete_registration }}",
+              "type": "string"
+            },
+            {
+              "id": "c0b42fb3-7f4a-431e-8397-12eb27a47f37",
+              "name": "Link Click",
+              "value": "={{ $json.link_click }}",
+              "type": "string"
+            },
+            {
+              "id": "9fb3dedb-5e85-4fbf-a119-32cce8e0dde6",
+              "name": "Coste Agenda",
+              "value": "={{ $json.schedule_total }}",
+              "type": "string"
+            },
+            {
+              "id": "395e3e19-2caa-47fa-805d-a5fd0f748e08",
+              "name": "Coste Registro Lead",
+              "value": "={{ $json.submit_application_website }}",
+              "type": "string"
+            },
+            {
+              "id": "a9d48e01-4528-48a8-b691-1069c85cdebf",
+              "name": "Reuniones",
+              "value": "={{ $json.schedule_total_2 }}",
+              "type": "string"
+            },
+            {
+              "id": "cb6720ff-68c1-4f9d-bc38-0e110d165556",
+              "name": "Inversión",
+              "value": "={{ $('Webhook').item.json.query['Inversión'] }}",
+              "type": "string"
+            },
+            {
+              "id": "aa59b30a-c45d-4bd0-8cb3-baa89d3d022b",
+              "name": "Alcance",
+              "value": "={{ $('Webhook').item.json.query.Alcance }}",
+              "type": "string"
+            },
+            {
+              "id": "7f93c7c3-6a4d-4ea0-bf84-a21ff37e25b8",
+              "name": "CPM",
+              "value": "={{ $('Webhook').item.json.query.CPM }}",
+              "type": "string"
+            },
+            {
+              "id": "0ed164db-5c6e-4cd4-bddf-1fb8866aaaa1",
+              "name": "CTR",
+              "value": "={{ $('Webhook').item.json.query.CTR }}",
+              "type": "string"
+            },
+            {
+              "id": "e2462185-b146-460f-ac47-08439bca1591",
+              "name": "Clicks",
+              "value": "={{ $('Webhook').item.json.query.Clicks }}",
+              "type": "string"
+            },
+            {
+              "id": "b8d8a387-5b5b-41d6-b919-dc0b579a5b31",
+              "name": "CPC",
+              "value": "={{ $('Webhook').item.json.query.CPC }}",
+              "type": "string"
+            },
+            {
+              "id": "f20985ed-391d-4c6c-a5ae-78c84704cbb9",
+              "name": "Fecha",
+              "value": "={{ $('Webhook').item.json.query.Fecha }}",
+              "type": "string"
+            },
+            {
+              "id": "864bde45-d17e-433a-8a2b-64d8ffc243e4",
+              "name": "Coste Por Venta",
+              "value": "={{ $json.purchase_2 }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        -140
+      ],
+      "id": "7a4c29d8-9c7d-4857-bd7f-315576e211e4",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C08SK8X2XFC",
+          "mode": "list",
+          "cachedResultName": "reporting-evergreen"
+        },
+        "text": "=Aquí adjunto el reporting diario {{ $json.Fecha }}\n\nInversión: {{ $json.Inversion }}€\nAlcance:  {{ $json.Alcance }}\nCPM: {{ $json.CPM }}\nClics: {{ $json.Clicks }}\nCPC: {{ $json.CPC }}\nCTR: {{ $json.CTR }}%\nLeads: {{ $json['Leads | FB'] }}\nCPL: {{ $json.CPL }}€\nAgendas: {{ $json.Agendas }}\nCP Agenda: {{ $json['CP Agenda'] }}€\nVentas:  {{ $json.Ventas }}\nCAC: {{ $json.CAC }}€",
+        "otherOptions": {
+          "mrkdwn": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        1220,
+        -140
+      ],
+      "id": "c94b2183-0a32-4ec0-86a1-006e2fb5f8c8",
+      "name": "Slack",
+      "webhookId": "29a41392-9e00-463b-8431-34294136f7c8",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "bI7F5mxkEysdPfv4",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "let input = items[0].json;\n\nlet output = {};\n\nfor (let key in input) {\n  // Si el valor parece un número con punto decimal, reemplaza por coma\n  if (typeof input[key] === 'string' && input[key].includes('.')) {\n    output[key] = input[key].replace('.', ',');\n  } else {\n    output[key] = input[key];\n  }\n}\n\nreturn [\n  {\n    json: output\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        820,
+        -140
+      ],
+      "id": "a9a9b7ad-3d43-4abe-a2ed-78a99b4486ba",
+      "name": "Code"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-05-15T10:47:34.000Z",
+  "versionId": "fb47bd6c-b708-4303-b004-b0fda31b1aeb"
+}
