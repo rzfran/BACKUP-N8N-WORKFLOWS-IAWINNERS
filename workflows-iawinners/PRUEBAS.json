@@ -1,0 +1,168 @@
+{
+  "active": false,
+  "connections": {
+    "WhatsApp Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-05-15T13:55:22.443Z",
+  "id": "IJoeWRcXfaCVYQQo",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "PRUEBAS",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ],
+        "options": {}
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        40,
+        20
+      ],
+      "id": "0a072665-1697-47a3-94df-55cc1722a090",
+      "name": "WhatsApp Trigger",
+      "webhookId": "63dd70bf-5eae-43a4-a657-115e51e21758",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "lnUiOQTTnYmr3yOu",
+          "name": "CREDENCIALES ANTES INMUEBLES"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "623273974208809",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').item.json.messages[0].from }}",
+        "textBody": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        860,
+        20
+      ],
+      "id": "238988e6-20fb-4c0d-81e7-0e50cfc99ee7",
+      "name": "WhatsApp Business Cloud",
+      "webhookId": "2b5b60dc-1f68-4616-adb9-ff0333bc6619",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "oqcZcWeo4OBtlCnZ",
+          "name": "CREDENCIALES ANTES INMUEBLES"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.messages[0].text.body }}",
+        "options": {
+          "systemMessage": "Eres un asistente de inmobiliaria llamada Andes Inmuebles"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        420,
+        20
+      ],
+      "id": "f7ff06e6-2e41-4d17-bc62-8a459093e785",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        300,
+        200
+      ],
+      "id": "5a5aeae9-acaa-4229-b467-aa06c605113c",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.messages[0].from }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        480,
+        200
+      ],
+      "id": "91501e4d-6f9d-4485-9e81-c28c295cd6e6",
+      "name": "Simple Memory"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-05-15T17:59:27.000Z",
+  "versionId": "84557a2c-4cf2-49da-bf67-988d6ef68600"
+}
