@@ -1868,7 +1868,8 @@
           "id": "K9FC3dKPup4y5HK9",
           "name": "CORREO ACADEMIA IA WINNERS"
         }
-      }
+      },
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -1878,7 +1879,7 @@
   },
   "staticData": {
     "node:Formulario": {
-      "webhookId": "cma72hh3b00e69fbsb7d4d2j3"
+      "webhookId": "cmaqqdyxc00g29fbsgynrr1tn"
     }
   },
   "tags": [
@@ -1896,6 +1897,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-05-02T17:27:51.000Z",
-  "versionId": "e8d0a5fb-bcc1-431b-b258-7146a904f02a"
+  "updatedAt": "2025-05-16T11:44:35.000Z",
+  "versionId": "33ab2741-3bc5-4370-b60c-d7110c707074"
 }
