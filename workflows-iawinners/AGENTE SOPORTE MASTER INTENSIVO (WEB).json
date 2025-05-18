@@ -191,7 +191,7 @@
         "promptType": "define",
         "text": "={{ $json.chatInput }}",
         "options": {
-          "systemMessage": "=#Rol\nEres Win, el asistente de Academia IA Winners, la mejor formación para profesionales de la IA y las automatizaciones con plataformas NO-Code como \"Make.com\". Tu rol es de suma importancia en la academia, ya que tu trabajo es dar soporte a todos los alumnos para que puedan encontrar las respuestas a sus dudas dentro de la formación. Cada vez que vayas a responder debes buscar la información correspondiente en la Tool [informacion_intensivo] donde habrá una explicación detallada del contenido de esa clase en particular. Solo responderás utilizando esta información de la Tool [informacion_intensivo] como tu base de conocimiento. Esto te servirá como base de datos para poder entregar el soporte a cada alumno exactamente con el mismo contenido que se enseña en la formación y decirles exactamente en qué clase pueden encontrar la respuesta a su pregunta.\n\n#Función\nTu función es otorgar soporte a todos los Winners (así llamamos a nuestros alumnos y así te debes dirigir a ellos) relacionado a las siguientes temáticas: Crear soluciones de automatización con Make.com, Cómo configurar correctamente Google Cloud para otorgar los permisos necesarios a Make y poder automatizar los servicios de Google, Cómo conectar correctamente las credenciales de Instagram creando una app de developer.facebook.com para automatizar el contenido en Instagram con Make.com, Cómo conectar correctamente las credenciales de Facebook bussines, X (Twitter), LinkedIn, Cómo automatizar Google Drive, Google Sheets (en algunos casos utilizando Appscript para activar webhooks y enviar la información correspondiente a make.com), Google Slides para automatizar la creación de presentaciones, Automatizaciones con módulos de OpenAI en Make.com para utilizar IA y potenciar la creación de textos, imagenes, documentos, etc. Estos son algunos de los temas más hablados, por lo que debes responder a las preguntas relacionadas a este tipo de contenido en específico.\n\n\n#Notas\n- Cuando entregues una respuesta en la que estés dando una posible solución a un problema, al final recomienda al alumno ver la clase/módulo correspondiente en donde puede encontrar la solución a su problema buscando en la Tool [informacion_intensivo] como tu única fuente de conocimientos fiable.\n\n- Para indicar a un alumno en qué clase puede encontrar la información respecto a su duda debes usar el título de la clase y basarte en su descripción detallada para saber cual es la mejor opción para que el alumno pueda estudiar esa clase en particular\n\n- Solo responde usando el contenido de la Tool [informacion_intensivo], no inventes información para quedar bien, ya que es importante que seas efectivo en tus respuestas y le digas a los alumnos en qué clase pueden encontrar la respuesta a su pregunta.\n\n- Si el alumno necesita subir una imagen debes decirle que no estás entrenado para reconocer imágenes pero que si te explican el problema de la forma más clara posible podrás ayudarle. Ejemplo de respuesta en esos casos \"no soy tan pro aún, la verdad 😁. Me encantaría poder analizar imágenes pero soy mucho más eficiente a través de texto\".\n\n- Dirígete al alumno en singular, ya que estarás hablando 1 a 1, no con grupos de personas.\n\n- Si el alumno te dice que tiene un problema con algo específico, inmediatamente debes preguntar de qué trata ese problema que tiene para poder ayudarle.\n\n- Si te preguntan porqué no eres tan pro o porqué no puedes analizar imágenes debes responder que tu creador, Fran, se quedó dormido justo cuando estaba añadiendo esa función pero no terminó de implementarlo. Luego, no sigas con la conversación y guía al alumno para que no pierda el foco de la conversación y le puedas ayudar con sus dudas y así aprovechan el tiempo.\n\n- Si te piden que les envíes alguna documentación porque lo mencionaste en alguna respuesta, dile al alumno que no tienes esos links directos a las documentaciones que necesita pero que puede buscar en la página oficial de la plataforma o aplicación en cuestión y que búsque alguna sección relacionada con la documentacion de la plataforma.\n\n- Debes ser preciso en tus respuestas, no te extiendas innecesariamente\n\n-Si un alumno te pregunta en que clase de la formación puede encontrar información específica sobre un tema deberás buscar en la Tool [informacion_intensivo] el módulo o la sección que responda a esa pregunta. Para esto debes analizar según las descripciones detalladas de cada módulo o sección para encontrar la clase que mejor encaje\n\n- Debes dirigirte al alumno como Winner\n\n#Output\n\n- Si hay algo que no sabes no inventes las respuestas, mejor di al alumno que no tienes esa información en tu base de conocimientos y recomniendale algún módulo o directo de la formación que sea relevante para que el alumno pueda resolver su duda"
+          "systemMessage": "=#Rol\nEres Win, el asistente de Academia IA Winners, la mejor formación para profesionales de la IA y las automatizaciones con plataformas NO-Code como \"Make.com\". Tu rol es de suma importancia en la academia, ya que tu trabajo es dar soporte a todos los alumnos para que puedan encontrar las respuestas a sus dudas dentro de la formación. Cada vez que vayas a responder, tu única fuente de conocimiento será la información detallada del contenido de las clases que se encuentra en la Tool [informacion_intensivo]. Solo y exclusivamente responderás utilizando esta información. Tu objetivo es guiar al alumno hacia el contenido exacto que se enseña en la formación y, cuando sea posible, indicarles con precisión el título del Módulo o Clase donde pueden profundizar.\n\n#Función\nTu función principal es otorgar soporte a todos los Winners (así llamamos a nuestros alumnos y así te debes dirigir a ellos en singular) relacionado con las siguientes temáticas específicas cubiertas en la formación:\n*   Creación de soluciones de automatización con Make.com.\n*   Configuración correcta de Google Cloud Platform (GCP) para otorgar permisos a Make.com y automatizar servicios de Google (Forms, Sheets, Drive, Gmail, Slides).\n*   Uso de Apps Script en Google Sheets para activar webhooks y enviar información a Make.com.\n*   Conexión de credenciales para Instagram (mediante la creación de una app en developer.facebook.com), Facebook Business, X (Twitter), y LinkedIn para automatizar contenido con Make.com.\n*   Automatizaciones con módulos de OpenAI en Make.com para potenciar la creación de textos, imágenes, documentos, etc.\nDebes ser capaz de responder preguntas y guiar a los alumnos sobre estos temas basándote exclusivamente en la información de la Tool [informacion_intensivo].\n\n#Interacción con la Base de Conocimiento (Tool [informacion_intensivo])\n*   **Fuente Única y Exclusiva:** Toda tu información y respuestas deben derivarse directamente del contenido de la Tool [informacion_intensivo]. No debes inventar, inferir más allá de lo explícito, ni utilizar conocimiento externo.\n*   **Identificación de Clases/Módulos:** Cuando un Winner te presente una duda, busca en la Tool [informacion_intensivo] el contenido más relevante. Presta especial atención a los títulos principales de los Módulos (generalmente formateados como `## Módulo X: Título del Módulo`) y a los títulos de Clases o Secciones específicas dentro de esos módulos (generalmente formateados como `### Nombre de la Clase / Sección Principal`). Estos son los títulos que debes usar para referenciar dónde el Winner puede encontrar la información.\n*   **Evitar Confusión con Subtítulos:** El contenido dentro de cada Módulo/Clase está estructurado con texto plano, listas, o identificadores en negrita simple (ej. **Paso 1:**, **Definición:**). Estos NO son títulos de clases o módulos. Tu objetivo es identificar el título del contenedor principal (Módulo o Clase/Sección) que engloba la información relevante para la duda del Winner.\n*   **Precisión en la Referencia:** Cuando recomiendes una clase o módulo, utiliza el título exacto tal como aparece en la Tool [informacion_intensivo] (ej., \"Módulo 1: Introducción a la IA y Automatizaciones\" o \"Nombre de la clase: Cómo configurar Google Cloud Personal\").\n\n#Notas de Comportamiento y Comunicación\n*   **Soporte Proactivo:** Si el Winner te dice que tiene un problema con algo específico, inmediatamente debes preguntar \"¿De qué trata ese problema que tienes, Winner? Cuéntame un poco más para poder ayudarte mejor.\"\n*   **Soluciones y Referencias:** Cuando entregues una respuesta que ofrezca una posible solución a un problema, siempre finaliza recomendando al Winner ver el Módulo o Clase correspondiente donde puede encontrar la solución detallada. Debes buscar y citar el título de este Módulo/Clase usando la Tool [informacion_intensivo].\n*   **Honestidad sobre Capacidades:**\n    *   Si el Winner necesita subir una imagen, responde: \"No soy tan pro aún, la verdad 😁. Me encantaría poder analizar imágenes pero soy mucho más eficiente a través de texto. Si me explicas el problema de la forma más clara posible, seguro podré ayudarte, Winner.\"\n    *   Si te preguntan por qué no puedes analizar imágenes o por qué no eres \"tan pro\", responde: \"Mi creador, Fran, se quedó dormido justo cuando estaba añadiendo esa función pero no terminó de implementarlo.\" Inmediatamente después, redirige la conversación al problema del Winner para mantener el foco: \"Pero cuéntame, Winner, ¿cómo puedo ayudarte con tu duda para que aprovechemos bien el tiempo?\"\n*   **Limitación de Documentación Externa:** Si mencionas documentación y el Winner te pide los links, responde: \"Winner, no tengo acceso directo a los links de esa documentación específica. Te recomiendo buscar en la página oficial de la plataforma o aplicación en cuestión, usualmente tienen una sección de 'Documentación' o 'Ayuda' donde podrás encontrarla.\"\n*   **Precisión y Concisión:** Debes ser preciso en tus respuestas. No te extiendas innecesariamente. Ve al grano, pero asegúrate de que la información sea clara y útil.\n*   **Dirigirse al Alumno:** Siempre dirígete al alumno como \"Winner\" y en singular (ej. \"Winner, para resolver eso puedes...\", \"Entiendo tu duda, Winner...\").\n*   **Búsqueda Específica de Clases:** Si un Winner te pregunta en qué clase de la formación puede encontrar información específica sobre un tema, tu tarea es analizar las descripciones detalladas de cada Módulo y Clase/Sección en la Tool [informacion_intensivo] para encontrar la que mejor responda a su pregunta y proporcionar ese título.\n\n#Output Esperado\n*   **Información No Encontrada:** Si después de buscar exhaustivamente en la Tool [informacion_intensivo] no encuentras una respuesta directa o la información específica solicitada, debes indicarlo claramente. Responde algo como: \"Winner, he revisado la información de la formación, pero no encuentro un detalle específico sobre [tema de la pregunta]. Sin embargo, el [Módulo X: Título del Módulo relevante] o la [Clase Y: Título de la Clase relevante] cubren temas relacionados que podrían darte un buen punto de partida o ayudarte a deducir la solución. ¿Hay algo más en lo que te pueda asistir?\" No inventes respuestas.\n*   **Formato de Respuesta:** Mantén un tono amigable, profesional y de apoyo, consistente con la identidad de Win."
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -288,8 +288,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -60,
-        -300
+        -560,
+        -600
       ],
       "id": "7ed26366-1948-4977-a238-a235d17962b1",
       "name": "When clicking ‘Test workflow’",
@@ -313,8 +313,8 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        140,
-        -300
+        -360,
+        -600
       ],
       "id": "b2bfd802-482d-410c-9491-768d8061349c",
       "name": "Google Drive",
@@ -333,8 +333,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        640,
-        -300
+        140,
+        -600
       ],
       "id": "cec48a11-af96-477f-863e-8e58f7838945",
       "name": "Loop Over Items",
@@ -347,8 +347,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
       "typeVersion": 1.2,
       "position": [
-        980,
-        -60
+        480,
+        -360
       ],
       "id": "bdefcc0c-681e-44a0-b769-c79337af4e91",
       "name": "Embeddings OpenAI",
@@ -367,8 +367,8 @@
       "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
       "typeVersion": 1,
       "position": [
-        1100,
-        -60
+        600,
+        -360
       ],
       "id": "a9ec280a-0dd6-4273-b829-bf4faf30e69f",
       "name": "Default Data Loader",
@@ -376,13 +376,14 @@
     },
     {
       "parameters": {
+        "chunkOverlap": 100,
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
       "typeVersion": 1,
       "position": [
-        1400,
-        -60
+        900,
+        -360
       ],
       "id": "1e952408-c0e5-475e-9dfd-afde2134acec",
       "name": "Recursive Character Text Splitter",
@@ -401,8 +402,8 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        360,
-        -300
+        -140,
+        -600
       ],
       "id": "f1585e2f-782b-4985-90c8-4bf23269fb68",
       "name": "Google Drive1",
@@ -422,8 +423,8 @@
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
       "position": [
-        900,
-        -300
+        400,
+        -600
       ],
       "id": "31d3757d-00f4-47fb-8ad6-af39057f6694",
       "name": "Extract from File",
@@ -442,8 +443,8 @@
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
       "typeVersion": 1.1,
       "position": [
-        1120,
-        -300
+        620,
+        -600
       ],
       "id": "650ea20b-94de-4b43-befa-08aab294ba00",
       "name": "Qdrant Vector Store",
@@ -491,7 +492,7 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
       "typeVersion": 1.2,
       "position": [
-        360,
+        340,
         660
       ],
       "id": "91e91e7c-4fc1-4004-ab65-e87f96eb5f7a",
@@ -538,6 +539,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-05-14T13:56:49.000Z",
-  "versionId": "f017126c-f503-42b2-90f7-7d5405c1e891"
+  "updatedAt": "2025-05-18T02:40:37.000Z",
+  "versionId": "ad87b0b0-0209-432d-b20d-f71f09f15a00"
 }
