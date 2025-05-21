@@ -994,7 +994,7 @@
       "type": "n8n-nodes-base.highLevel",
       "typeVersion": 2,
       "position": [
-        -920,
+        -940,
         -560
       ],
       "id": "f75e7a39-dd79-4fc7-8c99-bea554e33015",
@@ -1816,7 +1816,7 @@
       "credentials": {
         "whatsAppApi": {
           "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
+          "name": "CREDENCIALES ANTES INMUEBLES"
         }
       }
     },
@@ -2023,7 +2023,7 @@
       "credentials": {
         "whatsAppApi": {
           "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
+          "name": "CREDENCIALES ANTES INMUEBLES"
         }
       }
     },
@@ -2049,7 +2049,7 @@
       "credentials": {
         "whatsAppApi": {
           "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
+          "name": "CREDENCIALES ANTES INMUEBLES"
         }
       }
     },
@@ -2239,7 +2239,7 @@
       "credentials": {
         "whatsAppApi": {
           "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
+          "name": "CREDENCIALES ANTES INMUEBLES"
         }
       }
     },
@@ -2435,7 +2435,7 @@
       "credentials": {
         "whatsAppApi": {
           "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
+          "name": "CREDENCIALES ANTES INMUEBLES"
         }
       }
     },
@@ -2461,7 +2461,7 @@
       "credentials": {
         "whatsAppApi": {
           "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
+          "name": "CREDENCIALES ANTES INMUEBLES"
         }
       }
     },
@@ -2595,7 +2595,7 @@
       "credentials": {
         "whatsAppApi": {
           "id": "oqcZcWeo4OBtlCnZ",
-          "name": "WhatsApp fran"
+          "name": "CREDENCIALES ANTES INMUEBLES"
         }
       }
     },
@@ -3020,6 +3020,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2025-05-14T19:48:43.000Z",
-  "versionId": "bdc015a0-7279-4476-b5b7-368f3cccb08d"
+  "updatedAt": "2025-05-20T16:24:18.000Z",
+  "versionId": "5d792bb4-e745-4275-9cf5-0d9ccb0a29be"
 }
