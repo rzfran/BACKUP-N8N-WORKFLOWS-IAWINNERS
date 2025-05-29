@@ -1,0 +1,188 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-05-28T11:12:41.702Z",
+  "id": "hZxCUAmEgFEV5lIW",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "11 Jun - Lanzamiento Agencia IA",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "f24f272d-2f8c-420d-a0f7-bf5fe041074c",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c318f7a4-6065-442b-97a4-8ea990d12868",
+      "name": "Webhook",
+      "webhookId": "f24f272d-2f8c-420d-a0f7-bf5fe041074c"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1J7G1i9cd72sI-4FPecyQz734bC_gPAddNJ6nZNAfTt8",
+          "mode": "list",
+          "cachedResultName": "11 JUN |  FULL CAMPAIGN ANALYTIC | LANZAMIENTO AGENCIA IA ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1J7G1i9cd72sI-4FPecyQz734bC_gPAddNJ6nZNAfTt8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1683958641,
+          "mode": "list",
+          "cachedResultName": "Registros Evento",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1J7G1i9cd72sI-4FPecyQz734bC_gPAddNJ6nZNAfTt8/edit#gid=1683958641"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ $json.body.customData.Nombre }}",
+            "Apellido": "={{ $json.body.customData.Apellido }}",
+            "Telefono": "={{ $json.body.customData['Teléfono'] }}",
+            "Email": "={{ $json.body.customData.Email }}",
+            "Avatar": "={{ $json.body.customData.Avatar }}",
+            "campaing_type": "={{ $json.body.customData.campaing_type }}",
+            "Afiliados": "={{ $json.body.customData.Afiliado }}",
+            "Fecha Registro": "={{ $json.body.customData['Fecha de Registro'] }}",
+            "Fuente": "={{ $json.body.customData.Fuente }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Fecha Registro",
+              "displayName": "Fecha Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Avatar",
+              "displayName": "Avatar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fuente",
+              "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Afiliados",
+              "displayName": "Afiliados",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "campaing_type",
+              "displayName": "campaing_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        220,
+        0
+      ],
+      "id": "92547bda-1f53-4bda-8528-71a88aa93b39",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Wn4uY6kEcSU7yGw8",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-05-28T11:24:38.000Z",
+  "versionId": "7b90f54c-51f5-4835-bb0e-3ce6c91b3681"
+}
