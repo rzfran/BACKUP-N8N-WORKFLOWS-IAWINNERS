@@ -656,7 +656,7 @@
       "parameters": {
         "sendTo": "=adridigitalwinner@gmail.com",
         "subject": "NUEVA PREGUNTA DE MARCA PERSONAL",
-        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Nueva Pregunta de Marca Personal y RRSS - Ticket {{ $json.ticket }}</title>\n</head>\n<body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">\n    <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">\n        \n        <p style=\"margin-bottom: 1em;\">Hola</p>\n\n        <p style=\"margin-bottom: 1em;\">Hemos recibido una nueva pregunta en el formulario.</p>\n\n        <p style=\"margin-bottom: 1em;\">Estos son los datos:</p>\n        \n        <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>Nombre: {{ $json.Nombre }}</em></p>\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Correo: {{ $json.Correo }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Pregunta: {{ $json.Pregunta }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Área: {{ $json['Área'] }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Ticket: {{ $json.ticket }}</em></small></p>\n        </blockquote>\n\n        <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>\n\n        <div style=\"line-height: 1.4;\">\n            <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>\n            <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?gid=2132471341#gid=2132471341\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Clic aquí para ver el formulario</a></p>\n        </div>\n    </div>\n</body>\n</html>",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Nueva Pregunta de Marca Personal y RRSS - Ticket {{ $json.ticket }}</title>\n</head>\n<body style=\"margin: 0; padding: 20px; background-color: #f9f9f9; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333333;\">\n    <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 5px; border: 1px solid #dddddd;\">\n        \n        <p style=\"margin-bottom: 1em;\">Hola</p>\n\n        <p style=\"margin-bottom: 1em;\">Hemos recibido una nueva pregunta en el formulario.</p>\n\n        <p style=\"margin-bottom: 1em;\">Estos son los datos:</p>\n        \n        <blockquote style=\"border-left: 4px solid #cccccc; padding-left: 15px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 1em; font-style: italic; color: #555555; background-color: #fdfdfd; padding-top: 10px; padding-bottom: 1px;\">\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><em>Nombre: {{ $json.Nombre }}</em></p>\n            <p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Correo: {{ $json.Correo }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Pregunta: {{ $json.Pregunta }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Área: {{ $json['Área'] }}</em></small></p>\n<p style=\"margin-bottom: 10px; margin-top: 0;\"><small><em>Ticket: {{ $json.ticket }}</em></small></p>\n        </blockquote>\n\n        <p style=\"margin-bottom: 0.5em; line-height: 1.4;\">Atentamente,</p>\n\n        <div style=\"line-height: 1.4;\">\n            <p style=\"margin-bottom: 0.5em; margin-top: 0;\"><strong>El equipo de Academia IA Winners</strong></p>\n            <p style=\"margin-bottom: 0; margin-top: 0;\"><a href=\"https://docs.google.com/spreadsheets/d/1xXcYWedRa4Y471JJO5ni9BU6r093732AOg71GGYTRBo/edit?gid=1579050785#gid=1579050785\" target=\"_blank\" style=\"color: #007bff; text-decoration: none;\">Clic aquí para ver el formulario</a></p>\n        </div>\n    </div>\n</body>\n</html>",
         "options": {
           "appendAttribution": false,
           "ccList": "academia@iawinners.com"
@@ -1077,9 +1077,9 @@
             "Correo": "={{ $json.data.data.ans5r20ui8lz2vvs7db7elmu }}",
             "Pregunta": "={{ $json.data.data.w0xmi9ncyw7o8ij7w7km4ivc }}",
             "Archivo adjunto": "={{ $json.data.data.idzm3u8c0495j7ryobyg6knq[0] }}",
-            "Area": "={{ $json.data.data.w7vnbks92bjmq2t57eflqs7a }}",
             "Día de Clase": "Martes",
-            "Contestada": "No"
+            "Contestada": "No",
+            "Área": "={{ $('Formulario').item.json.data.data.w7vnbks92bjmq2t57eflqs7a }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -1134,8 +1134,8 @@
               "removed": false
             },
             {
-              "id": "Area",
-              "displayName": "Area",
+              "id": "Área",
+              "displayName": "Área",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -1879,7 +1879,7 @@
   },
   "staticData": {
     "node:Formulario": {
-      "webhookId": "cmaqqdyxc00g29fbsgynrr1tn"
+      "webhookId": "cmbeexmp000gk9fbs8e5o0aam"
     }
   },
   "tags": [
@@ -1897,6 +1897,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-05-16T11:44:35.000Z",
-  "versionId": "33ab2741-3bc5-4370-b60c-d7110c707074"
+  "updatedAt": "2025-06-02T01:30:25.000Z",
+  "versionId": "40e34eb3-8675-4a34-9006-b7b762b2e7d8"
 }
