@@ -48,8 +48,14 @@
             "node": "Actualizar Excel (Registros)1",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "Buscar Lead": {
@@ -59,8 +65,14 @@
             "node": "Code",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "Switch1": {
@@ -99,6 +111,67 @@
             "node": "Actualizar Excel (Registros)2",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Actualizar Excel (Registros)": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Actualizar Excel (Registros)1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Actualizar Excel (Registros)2": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -121,7 +194,7 @@
       "typeVersion": 2,
       "position": [
         -340,
-        -100
+        -200
       ],
       "id": "478c6064-8158-41aa-802f-e55390354e2d",
       "name": "Evergreen Excel",
@@ -188,7 +261,7 @@
       "typeVersion": 3.2,
       "position": [
         120,
-        -160
+        -200
       ],
       "id": "bc840feb-5c03-4dd6-9175-da6d769b4947",
       "name": "Switch"
@@ -301,7 +374,7 @@
       "typeVersion": 3.4,
       "position": [
         -120,
-        -100
+        -200
       ],
       "id": "1bb0abf9-78a8-4dfa-baf4-7891f9788c45",
       "name": "Edit Fields"
@@ -330,7 +403,7 @@
             "Fecha Registro": "={{ new Date($now).toLocaleString(\"es-ES\", { hour: '2-digit', minute: '2-digit', hour12: false }) + 'h ' + new Date($now).toLocaleDateString(\"es-ES\") }}\n",
             "Nombre": "={{ $json['Nombre Lead'] }}",
             "Apellido": "={{ $json['Apellido Lead'] }}",
-            "Telefono": "={{ $json.Telefono }}",
+            "Telefono": "={{ $('Evergreen Excel').item.json.body.customData.Telefono.replace(/\\D/g, \"\")  }}",
             "Email": "={{ $json.Email }}",
             "Avatar": "={{ $json.Avatar }}",
             "ETAPA LEAD": "={{ $json.ETAPA }}",
@@ -548,16 +621,17 @@
       "typeVersion": 4.5,
       "position": [
         400,
-        -340
+        -520
       ],
       "id": "e362be66-0aff-44b3-ad0b-424e86032c13",
       "name": "Actualizar Excel (Registros)",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Wn4uY6kEcSU7yGw8",
-          "name": "Google Sheets account"
+          "id": "f7EGdBCZh2j4m8K3",
+          "name": "G-Sheets IA Winners"
         }
-      }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -703,10 +777,11 @@
       "name": "Actualizar Excel (Reunion)",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Wn4uY6kEcSU7yGw8",
-          "name": "Google Sheets account"
+          "id": "f7EGdBCZh2j4m8K3",
+          "name": "G-Sheets IA Winners"
         }
-      }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -953,17 +1028,18 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1280,
+        1240,
         -100
       ],
       "id": "8cffa976-a9f8-4ef5-8fb2-ec1646df6485",
       "name": "Actualizar Excel (Registros)1",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Wn4uY6kEcSU7yGw8",
-          "name": "Google Sheets account"
+          "id": "f7EGdBCZh2j4m8K3",
+          "name": "G-Sheets IA Winners"
         }
-      }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -1003,10 +1079,11 @@
       "notesInFlow": false,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Wn4uY6kEcSU7yGw8",
-          "name": "Google Sheets account"
+          "id": "f7EGdBCZh2j4m8K3",
+          "name": "G-Sheets IA Winners"
         }
-      }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -1231,10 +1308,11 @@
       "name": "Actualizar Excel (Reunion)1",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Wn4uY6kEcSU7yGw8",
-          "name": "Google Sheets account"
+          "id": "f7EGdBCZh2j4m8K3",
+          "name": "G-Sheets IA Winners"
         }
-      }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -1261,7 +1339,7 @@
             "Fecha Registro": "={{ new Date($now).toLocaleString(\"es-ES\", { hour: '2-digit', minute: '2-digit', hour12: false }) + 'h ' + new Date($now).toLocaleDateString(\"es-ES\") }}",
             "Nombre": "={{ $('Edit Fields').item.json['Nombre Lead'] }}",
             "Apellido": "={{ $('Edit Fields').item.json['Apellido Lead'] }}",
-            "Telefono": "={{ $('Edit Fields').item.json.Telefono }}",
+            "Telefono": "={{ $('Edit Fields').item.json.Telefono.replace(/\\D/g, \"\")}}",
             "Email": "={{ $('Edit Fields').item.json.Email }}",
             "Avatar": "={{ $('Edit Fields').item.json.Avatar }}",
             "Fuente": "={{ $('Edit Fields').item.json.Fuente }}",
@@ -1498,372 +1576,139 @@
       "name": "Actualizar Excel (Registros)2",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Wn4uY6kEcSU7yGw8",
-          "name": "Google Sheets account"
+          "id": "f7EGdBCZh2j4m8K3",
+          "name": "G-Sheets IA Winners"
         }
-      }
-    }
-  ],
-  "pinData": {
-    "Evergreen Excel": [
-      {
-        "json": {
-          "headers": {
-            "host": "n8n.iawinners.com",
-            "user-agent": "axios/1.7.7",
-            "content-length": "12403",
-            "accept": "application/json, text/plain, */*",
-            "accept-encoding": "gzip, br",
-            "cdn-loop": "cloudflare; loops=1",
-            "cf-connecting-ip": "34.72.187.158",
-            "cf-ipcountry": "US",
-            "cf-ray": "9498e898c921e800-ORD",
-            "cf-visitor": "{\"scheme\":\"https\"}",
-            "content-type": "application/json",
-            "x-forwarded-for": "34.72.187.158, 172.70.100.67",
-            "x-forwarded-host": "n8n.iawinners.com",
-            "x-forwarded-port": "443",
-            "x-forwarded-proto": "https",
-            "x-forwarded-server": "1e96c02968f5",
-            "x-real-ip": "172.70.100.67"
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
           },
-          "params": {},
-          "query": {},
-          "body": {
-            "Do you have a way of knowing your staff is calling new leads within five minutes?": "",
-            "Do you currently have the ability to listen to recordings of conversations between new leads and your staff?": "",
-            "Topic for call": "",
-            "Lead Automation": "",
-            "Website": "",
-            "Do you currently have any auto-mated replies set up for people who message your Facebook page?": "",
-            "Do you currently send automated email/text messages to no-shows encouraging them to re-schedule?": "",
-            "Lead Management": "",
-            "Are you interested in implementing any of the things you responded 'No' to for your business?": "",
-            "Can your staff send text message to leads from a business number without using a personal phone?": "",
-            "Are you currently generating a steady flow of new leads each month? ": "",
-            "Do you currently send emails/text appointment reminders? ": "",
-            "Do you currently offer a way for new leads to book a call/appointment with you online?": "",
-            "Phone Number": "",
-            "Do you have any suggestions for new menu items?": "",
-            "Email Address": "",
-            "Are you totally and permanently disabled?": "",
-            "What were the outcomes or results achieved from your previous marketing efforts?": "",
-            "What specific deliverables do you expect from the marketing agency?": "",
-            "Are there any accessibility issues for our team (e.g., locked gates, pets)?": "",
-            "Mileage:": "",
-            "Location Cleanliness (scale of 1 to 5)": "",
-            " Description of the Issue:": "",
-            "Are they your dependent?": "",
-            "What was your least favourite item(s)": "",
-            "Other (Please specify):": "",
-            "Any Additional Comments, Questions Or Special Requests?": "",
-            "Allergies or Sensitivities:": "",
-            "Is there anything else you would like to share with us about your visit?": "",
-            "Location Name": "",
-            "Are you currently renting?": "",
-            "Taxpayer Signature": "",
-            "Is this a residential or commercial property?": "",
-            "Spouse Occupation ": "",
-            "Have you implemented any marketing strategies in the past? If yes, please describe them briefly.": "",
-            "Give us a brief description of the project:": "",
-            "How did you hear about us?": "",
-            "Preferred Time:": "",
-            "Overall Atmosphere Rating (scale of 1 to 5)": "",
-            "Type of Service (Check all that apply)": "",
-            "Are you contributing to 401k or other pre-tax account?": "",
-            "Check All Services Requested:": "",
-            "What are your objectives and goals for the project?": "",
-            "How satisfied were you with the food you were served?": "",
-            "Vehicle Year:": "",
-            "Any Previous Cosmetic Procedures?": "",
-            "Overall satisfaction rating (scale of 1 to 5)": "",
-            "Are you legally blind?": "",
-            "Which specific services are required for your project? Please select all that apply:": "",
-            "Current Medications": "",
-            "Are they totally and permanently disabled?": "",
-            "Was our staff knowledgeable and helpful with the menu? (scale of 1 to 5)": "",
-            "What is budget range allocated for the marketing project?": "",
-            "Are they a full-time student?": "",
-            "Any Allergies?": "",
-            "Do you have any additional comments, feedback, or suggestions regarding the legal services market?": "",
-            "Is there any other relevant information or specific requirements that you would like to communicate to potential marketing agencies?": "",
-            "Occupation": "",
-            "Who is your primary target audience and demographic?": "",
-            "Any Known Medical Conditions": "",
-            "Type of visit": "",
-            "Date Signed": "",
-            "Could you provide a breakdown of how you intend to allocate the budget across different marketing activities (e.g., advertising, content creation, website development)?": "",
-            "Enter your dependents here": "",
-            "Enter the following expenses total amount": "",
-            "What Was Your Favorite Item(s) You Tried?": "",
-            "Spouse Full Name": "",
-            "Preferred Barber (if any):": "",
-            " Type of Service Needed (Check all that apply):": "",
-            "Attach any relevant photos or documents related to the service request (if applicable).": "",
-            "Service speed (scale of 1 to 5)": "",
-            "Address": "",
-            "Preferred Date for Consultation": "",
-            "Spouse Date Of Birth": "",
-            "Are they legally blind?": "",
-            "Preferred Hair Products (if any):": "",
-            "Total Expenses": "",
-            "Vehicle Model:": "",
-            "What is the monthly rental amount?": "",
-            "Filing Status ": "",
-            "Are there any specific qualifications or expertise you prioritize in the evaluation process?": "",
-            "Reason for Consultation": "",
-            "How friendly was our staff? (scale of 1 to 5)": "",
-            "Preferred Date:": "",
-            "Do you have an ideal timeline in mind for the project?": "",
-            "Is this your first time opening a pre-tax account?": "",
-            "Would you recommend us?": "",
-            "Employment Status": "",
-            "How efficient was the service? (scale of 1 to 5)": "",
-            "Any Specific Concerns or Goals for the Consultation": "",
-            "Vehicle Make:": "",
-            "Are you a full-time student?": "",
-            "Selecciona las RRSS ": "",
-            "¿Cuánto dinero estás dispuesto/a a invertir para conseguir tu objetivo? *": "",
-            "Actualmente, ¿qué te gustaría conseguir con la IA? ¿Cuál es tu objetivo específicamente? *": "",
-            "Tu situación es...": "",
-            "Selecciona la cantidad de emplados": "",
-            "Objetivo de la formación": "",
-            "objetivo-agencia-ia": "",
-            "Nombre de afiliado": "Jessicatodo",
-            "Que avatar eres": "",
-            "obstaculo": "",
-            "Producto": "",
-            "Selecciona las RRSS que tiene tu negocio": "",
-            "¿Algo más que nos quieras comentar?": "",
-            "Radio 29djr": "",
-            "Selecciona la cantidad de empleados": "",
-            "Expreriencia  IA": "",
-            "Objetivo de Facturacion": "",
-            "¿Te gustaría mejorarla?": "",
-            "¿Tienes una empresa actualmente?": "",
-            "Presupuesto": "",
-            "Para poder empezar a hacer crecer tu Agencia de IA es necesaria una inversión económica . Ahora mismo, ¿estás dispuesto a invertir? ": "",
-            "Objetivo principal": "",
-            "Objetivo": "",
-            "¿Principalmente sobre que tema es tu duda?": "",
-            "Género": "",
-            "Sector": "",
-            "Describe brevemente qué necesitas resolver o aprender en esta sesión.": "",
-            "Rango de edad": "",
-            "Objetivos": "",
-            "Brief description of your situation": "",
-            "How would you like to be contacted?": "",
-            "Ubicación ": "",
-            "Service(s) Needed": "",
-            "Selecciona la opción correcta": "",
-            "Otros datos de interés": "",
-            "How can we help?": "",
-            "Message": "",
-            "Facturación anual ": "",
-            "Cif": "",
-            "Día \"tipo\" de mi cliente ideal": "",
-            "Nombre de tu empresa": "",
-            "Dni": "",
-            "¿Con qué frecuencia compra tu cliente ideal productos o servicios como el tuyo?": "",
-            "Solutions": "",
-            "Instagram": "",
-            "Telefono empresa": "",
-            "¿Cuánto suele gastar en productos como el tuyo?": "",
-            "Gender": "",
-            "¿Dispones de agencia de marketing?": "",
-            "Email empresa": "",
-            "¿Que podría influir en su decisión de compra?": "",
-            "¿A que se dedica tu empresa?": "",
-            "Razón Social": "",
-            "¿Qué necesidad satisface tu producto/servicio a tu cliente?": "",
-            "Facturación anual empresa": "",
-            "¿Qué espera el cliente obtener de tu producto/servicio?": "",
-            "Requested Media": "",
-            "Cual es tu objetivo con nosotros?": "",
-            "¿Cuál es el beneficio más importante de tu producto/servicio?": "",
-            "Event start date ": "",
-            "¿Dispones de web actualmente?": "",
-            "¿Qué problema principal resuelves a tu cliente con tu producto o servicio?": "",
-            "Event Start Time": "",
-            "Dominio web": "",
-            "¿Cuál es la pregunta más frecuente que le surge a tu cliente cuando piensa en tu producto o servicio? ": "",
-            "Special Instructions ": "",
-            "Plataforma de alojamiento web": "",
-            "Problema 1": "",
-            "What can we help with?": "",
-            "TikTok": "",
-            "Problema 2": "",
-            "Choose a time slot:": "",
-            "YouTube": "",
-            "Problema 3": "",
-            "¿Hay algo específico en tu sector que debamos saber?": "",
-            "Are any of these affecting currently you?": "",
-            "Fecha Factura": "",
-            "Other": "",
-            "Responde Chat Gpt": "",
-            "Código Postal": "",
-            "I consent to the above statements and affirm my honesty regarding my health.": "",
-            "Single Line 6602j": "",
-            "Ciudad": "",
-            "Today's Date": "",
-            "¿Tienes experiencia con IA y automatizaciones?": "",
-            "Precio pactado (297€, 1797€ , 1997€ o 2497€)": "",
-            "Dirección cliente": "",
-            "Describe brevemente tu experiencia": "",
-            "¿Qué áreas de la IA y automatizaciones te interesan más?": "",
-            "¿Por qué estás interesado en el Máster en IA y Automatizaciones?": "",
-            "Meeting_URL": "https://meet.google.com/xit-rmnd-yzv",
-            "Número de empleados": "",
-            "¿Prefieres clases grabadas, online en directo o híbridas?": "",
-            "¿Que esperas obtener de este Master?": "",
-            "¿Cuánto estas dispuesto a invertir en un Master de Ia y Automatizaciones que te enseñe todo de 0 a 100?": "",
-            "¿Te gustaría tener opción de financiación?": "",
-            "Precio pactado con My Digital Winner": "",
-            "¿Estás interesado en opciones de financiamiento?": "",
-            "Servicios pactados con My Digital Winner": "",
-            "Nombre empresa": "",
-            "¿Cuánto estas dispuesto a invertir en un Master de IA y Automatizaciones que te enseñe todo de 0 a 100?": "",
-            "Capital para formación": "",
-            "¿Que esperas obtener de este Master?1": "",
-            "Mensaje enviado": "",
-            "Respuesta IA": "",
-            "¿Hay algo más que te gustaría que supiéramos sobre ti?": "",
-            "PRUEBA": "",
-            "Single Line 67emc": "",
-            "ETAPA_LEAD": "Agenda",
-            "Servicios solicitados con My Digital Winner": "",
-            "Fecha_Reunion": "miércoles, 4 de junio de 2025 6:00 PM",
-            "Te gustaría acceder a este evento para...": "Quiero crear una agencia de IA",
-            "Evergreen-VSL": "",
-            "contact_id": "ba4ahnyRYiZTjulf8v5G",
-            "first_name": "Jessica",
-            "last_name": "Todó Carceller",
-            "full_name": "Jessica Todó Carceller",
-            "email": "jesicatodo87@gmail.com",
-            "phone": "+34606789942",
-            "tags": "descarga ebook gratuito,master intensivo,agenda llamada,master ia expert,la fórmula evento",
-            "address1": "Carrer Carme, 19 1A",
-            "city": "Les Borges Blanques",
-            "state": "Lleida",
-            "country": "ES",
-            "timezone": "Europe/Madrid",
-            "date_created": "2024-08-13T05:54:01.983Z",
-            "postal_code": "25400",
-            "contact_source": "formulario ia winners community",
-            "full_address": "Carrer Carme, 19 1A, Les Borges Blanques Lleida 25400",
-            "contact_type": "lead",
-            "location": {
-              "name": "MY DIGITAL WINNER",
-              "address": "30 N GOULD ST STE N",
-              "city": "SHERIDAN ",
-              "state": "WY",
-              "country": "US",
-              "postalCode": "82801",
-              "fullAddress": "30 N GOULD ST STE N, SHERIDAN  WY 82801",
-              "id": "H4xOOUiUOIw4yRDC8rba"
-            },
-            "user": {
-              "firstName": "Adrian",
-              "lastName": "Martinez",
-              "email": "adridigitalwinner@gmail.com",
-              "phone": "+34627242091"
-            },
-            "calendar": {
-              "title": "MASTERCLASS GRATIS - ACADEMIA IA WINNERS",
-              "selectedTimezone": "Europe/Madrid",
-              "appointmentId": "et5Hnq9eKicEiu6Lzc8T",
-              "startTime": "2025-06-04T18:00:00",
-              "endTime": "2025-06-04T20:00:00",
-              "status": "booked",
-              "appoinmentStatus": "confirmed",
-              "address": "https://meet.google.com/xit-rmnd-yzv",
-              "date_created": "2025-06-02T18:10:34.590Z",
-              "created_by": "",
-              "created_by_meta": {
-                "source": "google_calendar",
-                "channel": "event_sync"
-              },
-              "last_updated_by_meta": {
-                "source": "google_calendar",
-                "channel": "event_sync"
-              },
-              "id": "wToJRlDQgQpyQt0lbISr",
-              "calendarName": "Calendario | Formación IA WINNERS"
-            },
-            "workflow": {
-              "id": "5727fbc1-c1ab-4c40-a6ad-738416be3fcc",
-              "name": "02 -CALENDARIO| Agenda Academia de IA |"
-            },
-            "triggerData": {},
-            "contact": {
-              "attributionSource": {
-                "utmMatchtype": null,
-                "fbclid": "PAZXh0bgNhZW0CMTEAAaZV3Fw8b7Q05PdaKamX05zucSAHDTgX1P0X8cWtSmV3n28PWO1rzba6ImA_aem_yaDfEjLyzBc8FeKhG_Qejw",
-                "utmSource": null,
-                "adName": null,
-                "ip": "91.126.177.72",
-                "utmTerm": null,
-                "mediumId": "bpawI6bcFgU1zFZqSJxh",
-                "utmContent": null,
-                "userAgent": "Mozilla/5.0 (Linux; Android 14; SM-A137F Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/127.0.6533.103 Mobile Safari/537.36 Instagram 343.0.0.33.101 Android (34/14; 480dpi; 1080x2199; samsung; SM-A137F; a13ve; mt6768; es_ES; 629710210)",
-                "medium": "form",
-                "url": "https://www.mydigitalwinner.com/links?fbclid=PAZXh0bgNhZW0CMTEAAaZV3Fw8b7Q05PdaKamX05zucSAHDTgX1P0X8cWtSmV3n28PWO1rzba6ImA_aem_yaDfEjLyzBc8FeKhG_Qejw",
-                "adGroupId": null,
-                "referrer": "https://l.instagram.com",
-                "gclid": null,
-                "sessionSource": "Social media",
-                "adId": null,
-                "campaign": null,
-                "utmMedium": null,
-                "gaClientId": null,
-                "utmKeyword": null
-              },
-              "lastAttributionSource": {
-                "sessionSource": "Direct traffic",
-                "url": "https://iawinners.com/afiliados",
-                "utmSource": null,
-                "utmMedium": null,
-                "utmContent": null,
-                "utmTerm": null,
-                "utmKeyword": null,
-                "utmMatchtype": null,
-                "referrer": null,
-                "gclid": null,
-                "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/27.0 Chrome/125.0.0.0 Mobile Safari/537.36",
-                "ip": "185.165.254.32",
-                "gaClientId": null,
-                "medium": "form",
-                "mediumId": "0lcizOMxRuE3OLy8kf7v",
-                "adName": null,
-                "adGroupId": null,
-                "adId": null,
-                "gbraid": null,
-                "wbraid": null
+          "conditions": [
+            {
+              "id": "9e1457e4-2f4e-4552-8cef-f0c4eb3e89f0",
+              "leftValue": "={{ $json.error}}",
+              "rightValue": "The provided authorization grant",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
               }
             },
-            "attributionSource": {},
-            "customData": {
-              "Nombre": "Jessica",
-              "Apellido": "Todó Carceller",
-              "Email": "jesicatodo87@gmail.com",
-              "Telefono": "+34 606 78 99 42",
-              "ETAPA": "Agenda",
-              "ID": "ba4ahnyRYiZTjulf8v5G",
-              "Meeting URL": "https://meet.google.com/xit-rmnd-yzv",
-              "Fecha Agenda": "miércoles, 4 de junio de 2025 6:00 PM",
-              "Automatización": "Reunion",
-              "Closer": "Adrian Martinez",
-              "UTM": "",
-              "UTM 2": "",
-              "Fuente": "https://www.mydigitalwinner.com/links?fbclid=PAZXh0bgNhZW0CMTEAAaZV3Fw8b7Q05PdaKamX05zucSAHDTgX1P0X8cWtSmV3n28PWO1rzba6ImA_aem_yaDfEjLyzBc8FeKhG_Qejw"
+            {
+              "id": "92756638-ff3c-4ac9-a010-ebd39f4badd3",
+              "leftValue": "={{ $json.error}}",
+              "rightValue": "refresh token is invalid",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "7c096e2c-338c-4b7f-a65d-a1177a51589a",
+              "leftValue": "={{ $json.error}}",
+              "rightValue": "token is invalid, expired, revoked",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "7d130297-c8d0-4d82-aa72-3e2830c48d88",
+              "leftValue": "={{ $json.error}}",
+              "rightValue": "does not match the redirection URI",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "a8e2c754-7344-4d37-908b-5eee2e08b509",
+              "leftValue": "={{ $json.error}}",
+              "rightValue": "issued to another client",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
             }
-          },
-          "webhookUrl": "https://n8n.iawinners.com/webhook/1e5dec19-62c2-45fb-b016-27f73bd78c06",
-          "executionMode": "production"
+          ],
+          "combinator": "or"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1020,
+        -200
+      ],
+      "id": "a0b92b9e-61d4-4f9f-9d03-3c29942e9991",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "sendTo": "adridigitalwinner@gmail.com",
+        "subject": "N8N|AVISO DE ERROR EN WORKFLOW",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Registro de Lead</title>\n</head>\n<body>\n    <p>Hay un problema con uno de los Workflows en n8n.iawinners.com</p>\n    <p>Es Posible que hayan caducado las credenciales del siguiente workflow: 11 Jun - Lanzamiento Agencia IA</p>\n</body>\n</html>",
+        "options": {
+          "appendAttribution": false,
+          "ccList": "academia@iawinners.com"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -800,
+        -200
+      ],
+      "id": "c3061f04-b403-489a-a24f-891768faefc3",
+      "name": "Gmail",
+      "webhookId": "b2a06db5-1d96-4535-9139-a5ec57b2c7e6",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
         }
       }
-    ]
-  },
+    },
+    {
+      "parameters": {
+        "errorMessage": "Error de Autenticacion"
+      },
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        -600,
+        -200
+      ],
+      "id": "9e59245e-e0b3-489b-ad73-07786fa36eaa",
+      "name": "Stop and Error"
+    },
+    {
+      "parameters": {
+        "content": "## Control de errores",
+        "height": 220,
+        "width": 580,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1040,
+        -260
+      ],
+      "id": "d6760e91-74cc-4022-9957-2bc026b3d0d7",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
@@ -1871,12 +1716,18 @@
   "tags": [
     {
       "createdAt": "2025-04-16T10:35:06.049Z",
-      "updatedAt": "2025-04-16T10:35:06.049Z",
+      "updatedAt": "2025-06-07T15:07:46.386Z",
       "id": "VhIhN54OJ1lWSvmg",
-      "name": "Evergreen"
+      "name": "🟩 Evergreen"
+    },
+    {
+      "createdAt": "2025-02-26T15:17:43.536Z",
+      "updatedAt": "2025-02-26T15:17:43.536Z",
+      "id": "bB5H9hQQ6Hyuq8xS",
+      "name": "✅ PRODUCCION"
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-06-02T18:25:59.000Z",
-  "versionId": "5ba8540e-de55-4f3f-a923-15f1b4400e3f"
+  "updatedAt": "2025-06-07T15:14:57.000Z",
+  "versionId": "037329e2-5f3c-4e58-b988-f9a60d424a4d"
 }
