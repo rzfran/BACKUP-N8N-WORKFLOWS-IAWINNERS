@@ -1259,7 +1259,7 @@
       "credentials": {
         "whatsAppTriggerApi": {
           "id": "wNLNSjzYJjZWp1k5",
-          "name": "Mónica Winners +56"
+          "name": "Mónica Winners 4506"
         }
       }
     },
@@ -1489,8 +1489,8 @@
       "webhookId": "2a236d5d-229d-4072-bb75-2616201672f7",
       "credentials": {
         "whatsAppApi": {
-          "id": "BcbZdHgXnRRKJO2n",
-          "name": "WhatsApp account"
+          "id": "fwalCWsu32ovGXvD",
+          "name": "WhatsApp 4506"
         }
       }
     },
@@ -1815,8 +1815,8 @@
       "webhookId": "8d0c49fc-5de0-46e2-81c8-70198dc4e5c9",
       "credentials": {
         "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "CREDENCIALES ANTES INMUEBLES"
+          "id": "fwalCWsu32ovGXvD",
+          "name": "WhatsApp 4506"
         }
       }
     },
@@ -2022,8 +2022,8 @@
       "webhookId": "427e5f15-2baa-4191-ae22-1adede4cd46e",
       "credentials": {
         "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "CREDENCIALES ANTES INMUEBLES"
+          "id": "fwalCWsu32ovGXvD",
+          "name": "WhatsApp 4506"
         }
       }
     },
@@ -2048,8 +2048,8 @@
       "webhookId": "2880ed6c-5dc9-446e-800e-483b63200423",
       "credentials": {
         "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "CREDENCIALES ANTES INMUEBLES"
+          "id": "fwalCWsu32ovGXvD",
+          "name": "WhatsApp 4506"
         }
       }
     },
@@ -2238,8 +2238,8 @@
       "webhookId": "8d0c49fc-5de0-46e2-81c8-70198dc4e5c9",
       "credentials": {
         "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "CREDENCIALES ANTES INMUEBLES"
+          "id": "fwalCWsu32ovGXvD",
+          "name": "WhatsApp 4506"
         }
       }
     },
@@ -2434,8 +2434,8 @@
       "webhookId": "427e5f15-2baa-4191-ae22-1adede4cd46e",
       "credentials": {
         "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "CREDENCIALES ANTES INMUEBLES"
+          "id": "fwalCWsu32ovGXvD",
+          "name": "WhatsApp 4506"
         }
       }
     },
@@ -2460,8 +2460,8 @@
       "webhookId": "2880ed6c-5dc9-446e-800e-483b63200423",
       "credentials": {
         "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "CREDENCIALES ANTES INMUEBLES"
+          "id": "fwalCWsu32ovGXvD",
+          "name": "WhatsApp 4506"
         }
       }
     },
@@ -2594,8 +2594,8 @@
       "webhookId": "2880ed6c-5dc9-446e-800e-483b63200423",
       "credentials": {
         "whatsAppApi": {
-          "id": "oqcZcWeo4OBtlCnZ",
-          "name": "CREDENCIALES ANTES INMUEBLES"
+          "id": "fwalCWsu32ovGXvD",
+          "name": "WhatsApp 4506"
         }
       }
     },
@@ -3020,6 +3020,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2025-05-20T16:24:18.000Z",
-  "versionId": "5d792bb4-e745-4275-9cf5-0d9ccb0a29be"
+  "updatedAt": "2025-06-12T20:24:43.000Z",
+  "versionId": "bccf81c2-f22c-421d-9f36-a7e95c1b30b1"
 }
