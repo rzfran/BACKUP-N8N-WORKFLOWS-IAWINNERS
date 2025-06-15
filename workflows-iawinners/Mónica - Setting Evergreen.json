@@ -976,6 +976,7 @@
   },
   "createdAt": "2025-04-11T12:50:01.950Z",
   "id": "wTDTYDegIczPTbV3",
+  "isArchived": false,
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -3019,7 +3020,7 @@
       "name": "🟩 Evergreen"
     }
   ],
-  "triggerCount": 2,
+  "triggerCount": 1,
   "updatedAt": "2025-06-12T20:24:43.000Z",
   "versionId": "bccf81c2-f22c-421d-9f36-a7e95c1b30b1"
 }
