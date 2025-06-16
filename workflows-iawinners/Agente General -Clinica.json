@@ -571,7 +571,6 @@
   },
   "createdAt": "2025-02-27T12:32:07.259Z",
   "id": "v67QDkHYGXvvYdFS",
-  "isArchived": false,
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -1765,7 +1764,7 @@
       "name": "💬🟢WhatsApp"
     }
   ],
-  "triggerCount": 2,
+  "triggerCount": 4,
   "updatedAt": "2025-03-26T18:58:04.000Z",
   "versionId": "2215ed2c-569b-4157-a23d-38e69f8fd527"
 }
