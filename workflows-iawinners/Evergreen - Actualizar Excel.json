@@ -331,6 +331,12 @@
               "type": "string"
             },
             {
+              "id": "8e984ddc-0643-432b-9dc3-c2a0a97396c4",
+              "name": "UTM 3",
+              "value": "={{ $json.body.customData['UTM 3'] }}",
+              "type": "string"
+            },
+            {
               "id": "4511b2ad-bf04-4e78-a344-cfd9545c2b76",
               "name": "ETAPA",
               "value": "={{ $json.body.customData.ETAPA }}",
@@ -364,6 +370,12 @@
               "id": "6d4016bf-1a76-4ab1-a274-f5d3069068e4",
               "name": "campaing_type",
               "value": "={{ $json.body.customData['campaing_type'] }}",
+              "type": "string"
+            },
+            {
+              "id": "96e599e8-e252-4ad5-9e6c-d2c2805a30d2",
+              "name": "Agendado_por",
+              "value": "={{ $json.body.customData['Agendado_por'] }}",
               "type": "string"
             }
           ]
@@ -409,9 +421,10 @@
             "ETAPA LEAD": "={{ $json.ETAPA }}",
             "Fuente": "={{ $json.Fuente }}",
             "Afiliado": "={{ $json.Afiliado }}",
-            "UTM": "={{ $json['UTM 1'] }}",
-            "UTM 2": "={{ $json['UTM 2'] }}",
-            "campaing_type": "={{ $json['campaing_type'] }}"
+            "campaing_type": "={{ $json['campaing_type'] }}",
+            "Agendado Por": "={{ $json['Agendado_por'] }}",
+            "UTM 1": "={{ $('Edit Fields').item.json['UTM 1'] }}",
+            "UTM 3": "={{ $('Edit Fields').item.json['UTM 3'] }}"
           },
           "matchingColumns": [
             "ID"
@@ -491,53 +504,6 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Fuente",
-              "displayName": "Fuente",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Afiliado",
-              "displayName": "Afiliado",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "UTM",
-              "displayName": "UTM",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "UTM 2",
-              "displayName": "UTM 2",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "campaing_type",
-              "displayName": "campaing_type",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
               "id": "Llamada Setting",
               "displayName": "Llamada Setting",
               "required": false,
@@ -558,8 +524,18 @@
               "removed": false
             },
             {
-              "id": "Columna 4",
-              "displayName": "Columna 4",
+              "id": "Agendado Por",
+              "displayName": "Agendado Por",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fuente",
+              "displayName": "Fuente",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -567,8 +543,8 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Columna 5",
-              "displayName": "Columna 5",
+              "id": "Afiliado",
+              "displayName": "Afiliado",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -576,13 +552,44 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Columna 6",
-              "displayName": "Columna 6",
+              "id": "UTM 1",
+              "displayName": "UTM 1",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 2",
+              "displayName": "UTM 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "UTM 3",
+              "displayName": "UTM 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "campaing_type",
+              "displayName": "campaing_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
             },
             {
               "id": "Columna 7",
@@ -659,7 +666,11 @@
             "Correo ": "={{ $('Edit Fields').item.json.Email }}",
             "Closer": "={{ $('Edit Fields').item.json.Closer }}",
             "Estado reunión": "={{ $('Edit Fields').item.json.ETAPA }}",
-            "Fuente": "={{ $('Edit Fields').item.json.Fuente }}"
+            "Fuente": "={{ $('Edit Fields').item.json.Fuente }}",
+            "Agendado por": "={{ $('Edit Fields').item.json.Agendado_por }}",
+            "UTM 1": "={{ $('Edit Fields').item.json['UTM 1'] }}",
+            "UTM 2": "={{ $('Edit Fields').item.json['UTM 2'] }}",
+            "UTM 3": "={{ $('Edit Fields').item.json['UTM 3'] }}"
           },
           "matchingColumns": [
             "ID"
@@ -722,8 +733,48 @@
               "canBeUsedToMatch": true
             },
             {
+              "id": "Agendado por",
+              "displayName": "Agendado por",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Fuente",
               "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 1",
+              "displayName": "UTM 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 2",
+              "displayName": "UTM 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 3",
+              "displayName": "UTM 3",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -890,56 +941,6 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Fuente",
-              "displayName": "Fuente",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Afiliado",
-              "displayName": "Afiliado",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "UTM",
-              "displayName": "UTM",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "UTM 2",
-              "displayName": "UTM 2",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "campaing_type",
-              "displayName": "campaing_type",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
               "id": "Llamada Setting",
               "displayName": "Llamada Setting",
               "required": false,
@@ -960,34 +961,74 @@
               "removed": false
             },
             {
-              "id": "Columna 4",
-              "displayName": "Columna 4",
+              "id": "Agendado Por",
+              "displayName": "Agendado Por",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
-              "id": "Columna 5",
-              "displayName": "Columna 5",
+              "id": "Fuente",
+              "displayName": "Fuente",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
-              "id": "Columna 6",
-              "displayName": "Columna 6",
+              "id": "Afiliado",
+              "displayName": "Afiliado",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
+            },
+            {
+              "id": "UTM 1",
+              "displayName": "UTM 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 2",
+              "displayName": "UTM 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 3",
+              "displayName": "UTM 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "campaing_type",
+              "displayName": "campaing_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
             },
             {
               "id": "Columna 7",
@@ -1190,7 +1231,11 @@
             "Correo ": "={{ $('Edit Fields').item.json.Email }}",
             "Closer": "={{ $('Edit Fields').item.json.Closer }}",
             "Estado reunión": "={{ $('Edit Fields').item.json.ETAPA }}",
-            "Fuente": "={{ $('Edit Fields').item.json.Fuente }}"
+            "Fuente": "={{ $('Edit Fields').item.json.Fuente }}",
+            "UTM 1": "={{ $('Edit Fields').item.json['UTM 1'] }}",
+            "UTM 2": "={{ $('Edit Fields').item.json['UTM 2'] }}",
+            "UTM 3": "={{ $('Edit Fields').item.json['UTM 3'] }}",
+            "Agendado por": "={{ $('Edit Fields').item.json.Agendado_por }}"
           },
           "matchingColumns": [
             "ID"
@@ -1253,8 +1298,48 @@
               "canBeUsedToMatch": true
             },
             {
+              "id": "Agendado por",
+              "displayName": "Agendado por",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Fuente",
               "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 1",
+              "displayName": "UTM 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 2",
+              "displayName": "UTM 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM 3",
+              "displayName": "UTM 3",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -1345,7 +1430,10 @@
             "Fuente": "={{ $('Edit Fields').item.json.Fuente }}",
             "Afiliado": "={{ $('Edit Fields').item.json.Afiliado }}",
             "UTM": "={{ $('Edit Fields').item.json['UTM 1'] }}",
-            "UTM 2": "={{ $('Edit Fields').item.json['UTM 2'] }}"
+            "UTM 2": "={{ $('Edit Fields').item.json['UTM 2'] }}",
+            "UTM ": "={{ $('Edit Fields').item.json['UTM 1'] }}",
+            "UTM Term": "={{ $('Edit Fields').item.json['UTM 2'] }}",
+            "Agendado Por": "={{ $('Edit Fields').item.json.Agendado_por }}"
           },
           "matchingColumns": [
             "ID"
@@ -1501,34 +1589,34 @@
               "removed": false
             },
             {
-              "id": "Columna 4",
-              "displayName": "Columna 4",
+              "id": "UTM ",
+              "displayName": "UTM ",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
-              "id": "Columna 5",
-              "displayName": "Columna 5",
+              "id": "UTM Term",
+              "displayName": "UTM Term",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
-              "id": "Columna 6",
-              "displayName": "Columna 6",
+              "id": "Agendado Por",
+              "displayName": "Agendado Por",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Columna 7",
@@ -1710,7 +1798,9 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
   },
   "staticData": null,
   "tags": [
@@ -1728,6 +1818,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-06-07T15:14:57.000Z",
-  "versionId": "037329e2-5f3c-4e58-b988-f9a60d424a4d"
+  "updatedAt": "2025-06-20T08:48:50.000Z",
+  "versionId": "7efd705c-110c-43fb-90da-c3d7018bcfd0"
 }
