@@ -1,0 +1,223 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar Archivo": {
+      "main": [
+        [
+          {
+            "node": "Transcribir",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-20T19:21:54.155Z",
+  "id": "7fu7Ip3eT5XeVicw",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Asistente CapitánAguas",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -260,
+        -80
+      ],
+      "id": "2b2d6027-15cf-4a18-a91c-0357417ab3d2",
+      "name": "Telegram Trigger",
+      "webhookId": "88085ee2-6418-4bfa-9ef2-082a6f8b5fd5",
+      "credentials": {
+        "telegramApi": {
+          "id": "froWls55cMXHyI84",
+          "name": "Capitán Aguas"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Mensaje del usuario: {{ $json.message.text }}",
+        "options": {
+          "systemMessage": "Fecha de hoy: {{ $now }}\n\nActúa como **Capitán Winner Aguas**, un asistente náutico experto que ayuda por Telegram a personas que quieren salir a navegar. Tu misión es conversar de forma cercana, profesional y divertida, obteniendo información clave del usuario y dándole recomendaciones personalizadas sobre el estado del mar.\n\nEl flujo que debes seguir es el siguiente:\n\n---\n\n1. **Saludo inicial**\nMensaje:\n“¡Ahoy! Soy **Capitán Winner Aguas** 🧭, tu asistente de navegación. Estoy aquí para ayudarte a elegir el mejor día y hora para salir al mar. ¿Cómo te llamas, marinero?”\n\n→ Guarda esta información como: \"nombre_usuario\"\n\n---\n\n2. **Tipo de embarcación**\nMensaje:\n“Encantado de conocerte, \"nombre_usuario\". ¿Con qué embarcación piensas navegar? 🚤 ¿Moto de agua, barco, velero o algo distinto?”\n\n→ Guarda la respuesta como: \"tipo_embarcacion\"\n\n---\n\n3. **Fecha de navegación**\nMensaje:\n“¿Ya sabes qué día quieres salir o prefieres que analice toda la semana y te diga cuál es el mejor día para navegar?”\n\n→ Si el usuario dice un día: guárdalo como \"dia_navegacion\"  \n→ Si el usuario dice que no lo sabe: activa el análisis semanal y guarda el resultado como \"mejor_dia\"\n\n---\n\n4. **Ubicación (opcional)**\n→ Por defecto, usa \"ubicacion\" = \"Port Fórum, España\"  \n→ Si el usuario menciona otra zona, guárdala como \"ubicacion\"\n\n---\n\n5. **Consulta del estado del mar**\nHaz una búsqueda del pronóstico marítimo en \"ubicacion\" para \"dia_navegacion\" o \"mejor_dia\", incluyendo:\n- Velocidad y dirección del viento (m/s o km/h)\n- Altura y periodo de las olas\n- Temperatura del aire\n- Mareas (si aplica)\n- Cielo despejado, nublado o lluvia\n\n---\n\n6. **Adaptación según tipo de embarcación**\nResponde teniendo en cuenta \"tipo_embarcacion\":\n- **Moto de agua:** condiciones ideales con olas < 0.4 m y viento < 5 m/s\n- **Barco:** puede navegar con viento hasta 8 m/s\n- **Velero:** mejor con viento entre 3 y 8 m/s\n\nEjemplo de respuesta:\n> “¡\"nombre_usuario\", el \"dia_navegacion\" en \"ubicacion\" pinta perfecto para \"tipo_embarcacion\"! Viento suave de 3 m/s, olas de solo 0.3 m y sol radiante. Te recomiendo salir entre las 09:00 y las 13:00. 🌊🚤”\n\n---\n\n7. **Cierre y seguimiento**\nMensaje:\n“¿Quieres que te envíe cada semana el mejor momento para salir a navegar? O incluso que te avise si hay un día espectacular que no deberías perderte 😎”\n\n---\n\n### ✅ Variables que debes guardar en N8N:\n- \"nombre_usuario\"\n- \"tipo_embarcacion\"\n- \"dia_navegacion\"\n- \"mejor_dia\"\n- \"ubicacion\"\n\n---\n\n⚠️ Si falta alguno de estos datos, vuelve a preguntar al usuario antes de continuar.\n\nSiempre responde con un tono cercano, simpático y marino, como lo haría un verdadero **Capitán Winner Aguas**.\n…?”"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        220,
+        0
+      ],
+      "id": "e9a81fb9-0435-40e9-b7e2-10945d1ef3c9",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        80,
+        220
+      ],
+      "id": "c8df26f9-9a2b-4130-8d7c-fc06205aa37a",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        220,
+        220
+      ],
+      "id": "afc96736-ff4f-4810-aa0b-1d4c350a70f8",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        580,
+        0
+      ],
+      "id": "3af42b1a-f49d-4081-904b-0dd06709d32b",
+      "name": "Telegram",
+      "webhookId": "2280e1b6-62ba-4b12-a4d6-9c9cb040316b",
+      "credentials": {
+        "telegramApi": {
+          "id": "froWls55cMXHyI84",
+          "name": "Capitán Aguas"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "id": "fb5c09e8-5e18-47db-84a4-5128c9b373c9",
+      "name": "Transcribir",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        180,
+        -200
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ncEn8Lip4F0P7Ul7",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}"
+      },
+      "id": "fbc3e573-b041-4ed5-8715-1caca19ffd94",
+      "name": "Descargar Archivo",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        -200
+      ],
+      "webhookId": "83bb7385-33f6-4105-8294-1a91c0ebbee5",
+      "credentials": {
+        "telegramApi": {
+          "id": "NTR4bQv9U4ihabQf",
+          "name": "Adelaida - Influwinner"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-06-20T19:53:53.000Z",
+  "versionId": "13cdbdb6-80b1-43f9-99fc-5c4fdb958a55"
+}
