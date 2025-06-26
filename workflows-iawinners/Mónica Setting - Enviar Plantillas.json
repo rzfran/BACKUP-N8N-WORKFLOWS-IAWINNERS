@@ -492,9 +492,15 @@
       "updatedAt": "2025-06-07T15:07:46.386Z",
       "id": "VhIhN54OJ1lWSvmg",
       "name": "🟩 Evergreen"
+    },
+    {
+      "createdAt": "2025-02-26T15:17:43.536Z",
+      "updatedAt": "2025-02-26T15:17:43.536Z",
+      "id": "bB5H9hQQ6Hyuq8xS",
+      "name": "✅ PRODUCCION"
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-06-21T23:07:00.000Z",
-  "versionId": "ca2c8f04-a112-43f0-8399-8a19ebb8eafa"
+  "updatedAt": "2025-06-25T20:11:08.000Z",
+  "versionId": "f2facc76-dbb9-4610-b32a-421d47633d71"
 }
