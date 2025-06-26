@@ -1,0 +1,59 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-25T17:08:16.109Z",
+  "id": "LOd56xV63knGNCvi",
+  "meta": null,
+  "name": "FormulationMakers public",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "publicar",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -200,
+        0
+      ],
+      "id": "2afa24a6-4920-4076-86c7-0a396d0449cd",
+      "name": "Webhook",
+      "webhookId": "c050dc5d-9067-4a30-be95-d92b38db3ccb"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        140,
+        0
+      ],
+      "id": "f6a6271b-a709-4d5e-a779-a9f6a6030f1e",
+      "name": "Edit Fields1"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-25T18:39:10.000Z",
+  "versionId": "89fc8eb6-0725-4bea-9f4f-3afdcb9c0d19"
+}
