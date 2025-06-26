@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Switch": {
       "main": [
@@ -677,6 +677,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-14T16:26:18.000Z",
+  "updatedAt": "2025-06-25T20:05:30.000Z",
   "versionId": "beb47bfd-3629-431e-bf83-0f0aea1506ee"
 }
