@@ -855,7 +855,11 @@
           "mappingMode": "defineBelow",
           "value": {
             "ID": "={{ $('Edit Fields').item.json.ID }}",
-            "ETAPA LEAD": "={{ $('Edit Fields').item.json.ETAPA }}"
+            "ETAPA LEAD": "={{ $('Edit Fields').item.json.ETAPA }}",
+            "Agendado Por": "={{ $json['Agendado por'] }}",
+            "UTM 1": "={{ $json['UTM 1'] }}",
+            "UTM 2": "={{ $json['UTM 2'] }}",
+            "UTM 3": "={{ $json['UTM 3'] }}"
           },
           "matchingColumns": [
             "ID"
@@ -1818,6 +1822,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-06-20T08:48:50.000Z",
-  "versionId": "7efd705c-110c-43fb-90da-c3d7018bcfd0"
+  "updatedAt": "2025-06-26T11:50:37.000Z",
+  "versionId": "0d9c4639-9902-4a34-be66-b53c25273062"
 }
