@@ -78,7 +78,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        180,
+        140,
         -140
       ],
       "id": "05d495e8-bf5b-481c-bfb6-82466cb350ce",
@@ -97,10 +97,10 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": "gid=0",
+          "value": 710386497,
           "mode": "list",
-          "cachedResultName": "Mayo",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15eBrfwf764_OoH2uNfGsAagO-fDZdB6eO6SaQK9qv94/edit#gid=0"
+          "cachedResultName": "Junio",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15eBrfwf764_OoH2uNfGsAagO-fDZdB6eO6SaQK9qv94/edit#gid=710386497"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -269,8 +269,8 @@
       "name": "Google Sheets",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Wn4uY6kEcSU7yGw8",
-          "name": "Google Sheets account"
+          "id": "f7EGdBCZh2j4m8K3",
+          "name": "G-Sheets IA Winners"
         }
       }
     },
@@ -281,7 +281,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        420,
+        380,
         -140
       ],
       "id": "c265bab7-847b-4f44-a8be-1542393b65de",
@@ -400,7 +400,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        600,
+        580,
         -140
       ],
       "id": "7a4c29d8-9c7d-4857-bd7f-315576e211e4",
@@ -444,7 +444,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        820,
+        800,
         -140
       ],
       "id": "a9a9b7ad-3d43-4abe-a2ed-78a99b4486ba",
@@ -458,6 +458,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-05-15T10:47:34.000Z",
-  "versionId": "fb47bd6c-b708-4303-b004-b0fda31b1aeb"
+  "updatedAt": "2025-06-26T17:59:07.000Z",
+  "versionId": "cb6b259a-e8e2-4dbb-81bc-fa9497bb619d"
 }
