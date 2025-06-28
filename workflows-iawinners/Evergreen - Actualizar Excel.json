@@ -369,13 +369,13 @@
             {
               "id": "6d4016bf-1a76-4ab1-a274-f5d3069068e4",
               "name": "campaing_type",
-              "value": "={{ $json.body.customData['campaing_type'] }}",
+              "value": "={{ $json.body.customData.camping_type }}",
               "type": "string"
             },
             {
               "id": "96e599e8-e252-4ad5-9e6c-d2c2805a30d2",
               "name": "Agendado_por",
-              "value": "={{ $json.body.customData['Agendado_por'] }}",
+              "value": "={{ $json.body.customData['Agendado por'] }}",
               "type": "string"
             }
           ]
@@ -413,16 +413,16 @@
           "value": {
             "ID": "={{ $json.ID }}",
             "Fecha Registro": "={{ new Date($now).toLocaleString(\"es-ES\", { hour: '2-digit', minute: '2-digit', hour12: false }) + 'h ' + new Date($now).toLocaleDateString(\"es-ES\") }}\n",
-            "Nombre": "={{ $json['Nombre Lead'] }}",
-            "Apellido": "={{ $json['Apellido Lead'] }}",
+            "Nombre": "={{ $('Edit Fields').item.json['Nombre Lead'] }}",
+            "Apellido": "={{ $('Edit Fields').item.json['Apellido Lead'] }}",
             "Telefono": "={{ $('Evergreen Excel').item.json.body.customData.Telefono.replace(/\\D/g, \"\")  }}",
-            "Email": "={{ $json.Email }}",
-            "Avatar": "={{ $json.Avatar }}",
-            "ETAPA LEAD": "={{ $json.ETAPA }}",
-            "Fuente": "={{ $json.Fuente }}",
-            "Afiliado": "={{ $json.Afiliado }}",
-            "campaing_type": "={{ $json['campaing_type'] }}",
-            "Agendado Por": "={{ $json['Agendado_por'] }}",
+            "Email": "={{ $('Edit Fields').item.json.Email }}",
+            "Avatar": "={{ $('Edit Fields').item.json.Avatar }}",
+            "ETAPA LEAD": "={{ $('Edit Fields').item.json.ETAPA }}",
+            "Fuente": "={{ $('Edit Fields').item.json.Fuente }}",
+            "Afiliado": "={{ $('Edit Fields').item.json.Afiliado }}",
+            "campaing_type": "={{ $('Edit Fields').item.json.campaing_type }}",
+            "Agendado Por": "={{ $('Edit Fields').item.json.Agendado_por }}",
             "UTM 1": "={{ $('Edit Fields').item.json['UTM 1'] }}",
             "UTM 3": "={{ $('Edit Fields').item.json['UTM 3'] }}"
           },
@@ -1822,6 +1822,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-06-26T11:50:37.000Z",
-  "versionId": "0d9c4639-9902-4a34-be66-b53c25273062"
+  "updatedAt": "2025-06-27T17:16:06.000Z",
+  "versionId": "c1b4de73-c567-430e-9fa0-0b0e6e9fb1fb"
 }
