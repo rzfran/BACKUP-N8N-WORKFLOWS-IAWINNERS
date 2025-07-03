@@ -49,6 +49,39 @@
       "main": [
         []
       ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Edit Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-05-15T13:55:22.443Z",
@@ -178,7 +211,8 @@
       ],
       "id": "513eb5b4-37fa-4d16-a32f-38a24abc10d3",
       "name": "Webhook",
-      "webhookId": "76358cc6-aaa3-488e-8ebf-4d6be26d5787"
+      "webhookId": "76358cc6-aaa3-488e-8ebf-4d6be26d5787",
+      "disabled": true
     },
     {
       "parameters": {},
@@ -189,7 +223,8 @@
         620
       ],
       "id": "8c797dbe-a62f-422b-9a81-37da166db6e5",
-      "name": "Respond to Webhook"
+      "name": "Respond to Webhook",
+      "disabled": true
     },
     {
       "parameters": {
@@ -204,7 +239,8 @@
         460
       ],
       "id": "59259289-4001-4df2-a6c3-abb44ddb0796",
-      "name": "Sticky Note"
+      "name": "Sticky Note",
+      "disabled": true
     },
     {
       "parameters": {
@@ -217,7 +253,71 @@
         560
       ],
       "id": "3af44e4d-c9e4-4b9e-af91-7c99a2de3515",
-      "name": "Respond to Webhook1"
+      "name": "Respond to Webhook1",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        280
+      ],
+      "id": "ab92a522-f4a7-4176-986b-1e10dec3a75c",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "composite",
+        "dataPropertyName": "data2",
+        "dataPropertyNameComposite": "data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        280
+      ],
+      "id": "f6dfc33e-c989-4321-b3be-81b730c7621e",
+      "name": "Edit Image"
+    },
+    {
+      "parameters": {
+        "url": "https://evolution-api-minio.wepndv.easypanel.host/productos-compufran/Lenovo%20IdeaPad%203%2014%20Ryzen%205.jpg",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1280,
+        280
+      ],
+      "id": "8dce7066-915c-4bcd-98e4-ec9e7e353d48",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "url": "https://evolution-api-minio.wepndv.easypanel.host/productos-compufran/ia%20winners%20png_Mesa%20de%20trabajo%201%20copia.png",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "file",
+              "outputPropertyName": "data2"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1500,
+        280
+      ],
+      "id": "272d8ff2-e288-4df0-9757-9edecfe4d96c",
+      "name": "HTTP Request1"
     }
   ],
   "pinData": {},
@@ -227,6 +327,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-06-21T18:13:29.000Z",
-  "versionId": "6cbfa916-4981-45ca-a8ea-6859aab01768"
+  "updatedAt": "2025-07-02T23:00:27.000Z",
+  "versionId": "2d74e716-eac2-4c45-9886-a9f6f996ed1e"
 }
