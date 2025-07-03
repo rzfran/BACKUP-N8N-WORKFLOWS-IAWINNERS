@@ -1,0 +1,356 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [],
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Gmail": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-05-28T11:12:41.702Z",
+  "id": "hZxCUAmEgFEV5lIW",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "16 jul - Lanzamiento Agencia IA",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "f24f272d-2f8c-420d-a0f7-bf5fe041074c",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c318f7a4-6065-442b-97a4-8ea990d12868",
+      "name": "Webhook",
+      "webhookId": "f24f272d-2f8c-420d-a0f7-bf5fe041074c"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1pqnVXyAnnHl98sOFf97gQ5yoB5S4e0tYK2TkoWD78XQ",
+          "mode": "list",
+          "cachedResultName": "11 JUL _  FULL CAMPAIGN ANALYTIC _ LANZAMIENTO AGENCIA IA ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pqnVXyAnnHl98sOFf97gQ5yoB5S4e0tYK2TkoWD78XQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1502604313,
+          "mode": "list",
+          "cachedResultName": "Registros Evento",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1pqnVXyAnnHl98sOFf97gQ5yoB5S4e0tYK2TkoWD78XQ/edit#gid=1502604313"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ $json.body.customData.Nombre }}",
+            "Apellido": "={{ $json.body.customData.Apellido }}",
+            "Telefono": "={{ $json.body.customData['Teléfono'].replace(/\\D/g, \"\") }}",
+            "Email": "={{ $json.body.customData.Email }}",
+            "Avatar": "={{ $json.body.customData.Avatar }}",
+            "campaing_type": "={{ $json.body.customData.campaing_type }}",
+            "Afiliados": "={{ $json.body.customData.Afiliado }}",
+            "Fecha Registro": "={{ $json.body.customData['Fecha de Registro'] }}",
+            "Fuente": "={{ $json.body.customData.Fuente }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Fecha Registro",
+              "displayName": "Fecha Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Avatar",
+              "displayName": "Avatar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fuente",
+              "displayName": "Fuente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Afiliados",
+              "displayName": "Afiliados",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "campaing_type",
+              "displayName": "campaing_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        200,
+        0
+      ],
+      "id": "92547bda-1f53-4bda-8528-71a88aa93b39",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "f7EGdBCZh2j4m8K3",
+          "name": "G-Sheets IA Winners"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9e1457e4-2f4e-4552-8cef-f0c4eb3e89f0",
+              "leftValue": "={{ $json.error}}",
+              "rightValue": "The provided authorization grant",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "92756638-ff3c-4ac9-a010-ebd39f4badd3",
+              "leftValue": "={{ $json.error}}",
+              "rightValue": "refresh token is invalid",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "7c096e2c-338c-4b7f-a65d-a1177a51589a",
+              "leftValue": "={{ $json.error}}",
+              "rightValue": "token is invalid, expired, revoked",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "7d130297-c8d0-4d82-aa72-3e2830c48d88",
+              "leftValue": "={{ $json.error}}",
+              "rightValue": "does not match the redirection URI",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "a8e2c754-7344-4d37-908b-5eee2e08b509",
+              "leftValue": "={{ $json.error}}",
+              "rightValue": "issued to another client",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        440,
+        220
+      ],
+      "id": "666bbf21-29a4-466b-8ac3-0cdd202d715c",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "sendTo": "adridigitalwinner@gmail.com",
+        "subject": "N8N|AVISO DE ERROR EN WORKFLOW",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Registro de Lead</title>\n</head>\n<body>\n    <p>Hay un problema con uno de los Workflows en n8n.iawinners.com</p>\n    <p>Es Posible que hayan caducado las credenciales del siguiente workflow: 11 Jun - Lanzamiento Agencia IA</p>\n</body>\n</html>",
+        "options": {
+          "appendAttribution": false,
+          "ccList": "academia@iawinners.com"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        660,
+        220
+      ],
+      "id": "2bc68ffe-ac0a-4761-9a1e-eefb4c280494",
+      "name": "Gmail",
+      "webhookId": "b2a06db5-1d96-4535-9139-a5ec57b2c7e6",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "K9FC3dKPup4y5HK9",
+          "name": "CORREO ACADEMIA IA WINNERS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "errorMessage": "Error de Autenticacion"
+      },
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        860,
+        220
+      ],
+      "id": "4541e386-fdd0-4ec2-a5f9-161759a16b04",
+      "name": "Stop and Error"
+    },
+    {
+      "parameters": {
+        "content": "## Control de errores",
+        "height": 220,
+        "width": 580,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        420,
+        160
+      ],
+      "id": "24b24e71-a3d1-465a-872d-bf7d4829d071",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-26T15:17:43.536Z",
+      "updatedAt": "2025-02-26T15:17:43.536Z",
+      "id": "bB5H9hQQ6Hyuq8xS",
+      "name": "✅ PRODUCCION"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-02T14:00:20.000Z",
+  "versionId": "337f3c59-019d-42c6-ac91-c92936bb8734"
+}
