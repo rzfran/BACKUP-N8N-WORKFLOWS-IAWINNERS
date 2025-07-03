@@ -1,0 +1,55 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-02T22:17:14.949Z",
+  "id": "IeiiNLYzCnYYDp3g",
+  "meta": null,
+  "name": "test ext",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "3b6e3490-a05f-4611-b021-2a8d47f334fb",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "try {\n  const fs = require(\"fs\");\n  return [{ json: { success: true, message: \"¡require() funciona!\" } }];\n} catch (err) {\n  return [{ json: { success: false, error: err.message } }];\n}\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "id": "1c52b1d1-d188-4566-90d9-b6abe3dc81ab",
+      "name": "Code"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-02T22:30:31.000Z",
+  "versionId": "7a9ad0b3-08cc-4b3d-bf8c-bad026f0cc25"
+}
